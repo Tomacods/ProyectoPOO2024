@@ -14,7 +14,6 @@ CREATE TABLE Pregunta (
     Enunciado TEXT, -- Enunciado de la pregunta
     Tipo_Pregunta VARCHAR(20) CHECK (Tipo_Pregunta IN ('multiple_choice', 'aproximación')), -- Tipo de pregunta
     Categoría VARCHAR(50), -- Categoría de la pregunta
-    -- Dificultad VARCHAR(20) CHECK (Dificultad IN ('baja', 'media', 'alta')), -- Dificultad de la pregunta (esto no hace falta)
     -- Respuesta_Correcta TEXT, -- Respuesta correcta de la pregunta | Una sola respuesta tendrá el valor True en Correcta BOOLEAN
     Valor_Aproximado DECIMAL(10, 2) -- Valor aproximado de la pregunta (para las preguntas de aproximación)
 );
@@ -43,8 +42,6 @@ CREATE TABLE Escalón ( -- Tabla que contiene los escalones de las preguntas
     FOREIGN KEY (ID_Temática) REFERENCES Temática(ID_Temática) -- ID de la temática a la que pertenece el escalón
 );
 
-
-
 -- Tabla Juego
 CREATE TABLE Juego ( -- Tabla que contiene los juegos 
     ID_Juego INT PRIMARY KEY,
@@ -53,24 +50,6 @@ CREATE TABLE Juego ( -- Tabla que contiene los juegos
     ID_Jugador_Ganador INT,
     FOREIGN KEY (ID_Jugador_Ganador) REFERENCES Jugador(ID_Jugador) -- ID del jugador ganador del juego
 );
-
--- Tabla Empate
-CREATE TABLE Empate ( -- Tabla que contiene los empates entre jugadores
-    ID_Empate INT PRIMARY KEY,
-    ID_Pregunta_Aproximacion INT,
-    FOREIGN KEY (ID_Pregunta_Aproximacion) REFERENCES Pregunta(ID_Pregunta) -- ID de la pregunta de aproximación que genero el empate
-);
-
--- Tabla Empate_Jugador
-CREATE TABLE Empate_Jugador ( -- Tabla que contiene los jugadores que empataron
-    ID_Empate INT,
-    ID_Jugador INT,
-    Es_Ganador BOOLEAN,
-    PRIMARY KEY (ID_Empate, ID_Jugador), -- Clave primaria compuesta
-    FOREIGN KEY (ID_Empate) REFERENCES Empate(ID_Empate), -- ID del empate
-    FOREIGN KEY (ID_Jugador) REFERENCES Jugador(ID_Jugador) -- ID del jugador que empato
-);
-
 
 -- Tabla Ronda
 CREATE TABLE Ronda ( -- Tabla que contiene las rondas de los juegos
