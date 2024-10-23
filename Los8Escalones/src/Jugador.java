@@ -7,4 +7,5 @@ public class Jugador {
     private String estado;
 
     // Constructor, getters y setters
+    
 }
