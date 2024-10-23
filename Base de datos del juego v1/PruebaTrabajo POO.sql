@@ -54,24 +54,6 @@ CREATE TABLE Juego ( -- Tabla que contiene los juegos
     FOREIGN KEY (ID_Jugador_Ganador) REFERENCES Jugador(ID_Jugador) -- ID del jugador ganador del juego
 );
 
--- Tabla Empate
-CREATE TABLE Empate ( -- Tabla que contiene los empates entre jugadores
-    ID_Empate INT PRIMARY KEY,
-    ID_Pregunta_Aproximacion INT,
-    FOREIGN KEY (ID_Pregunta_Aproximacion) REFERENCES Pregunta(ID_Pregunta) -- ID de la pregunta de aproximación que genero el empate
-);
-
--- Tabla Empate_Jugador
-CREATE TABLE Empate_Jugador ( -- Tabla que contiene los jugadores que empataron
-    ID_Empate INT,
-    ID_Jugador INT,
-    Es_Ganador BOOLEAN,
-    PRIMARY KEY (ID_Empate, ID_Jugador), -- Clave primaria compuesta
-    FOREIGN KEY (ID_Empate) REFERENCES Empate(ID_Empate), -- ID del empate
-    FOREIGN KEY (ID_Jugador) REFERENCES Jugador(ID_Jugador) -- ID del jugador que empato
-);
-
-
 -- Tabla Ronda
 CREATE TABLE Ronda ( -- Tabla que contiene las rondas de los juegos
     ID_Ronda INT PRIMARY KEY,
