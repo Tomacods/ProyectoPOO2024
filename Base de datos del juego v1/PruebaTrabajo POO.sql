@@ -46,7 +46,7 @@ CREATE TABLE Escalón ( -- Tabla que contiene los escalones de las preguntas
 
 
 -- Tabla Juego
-CREATE TABLE Juego (
+CREATE TABLE Juego ( -- Tabla que contiene los juegos 
     ID_Juego INT PRIMARY KEY,
     Fecha DATE,
     Estado VARCHAR(20) CHECK (Estado IN ('en curso', 'completado')), -- Estado del juego si esta jugandose o ya se completo
