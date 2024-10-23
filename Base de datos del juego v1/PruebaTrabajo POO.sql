@@ -14,8 +14,8 @@ CREATE TABLE Pregunta (
     Enunciado TEXT, -- Enunciado de la pregunta
     Tipo_Pregunta VARCHAR(20) CHECK (Tipo_Pregunta IN ('multiple_choice', 'aproximación')), -- Tipo de pregunta
     Categoría VARCHAR(50), -- Categoría de la pregunta
-    Dificultad VARCHAR(20) CHECK (Dificultad IN ('baja', 'media', 'alta')), -- Dificultad de la pregunta (esto no hace falta)
-    Respuesta_Correcta TEXT, -- Respuesta correcta de la pregunta
+    -- Dificultad VARCHAR(20) CHECK (Dificultad IN ('baja', 'media', 'alta')), -- Dificultad de la pregunta (esto no hace falta)
+    -- Respuesta_Correcta TEXT, -- Respuesta correcta de la pregunta | Una sola respuesta tendrá el valor True en Correcta BOOLEAN
     Valor_Aproximado DECIMAL(10, 2) -- Valor aproximado de la pregunta (para las preguntas de aproximación)
 );
 
