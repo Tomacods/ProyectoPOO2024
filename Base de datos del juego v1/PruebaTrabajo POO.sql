@@ -66,3 +66,4 @@ CREATE TABLE Ronda ( -- Tabla que contiene las rondas de los juegos
     FOREIGN KEY (ID_Pregunta) REFERENCES Pregunta(ID_Pregunta), -- ID de la pregunta que se jugo en la ronda
     FOREIGN KEY (ID_Escalon) REFERENCES Escalón(ID_Escalon) -- ID del escalón que se jugo en la ronda
 );
+
