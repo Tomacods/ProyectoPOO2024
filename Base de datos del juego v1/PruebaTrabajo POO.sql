@@ -16,7 +16,7 @@ CREATE TABLE Pregunta (
     Categoría VARCHAR(50), -- Categoría de la pregunta
     -- Respuesta_Correcta TEXT, -- Respuesta correcta de la pregunta | Una sola respuesta tendrá el valor True en Correcta BOOLEAN
     Valor_Aproximado DECIMAL(10, 2) -- Valor aproximado de la pregunta (para las preguntas de aproximación)
-);
+); --el valor aproximado no se si es necesario, pero lo puse por si se llega a necesitar
 
 -- Tabla Respuesta
 CREATE TABLE Respuesta (
