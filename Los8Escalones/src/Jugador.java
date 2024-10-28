@@ -1,5 +1,5 @@
 public class Jugador {
-    private int id;
+    private int id_jugador;
     private String nombre;
     private String apellido;
     private String correo; //no se si lo pondria, pero en el ejemplo del profe lo puso
@@ -9,8 +9,8 @@ public class Jugador {
 
     // Constructor, getters y setters
     
-    public Jugador(int id, String nombre, String apellido, String correo, int puntaje, String estado) {
-        this.id = id;
+    public Jugador(int id_jugador, String nombre, String apellido, String correo, int puntaje, String estado) {
+        this.id_jugador = id_jugador;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
@@ -22,7 +22,7 @@ public class Jugador {
     }
 
     public int getId() {
-        return id;
+        return id_jugador;
     }
 
     public String getNombre() {
@@ -42,8 +42,8 @@ public class Jugador {
         return estado;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id_jugador) {
+        this.id_jugador = id_jugador;
     }
 
     public void setNombre(String nombre) {
