@@ -13,7 +13,7 @@ CREATE TABLE Pregunta (
     ID_Pregunta INT PRIMARY KEY,
     Enunciado TEXT, -- Enunciado de la pregunta
     Tipo_Pregunta VARCHAR(20) CHECK (Tipo_Pregunta IN ('multiple_choice', 'aproximación')), -- Tipo de pregunta
-    Categoría VARCHAR(50), -- Categoría de la pregunta
+    Categoria VARCHAR(50), -- Categoría de la pregunta
     -- Respuesta_Correcta TEXT, -- Respuesta correcta de la pregunta | Una sola respuesta tendrá el valor True en Correcta BOOLEAN
     Valor_Aproximado DECIMAL(10, 2) -- Valor aproximado de la pregunta (para las preguntas de aproximación)
 ); --el valor aproximado no se si es necesario, pero lo puse por si se llega a necesitar
@@ -28,18 +28,18 @@ CREATE TABLE Respuesta (
 );
 
 -- Tabla Temática
-CREATE TABLE Temática ( -- Tabla que contiene las temáticas de las preguntas
-    ID_Temática INT PRIMARY KEY,
-    Nombre_Temática VARCHAR(50)
+CREATE TABLE Tematica ( -- Tabla que contiene las temáticas de las preguntas
+    ID_Tematica INT PRIMARY KEY,
+    Nombre_Tematica VARCHAR(50)
 );
 
 -- Tabla Escalón
-CREATE TABLE Escalón ( -- Tabla que contiene los escalones de las preguntas
+CREATE TABLE Escalon ( -- Tabla que contiene los escalones de las preguntas
     ID_Escalon INT PRIMARY KEY,
-    Número_Escalon INT,
-    ID_Temática INT,
+    Numero_Escalon INT,
+    ID_Tematica INT,
     Estado VARCHAR(20) CHECK (Estado IN ('pendiente', 'completado')), -- Estado del escalón si esta jugandose o ya se completo
-    FOREIGN KEY (ID_Temática) REFERENCES Temática(ID_Temática) -- ID de la temática a la que pertenece el escalón
+    FOREIGN KEY (ID_Tematica) REFERENCES Tematica(ID_Tematica) -- ID de la temática a la que pertenece el escalón
 );
 
 -- Tabla Juego
