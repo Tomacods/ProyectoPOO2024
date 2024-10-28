@@ -1,3 +1,5 @@
+//Singleton
+
 package Conex;
 import java.sql.Connection;
 import java.sql.DriverManager;
