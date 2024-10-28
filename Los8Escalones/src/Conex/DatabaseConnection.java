@@ -7,8 +7,8 @@ public class DatabaseConnection {
     private Connection connection;
     private static DatabaseConnection instance;
     private String url = "jdbc:postgresql://localhost/"; 
-    private String nombreBD = "tu_base_de_datos";
-    private String usuario = "tu_usuario";
+    private String nombreBD = "Los8Escalones";
+    private String usuario = "postgres";
     private String clave = "1234";
 
     private DatabaseConnection() throws SQLException {
