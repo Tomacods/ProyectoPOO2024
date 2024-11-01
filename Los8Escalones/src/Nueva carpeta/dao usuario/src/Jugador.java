@@ -38,12 +38,12 @@ public class Jugador {
     }
 
 
-    public String getEstado() {
-        return estado;
+    public int getPuntaje() {
+        return puntaje;
     }
 
-    public int getPuntaje(){
-        return puntaje;
+    public String getEstado() {
+        return estado;
     }
 
     public void setId(int id_jugador) {
