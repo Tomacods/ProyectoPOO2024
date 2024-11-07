@@ -29,7 +29,7 @@ CREATE TABLE Respuesta (
 
 -- Tabla Temática
 CREATE TABLE Tematica ( -- Tabla que contiene las temáticas de las preguntas
-    ID_Tematica INT PRIMARY KEY,
+    ID_Tematica INT  PRIMARY KEY AUTO_INCREMENT,
     Nombre_Tematica VARCHAR(50)
 );
 
