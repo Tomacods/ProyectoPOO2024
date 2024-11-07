@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App", // Cambia esto al nombre de tu clase principal
+            "classPaths": [
+                "lib/postgresql-42.3.6.jar", // Asegúrate de que esta ruta sea correcta
+                "bin" // Si compilas tus clases en una carpeta bin, añade esta ruta
+            ]
+        }
+    ]
+}
