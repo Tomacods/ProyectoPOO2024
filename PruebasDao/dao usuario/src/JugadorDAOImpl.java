@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class JugadorDAOImpl implements JugadorDAO {
-     private Connection conexion;
+    private Connection conexion;
     public JugadorDAOImpl(Connection conexion){
         this.conexion = conexion;
     }
@@ -19,7 +19,7 @@ public class JugadorDAOImpl implements JugadorDAO {
         this.estado = estado;
     } */
 
-     @Override
+    @Override
     public Jugador obtenerJugadorPorId(int id) {
         Jugador jugador = null;
         String query = "SELECT * FROM jugador WHERE id_jugador = ?";

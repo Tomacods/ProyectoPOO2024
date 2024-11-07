@@ -57,12 +57,12 @@ public class JugadorDAOImpl implements JugadorDAO {
     public void actualizarJugador(Jugador jugador) {
         String query = "UPDATE jugador SET nombre = ?, apellido = ?, correo= ?, puntaje=?, estado=? WHERE id_jugador= ?";
         try (PreparedStatement statement = conexion.prepareStatement(query)) {
-            statement.setString(1, usuario.getNombre());
-            statement.setString(2, usuario.getApellido());
-            statement.setString(3, usuario.getCorreo());
-            statement.setInt(4, usuario.getPuntaje());
-            statement.setString(5, usuario.getEstado());
-            statement.setInt(6, usuario.getId());
+            statement.setString(1, jugador.getNombre());
+            statement.setString(2, jugador.getApellido());
+            statement.setString(3, jugador.getCorreo());
+            statement.setInt(4, jugador.getPuntaje());
+            statement.setString(5, jugador.getEstado());
+            statement.setInt(6, jugador.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
