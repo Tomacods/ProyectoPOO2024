@@ -1,22 +1,21 @@
 -- Tabla Jugador
 CREATE TABLE Jugador (
-    ID_Jugador INT PRIMARY KEY,
+    ID_Jugador INT PRIMARY KEY AUTO_INCREMENT,
     Nombre VARCHAR(50), -- Nombre del jugador
     Apellido VARCHAR(50), -- datos que pueden servir mas adelante
     Correo VARCHAR(100), -- datos que pueden servir mas adelante
     Puntaje INT, -- Puntaje del jugador en el juego (cuantas preguntas respondio correctamente)
     Estado VARCHAR(20) CHECK (Estado IN ('activo', 'eliminado')) -- Estado del jugador si esta jugando o quedo eliminado
 );
-
 -- Tabla Pregunta
 CREATE TABLE Pregunta (
     ID_Pregunta INT PRIMARY KEY,
     Enunciado TEXT, -- Enunciado de la pregunta
     Tipo_Pregunta VARCHAR(20) CHECK (Tipo_Pregunta IN ('multiple_choice', 'aproximación')), -- Tipo de pregunta
     Categoria VARCHAR(50), -- Categoría de la pregunta
-    -- Respuesta_Correcta TEXT, -- Respuesta correcta de la pregunta | Una sola respuesta tendrá el valor True en Correcta BOOLEAN
     Valor_Aproximado DECIMAL(10, 2) -- Valor aproximado de la pregunta (para las preguntas de aproximación)
-); --el valor aproximado no se si es necesario, pero lo puse por si se llega a necesitar
+    FOREIGN KEY (ID_Tematica) REFERENCES Tematica(ID_Tematica) -- ID de la temática a la que pertenece la pregunta
+);
 
 -- Tabla Respuesta
 CREATE TABLE Respuesta (
@@ -43,7 +42,7 @@ CREATE TABLE Escalon ( -- Tabla que contiene los escalones de las preguntas
 );
 
 -- Tabla Juego
-CREATE TABLE Juego ( -- Tabla que contiene los juegos 
+CREATE TABLE Juego ( -- Tabla que contiene los juegos que se jugaron, para despues mostrarlos en el historial
     ID_Juego INT PRIMARY KEY,
     Fecha DATE,
     Estado VARCHAR(20) CHECK (Estado IN ('en curso', 'completado')), -- Estado del juego si esta jugandose o ya se completo
