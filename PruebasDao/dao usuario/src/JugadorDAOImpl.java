@@ -9,15 +9,6 @@ public class JugadorDAOImpl implements JugadorDAO {
         this.conexion = conexion;
     }
 
-/*  
-    public Jugador(int id_jugador, String nombre, String apellido, String correo, int puntaje, String estado) {
-        this.id_jugador = id_jugador;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.correo = correo;
-        this.puntaje = puntaje;
-        this.estado = estado;
-    } */
 
     @Override
     public Jugador obtenerJugadorPorId(int id) {

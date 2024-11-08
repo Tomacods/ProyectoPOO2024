@@ -8,22 +8,25 @@ public class App {
         String usuario = "postgres";
         String password = "7508";
 
-        // Cargar el controlador JDBC
+        
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
             System.out.println("Controlador no encontrado. Asegúrate de tener el JAR del controlador en tu classpath.");
             e.printStackTrace();
-            return; // Termina el programa si no se puede cargar el controlador
+            return; 
         }
 
-        // Intentar conectarse a la base de datos
+    
         try (Connection conexion = DriverManager.getConnection(url, usuario, password)) {
             JugadorDAO jugadorDAO = new JugadorDAOImpl(conexion);
 
-            // Insertar un nuevo jugador
-            Jugador nuevoJugador = new Jugador(0, "Mora", "Molina", "moramo@gmail.com", 208, "eliminado");
-            jugadorDAO.insertarJugador(nuevoJugador);
+            
+            // Jugador nuevoJugador = new Jugador(0, "Mora", "Molina", "moramo@gmail.com", 208, "eliminado");
+            // jugadorDAO.insertarJugador(nuevoJugador);
+            Jugador nuevoJugador2 = new Jugador(1, "Fede", "Roldan", "fede@gmail", 251, "eliminado");
+            jugadorDAO.insertarJugador(nuevoJugador2);
+            
 
             System.out.println("Jugador insertado exitosamente.");
 
