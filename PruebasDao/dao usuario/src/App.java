@@ -18,6 +18,7 @@ public class App {
             jugadorDAO.insertarJugador(jugadorEjemplo);
             System.out.println("Jugador insertado correctamente.");*/ 
             jugadorDAO.eliminarJugador(1);
+            
         }
 
 
