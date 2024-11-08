@@ -10,7 +10,7 @@ public class JugadorDAOImpl implements JugadorDAO {
     }
 
 
-    @Override
+  /*  @Override
     public Jugador obtenerJugadorPorId(int id) {
         Jugador jugador = null;
         String query = "SELECT * FROM jugador WHERE id_jugador = ?";
@@ -26,17 +26,17 @@ public class JugadorDAOImpl implements JugadorDAO {
             e.printStackTrace();
         }
         return jugador;
-    }
+    }*/ 
     @Override
     public void insertarJugador(Jugador jugador){
-        String query = "INSERT INTO jugador( nombre, apellido, correo, puntaje, estado) VALUES (?,?,?,?,?,?)";
+        String query = "INSERT INTO jugador( nombre, apellido, correo, puntaje, estado) VALUES (?,?,?,?,?)";
         try (PreparedStatement statement = conexion.prepareStatement(query)){
-            statement.setInt(1, jugador.getId());
-            statement.setString(2, jugador.getNombre());
-            statement.setString(3, jugador.getApellido());
-            statement.setString(4, jugador.getCorreo());
-            statement.setInt(5, jugador.getPuntaje());
-            statement.setString(6, jugador.getEstado());
+
+            statement.setString(1, jugador.getNombre());
+            statement.setString(2, jugador.getApellido());
+            statement.setString(3, jugador.getCorreo());
+            statement.setInt(4, jugador.getPuntaje());
+            statement.setString(5, jugador.getEstado());
             statement.executeUpdate();
         } catch (SQLException e){
             e.printStackTrace(); 

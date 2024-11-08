@@ -4,7 +4,24 @@ import java.sql.SQLException;
 
 public class App {
     public static void main(String[] args) {
-        String url = "jdbc:postgresql://localhost:5432/Los8Escalones";
+
+        BaseDeDatos bd = BaseDeDatos.obtenerInstancia();
+        Connection connection = bd.getConnection();
+
+        if (connection!=null){
+            System.out.println("conexion exitosa con la bd");
+
+            JugadorDAO jugadorDAO = new JugadorDAOImpl(connection);
+
+            
+            Jugador jugadorEjemplo = new Jugador(0,"Fede", "Roldan", "fedeemail", 100, "eliminado");
+            jugadorDAO.insertarJugador(jugadorEjemplo);
+            System.out.println("Jugador insertado correctamente.");
+        }
+
+
+
+    /* String url = "jdbc:postgresql://localhost:5432/Los8Escalones";
         String usuario = "postgres";
         String password = "7508";
 
@@ -33,6 +50,7 @@ public class App {
         } catch (SQLException e) {
             System.out.println("Error al conectar a la base de datos.");
             e.printStackTrace();
-        }
-    }
+        }*/
+    } 
 }
+
