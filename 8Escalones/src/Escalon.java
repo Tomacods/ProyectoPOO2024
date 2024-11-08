@@ -1,14 +1,26 @@
+import java.util.ArrayList;
+
 public class Escalon {
     private int idEscalon;
     private int numeroEscalon;
     private String estado;
     private int idTematica;
+    private ArrayList<Pregunta> preguntas;
 
     public Escalon(int idEscalon, int numeroEscalon, String estado, int idTematica) {
         this.idEscalon = idEscalon;
         this.numeroEscalon = numeroEscalon;
         this.estado = estado;
         this.idTematica = idTematica;
+        this.preguntas = new ArrayList<>();
+    }
+
+    public void jugarEscalon() {
+
+    }
+
+    public void preguntasEscalon() {
+        
     }
 
     public int getIdEscalon() {
@@ -29,5 +41,9 @@ public class Escalon {
 
     public void setIdEscalon(int idEscalon) {
         this.idEscalon = idEscalon;
+    }
+
+    public void addPreguntas(Pregunta pregunta) {
+        preguntas.add(pregunta);
     }
 }

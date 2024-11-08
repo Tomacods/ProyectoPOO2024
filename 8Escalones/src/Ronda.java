@@ -32,8 +32,11 @@ public class Ronda {
     private void realizarPreguntas() {
         for (Jugador jugador : jugadores) {
             Pregunta pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
+            while (pregunta.getTipoPregunta() != "multiple choice"){
+                pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
+            }
             System.out.println("Pregunta para " + jugador.getNombre() + ": " + pregunta.getEnunciado());
-            //tendria que de alguna forma buscar la pregunta en la base de datos con las respuestas asociadas a esa pregunta y verificar cual de esas es la correcta con el metodo esCorrecta
+            // La respuesta se obtiene de un botón. 
             // Simular respuesta del jugador
             String respuesta = "Opción A"; // Ejemplo de respuesta
             if (pregunta.esCorrecta(respuesta)) {
@@ -42,6 +45,7 @@ public class Ronda {
             } else {
                 System.out.println("Respuesta incorrecta");
             }
+            preguntas.remove(pregunta);
         }
     }
     //metodoo para realizar preguntas por aproximacion

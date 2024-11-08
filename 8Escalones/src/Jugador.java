@@ -6,7 +6,6 @@ public class Jugador {
     private int puntaje;
     private String estado;
 
-
     // Constructor, getters y setters
     
     public Jugador(int id_jugador, String nombre, String apellido, String correo, int puntaje, String estado) {
