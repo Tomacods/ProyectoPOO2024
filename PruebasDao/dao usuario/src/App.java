@@ -14,9 +14,10 @@ public class App {
             JugadorDAO jugadorDAO = new JugadorDAOImpl(connection);
 
             
-            Jugador jugadorEjemplo = new Jugador(0,"Fede", "Roldan", "fedeemail", 100, "eliminado");
+           /* Jugador jugadorEjemplo = new Jugador(0,"Fede", "Roldan", "fedeemail", 100, "eliminado");
             jugadorDAO.insertarJugador(jugadorEjemplo);
-            System.out.println("Jugador insertado correctamente.");
+            System.out.println("Jugador insertado correctamente.");*/ 
+            jugadorDAO.eliminarJugador(1);
         }
 
 

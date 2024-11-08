@@ -10,7 +10,7 @@ public class JugadorDAOImpl implements JugadorDAO {
     }
 
 
-  /*  @Override
+    @Override
     public Jugador obtenerJugadorPorId(int id) {
         Jugador jugador = null;
         String query = "SELECT * FROM jugador WHERE id_jugador = ?";
@@ -26,7 +26,7 @@ public class JugadorDAOImpl implements JugadorDAO {
             e.printStackTrace();
         }
         return jugador;
-    }*/ 
+    } 
     @Override
     public void insertarJugador(Jugador jugador){
         String query = "INSERT INTO jugador( nombre, apellido, correo, puntaje, estado) VALUES (?,?,?,?,?)";
