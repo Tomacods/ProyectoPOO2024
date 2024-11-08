@@ -9,7 +9,7 @@ CREATE TABLE Jugador (
 );
 -- Tabla Pregunta
 CREATE TABLE Pregunta (
-    ID_Pregunta INT PRIMARY KEY,
+    ID_Pregunta INT PRIMARY KEY,--tiene q ser auto 
     Enunciado TEXT, -- Enunciado de la pregunta
     Tipo_Pregunta VARCHAR(20) CHECK (Tipo_Pregunta IN ('multiple_choice', 'aproximación')), -- Tipo de pregunta
     Categoria VARCHAR(50), -- Categoría de la pregunta
@@ -19,7 +19,7 @@ CREATE TABLE Pregunta (
 
 -- Tabla Respuesta
 CREATE TABLE Respuesta (
-    ID_Respuesta INT PRIMARY KEY,  -- ID de la respuesta
+    ID_Respuesta INT PRIMARY KEY,  -- ID de la respuesta TIENE Q SER AUTOINC
     ID_Pregunta INT,
     Texto TEXT,
     Correcta BOOLEAN,
@@ -34,7 +34,7 @@ CREATE TABLE Tematica ( -- Tabla que contiene las temáticas de las preguntas
 
 -- Tabla Escalón
 CREATE TABLE Escalon ( -- Tabla que contiene los escalones de las preguntas
-    ID_Escalon INT PRIMARY KEY,
+    ID_Escalon INT PRIMARY KEY ,--AUTO INC
     Numero_Escalon INT,
     ID_Tematica INT,
     Estado VARCHAR(20) CHECK (Estado IN ('pendiente', 'completado')), -- Estado del escalón si esta jugandose o ya se completo
@@ -52,12 +52,12 @@ CREATE TABLE Juego ( -- Tabla que contiene los juegos que se jugaron, para despu
 
 -- Tabla Ronda
 CREATE TABLE Ronda ( -- Tabla que contiene las rondas de los juegos
-    ID_Ronda INT PRIMARY KEY,
+    ID_Ronda INT PRIMARY KEY, --AUTO INC
     ID_Juego INT, -- ID del juego al que pertenece la ronda
     ID_Jugador INT,
     ID_Pregunta INT,
     ID_Escalon INT,
-    Resultado VARCHAR(20) CHECK (Resultado IN ('correcto', 'incorrecto', 'aproximado')), -- Resultado de la ronda
+    Resultado VARCHAR(20) CHECK (Resultado IN ('correcto', 'incorrecto', 'aproximado')), -- Resultado de la ronda 
     Fecha DATE,
     Estado VARCHAR(20) CHECK (Estado IN ('en curso', 'finalizado')), -- Estado de la ronda si esta jugandose o ya se completo
     FOREIGN KEY (ID_Juego) REFERENCES Juego(ID_Juego),  -- ID del juego al que pertenece la ronda
