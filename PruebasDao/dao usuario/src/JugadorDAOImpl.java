@@ -29,7 +29,7 @@ public class JugadorDAOImpl implements JugadorDAO {
     }
     @Override
     public void insertarJugador(Jugador jugador){
-        String query = "INSERT INTO jugador(id_jugador, nombre, apellido, correo, puntaje, estado) VALUES (?,?,?,?,?,?)";
+        String query = "INSERT INTO jugador( nombre, apellido, correo, puntaje, estado) VALUES (?,?,?,?,?,?)";
         try (PreparedStatement statement = conexion.prepareStatement(query)){
             statement.setInt(1, jugador.getId());
             statement.setString(2, jugador.getNombre());
