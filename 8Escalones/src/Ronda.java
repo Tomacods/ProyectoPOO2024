@@ -7,8 +7,8 @@ public class Ronda {
     private int idJuego;
     private List<Jugador> jugadores;
     private List<Pregunta> preguntas;
-    private Escalon escalon;
-    private String resultado;
+    private Escalon escalon; // pq
+    private String resultado; // para q
     private Date fecha;
     private String estado;
 

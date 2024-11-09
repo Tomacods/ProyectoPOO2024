@@ -2,15 +2,16 @@ public abstract class Pregunta {
     private int idPregunta;
     private String enunciado;
     private String tipoPregunta;
-    private String categoria;
+    //private String categoria;
+    private Tematica tematica;
 
     // Constructor
-    public Pregunta(int idPregunta, String enunciado, String tipoPregunta, String categoria) {
+    public Pregunta(int idPregunta, String enunciado, String tipoPregunta, Tematica tematica/*String categoria*/) {
         this.idPregunta = idPregunta;
         this.enunciado = enunciado;
         this.tipoPregunta = tipoPregunta;
-        this.categoria = categoria;
-
+        //this.categoria = categoria;
+        this.tematica = tematica;
     }
 
     // Getters y Setters
@@ -38,12 +39,12 @@ public abstract class Pregunta {
         this.tipoPregunta = tipoPregunta;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public Tematica getTematica() {
+        return tematica;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setTematica(Tematica tematica) {
+        this.tematica = tematica;
     }
 
 
