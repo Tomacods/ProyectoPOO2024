@@ -1,3 +1,4 @@
+package Modelos;
 import java.math.BigDecimal;
 
 public class PreguntaAproximacion extends Pregunta {

@@ -1,3 +1,5 @@
+package DAOs;
+import Modelos.Tematica;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

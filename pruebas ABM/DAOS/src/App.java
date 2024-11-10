@@ -1,5 +1,10 @@
 import java.math.BigDecimal;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import Modelos.*;
+import DAOs.*;
 
 public class App {
     public static void main(String[] args) {
@@ -7,23 +12,16 @@ public class App {
         BaseDeDatos bd = BaseDeDatos.obtenerInstancia();
         Connection connection = bd.getConnection();
 
-        if (connection!=null){
-            System.out.println("conexion exitosa con la bd");
+        if (connection != null) {
+            System.out.println("conexión exitosa con la BDD");
+            PreguntaMCDAO preguntaMCDAO = new PreguntaMCDAO(connection);
 
-            JugadorDAOImpl jugadorDAO = new JugadorDAOImpl(connection);
-            PreguntaAproxDAO pregunta_aproxDAO = new PreguntaAproxDAO(connection);
 
-        PreguntaAproximacion preguntaaproxejemplo = new PreguntaAproximacion(0, "PRUEBA DAO", "Aproximacion", new BigDecimal(78.45), 1);
-          //  pregunta_aproxDAO.insertarPreguntaAprox(preguntaaproxejemplo);
-            preguntaaproxejemplo.setCategoria("deporte");
-            pregunta_aproxDAO.actualizarPreguntaAprox(preguntaaproxejemplo);
-           // Jugador jugadorEjemplo = new Jugador(0,"Jugador de prueba DAO", 0, "eliminado");
-           // jugadorDAO.insertarJugador(jugadorEjemplo);
-            System.out.println("insertado correctamente.");
-           // jugadorDAO.eliminarJugador(0);
-            
+        //    preguntaMCDAO.obtenerPyRHistoria();
+        preguntaMCDAO.obtenerRtaCorrectasHistoria();
+
         }
+    }
 
-    } 
+   
 }
-

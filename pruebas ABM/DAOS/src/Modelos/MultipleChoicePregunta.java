@@ -1,3 +1,4 @@
+package Modelos;
 import java.util.List;
 
 public class MultipleChoicePregunta extends Pregunta {

@@ -1,3 +1,5 @@
+package DAOs;
+import Modelos.PreguntaAproximacion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +12,7 @@ public class PreguntaAproxDAO {
         this.connection = connection;
     }
 
-    public void insertarPreguntaAprox(Pregunta pregunta){
+    public void insertarPreguntaAprox(PreguntaAproximacion pregunta){
         String query = "INSERT INTO pregunta_aproximacion(enunciado, categoria, valor_aproximado, id_tematica) VALUES (?,?,?,?)";
         try (PreparedStatement statement = connection.prepareStatement(query)){
 
@@ -45,7 +47,7 @@ public class PreguntaAproxDAO {
 }
 
 
-    public void actualizarPreguntaAprox(Pregunta pregunta){
+    public void actualizarPreguntaAprox(PreguntaAproximacion pregunta){
         int idPregunta = obtenerIdPregunta(pregunta.getEnunciado(), pregunta.getId_tematica());
         if (idPregunta != -1) {
         String query = "UPDATE pregunta_aproximacion SET enunciado = ?, categoria = ?, valor_aproximado = ?, id_tematica = ? WHERE id_pregunta = ?";

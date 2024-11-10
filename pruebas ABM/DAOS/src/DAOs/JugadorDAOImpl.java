@@ -1,3 +1,6 @@
+package DAOs;
+import Modelos.Jugador;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
