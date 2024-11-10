@@ -1,5 +1,7 @@
 package DAOs;
 import Modelos.PreguntaAproximacion;
+
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -83,5 +85,36 @@ public class PreguntaAproxDAO {
 
 
 
+
+
+
+    
+    public void obtenerPreguntasAproxHistoria(){
+        String query = "SELECT ID_Pregunta, Enunciado, Categoria, Valor_Aproximado " +
+        "FROM Pregunta_aproximacion " +
+        "WHERE ID_Tematica = (SELECT ID_Tematica FROM Tematica WHERE Nombre_Tematica = 'historia') " +
+        "ORDER BY ID_Pregunta;";
+
+
+
+
+    try(PreparedStatement statement = connection.prepareStatement(query);
+    ResultSet resultSet = statement.executeQuery()) {
+        while (resultSet.next()){
+            int idPregunta = resultSet.getInt("ID_Pregunta");
+                String enunciado = resultSet.getString("Enunciado");
+                String categoria = resultSet.getString("Categoria");
+                float valor_aprox = resultSet.getFloat("Valor_Aproximado");
+                System.out.println("ID pregunta: " + idPregunta + ", Enunciado: " + enunciado + ", Categoria: " + categoria + ", Valor aproximado: " + valor_aprox);
+
+
+        }
+        
+    } catch (SQLException e) {
+        e.printStackTrace();
+        
+    }
+
+    }
     
 }

@@ -14,11 +14,14 @@ public class App {
 
         if (connection != null) {
             System.out.println("conexión exitosa con la BDD");
-            PreguntaMCDAO preguntaMCDAO = new PreguntaMCDAO(connection);
+         //   PreguntaMCDAO preguntaMCDAO = new PreguntaMCDAO(connection);
 
 
         //    preguntaMCDAO.obtenerPyRHistoria();
-        preguntaMCDAO.obtenerRtaCorrectasHistoria();
+      //  preguntaMCDAO.obtenerRtaCorrectasHistoria();
+
+      PreguntaAproxDAO preguntaAproxDAO = new PreguntaAproxDAO(connection);
+      preguntaAproxDAO.obtenerPreguntasAproxHistoria();
 
         }
     }
