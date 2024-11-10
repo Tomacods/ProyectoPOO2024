@@ -6,7 +6,6 @@ public class Jugador {
     private int puntaje;
     private String estado;
 
-
     // Constructor, getters y setters
     
     public Jugador(int id_jugador, String nombre, String apellido, String correo, int puntaje, String estado) {
@@ -42,6 +41,10 @@ public class Jugador {
         return estado;
     }
 
+    public int getPuntaje(){
+        return puntaje;
+    }
+
     public void setId(int id_jugador) {
         this.id_jugador = id_jugador;
     }
@@ -65,6 +68,9 @@ public class Jugador {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
+
+    public void incrementarPuntaje() {
+        this.puntaje++;
+    }
     
 }
