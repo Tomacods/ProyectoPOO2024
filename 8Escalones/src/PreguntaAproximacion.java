@@ -3,8 +3,8 @@ import java.math.BigDecimal;
 public class PreguntaAproximacion extends Pregunta {
     private BigDecimal valorAproximado;
 
-    public PreguntaAproximacion(int idPregunta, String enunciado, String tipoPregunta, Tematica tematica, BigDecimal valorAproximado) {
-        super(idPregunta, enunciado, tipoPregunta, tematica);
+    public PreguntaAproximacion(int idPregunta, String enunciado, String categoria, BigDecimal valorAproximado, int id_tematica) {
+        super(idPregunta, enunciado, categoria, id_tematica);
         this.valorAproximado = valorAproximado;
     }
 
@@ -13,10 +13,13 @@ public class PreguntaAproximacion extends Pregunta {
         BigDecimal respuestaDecimal = new BigDecimal(respuesta);
         return respuestaDecimal.compareTo(valorAproximado) == 0;
     }
-
-    public BigDecimal getValorAproximado() {
-        return valorAproximado;
+    //no se si funciona es q en dao sql solo toma float no big decimal
+    public float getValorAproximado() {
+        return valorAproximado.floatValue();
     }
+/*   public BigDecimal getValorAproximado() {
+        return valorAproximado;
+    }*/
 
     public void setValorAproximado(BigDecimal valorAproximado) {
         this.valorAproximado = valorAproximado;

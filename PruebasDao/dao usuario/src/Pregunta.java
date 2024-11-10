@@ -1,15 +1,15 @@
 public abstract class Pregunta {
     private int idPregunta;
     private String enunciado;
-    private String tipoPregunta;
     private String categoria;
+    private int id_tematica;
 
     // Constructor
-    public Pregunta(int idPregunta, String enunciado, String tipoPregunta, String categoria) {
+    public Pregunta(int idPregunta, String enunciado, String categoria, int id_tematica) {
         this.idPregunta = idPregunta;
         this.enunciado = enunciado;
-        this.tipoPregunta = tipoPregunta;
         this.categoria = categoria;
+        this.id_tematica=id_tematica;
 
     }
 
@@ -30,14 +30,6 @@ public abstract class Pregunta {
         this.enunciado = enunciado;
     }
 
-    public String getTipoPregunta() {
-        return tipoPregunta;
-    }
-
-    public void setTipoPregunta(String tipoPregunta) {
-        this.tipoPregunta = tipoPregunta;
-    }
-
     public String getCategoria() {
         return categoria;
     }
@@ -48,5 +40,13 @@ public abstract class Pregunta {
 
 
     
+    public int getId_tematica() {
+        return id_tematica;
+    }
+
+    public void setId_tematica(int id_tematica) {
+        this.id_tematica = id_tematica;
+    }
+
     public abstract boolean esCorrecta(String respuesta);
 }

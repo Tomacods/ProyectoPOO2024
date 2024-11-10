@@ -3,14 +3,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class JugadorDAOImpl implements JugadorDAO {
+public class JugadorDAOImpl {
     private Connection conexion;
     public JugadorDAOImpl(Connection conexion){
         this.conexion = conexion;
     }
 
-
-    @Override
     public Jugador obtenerJugadorPorId(int id) {
         Jugador jugador = null;
         String query = "SELECT * FROM jugador WHERE id_jugador = ?";
@@ -26,7 +24,7 @@ public class JugadorDAOImpl implements JugadorDAO {
         }
         return jugador;
     } 
-    @Override
+
     public void insertarJugador(Jugador jugador){
         String query = "INSERT INTO jugador( nombre, puntaje, estado) VALUES (?,?,?)";
         try (PreparedStatement statement = conexion.prepareStatement(query)){
@@ -41,7 +39,6 @@ public class JugadorDAOImpl implements JugadorDAO {
     }
 
 
-    @Override
     public void actualizarJugador(Jugador jugador) {
         String query = "UPDATE jugador SET nombre = ?, puntaje=?, estado=? WHERE id_jugador= ?";
         try (PreparedStatement statement = conexion.prepareStatement(query)) {
@@ -55,7 +52,6 @@ public class JugadorDAOImpl implements JugadorDAO {
         }
     }
 
-    @Override
     public void eliminarJugador(int id) {
         String query = "DELETE FROM jugador WHERE id_jugador = ?";
         try (PreparedStatement statement = conexion.prepareStatement(query)) {
