@@ -12,8 +12,8 @@ public class App {
 
             JugadorDAOImpl jugadorDAO = new JugadorDAOImpl(connection);
             PreguntaAproxDAO pregunta_aproxDAO = new PreguntaAproxDAO(connection);
-            //SI QUIERO ACTUALIAR DEBO CONOCER EL ID Y PONERLO ACA
-           PreguntaAproximacion preguntaaproxejemplo = new PreguntaAproximacion(0, "PRUEBA DAO", "Aproximacion", new BigDecimal(78.45), 1);
+
+        PreguntaAproximacion preguntaaproxejemplo = new PreguntaAproximacion(0, "PRUEBA DAO", "Aproximacion", new BigDecimal(78.45), 1);
           //  pregunta_aproxDAO.insertarPreguntaAprox(preguntaaproxejemplo);
             preguntaaproxejemplo.setCategoria("deporte");
             pregunta_aproxDAO.actualizarPreguntaAprox(preguntaaproxejemplo);
