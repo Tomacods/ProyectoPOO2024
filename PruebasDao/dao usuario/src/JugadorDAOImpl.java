@@ -19,7 +19,6 @@ public class JugadorDAOImpl implements JugadorDAO {
             ResultSet rs = statement.executeQuery();
             if (rs.next()) {
                 jugador = new Jugador(rs.getInt("id_jugador"), rs.getString("nombre"), 
-                rs.getString("apellido"), rs.getString("correo"),
                 rs.getInt("puntaje"), rs.getString("estado"));
             }
         } catch (SQLException e) {
@@ -29,14 +28,12 @@ public class JugadorDAOImpl implements JugadorDAO {
     } 
     @Override
     public void insertarJugador(Jugador jugador){
-        String query = "INSERT INTO jugador( nombre, apellido, correo, puntaje, estado) VALUES (?,?,?,?,?)";
+        String query = "INSERT INTO jugador( nombre, puntaje, estado) VALUES (?,?,?)";
         try (PreparedStatement statement = conexion.prepareStatement(query)){
 
             statement.setString(1, jugador.getNombre());
-            statement.setString(2, jugador.getApellido());
-            statement.setString(3, jugador.getCorreo());
-            statement.setInt(4, jugador.getPuntaje());
-            statement.setString(5, jugador.getEstado());
+            statement.setInt(2, jugador.getPuntaje());
+            statement.setString(3, jugador.getEstado());
             statement.executeUpdate();
         } catch (SQLException e){
             e.printStackTrace(); 
@@ -46,14 +43,12 @@ public class JugadorDAOImpl implements JugadorDAO {
 
     @Override
     public void actualizarJugador(Jugador jugador) {
-        String query = "UPDATE jugador SET nombre = ?, apellido = ?, correo= ?, puntaje=?, estado=? WHERE id_jugador= ?";
+        String query = "UPDATE jugador SET nombre = ?, puntaje=?, estado=? WHERE id_jugador= ?";
         try (PreparedStatement statement = conexion.prepareStatement(query)) {
             statement.setString(1, jugador.getNombre());
-            statement.setString(2, jugador.getApellido());
-            statement.setString(3, jugador.getCorreo());
-            statement.setInt(4, jugador.getPuntaje());
-            statement.setString(5, jugador.getEstado());
-            statement.setInt(6, jugador.getId());
+            statement.setInt(2, jugador.getPuntaje());
+            statement.setString(3, jugador.getEstado());
+            statement.setInt(4, jugador.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

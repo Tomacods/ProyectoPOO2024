@@ -1,6 +1,4 @@
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class App {
     public static void main(String[] args) {
@@ -11,48 +9,16 @@ public class App {
         if (connection!=null){
             System.out.println("conexion exitosa con la bd");
 
-            JugadorDAO jugadorDAO = new JugadorDAOImpl(connection);
+            JugadorDAOImpl jugadorDAO = new JugadorDAOImpl(connection);
 
             
-           /* Jugador jugadorEjemplo = new Jugador(0,"Fede", "Roldan", "fedeemail", 100, "eliminado");
-            jugadorDAO.insertarJugador(jugadorEjemplo);
-            System.out.println("Jugador insertado correctamente.");*/ 
-            jugadorDAO.eliminarJugador(1);
+           // Jugador jugadorEjemplo = new Jugador(0,"Jugador de prueba DAO", 0, "eliminado");
+           // jugadorDAO.insertarJugador(jugadorEjemplo);
+            System.out.println("insertado correctamente.");
+           // jugadorDAO.eliminarJugador(0);
             
         }
 
-
-
-    /* String url = "jdbc:postgresql://localhost:5432/Los8Escalones";
-        String usuario = "postgres";
-        String password = "7508";
-
-        
-        try {
-            Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException e) {
-            System.out.println("Controlador no encontrado. Asegúrate de tener el JAR del controlador en tu classpath.");
-            e.printStackTrace();
-            return; 
-        }
-
-    
-        try (Connection conexion = DriverManager.getConnection(url, usuario, password)) {
-            JugadorDAO jugadorDAO = new JugadorDAOImpl(conexion);
-
-            
-            // Jugador nuevoJugador = new Jugador(0, "Mora", "Molina", "moramo@gmail.com", 208, "eliminado");
-            // jugadorDAO.insertarJugador(nuevoJugador);
-            Jugador nuevoJugador2 = new Jugador(1, "Fede", "Roldan", "fede@gmail", 251, "eliminado");
-            jugadorDAO.insertarJugador(nuevoJugador2);
-            
-
-            System.out.println("Jugador insertado exitosamente.");
-
-        } catch (SQLException e) {
-            System.out.println("Error al conectar a la base de datos.");
-            e.printStackTrace();
-        }*/
     } 
 }
 
