@@ -4,6 +4,8 @@ public abstract class Pregunta {
     private String enunciado;
     private String categoria;
     private int id_tematica;
+    protected IDao Dao;
+    
 
     // Constructor
     public Pregunta(int idPregunta, String enunciado, String categoria, int id_tematica) {
@@ -11,7 +13,6 @@ public abstract class Pregunta {
         this.enunciado = enunciado;
         this.categoria = categoria;
         this.id_tematica=id_tematica;
-
     }
 
     // Getters y Setters
@@ -50,4 +51,6 @@ public abstract class Pregunta {
     }
 
     public abstract boolean esCorrecta(String respuesta);
+
+
 }
