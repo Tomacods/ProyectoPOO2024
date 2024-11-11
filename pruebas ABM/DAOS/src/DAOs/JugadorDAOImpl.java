@@ -65,6 +65,24 @@ public class JugadorDAOImpl {
             e.printStackTrace();
         }
     }
+
+    //Querys
+    public void obtenerJugadores(){
+        String query= "select id_jugador, nombre, puntaje, estado from jugador";
+        try(PreparedStatement statement = conexion.prepareStatement(query)) {
+            ResultSet resultSet = statement.executeQuery();
+            while(resultSet.next()){
+                int id_jugador= resultSet.getInt("id_jugador");
+                String nombre= resultSet.getString("nombre");
+                String puntaje= resultSet.getString("puntaje");
+                String estado= resultSet.getString("estado");
+                System.out.println(nombre);
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     
 }
 
