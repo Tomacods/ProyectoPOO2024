@@ -21,7 +21,6 @@ public class Escalon {
         ronda.iniciarRonda();
     }
 
-
     public void actualizarJugadores(Jugador jugador){
         jugadores.remove(jugador);
     }
