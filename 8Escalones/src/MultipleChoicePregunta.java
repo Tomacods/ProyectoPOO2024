@@ -4,8 +4,8 @@ public class MultipleChoicePregunta extends Pregunta {
     private List<String> opciones;
     private String respuestaCorrecta;
 
-    public MultipleChoicePregunta(int idPregunta, String enunciado, String tipoPregunta, String categoria, List<String> opciones, String respuestaCorrecta) {
-        super(idPregunta, enunciado, tipoPregunta, categoria);
+    public MultipleChoicePregunta(int idPregunta, String enunciado, Tematica tematica, List<String> opciones, String respuestaCorrecta) {
+        super(idPregunta, enunciado, tematica, "multiple choice");
         this.opciones = opciones;
         this.respuestaCorrecta = respuestaCorrecta;
     }

@@ -1,16 +1,14 @@
 public abstract class Pregunta {
     private int idPregunta;
     private String enunciado;
-    private String categoria;
-    private int id_tematica;
+    private Tematica tematica;
+    private String tipoPregunta;
 
     // Constructor
-    public Pregunta(int idPregunta, String enunciado, String categoria, int id_tematica) {
+    public Pregunta(int idPregunta, String enunciado, Tematica tematica, String tipoPregunta) {
         this.idPregunta = idPregunta;
         this.enunciado = enunciado;
-        this.categoria = categoria;
-        this.id_tematica=id_tematica;
-
+        this.tematica = tematica;
     }
 
     // Getters y Setters
@@ -30,22 +28,20 @@ public abstract class Pregunta {
         this.enunciado = enunciado;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public Tematica getTematica() {
+        return tematica;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setTematica(Tematica tematica) {
+        this.tematica = tematica;
     }
 
-
-    
-    public int getId_tematica() {
-        return id_tematica;
+    public String getTipoPregunta() {
+        return tipoPregunta;
     }
 
-    public void setId_tematica(int id_tematica) {
-        this.id_tematica = id_tematica;
+    public void setTipoPregunta(String tipoPregunta) {
+        this.tipoPregunta = tipoPregunta;
     }
 
     public abstract boolean esCorrecta(String respuesta);

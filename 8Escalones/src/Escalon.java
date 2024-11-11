@@ -5,7 +5,6 @@ public class Escalon {
     private int numeroEscalon;
     private String estado;
     private ArrayList<Jugador> jugadores;
-    //private int idTematica;
     private Tematica tematica;
     private ArrayList<Pregunta> preguntas;
 
@@ -13,7 +12,6 @@ public class Escalon {
         this.idEscalon = idEscalon;
         this.numeroEscalon = numeroEscalon;
         this.estado = estado;
-        //this.idTematica = idTematica;
         this.tematica = tematica;
         this.preguntas = new ArrayList<>();
     }
