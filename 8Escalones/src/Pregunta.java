@@ -44,5 +44,5 @@ public abstract class Pregunta {
         this.tipoPregunta = tipoPregunta;
     }
 
-    public abstract boolean esCorrecta(String respuesta);
+    //public abstract boolean esCorrecta(String respuesta);
 }
