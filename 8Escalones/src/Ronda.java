@@ -63,10 +63,14 @@ public class Ronda {
         // Lógica para determinar el resultado de la ronda
         // Por ejemplo, eliminar al jugador con menos puntaje
         Boolean desempate = false;
-        Jugador jugadorEliminado = jugadores.get(0);
+        Jugador jugadorEliminado = jugadores.get(1);
         for (Jugador jugador : jugadores) {
             if (jugador.getPuntaje() < jugadorEliminado.getPuntaje()) {
                 jugadorEliminado = jugador;
+            }else{
+                if (jugador.getPuntaje() = jugadorEliminado.getPuntaje()) {
+                    
+                }
             }
         }
         jugadores.remove(jugadorEliminado);
