@@ -65,7 +65,7 @@ public class PreguntaAproxDAO {
             e.printStackTrace();
         }
     }else{
-            System.out.println("no se la pregunta: " + pregunta.getEnunciado());
+            System.out.println("no se encontro la pregunta: " + pregunta.getEnunciado());
 
         }
     }

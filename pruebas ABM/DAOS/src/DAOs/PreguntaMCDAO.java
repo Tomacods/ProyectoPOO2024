@@ -63,6 +63,46 @@ public void eliminarPreguntaMC(int id_pregunta){
     }
 }
 
+private int obtenerIdPregunta(String enunciado, int id_tematica) {
+    String query = "SELECT id_pregunta_mc FROM pregunta_multiple_choise WHERE enunciado = ? and id_tematica= ?";
+    try (PreparedStatement statement = connection.prepareStatement(query)) {
+        statement.setString(1, enunciado);
+        statement.setInt(2, id_tematica);
+        ResultSet resultSet = statement.executeQuery();
+        
+        if (resultSet.next()) { //herramienta para trabajar con los resultados de las consultas SQL https://www.arquitecturajava.com/java-resultset-un-ejemplo-sencillo-con-persona/
+            return resultSet.getInt("id_pregunta_mc");
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return -1;  //va a retornar -1 cuadno no encuentre el id
+
+}
+
+public void obtenerPyR(MultipleChoicePregunta pregunta){
+    int idPregunta= obtenerIdPregunta(pregunta.getEnunciado(), pregunta.getId_tematica());
+    if (idPregunta != -1){
+        String query = "select p.enunciado, p.categoria, r.texto from pregunta_multiple_choise p inner join respuesta r  on p.id_pregunta_mc = r.id_pregunta where id_pregunta_mc = ?";
+    try(PreparedStatement statement = connection.prepareStatement(query)) {
+        statement.setInt(1, idPregunta);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+            String enunciado = resultSet.getString("Enunciado");
+            String categoria = resultSet.getString("categoria");
+            String texto = resultSet.getString("texto");
+            System.out.println("Enunciado: " + enunciado + ", categoria: " + categoria + "Opcion: " + texto);
+            
+        }
+        
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    }else{
+        System.out.println("no se encontro la pregunta: " + pregunta.getEnunciado());
+
+    }
+}
 
 
 
