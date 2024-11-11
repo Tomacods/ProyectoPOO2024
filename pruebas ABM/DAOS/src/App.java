@@ -17,15 +17,17 @@ public class App {
 
         if (connection != null) {
             System.out.println("conexión exitosa con la BDD");
-            List<String> opciones = Arrays.asList("Opción A 2", "Opción B 2", "Opción C 2", "Opción D 2");
-            String respuestaCorrecta = "Opción B";
+           // List<String> opciones = Arrays.asList("Opción A 2", "Opción B 2", "Opción C 2", "Opción D 2");
+           // String respuestaCorrecta = "Opción B";
           //  MultipleChoicePregunta mcejemplo = new MultipleChoicePregunta(0, "Prueba dao 2", "prueba2", opciones, respuestaCorrecta, 1);
            // PreguntaMCDAO preguntaMCDAO = new PreguntaMCDAO(connection);
             PreguntaDAO preguntadao = new PreguntaDAO(connection);
+            JugadorDAOImpl jug = new JugadorDAOImpl(connection);
+            jug.obtenerJugadores();
         //    preguntadao.obtenerPreguntasAprox("historia");
        // preguntadao.obtenerOpcionesMC(1);
         //preguntadao.obtenerRtaCorrecta(1);
-        System.out.println(preguntadao.obtenerRtaCorrecta(1));
+       // System.out.println(preguntadao.obtenerRtaCorrecta(1));
            // preguntadao.eliminarPregunta(82, "Multiple choice");
          //   preguntadao.insertarPregunta(mcejemplo);
         //    System.out.println("Pregunta insertada");
