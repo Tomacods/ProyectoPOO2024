@@ -1,6 +1,7 @@
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Ronda {
     private int idRonda;
@@ -83,9 +84,42 @@ public class Ronda {
         }
     }
 
+    private void desempatar() {
+        System.out.println("A continuación, ¡Evaluaremos el desempate!");
+        inicializarPuntos();
+        Boolean eliminado = true;
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> rtas = new ArrayList<>(empatados.size());
+        while (eliminado) {
+            Pregunta pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
+            while (pregunta.getTipoPregunta() != "aproximación"){
+                pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
+            }
+            System.out.println("Pregunta desempate " + ": "+"\n" + pregunta.getEnunciado());
+            int i = 0;
+            for (Jugador jugador : empatados){
+                System.out.println("Responde el jugador " + jugador.getNombre());
+                i = i + 1;
+                rtas.set(i, sc.nextInt());
+            }
+
+            for(Integer rta : rtas){
+                Integer 
+            }
+
+            preguntas.remove(pregunta);
+        }
+    }
+
     private void eliminarJugador(Jugador jugador){
         jugadores.remove(jugador);
         System.out.println("Jugador eliminado: " + jugador.getNombre());
+    }
+
+    private void inicializarPuntos() {
+        for (Jugador jug: empatados) {
+            jug.setPuntaje(0);
+        }
     }
 
     private void preguntasTematica (ArrayList<Jugador> jugadores)
