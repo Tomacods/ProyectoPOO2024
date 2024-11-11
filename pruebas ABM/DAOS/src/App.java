@@ -21,7 +21,8 @@ public class App {
             String respuestaCorrecta = "Opción B";
             MultipleChoicePregunta mcejemplo = new MultipleChoicePregunta(0, "Prueba dao", "prueba", opciones, respuestaCorrecta, 1);
             PreguntaMCDAO preguntaMCDAO = new PreguntaMCDAO(connection);
-            preguntaMCDAO.obtenerPyR(mcejemplo);
+         //   preguntaMCDAO.obtenerPyR(mcejemplo);
+            preguntaMCDAO.obtenerPreguntasporTematica("deporte");
          //   SELECT p.*, r.* FROM PREGUNTA_MULTIPLE_CHOISE p inner join respuesta r on p.id_pregunta_mc = r.id_pregunta
            //where p.id_pregunta_mc = 81;
 

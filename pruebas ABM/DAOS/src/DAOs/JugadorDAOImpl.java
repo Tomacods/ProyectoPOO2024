@@ -54,6 +54,7 @@ public class JugadorDAOImpl {
             e.printStackTrace();
         }
     }
+    
 
     public void eliminarJugador(int id) {
         String query = "DELETE FROM jugador WHERE id_jugador = ?";

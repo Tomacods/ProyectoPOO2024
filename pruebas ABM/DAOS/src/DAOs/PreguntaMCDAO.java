@@ -80,6 +80,23 @@ private int obtenerIdPregunta(String enunciado, int id_tematica) {
 
 }
 
+public void obtenerPreguntasporTematica(String tematica){
+    String query = "select  p.enunciado from pregunta_multiple_choise p inner join tematica t on p.id_tematica = t.id_tematica where t.nombre_tematica=?";
+    try(PreparedStatement statement = connection.prepareStatement(query)){
+        statement.setString(1, tematica);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()){
+            String enunciado = resultSet.getString("enunciado");
+            System.out.println(enunciado);
+
+        }
+
+    }catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+
+
 public void obtenerPyR(MultipleChoicePregunta pregunta){
     int idPregunta= obtenerIdPregunta(pregunta.getEnunciado(), pregunta.getId_tematica());
     if (idPregunta != -1){
