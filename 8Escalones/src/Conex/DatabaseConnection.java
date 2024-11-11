@@ -33,7 +33,6 @@ public class DatabaseConnection {
         } else if (instance.getConnection().isClosed()) {
             instance = new DatabaseConnection();
         }
-
         return instance;
     }
 
