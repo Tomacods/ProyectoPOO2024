@@ -36,6 +36,7 @@ public class Ronda {
                 pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
             }
             System.out.println("Pregunta para " + jugador.getNombre() + ": " + pregunta.getEnunciado());
+            
             // La respuesta se obtiene de un botón. 
             // Simular respuesta del jugador
             String respuesta = "Opción A"; // Ejemplo de respuesta
@@ -130,5 +131,9 @@ public class Ronda {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public void addPreguntas(Pregunta pregunta) {
+        preguntas.add(pregunta);
     }
 }

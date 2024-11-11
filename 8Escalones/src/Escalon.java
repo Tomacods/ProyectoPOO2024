@@ -6,14 +6,12 @@ public class Escalon {
     private String estado;
     private ArrayList<Jugador> jugadores;
     private Tematica tematica;
-    private ArrayList<Pregunta> preguntas;
 
     public Escalon(int idEscalon, int numeroEscalon, String estado, Tematica tematica /*int idTematica*/) {
         this.idEscalon = idEscalon;
         this.numeroEscalon = numeroEscalon;
         this.estado = estado;
         this.tematica = tematica;
-        this.preguntas = new ArrayList<>();
     }
 
     public void jugarEscalon() {
@@ -21,7 +19,7 @@ public class Escalon {
         preguntasEscalon(tematica);
     }
 
-    public ArrayList<Pregunta> preguntasEscalon(Tematica tematica) {
+    public ArrayList<Pregunta> preguntasEscalon(/* acá habrian parametros si tan solo supiera como hacerlo */) {
         /*for (Pregunta preg : bd) {
             if (preg.getTematica() == tematica){
                 preguntas.add(preg);
@@ -52,9 +50,5 @@ public class Escalon {
 
     public void setIdEscalon(int idEscalon) {
         this.idEscalon = idEscalon;
-    }
-
-    public void addPreguntas(Pregunta pregunta) {
-        preguntas.add(pregunta);
     }
 }
