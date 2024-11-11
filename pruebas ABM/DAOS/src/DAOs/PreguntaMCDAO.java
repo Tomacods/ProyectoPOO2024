@@ -24,6 +24,20 @@ public void insertarPreguntaMC(MultipleChoicePregunta pregunta){
             e.printStackTrace(); 
         }
     }
+    public void insertarOpcionesMC(MultipleChoicePregunta pregunta) {
+        String query = "INSERT INTO respuesta (id_pregunta, texto, correcta) VALUES (?, ?, ?)";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            for (String opcion : pregunta.getOpciones()) {
+                statement.setInt(1, pregunta.getIdPregunta());
+                statement.setString(2, opcion);
+                statement.setBoolean(3, opcion.equals(pregunta.getRespuestaCorrecta()));
+                statement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
 
 public void actualizarPreguntaMC(MultipleChoicePregunta pregunta){
     String query ="UPDATE pregunta_multiple_choise SET enunciado=?, categoria=?, id_tematica=?) WHERE id_pregunta_mc = ?";
