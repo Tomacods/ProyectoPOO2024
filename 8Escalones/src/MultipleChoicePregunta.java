@@ -1,12 +1,13 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class MultipleChoicePregunta extends Pregunta {
-    private List<String> opciones;
+    private ArrayList<Respuesta> opciones;
     private String respuestaCorrecta;
 
-    public MultipleChoicePregunta(int idPregunta, String enunciado, int idTematica, List<String> opciones, String respuestaCorrecta) {
+    public MultipleChoicePregunta(int idPregunta, String enunciado, int idTematica, String respuestaCorrecta) {
         super(idPregunta, enunciado, idTematica, "multiple choice");
-        this.opciones = opciones;
+        this.opciones = new ArrayList<>();
         this.respuestaCorrecta = respuestaCorrecta;
     }
 
@@ -15,11 +16,30 @@ public class MultipleChoicePregunta extends Pregunta {
         return respuestaCorrecta.equalsIgnoreCase(respuesta);
     }
 
-    public List<String> getOpciones() {
+    public void imprimirOpciones() {
+        String[] abc = {"a", "b", "c", "d"};
+        int num = 1;
+        for (Respuesta op: opciones) {
+            System.out.println(abc[num] + ". " + op.getTexto());
+            num = num + 1;
+        }
+    }
+
+    public void guardarOpciones(int idPregunta/* acá iria el coso de la base de datos */) {
+        for (Respuesta rep: bd){
+            if (rep.getIdPregunta() == idPregunta){
+                opciones.add(rep);
+            }
+        }
+    }
+
+    // getters y setters
+
+    public ArrayList<Respuesta> getOpciones() {
         return opciones;
     }
 
-    public void setOpciones(List<String> opciones) {
+    public void setOpciones(ArrayList<Respuesta> opciones) {
         this.opciones = opciones;
     }
 

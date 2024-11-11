@@ -6,28 +6,19 @@ public class Escalon {
     private String estado;
     private ArrayList<Jugador> jugadores;
     private Tematica tematica;
-    private ArrayList<Pregunta> preguntas;
+    private Juego juego;
 
     public Escalon(int idEscalon, int numeroEscalon, String estado, Tematica tematica /*int idTematica*/) {
         this.idEscalon = idEscalon;
         this.numeroEscalon = numeroEscalon;
         this.estado = estado;
         this.tematica = tematica;
-        this.preguntas = new ArrayList<>();
     }
 
     public void jugarEscalon() {
         System.out.println("La categoría del escalón " + numeroEscalon + " es " + tematica.getNombre() + ".");
-        preguntasEscalon(tematica);
-    }
-
-    public ArrayList<Pregunta> preguntasEscalon(Tematica tematica) {
-        /*for (Pregunta preg : bd) {
-            if (preg.getTematica() == tematica){
-                preguntas.add(preg);
-            }
-        }*/
-        return preguntas;
+        Ronda ronda = new Ronda(idEscalon, juego.getIdJuego(), jugadores, this);
+        ronda.iniciarRonda();
     }
 
     public void actualizarJugadores(Jugador jugador){
@@ -52,9 +43,5 @@ public class Escalon {
 
     public void setIdEscalon(int idEscalon) {
         this.idEscalon = idEscalon;
-    }
-
-    public void addPreguntas(Pregunta pregunta) {
-        preguntas.add(pregunta);
     }
 }

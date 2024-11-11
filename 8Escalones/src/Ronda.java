@@ -1,30 +1,35 @@
 import java.util.Date;
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Ronda {
     private int idRonda;
     private int idJuego;
-    private List<Jugador> jugadores;
-    private List<Pregunta> preguntas;
+    private ArrayList<Jugador> jugadores;
+    private ArrayList<Pregunta> preguntas;
+    private ArrayList<Respuesta> repuestas;
     private Escalon escalon; // pq
     private String resultado; // para q (no creo que haga falta usarlo, nota)
     private Date fecha;
     private String estado;
 
-    public Ronda(int idRonda, int idJuego, List<Jugador> jugadores, List<Pregunta> preguntas, Escalon escalon) {
+    public Ronda(int idRonda, int idJuego, ArrayList<Jugador> jugadores ,Escalon escalon) {
         this.idRonda = idRonda;
         this.idJuego = idJuego;
         this.jugadores = jugadores;
-        this.preguntas = preguntas;
+        this.preguntas = new ArrayList<>(18);
+        this.repuestas = new ArrayList<>(36);
         this.escalon = escalon;
         this.fecha = new Date();
         this.estado = "en curso";
     }
 
+
     public void iniciarRonda() {
-        System.out.println("Iniciando ronda " + idRonda + " del juego " + idJuego);
-        realizarPreguntas();
+        for(int i = 1; i<3;i++){
+            System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
+            realizarPreguntas();
+        }
         determinarResultado();
         this.estado = "finalizado";
     }
@@ -35,7 +40,8 @@ public class Ronda {
             while (pregunta.getTipoPregunta() != "multiple choice"){
                 pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
             }
-            System.out.println("Pregunta para " + jugador.getNombre() + ": " + pregunta.getEnunciado());
+            System.out.println("Pregunta para " + jugador.getNombre() + ": "+"\n" + pregunta.getEnunciado());
+            
             // La respuesta se obtiene de un botón. 
             // Simular respuesta del jugador
             String respuesta = "Opción A"; // Ejemplo de respuesta
@@ -56,15 +62,22 @@ public class Ronda {
     private void determinarResultado() {
         // Lógica para determinar el resultado de la ronda
         // Por ejemplo, eliminar al jugador con menos puntaje
-        Jugador jugadorEliminado = jugadores.get(0);
+        Boolean desempate = false;
+        Jugador jugadorEliminado = jugadores.get(1);
         for (Jugador jugador : jugadores) {
             if (jugador.getPuntaje() < jugadorEliminado.getPuntaje()) {
                 jugadorEliminado = jugador;
+            }else{
+                if (jugador.getPuntaje() = jugadorEliminado.getPuntaje()) {
+                    
+                }
             }
         }
         jugadores.remove(jugadorEliminado);
         System.out.println("Jugador eliminado: " + jugadorEliminado.getNombre());
     }
+
+    private void preguntasTematica (ArrayList<Jugador> jugadores)
 
     // Getters y Setters
 
@@ -130,5 +143,9 @@ public class Ronda {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public void addPreguntas(Pregunta pregunta) {
+        preguntas.add(pregunta);
     }
 }

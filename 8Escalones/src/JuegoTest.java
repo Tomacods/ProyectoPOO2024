@@ -7,9 +7,9 @@ public class JuegoTest {
         BigDecimal respuestaJugador1 = new BigDecimal(respuesta1);
         BigDecimal respuestaJugador2 = new BigDecimal(respuesta2);
 
+        System.out.println("Prueba");
         BigDecimal diferenciaJugador1 = respuestaJugador1.subtract(valorCorrecto).abs();
         BigDecimal diferenciaJugador2 = respuestaJugador2.subtract(valorCorrecto).abs();
-
         if (diferenciaJugador1.compareTo(diferenciaJugador2) < 0) {
             return jugador1;
         } else {
