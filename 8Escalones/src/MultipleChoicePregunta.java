@@ -11,10 +11,9 @@ public class MultipleChoicePregunta extends Pregunta {
         this.respuestaCorrecta = respuestaCorrecta;
     }
 
-    @Override
-    public boolean esCorrecta(String respuesta) {
+    /*public boolean esCorrecta(String respuesta) {
         return respuestaCorrecta.equalsIgnoreCase(respuesta);
-    }
+    }*/
 
     public void imprimirOpciones() {
         String[] abc = {"a", "b", "c", "d"};
