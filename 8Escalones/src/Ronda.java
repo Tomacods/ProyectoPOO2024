@@ -12,6 +12,8 @@ public class Ronda {
     private String resultado; // para q (no creo que haga falta usarlo, nota)
     private Date fecha;
     private String estado;
+    private ArrayList<Jugador> empatados;
+
 
     public Ronda(int idRonda, int idJuego, ArrayList<Jugador> jugadores ,Escalon escalon) {
         this.idRonda = idRonda;
@@ -63,18 +65,27 @@ public class Ronda {
         // Lógica para determinar el resultado de la ronda
         // Por ejemplo, eliminar al jugador con menos puntaje
         Boolean desempate = false;
-        Jugador jugadorEliminado = jugadores.get(1);
+        Jugador jugadorMenorPuntaje = jugadores.get(1);
         for (Jugador jugador : jugadores) {
-            if (jugador.getPuntaje() < jugadorEliminado.getPuntaje()) {
-                jugadorEliminado = jugador;
-            }else{
-                if (jugador.getPuntaje() = jugadorEliminado.getPuntaje()) {
-                    
-                }
+            if (jugador.getPuntaje() < jugadorMenorPuntaje.getPuntaje()) {
+                jugadorMenorPuntaje = jugador;
             }
         }
-        jugadores.remove(jugadorEliminado);
-        System.out.println("Jugador eliminado: " + jugadorEliminado.getNombre());
+        for(Jugador jugador : jugadores){
+            if(jugadorMenorPuntaje.getPuntaje() == jugador.getPuntaje()){
+                addEmpatados(jugador);
+            }
+        }
+        if (empatados.size()== 1){
+            eliminarJugador(empatados.get(1));
+        }else{
+            desempate = true;
+        }
+    }
+
+    private void eliminarJugador(Jugador jugador){
+        jugadores.remove(jugador);
+        System.out.println("Jugador eliminado: " + jugador.getNombre());
     }
 
     private void preguntasTematica (ArrayList<Jugador> jugadores)
@@ -95,22 +106,6 @@ public class Ronda {
 
     public void setIdJuego(int idJuego) {
         this.idJuego = idJuego;
-    }
-
-    public List<Jugador> getJugadores() {
-        return jugadores;
-    }
-
-    public void setJugadores(List<Jugador> jugadores) {
-        this.jugadores = jugadores;
-    }
-
-    public List<Pregunta> getPreguntas() {
-        return preguntas;
-    }
-
-    public void setPreguntas(List<Pregunta> preguntas) {
-        this.preguntas = preguntas;
     }
 
     public Escalon getEscalon() {
@@ -147,5 +142,9 @@ public class Ronda {
 
     public void addPreguntas(Pregunta pregunta) {
         preguntas.add(pregunta);
+    }
+
+    public void addEmpatados(Jugador jugador) {
+        empatados.add(jugador);
     }
 }
