@@ -6,17 +6,20 @@ public class Escalon {
     private String estado;
     private ArrayList<Jugador> jugadores;
     private Tematica tematica;
+    private Ronda ronda;
+    private Juego juego;
 
     public Escalon(int idEscalon, int numeroEscalon, String estado, Tematica tematica /*int idTematica*/) {
         this.idEscalon = idEscalon;
         this.numeroEscalon = numeroEscalon;
         this.estado = estado;
         this.tematica = tematica;
+        this.ronda = new Ronda(idEscalon, juego.getIdJuego(), jugadores, this);
     }
 
     public void jugarEscalon() {
         System.out.println("La categoría del escalón " + numeroEscalon + " es " + tematica.getNombre() + ".");
-        preguntasEscalon(tematica);
+        ronda.iniciarRonda();
     }
 
     public ArrayList<Pregunta> preguntasEscalon(/* acá habrian parametros si tan solo supiera como hacerlo */) {

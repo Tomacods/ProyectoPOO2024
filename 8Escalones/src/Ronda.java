@@ -12,7 +12,7 @@ public class Ronda {
     private Date fecha;
     private String estado;
 
-    public Ronda(int idRonda, int idJuego, List<Jugador> jugadores, List<Pregunta> preguntas, Escalon escalon) {
+    public Ronda(int idRonda, int idJuego, List<Jugador> jugadores, Escalon escalon) {
         this.idRonda = idRonda;
         this.idJuego = idJuego;
         this.jugadores = jugadores;
