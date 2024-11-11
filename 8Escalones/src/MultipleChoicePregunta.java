@@ -15,6 +15,15 @@ public class MultipleChoicePregunta extends Pregunta {
         return respuestaCorrecta.equalsIgnoreCase(respuesta);
     }
 
+    public void imprimirOpciones() {
+        String[] abc = {"a", "b", "c", "d"};
+        int num = 1;
+        for (String op: opciones) {
+            System.out.println(abc[num] + ". " + op);
+            num = num + 1;
+        }
+    }
+
     public List<String> getOpciones() {
         return opciones;
     }
