@@ -48,6 +48,7 @@ public class Ronda {
             preguntas.remove(pregunta);
         }
     }
+    
     //metodoo para realizar preguntas por aproximacion
     //recorro la lista de jugadores y de las respuestas que me dicen compararlas con la respuesta correcta, la que mas se aproxime es la que se toma como correcta y el queda en el escalon
 

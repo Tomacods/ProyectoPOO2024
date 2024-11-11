@@ -3,8 +3,8 @@ import java.math.BigDecimal;
 public class PreguntaAproximacion extends Pregunta {
     private BigDecimal valorAproximado;
 
-    public PreguntaAproximacion(int idPregunta, String enunciado, Tematica tematica, BigDecimal valorAproximado) {
-        super(idPregunta, enunciado, tematica, "aproximación");
+    public PreguntaAproximacion(int idPregunta, String enunciado, int idTematica, BigDecimal valorAproximado) {
+        super(idPregunta, enunciado, idTematica, "aproximación");
         this.valorAproximado = valorAproximado;
     }
 

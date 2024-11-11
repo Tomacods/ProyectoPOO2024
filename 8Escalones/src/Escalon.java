@@ -18,15 +18,20 @@ public class Escalon {
 
     public void jugarEscalon() {
         System.out.println("La categoría del escalón " + numeroEscalon + " es " + tematica.getNombre() + ".");
-        preguntasEscalon(/*acá va algo */);
+        preguntasEscalon(tematica);
     }
 
-    public void preguntasEscalon(/*ArrayList<Pregunta> bd || acá deberian entrar las preguntas de la bd ??*/) {
+    public ArrayList<Pregunta> preguntasEscalon(Tematica tematica) {
         /*for (Pregunta preg : bd) {
-            if (preg.getCategoria() == tematica.getNombre()){
+            if (preg.getTematica() == tematica){
                 preguntas.add(preg);
             }
         }*/
+        return preguntas;
+    }
+
+    public void actualizarJugadores(Jugador jugador){
+        jugadores.remove(jugador);
     }
 
     public int getIdEscalon() {
