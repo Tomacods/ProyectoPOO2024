@@ -1,3 +1,4 @@
+package Modelos;
 public abstract class Pregunta {
     private int idPregunta;
     private String enunciado;
