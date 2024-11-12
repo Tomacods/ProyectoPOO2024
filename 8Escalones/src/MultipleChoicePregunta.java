@@ -38,10 +38,6 @@ public class MultipleChoicePregunta {
         return opciones;
     }
 
-    public void setOpciones(ArrayList<Respuesta> opciones) {
-        this.opciones = opciones;
-    }
-
     public String getRespuestaCorrecta() {
         return respuestaCorrecta;
     }
