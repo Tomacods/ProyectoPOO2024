@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Random;
 import java.util.ArrayList;
 
 public class Juego {
@@ -16,7 +17,15 @@ public class Juego {
     }
 
     public void comenzarJuego(){
-        Integer[] tematicas = {1,2,3,4,5,6,7,8,9};
+        Random rnd = new Random();
+        ArrayList<Tematica> tematicas = obtenerTematicas();//Bajar todas las tematicas
+        Escalon escalon = new Escalon(0,"sin comenzar",null);
+        for (int i=1;i<=8; i++){
+            Tematica tematica =  tematicas.get(rnd.nextInt(tematicas.size()));
+            tematicas.remove(tematica);
+            escalon = new Escalon(i, "en curso", tematica);
+            escalon.jugarEscalon();
+        }
         
     }
 
