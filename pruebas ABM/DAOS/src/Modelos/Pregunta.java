@@ -4,7 +4,7 @@ public abstract class Pregunta {
     private String enunciado;//cambiar a protected
     private String categoria;
     private int id_tematica;
-    protected IDao Dao; //INTERFAZ Q VA A TENER LOS ABM Y ALL Y UNO X ID QUE VAN A USAR TODOS LOS DAO
+    //protected IDao Dao; //INTERFAZ Q VA A TENER LOS ABM Y ALL Y UNO X ID QUE VAN A USAR TODOS LOS DAO
     //SEPARAR LOS DAO EN PREGUNTA
     //CREAR EL DAO RESPUESTA
     
