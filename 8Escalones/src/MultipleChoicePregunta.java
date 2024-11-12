@@ -32,7 +32,7 @@ public class MultipleChoicePregunta {
 
     // getters y setters
 
-    public ArrayList<Respuesta> getOpciones() {
+    public List<Respuesta> getOpciones() {
         return opciones;
     }
 
