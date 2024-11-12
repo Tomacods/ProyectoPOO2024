@@ -4,10 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import Modelos.MultipleChoicePregunta;
 import Modelos.Pregunta;
 import Modelos.PreguntaAproximacion;
+
 
 public class PreguntaDAO {
     Connection connection;
@@ -69,7 +71,6 @@ public void actualizarPregunta(Pregunta pregunta){
         }
         
     }
-
 }
 
 
@@ -170,15 +171,39 @@ public int obtenerRtaCorrecta(int id){
 
 }
 
+  public ArrayList<Object[]> obtenerPreguntasMCPorTematica(String tematica) {
+        ArrayList<Object[]> preguntas = new ArrayList<>();
+        String query = "select p.id_pregunta_mc,  p.enunciado, t.nombre_tematica from pregunta_multiple_choise p inner join tematica t on p.id_tematica = t.id_tematica where t.nombre_tematica=?";
+        
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, tematica);
+            ResultSet resultSet = statement.executeQuery();
 
-
-
-
-
-
-
-
+            // Recorrer el resultado y agregar las preguntas al ArrayList
+            while (resultSet.next()) {
+                Object[] row = {
+                    resultSet.getInt("id_pregunta_mc"),   
+                    resultSet.getString("enunciado"),  
+                    resultSet.getString("nombre_tematica")   
+                };
+                preguntas.add(row);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return preguntas;
+    }
 }
+
+
+
+
+
+
+
+
+
+
 /*
  * private int obtenerIdPregunta(String enunciado, int id_tematica) {
     String query = "SELECT id_pregunta FROM pregunta_aproximacion WHERE enunciado = ? and id_tematica= ?";

@@ -6,9 +6,10 @@ public class MultipleChoicePregunta extends Pregunta {
     private String respuestaCorrecta;
 
     public MultipleChoicePregunta(int idPregunta, String enunciado, String categoria, List<String> opciones, String respuestaCorrecta, int id_tematica) {
-        super(idPregunta, enunciado, categoria,id_tematica );
+        super(idPregunta, enunciado, categoria,id_tematica, );
         this.opciones = opciones;
         this.respuestaCorrecta = respuestaCorrecta;
+        this.Dao = new MultipleChoicePreguntaDao();
     }
 
     @Override
