@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Rondas {
+public class Ronda {
     private int idRonda;
     private int idJuego;
     private ArrayList<Jugador> jugadores;
@@ -14,7 +14,7 @@ public class Rondas {
     private ArrayList<Jugador> empatados;
 
 
-    public Rondas(int idRonda, int idJuego, ArrayList<Jugador> jugadores ,Escalon escalon) {
+    public Ronda(int idRonda, int idJuego, ArrayList<Jugador> jugadores ,Escalon escalon) {
         this.idRonda = idRonda;
         this.idJuego = idJuego;
         this.jugadores = jugadores;
