@@ -13,7 +13,7 @@ public class MultipleChoicePregunta {
         this.idPregunta = idPregunta;
         this.enunciado = enunciado;
         this.idTematica = idTematica;
-        this.opciones = guardarOpciones();
+        this.opciones = new ArrayList<>();//guardarOpciones();
     }
 
     public void imprimirOpciones() {
@@ -25,10 +25,10 @@ public class MultipleChoicePregunta {
         }
     }
 
-    private List<Respuesta> guardarOpciones() {
+    /* private List<Respuesta> guardarOpciones() {
         //List<Respuesta> mcPreg = obtenerRespuestasPorPregunta(idPregunta);
         return obtenerRespuestasPorPregunta(idPregunta);
-    }
+    } */
 
     // getters y setters
 
