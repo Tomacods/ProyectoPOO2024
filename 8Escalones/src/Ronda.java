@@ -8,7 +8,7 @@ public class Ronda {
     private int idJuego;
     private ArrayList<Jugador> jugadores;
     //private ArrayList<Pregunta> preguntas;
-    private ArrayList<Respuesta> repuestas;
+    //private ArrayList<Respuesta> repuestas;
     private Escalon escalon; // pq
     private String resultado; // para q (no creo que haga falta usarlo, nota)
     private Date fecha;
@@ -21,7 +21,7 @@ public class Ronda {
         this.idJuego = idJuego;
         this.jugadores = jugadores;
         //this.preguntas = new ArrayList<>(18);
-        this.repuestas = new ArrayList<>(36);
+        //this.repuestas = new ArrayList<>(36);
         this.escalon = escalon;
         this.fecha = new Date();
         this.estado = "en curso";
@@ -29,6 +29,7 @@ public class Ronda {
 
 
     public void iniciarRonda() {
+        inicializarPuntos();
         for(int i = 1; i<3;i++){
             System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
             realizarPreguntas();
@@ -85,7 +86,6 @@ public class Ronda {
     private void desempatar() {
         ArrayList<PreguntaAproximacion> pregAprox = new ArrayList<>();
         System.out.println("A continuación, ¡Evaluaremos el desempate!");
-        inicializarPuntos();
         Boolean eliminado = true;
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> rtas = new ArrayList<>(empatados.size());
@@ -99,19 +99,18 @@ public class Ronda {
                 rtas.set(i, sc.nextInt());
             }
             int peorRta = 0;
-            Integer pos;
-            /* for(int j = 1; j< (rtas.size() + 1); j++){
+            Integer pos = 0;
+            for(int j = 1; j< (rtas.size() + 1); j++){
                 if ((pregunta.getValorAproximado() - rtas.get(j)) < peorRta) {
                     peorRta = rtas.get(j);
                     pos= j;
                 }
-            } */
+            }
             eliminarJugador(empatados.get(pos));
             pregAprox.remove(pregunta);
         }
+        sc.close();
     }
-
-    private int peorRta()
 
     private void eliminarJugador(Jugador jugador){
         jugadores.remove(jugador);
@@ -123,8 +122,6 @@ public class Ronda {
             jug.setPuntaje(0);
         }
     }
-
-    //private void preguntasTematica (ArrayList<Jugador> jugadores)
 
     // Getters y Setters
 
