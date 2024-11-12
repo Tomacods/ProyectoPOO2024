@@ -19,11 +19,11 @@ public class Juego {
     public void comenzarJuego(){
         Random rnd = new Random();
         ArrayList<Tematica> tematicas = obtenerTematicas();//Bajar todas las tematicas
-        Escalon escalon = new Escalon(0,"sin comenzar",null);
+        //Escalon escalon = new Escalon(0,"sin comenzar",null);
         for (int i=1;i<=8; i++){
             Tematica tematica =  tematicas.get(rnd.nextInt(tematicas.size()));
             tematicas.remove(tematica);
-            escalon = new Escalon(i, "en curso", tematica);
+            Escalon escalon = new Escalon(i, "en curso", tematica);
             escalon.jugarEscalon();
         }
         
