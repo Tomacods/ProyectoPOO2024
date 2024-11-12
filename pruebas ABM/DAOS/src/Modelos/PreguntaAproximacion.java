@@ -1,3 +1,6 @@
+package Modelos;
+
+
 public class PreguntaAproximacion {
     private int idPregunta;
     private String enunciado;
