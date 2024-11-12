@@ -1,11 +1,11 @@
-public abstract class Pregunta {
+public abstract class PreguntaAA {
     private int idPregunta;
     private String enunciado;
     private int idTematica;
     private String tipoPregunta;
 
     // Constructor
-    public Pregunta(int idPregunta, String enunciado, int idTematica, String tipoPregunta) {
+    public PreguntaAA(int idPregunta, String enunciado, int idTematica, String tipoPregunta) {
         this.idPregunta = idPregunta;
         this.enunciado = enunciado;
         this.idTematica = idTematica;

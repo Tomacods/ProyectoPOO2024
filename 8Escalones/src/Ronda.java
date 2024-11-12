@@ -7,7 +7,7 @@ public class Ronda {
     private int idRonda;
     private int idJuego;
     private ArrayList<Jugador> jugadores;
-    private ArrayList<Pregunta> preguntas;
+    //private ArrayList<Pregunta> preguntas;
     private ArrayList<Respuesta> repuestas;
     private Escalon escalon; // pq
     private String resultado; // para q (no creo que haga falta usarlo, nota)
@@ -20,7 +20,7 @@ public class Ronda {
         this.idRonda = idRonda;
         this.idJuego = idJuego;
         this.jugadores = jugadores;
-        this.preguntas = new ArrayList<>(18);
+        //this.preguntas = new ArrayList<>(18);
         this.repuestas = new ArrayList<>(36);
         this.escalon = escalon;
         this.fecha = new Date();
@@ -38,23 +38,22 @@ public class Ronda {
     }
 
     private void realizarPreguntas() {
+        ArrayList<MultipleChoicePregunta> pregMult = new ArrayList<>();
+        //metodo para llenar
         for (Jugador jugador : jugadores) {
-            Pregunta pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
-            while (pregunta.getTipoPregunta() != "multiple choice"){
-                pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
-            }
+            MultipleChoicePregunta pregunta = pregMult.get(new Random().nextInt(pregMult.size()));
             System.out.println("Pregunta para " + jugador.getNombre() + ": "+"\n" + pregunta.getEnunciado());
-            
+            pregunta.imprimirOpciones();
             // La respuesta se obtiene de un botón. 
             // Simular respuesta del jugador
             String respuesta = "Opción A"; // Ejemplo de respuesta
-            if (pregunta.esCorrecta(respuesta)) {
+            if (pregunta.getRespuestaCorrecta() == respuesta) {
                 System.out.println("Respuesta correcta");
                 jugador.incrementarPuntaje();
             } else {
                 System.out.println("Respuesta incorrecta");
             }
-            preguntas.remove(pregunta);
+            pregMult.remove(pregunta);
         }
     }
     
@@ -108,6 +107,15 @@ public class Ronda {
             }
 
             preguntas.remove(pregunta);
+        }
+    }
+
+    private void imprimirOpciones() {
+        String[] abc = {"a", "b", "c", "d"};
+        int num = 1;
+        for (Respuesta op: pregunta.getOpciones()) {
+            System.out.println(abc[num] + ". " + op.getTexto());
+            num = num + 1;
         }
     }
 

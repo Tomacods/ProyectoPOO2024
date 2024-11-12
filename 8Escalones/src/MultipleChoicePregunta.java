@@ -1,19 +1,21 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultipleChoicePregunta extends Pregunta {
+public class MultipleChoicePregunta{
+    private int idPregunta;
+    private String enunciado;
+    private int idTematica;
+    private String tipoPregunta;
     private ArrayList<Respuesta> opciones;
     private String respuestaCorrecta;
 
     public MultipleChoicePregunta(int idPregunta, String enunciado, int idTematica, String respuestaCorrecta) {
-        super(idPregunta, enunciado, idTematica, "multiple choice");
+        this.idPregunta = idPregunta;
+        this.enunciado = enunciado;
+        this.idTematica = idTematica;
         this.opciones = new ArrayList<>();
         this.respuestaCorrecta = respuestaCorrecta;
     }
-
-    /*public boolean esCorrecta(String respuesta) {
-        return respuestaCorrecta.equalsIgnoreCase(respuesta);
-    }*/
 
     public void imprimirOpciones() {
         String[] abc = {"a", "b", "c", "d"};
@@ -46,7 +48,19 @@ public class MultipleChoicePregunta extends Pregunta {
         return respuestaCorrecta;
     }
 
-    public void setRespuestaCorrecta(String respuestaCorrecta) {
-        this.respuestaCorrecta = respuestaCorrecta;
+    public int getIdPregunta() {
+        return idPregunta;
+    }
+
+    public String getEnunciado() {
+        return enunciado;
+    }
+
+    public int getIdTematica() {
+        return idTematica;
+    }
+
+    public String getTipoPregunta() {
+        return tipoPregunta;
     }
 }
