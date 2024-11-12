@@ -64,7 +64,6 @@ public class Ronda {
     private void determinarResultado() {
         // Lógica para determinar el resultado de la ronda
         // Por ejemplo, eliminar al jugador con menos puntaje
-        Boolean desempate = false;
         Jugador jugadorMenorPuntaje = jugadores.get(1);
         for (Jugador jugador : jugadores) {
             if (jugador.getPuntaje() < jugadorMenorPuntaje.getPuntaje()) {
@@ -79,21 +78,19 @@ public class Ronda {
         if (empatados.size()== 1){
             eliminarJugador(empatados.get(1));
         }else{
-            desempate = true;
+            desempatar();
         }
     }
 
     private void desempatar() {
+        ArrayList<PreguntaAproximacion> pregAprox = new ArrayList<>();
         System.out.println("A continuación, ¡Evaluaremos el desempate!");
         inicializarPuntos();
         Boolean eliminado = true;
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> rtas = new ArrayList<>(empatados.size());
         while (eliminado) {
-            Pregunta pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
-            while (pregunta.getTipoPregunta() != "aproximación"){
-                pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
-            }
+            PreguntaAproximacion pregunta = pregAprox.get(new Random().nextInt(pregAprox.size()));
             System.out.println("Pregunta desempate " + ": "+"\n" + pregunta.getEnunciado());
             int i = 0;
             for (Jugador jugador : empatados){
@@ -101,23 +98,20 @@ public class Ronda {
                 i = i + 1;
                 rtas.set(i, sc.nextInt());
             }
-
-            for(Integer rta : rtas){
-                Integer 
-            }
-
-            preguntas.remove(pregunta);
+            int peorRta = 0;
+            Integer pos;
+            /* for(int j = 1; j< (rtas.size() + 1); j++){
+                if ((pregunta.getValorAproximado() - rtas.get(j)) < peorRta) {
+                    peorRta = rtas.get(j);
+                    pos= j;
+                }
+            } */
+            eliminarJugador(empatados.get(pos));
+            pregAprox.remove(pregunta);
         }
     }
 
-    private void imprimirOpciones() {
-        String[] abc = {"a", "b", "c", "d"};
-        int num = 1;
-        for (Respuesta op: pregunta.getOpciones()) {
-            System.out.println(abc[num] + ". " + op.getTexto());
-            num = num + 1;
-        }
-    }
+    private int peorRta()
 
     private void eliminarJugador(Jugador jugador){
         jugadores.remove(jugador);
@@ -130,7 +124,7 @@ public class Ronda {
         }
     }
 
-    private void preguntasTematica (ArrayList<Jugador> jugadores)
+    //private void preguntasTematica (ArrayList<Jugador> jugadores)
 
     // Getters y Setters
 
@@ -180,10 +174,6 @@ public class Ronda {
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-
-    public void addPreguntas(Pregunta pregunta) {
-        preguntas.add(pregunta);
     }
 
     public void addEmpatados(Jugador jugador) {
