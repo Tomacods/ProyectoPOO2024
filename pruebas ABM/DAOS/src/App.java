@@ -18,36 +18,54 @@ public class App {
 
         if (connection != null) {
             System.out.println("conexión exitosa con la BDD");
+            RespuestaDAO rtadao = new RespuestaDAO(connection);
+            MultipleChoiceDAO mcdao = new MultipleChoiceDAO(connection, rtadao);
+            MultipleChoicePregunta pregunta = new MultipleChoicePregunta(0, "PRUEBA DAO", 1);
+            Respuesta respuesta1 = new Respuesta(0, 0, "A", true);
+            Respuesta respuesta2 = new Respuesta(0, 0, "B", false);
+            Respuesta respuesta3 = new Respuesta(0, 0, "C", false);
+            Respuesta respuesta4 = new Respuesta(0, 0, "D", false);
+
+            // Insertar la pregunta y sus respuestas
+            try {
+                mcdao.insertarPreguntaMultipleChoise(pregunta, Arrays.asList(respuesta1, respuesta2, respuesta3, respuesta4));
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+            System.out.println("insertado");
             // List<String> opciones = Arrays.asList("Opción A 2", "Opción B 2", "Opción C
             // 2", "Opción D 2");
             // String respuestaCorrecta = "Opción B";
             // MultipleChoicePregunta mcejemplo = new MultipleChoicePregunta(0, "Prueba dao
             // 2", "prueba2", opciones, respuestaCorrecta, 1);
             // PreguntaMCDAO preguntaMCDAO = new PreguntaMCDAO(connection);
-        //    PreguntaDAO preguntadao = new PreguntaDAO(connection);
+            // PreguntaDAO preguntadao = new PreguntaDAO(connection);
             // JugadorDAOImpl jug = new JugadorDAOImpl(connection);
             // jug.obtenerJugadores();
-          //  ArrayList<Object[]> preguntas = preguntadao.obtenerPreguntasMCPorTematica("deporte");
-          RespuestaDAO rta = new RespuestaDAO(connection);
-          try {
-            List<Respuesta> respuestas =  rta.obtenerRespuestasPorPregunta(1);
-            for (Respuesta respuesta : respuestas) {
-                System.out.println("ID Respuesta: " + respuesta.getIdRespuesta() +
-                                   ", ID Pregunta: " + respuesta.getIdPregunta() +
-                                   ", Texto: " + respuesta.getTexto() +
-                                   ", Correcta: " + respuesta.isEsCorrecta());
-            }
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+            // ArrayList<Object[]> preguntas =
+            // preguntadao.obtenerPreguntasMCPorTematica("deporte");
+            /* RespuestaDAO rta = new RespuestaDAO(connection);
+            try {
+                List<Respuesta> respuestas = rta.obtenerRespuestasPorPregunta(1);
+                for (Respuesta respuesta : respuestas) {
+                    System.out.println("ID Respuesta: " + respuesta.getIdRespuesta() +
+                            ", ID Pregunta: " + respuesta.getIdPregunta() +
+                            ", Texto: " + respuesta.getTexto() +
+                            ", Correcta: " + respuesta.isEsCorrecta());
+                }
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } */
 
-          
-
-         /*   for (Object[] pregunta : preguntas) {
-                System.out.println("ID: " + pregunta[0] + ", Contenido: " + pregunta[1] +
-                          ", Temática: " + pregunta[2]);
-            }*/ 
+            /*
+             * for (Object[] pregunta : preguntas) {
+             * System.out.println("ID: " + pregunta[0] + ", Contenido: " + pregunta[1] +
+             * ", Temática: " + pregunta[2]);
+             * }
+             */
             // preguntadao.obtenerPreguntasAprox("historia");
             // preguntadao.obtenerOpcionesMC(1);
             // preguntadao.obtenerRtaCorrecta(1);
