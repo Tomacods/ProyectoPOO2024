@@ -108,4 +108,25 @@ public List<Respuesta> obtenerTodasLasRespuestas() throws SQLException {
     }
     return respuestas;
 }
+
+
+public int obtenerIdRtaCorrectaMC(int id_pregunta){
+    String query = "select  id_respuesta, texto from respuesta inner join pregunta_multiple_choise p on p.id_pregunta_mc = respuesta.id_pregunta\n" + //
+    "where  p.id_pregunta_mc=? and respuesta.correcta = 'True'";
+    try(PreparedStatement statement = connection.prepareStatement(query)){
+        statement.setInt(1, id_pregunta);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()){
+            int id_respuesta = resultSet.getInt("id_respuesta");
+            String enunciado = resultSet.getString("texto");
+            System.out.println(enunciado);
+            return id_respuesta;
+        }
+    }catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return -1; //si no la encuentra devuelve -1
+
+}
 }

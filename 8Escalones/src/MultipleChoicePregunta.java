@@ -1,11 +1,9 @@
 import java.util.ArrayList;
-import java.util.List;
 
-public class MultipleChoicePregunta{
+public class MultipleChoicePregunta {
     private int idPregunta;
     private String enunciado;
     private int idTematica;
-    private String tipoPregunta;
     private ArrayList<Respuesta> opciones;
     private String respuestaCorrecta;
 
@@ -26,22 +24,18 @@ public class MultipleChoicePregunta{
         }
     }
 
-    public void guardarOpciones(int idPregunta/* acá iria el coso de la base de datos */) {
-        for (Respuesta rep: bd){
+    public void guardarOpciones(int idPregunta) {
+        /* for (Respuesta rep: bd){
             if (rep.getIdPregunta() == idPregunta){
                 opciones.add(rep);
             }
-        }
+        } */
     }
 
     // getters y setters
 
     public ArrayList<Respuesta> getOpciones() {
         return opciones;
-    }
-
-    public void setOpciones(ArrayList<Respuesta> opciones) {
-        this.opciones = opciones;
     }
 
     public String getRespuestaCorrecta() {
@@ -58,9 +52,5 @@ public class MultipleChoicePregunta{
 
     public int getIdTematica() {
         return idTematica;
-    }
-
-    public String getTipoPregunta() {
-        return tipoPregunta;
     }
 }
