@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Escalon {
-    private int idEscalon;
+    //private int idEscalon;
     private int numeroEscalon;
     private String estado;
     private ArrayList<Jugador> jugadores;

@@ -128,4 +128,6 @@ public int obtenerIdRtaCorrectaMC(int id_pregunta){
     return -1; //si no la encuentra devuelve -1
 
 }
+
+
 }
