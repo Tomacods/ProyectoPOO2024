@@ -7,10 +7,8 @@ public class Ronda {
     private int idRonda;
     private int idJuego;
     private ArrayList<Jugador> jugadores;
-    //private ArrayList<Pregunta> preguntas;
-    //private ArrayList<Respuesta> repuestas;
-    private Escalon escalon; // pq
-    private String resultado; // para q (no creo que haga falta usarlo, nota)
+    private Escalon escalon;
+    private String resultado;
     private Date fecha;
     private String estado;
     private ArrayList<Jugador> empatados;
