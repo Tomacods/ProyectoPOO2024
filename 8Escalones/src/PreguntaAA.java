@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream:8Escalones/src/PreguntaAA.java
 public abstract class PreguntaAA {
+=======
+public abstract class Pregunta {//ES UNA INTERFAZ NO UNA ABSTRACCION AAAAA
+>>>>>>> Stashed changes:8Escalones/src/Pregunta.java
     private int idPregunta;
     private String enunciado;
     private int idTematica;
