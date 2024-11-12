@@ -16,7 +16,6 @@ CREATE TABLE Tematica ( -- Tabla que contiene las temáticas de las preguntas
 CREATE TABLE Pregunta_multiple_choise (
     ID_Pregunta_mc SERIAL PRIMARY KEY, --tiene q ser auto 
     Enunciado TEXT, -- Enunciado de la pregunta
-    Categoria VARCHAR(50), -- Categoría de la pregunta
     ID_Tematica INT,
     FOREIGN KEY (ID_Tematica) REFERENCES Tematica(ID_Tematica) -- ID de la temática a la que pertenece la pregunta
 );
@@ -25,7 +24,6 @@ CREATE TABLE Pregunta_multiple_choise (
 CREATE TABLE Pregunta_aproximacion (
     ID_Pregunta SERIAL PRIMARY KEY, --tiene q ser auto 
     Enunciado TEXT, -- Enunciado de la pregunta
-    Categoria VARCHAR(50), -- Categoría de la pregunta
     Valor_Aproximado DECIMAL(10, 2), -- Valor aproximado de la pregunta (para las preguntas de aproximación)
     ID_Tematica INT,
     FOREIGN KEY (ID_Tematica) REFERENCES Tematica(ID_Tematica) -- ID de la temática a la que pertenece la pregunta
@@ -72,4 +70,3 @@ CREATE TABLE Ronda ( -- Tabla que contiene las rondas de los juegos
     FOREIGN KEY (ID_Pregunta) REFERENCES Pregunta_multiple_choise(ID_Pregunta_mc), -- ID de la pregunta que se jugo en la ronda
     FOREIGN KEY (ID_Escalon) REFERENCES Escalon(ID_Escalon) -- ID del escalón que se jugo en la ronda
 );
-
