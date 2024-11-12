@@ -8,7 +8,7 @@ public class Ronda {
     private int idJuego;
     private ArrayList<Jugador> jugadores;
     //private ArrayList<Pregunta> preguntas;
-    private ArrayList<Respuesta> repuestas;
+    //private ArrayList<Respuesta> repuestas;
     private Escalon escalon; // pq
     private String resultado; // para q (no creo que haga falta usarlo, nota)
     private Date fecha;
@@ -21,7 +21,7 @@ public class Ronda {
         this.idJuego = idJuego;
         this.jugadores = jugadores;
         //this.preguntas = new ArrayList<>(18);
-        this.repuestas = new ArrayList<>(36);
+        //this.repuestas = new ArrayList<>(36);
         this.escalon = escalon;
         this.fecha = new Date();
         this.estado = "en curso";
@@ -29,6 +29,7 @@ public class Ronda {
 
 
     public void iniciarRonda() {
+        inicializarPuntos();
         for(int i = 1; i<3;i++){
             System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
             realizarPreguntas();
@@ -64,7 +65,6 @@ public class Ronda {
     private void determinarResultado() {
         // Lógica para determinar el resultado de la ronda
         // Por ejemplo, eliminar al jugador con menos puntaje
-        Boolean desempate = false;
         Jugador jugadorMenorPuntaje = jugadores.get(1);
         for (Jugador jugador : jugadores) {
             if (jugador.getPuntaje() < jugadorMenorPuntaje.getPuntaje()) {
@@ -79,21 +79,18 @@ public class Ronda {
         if (empatados.size()== 1){
             eliminarJugador(empatados.get(1));
         }else{
-            desempate = true;
+            desempatar();
         }
     }
 
     private void desempatar() {
+        ArrayList<PreguntaAproximacion> pregAprox = new ArrayList<>();
         System.out.println("A continuación, ¡Evaluaremos el desempate!");
-        inicializarPuntos();
         Boolean eliminado = true;
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> rtas = new ArrayList<>(empatados.size());
         while (eliminado) {
-            Pregunta pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
-            while (pregunta.getTipoPregunta() != "aproximación"){
-                pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
-            }
+            PreguntaAproximacion pregunta = pregAprox.get(new Random().nextInt(pregAprox.size()));
             System.out.println("Pregunta desempate " + ": "+"\n" + pregunta.getEnunciado());
             int i = 0;
             for (Jugador jugador : empatados){
@@ -101,22 +98,18 @@ public class Ronda {
                 i = i + 1;
                 rtas.set(i, sc.nextInt());
             }
-
-            for(Integer rta : rtas){
-                Integer 
+            int peorRta = 0;
+            Integer pos = 0;
+            for(int j = 1; j< (rtas.size() + 1); j++){
+                if ((pregunta.getValorAproximado() - rtas.get(j)) < peorRta) {
+                    peorRta = rtas.get(j);
+                    pos= j;
+                }
             }
-
-            preguntas.remove(pregunta);
+            eliminarJugador(empatados.get(pos));
+            pregAprox.remove(pregunta);
         }
-    }
-
-    private void imprimirOpciones() {
-        String[] abc = {"a", "b", "c", "d"};
-        int num = 1;
-        for (Respuesta op: pregunta.getOpciones()) {
-            System.out.println(abc[num] + ". " + op.getTexto());
-            num = num + 1;
-        }
+        sc.close();
     }
 
     private void eliminarJugador(Jugador jugador){
@@ -129,8 +122,6 @@ public class Ronda {
             jug.setPuntaje(0);
         }
     }
-
-    private void preguntasTematica (ArrayList<Jugador> jugadores)
 
     // Getters y Setters
 
@@ -180,10 +171,6 @@ public class Ronda {
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-
-    public void addPreguntas(Pregunta pregunta) {
-        preguntas.add(pregunta);
     }
 
     public void addEmpatados(Jugador jugador) {
