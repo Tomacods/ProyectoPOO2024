@@ -1,16 +1,16 @@
 package DAOs;
 
+import Modelos.Respuesta;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import Modelos.Respuesta;
 
 
 public class RespuestaDAO {
-    private connection connection;
+    private Connection connection;
 
 public RespuestaDAO(Connection connection){
         this.connection = connection;
@@ -95,7 +95,7 @@ public List<Respuesta> obtenerTodasLasRespuestas() throws SQLException {
     List<Respuesta> respuestas = new ArrayList<>();
     String query = "SELECT * FROM Respuesta";
     try (PreparedStatement statement = connection.prepareStatement(query);
-         ResultSet resultSet = statement.executeQuery()) {
+        ResultSet resultSet = statement.executeQuery()) {
         while (resultSet.next()) {
             Respuesta respuesta = new Respuesta(
                 resultSet.getInt("ID_Respuesta"),
