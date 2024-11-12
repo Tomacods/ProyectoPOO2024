@@ -18,7 +18,7 @@ public class Ronda {
         this.idRonda = idRonda;
         this.idJuego = idJuego;
         this.jugadores = jugadores;
-        //this.preguntas = new ArrayList<>(18);
+        
         //this.repuestas = new ArrayList<>(36);
         this.escalon = escalon;
         this.fecha = new Date();
