@@ -16,8 +16,8 @@ public class Ronda {
     private ArrayList<Jugador> empatados;
 
 
-    public Ronda(int idRonda, int idJuego, ArrayList<Jugador> jugadores ,Escalon escalon) {
-        this.idRonda = idRonda;
+    public Ronda(/* int idRonda,  */int idJuego, ArrayList<Jugador> jugadores ,Escalon escalon) {
+        //this.idRonda = idRonda;
         this.idJuego = idJuego;
         this.jugadores = jugadores;
         this.escalon = escalon;
