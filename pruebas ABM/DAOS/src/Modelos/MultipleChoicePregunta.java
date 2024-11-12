@@ -6,7 +6,6 @@ public class MultipleChoicePregunta{
     private int idPregunta;
     private String enunciado;
     private int idTematica;
-    private String tipoPregunta;
     private ArrayList<Respuesta> opciones;
     private String respuestaCorrecta;
 
@@ -61,7 +60,4 @@ public class MultipleChoicePregunta{
         return idTematica;
     }
 
-    public String getTipoPregunta() {
-        return tipoPregunta;
-    }
 }
