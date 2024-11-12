@@ -24,7 +24,7 @@ CREATE TABLE Pregunta_multiple_choise (
 CREATE TABLE Pregunta_aproximacion (
     ID_Pregunta SERIAL PRIMARY KEY, --tiene q ser auto 
     Enunciado TEXT, -- Enunciado de la pregunta
-    Valor_Aproximado DECIMAL(10, 2), -- Valor aproximado de la pregunta (para las preguntas de aproximación)
+    Valor_Aproximado INT, -- Valor aproximado de la pregunta (para las preguntas de aproximación)
     ID_Tematica INT,
     FOREIGN KEY (ID_Tematica) REFERENCES Tematica(ID_Tematica) -- ID de la temática a la que pertenece la pregunta
 );

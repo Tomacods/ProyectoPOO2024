@@ -38,6 +38,7 @@ public class MultipleChoicePregunta {
         return opciones;
     }
 
+
     public String getRespuestaCorrecta() {
         return respuestaCorrecta;
     }

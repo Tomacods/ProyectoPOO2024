@@ -2,6 +2,8 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Ronda {
     private int idRonda;
@@ -73,7 +75,7 @@ public class Ronda {
             }
         }
         if (empatados.size()== 1){
-            eliminarJugador(empatados.get(1));
+            eliminarJugador(empatados.get(0));
         }else{
             desempatar();
         }
@@ -84,28 +86,41 @@ public class Ronda {
         System.out.println("A continuación, ¡Evaluaremos el desempate!");
         Boolean eliminado = true;
         Scanner sc = new Scanner(System.in);
-        ArrayList<Integer> rtas = new ArrayList<>(empatados.size());
+        Map<Jugador, Integer> respuestas= new HashMap<>();
         while (eliminado) {
             PreguntaAproximacion pregunta = pregAprox.get(new Random().nextInt(pregAprox.size()));
             System.out.println("Pregunta desempate " + ": "+"\n" + pregunta.getEnunciado());
-            int i = 0;
             for (Jugador jugador : empatados){
                 System.out.println("Responde el jugador " + jugador.getNombre());
-                i = i + 1;
-                rtas.set(i, sc.nextInt());
+                respuestas.put(jugador, sc.nextInt());
             }
             int peorRta = 0;
-            Integer pos = 0;
-            for(int j = 1; j< (rtas.size() + 1); j++){
-                if ((pregunta.getValorAproximado() - rtas.get(j)) < peorRta) {
-                    peorRta = rtas.get(j);
-                    pos= j;
+            for(Map.Entry<Jugador, Integer> entry : respuestas.entrySet()){
+                if (valorAbsoluto((pregunta.getValorAproximado() - entry.getValue())) > peorRta) {
+                    /* removeEmpatado(empatados.get(j)); */
+                    peorRta = entry.getValue();
                 }
             }
-            eliminarJugador(empatados.get(pos));
+            for(Map.Entry<Jugador, Integer> entry : respuestas.entrySet()){
+                if (valorAbsoluto((pregunta.getValorAproximado() - entry.getValue())) != peorRta) {
+                    removeEmpatado(entry.getKey());
+                }
+            }
+            if(empatados.size() == 1){
+                eliminarJugador(empatados.get(0));
+                eliminado= false;
+            }
+
             pregAprox.remove(pregunta);
         }
         sc.close();
+    }
+    private int valorAbsoluto(int numero){
+        if (numero>=0){
+            return numero;
+        }else{
+        return (numero*-1);
+        }
     }
 
     private void eliminarJugador(Jugador jugador){
@@ -171,5 +186,9 @@ public class Ronda {
 
     public void addEmpatados(Jugador jugador) {
         empatados.add(jugador);
+    }
+    
+    public void removeEmpatado(Jugador jugador) {
+        empatados.remove(jugador);
     }
 }
