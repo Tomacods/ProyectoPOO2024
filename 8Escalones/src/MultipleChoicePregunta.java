@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class MultipleChoicePregunta{
     private int idPregunta;
@@ -26,12 +25,12 @@ public class MultipleChoicePregunta{
         }
     }
 
-    public void guardarOpciones(int idPregunta/* acá iria el coso de la base de datos */) {
-        for (Respuesta rep: bd){
+    public void guardarOpciones(int idPregunta) {
+        /* for (Respuesta rep: bd){
             if (rep.getIdPregunta() == idPregunta){
                 opciones.add(rep);
             }
-        }
+        } */
     }
 
     // getters y setters
