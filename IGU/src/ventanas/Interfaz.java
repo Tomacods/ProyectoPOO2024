@@ -76,15 +76,16 @@ public class Interfaz extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JLabel lblTitulo2 = new JLabel("8 ESCALONES");
+		lblTitulo2.setEnabled(false);
 		lblTitulo2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitulo2.setBounds(60, 203, 325, 108);
 		lblTitulo2.setForeground(Color.CYAN);
 		lblTitulo2.setFont(new Font("Segoe UI Black", Font.BOLD, 45));
 		contentPane.add(lblTitulo2);
 		
-		JLabel lblFondo = new JLabel("New label");
+		JLabel lblFondo = new JLabel("");
 		lblFondo.setBounds(-10, -10, 786, 563);
-		lblFondo.setIcon(new ImageIcon("C:\\Users\\Maria\\Desktop\\ImagenesIGU\\1.jpg"));
+		lblFondo.setIcon(new ImageIcon("MenuPrincipal.png"));
 		contentPane.add(lblFondo);
 	}
 }

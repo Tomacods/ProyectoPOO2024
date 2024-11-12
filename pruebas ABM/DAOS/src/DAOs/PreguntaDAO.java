@@ -126,9 +126,7 @@ public void obtenerPreguntasMC(String tematica){
         while (resultSet.next()){
             String enunciado = resultSet.getString("enunciado");
             System.out.println(enunciado);
-
         }
-
     }catch (SQLException e) {
         e.printStackTrace();
     }
@@ -171,7 +169,7 @@ public int obtenerRtaCorrecta(int id){
 
 }
 
-  public ArrayList<Object[]> obtenerPreguntasMCPorTematica(String tematica) {
+public ArrayList<Object[]> obtenerPreguntasMCPorTematica(String tematica) {
         ArrayList<Object[]> preguntas = new ArrayList<>();
         String query = "select p.id_pregunta_mc,  p.enunciado, t.nombre_tematica from pregunta_multiple_choise p inner join tematica t on p.id_tematica = t.id_tematica where t.nombre_tematica=?";
         

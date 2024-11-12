@@ -5,7 +5,6 @@ public class PreguntaAproximacion {
     private int idPregunta;
     private String enunciado;
     private int idTematica;
-    private String tipoPregunta;
     private int valorAproximado;
 
     public PreguntaAproximacion(int idPregunta, String enunciado, int idTematica, int valorAproximado) {
@@ -36,7 +35,4 @@ public class PreguntaAproximacion {
         return idTematica;
     }
 
-    public String getTipoPregunta() {
-        return tipoPregunta;
-    }
 }
