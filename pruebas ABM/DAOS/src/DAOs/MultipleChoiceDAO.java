@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import Modelos.MultipleChoicePregunta;
 import Modelos.Pregunta;
@@ -12,9 +13,31 @@ import Modelos.PreguntaAproximacion;
 public class MultipleChoiceDAO {
 
 private Connection connection;
+private RespuestaDAO rta;
 
 public MultipleChoiceDAO(Connection Connection){
     this.connection= connection;
+}
+public void insertarOpciones(int id_pregunta, List<String> opciones, String opcionCorrecta){
+
+     if (opciones.size() != 4) {
+        System.err.println("Una pregunta solo puede tener 4 opciones.");
+        return;
+    }
+
+    String query = "INSERT INTO respuesta (id_pregunta, texto, correcta) VALUES (?,?,?)";
+    try(PreparedStatement statement = connection.prepareStatement(query)) {
+        for (String opcion : opciones){
+        statement.setInt(1, id_pregunta );
+        statement.setString(2, opcion);
+        statement.setBoolean(3, opcion.equals(opcionCorrecta));
+        }
+        
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+
 }
 
     public void insertarPregunta(MultipleChoicePregunta pregunta){
@@ -55,13 +78,8 @@ public MultipleChoiceDAO(Connection Connection){
     }
 
 
-
-
-
-
-
     //QUERYS
-    public ArrayList<Object[]> obtenerPreguntasMCPorTematica(int id) { //DEVOLVERA LAS PREGUNTAS DE CIERTA TEMATICA (SEGUN EL ID)
+    public ArrayList<Object[]> obtenerPreguntasMCPorTematica(int id) { //DEVUELVE LAS PREGUNTAS DE CIERTA TEMATICA (SEGUN EL ID)
         ArrayList<Object[]> preguntas = new ArrayList<>();
         String query = "select p.id_pregunta_mc,  p.enunciado, p.id_tematica from pregunta_multiple_choise p inner join tematica t on p.id_tematica = t.id_tematica where t.id_tematica=?";
         
