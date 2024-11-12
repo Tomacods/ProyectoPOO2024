@@ -17,7 +17,6 @@ public RespuestaDAO(Connection connection){
     }
 
 //ABM
-
 public void insertarRespuesta(Respuesta respuesta) throws SQLException {
     String query = "INSERT INTO Respuesta (ID_Pregunta, Texto, Correcta) VALUES (?, ?, ?)";
     try (PreparedStatement statement = connection.prepareStatement(query)) {
