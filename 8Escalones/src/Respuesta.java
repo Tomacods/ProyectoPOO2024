@@ -1,13 +1,5 @@
-// CREATE TABLE Respuesta (
-//     ID_Respuesta INT PRIMARY KEY,  -- ID de la respuesta
-//     ID_Pregunta INT,
-//     Texto TEXT,
-//     Correcta BOOLEAN,
-//     FOREIGN KEY (ID_Pregunta) REFERENCES Pregunta(ID_Pregunta) -- ID de la pregunta a la que pertenece la respuesta
-// );
-
-
 public class Respuesta {
+    
     private int idPregunta;
     private int idRespuesta;
     private String texto;
@@ -37,6 +29,4 @@ public class Respuesta {
     public void setCorrecta(boolean correcta) {
         this.correcta = correcta;
     }
-
-
 }
