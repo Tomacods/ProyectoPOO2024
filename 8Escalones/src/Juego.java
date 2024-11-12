@@ -18,7 +18,7 @@ public class Juego {
 
     public void comenzarJuego(){
         Random rnd = new Random();
-        ArrayList<Tematica> tematicas = obtenerTematicas();//Bajar todas las tematicas
+        //ArrayList<Tematica> tematicas = obtenerTematicas();//Bajar todas las tematicas, NECESITAMOS METODOS DAOS
         Escalon escalon = new Escalon(0,"sin comenzar",null);
         for (int i=1;i<=8; i++){
             Tematica tematica =  tematicas.get(rnd.nextInt(tematicas.size()));
@@ -28,6 +28,7 @@ public class Juego {
         }
         
     }
+
 
     // Getters y Setters
     public int getIdJuego() {

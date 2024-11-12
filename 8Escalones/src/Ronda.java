@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Ronda {
-    private int idRonda;
+    //private int idRonda;
     private int idJuego;
     private ArrayList<Jugador> jugadores;
     private Escalon escalon;
