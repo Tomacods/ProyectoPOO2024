@@ -16,7 +16,7 @@ public abstract class Pregunta {
         this.categoria = categoria;
         this.id_tematica=id_tematica;
     }
-
+    
     // Getters y Setters
     public int getIdPregunta() {
         return idPregunta;
