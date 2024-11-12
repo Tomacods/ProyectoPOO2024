@@ -1,10 +1,9 @@
 import java.util.ArrayList;
 
-public class MultipleChoicePregunta{
+public class MultipleChoicePregunta {
     private int idPregunta;
     private String enunciado;
     private int idTematica;
-    private String tipoPregunta;
     private ArrayList<Respuesta> opciones;
     private String respuestaCorrecta;
 
@@ -57,9 +56,5 @@ public class MultipleChoicePregunta{
 
     public int getIdTematica() {
         return idTematica;
-    }
-
-    public String getTipoPregunta() {
-        return tipoPregunta;
     }
 }
