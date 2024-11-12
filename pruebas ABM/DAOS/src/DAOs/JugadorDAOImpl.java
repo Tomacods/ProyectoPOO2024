@@ -1,32 +1,16 @@
 package DAOs;
 import Modelos.Jugador;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class JugadorDAOImpl {
     private Connection conexion;
     public JugadorDAOImpl(Connection conexion){
         this.conexion = conexion;
     }
-
-    public Jugador obtenerJugadorPorId(int id) {
-        Jugador jugador = null;
-        String query = "SELECT * FROM jugador WHERE id_jugador = ?";
-        try (PreparedStatement statement = conexion.prepareStatement(query)) {
-            statement.setInt(1, id);
-            ResultSet rs = statement.executeQuery();
-            if (rs.next()) {
-                jugador = new Jugador(rs.getInt("id_jugador"), rs.getString("nombre"), 
-                rs.getInt("puntaje"), rs.getString("estado"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return jugador;
-    } 
 
     public void insertarJugador(Jugador jugador){
         String query = "INSERT INTO jugador( nombre, puntaje, estado) VALUES (?,?,?)";
@@ -41,7 +25,6 @@ public class JugadorDAOImpl {
         }
     }
 
-
     public void actualizarJugador(Jugador jugador) {
         String query = "UPDATE jugador SET nombre = ?, puntaje=?, estado=? WHERE id_jugador= ?";
         try (PreparedStatement statement = conexion.prepareStatement(query)) {
@@ -55,7 +38,6 @@ public class JugadorDAOImpl {
         }
     }
     
-
     public void eliminarJugador(int id) {
         String query = "DELETE FROM jugador WHERE id_jugador = ?";
         try (PreparedStatement statement = conexion.prepareStatement(query)) {
@@ -66,23 +48,49 @@ public class JugadorDAOImpl {
         }
     }
 
-    //Querys
-    public void obtenerJugadores(){
-        String query= "select id_jugador, nombre, puntaje, estado from jugador";
-        try(PreparedStatement statement = conexion.prepareStatement(query)) {
+//Querys
+   public ArrayList<Object[]> obtenerJugadores() { //DEVUELVE LOS JUGADORES 
+        ArrayList<Object[]> jugadores = new ArrayList<>();
+        String query = "select * from jugador";
+        
+        try (PreparedStatement statement = conexion.prepareStatement(query)) {
             ResultSet resultSet = statement.executeQuery();
-            while(resultSet.next()){
-                int id_jugador= resultSet.getInt("id_jugador");
-                String nombre= resultSet.getString("nombre");
-                String puntaje= resultSet.getString("puntaje");
-                String estado= resultSet.getString("estado");
-                System.out.println(nombre);
+
+            while (resultSet.next()) {
+                Object[] row = {
+                    resultSet.getInt("id_jugador"),   
+                    resultSet.getString("nombre"),  
+                    resultSet.getInt("puntaje"),
+                    resultSet.getString("estado")  
+                };
+                jugadores.add(row);
             }
-            
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return jugadores;
+    } 
+
+    public Jugador obtenerJugador (int id_jugador) throws SQLException {
+        String query = "SELECT * FROM jugador WHERE id_jugador = ?";
+        try (PreparedStatement statement = conexion.prepareStatement(query)) {
+            statement.setInt(1, id_jugador);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    return new Jugador(
+                            resultSet.getInt("id_jugador"),
+                            resultSet.getString("nombre"),
+                            resultSet.getInt("puntaje"),
+                            resultSet.getString("estado")  
+                    );
+                }
+            }
+        }catch (SQLException ex){
+            throw new SQLException("Error al obtener jugador: " + ex.getMessage());
+        }
+        return null;
     }
+
     
 }
 
