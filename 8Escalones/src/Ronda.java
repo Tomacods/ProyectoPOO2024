@@ -7,8 +7,8 @@ public class Ronda {
     private int idRonda;
     private int idJuego;
     private ArrayList<Jugador> jugadores;
-    //private ArrayList<Pregunta> preguntas;
-    //private ArrayList<Respuesta> repuestas;
+    private ArrayList<Pregunta> preguntas;
+    private ArrayList<Respuesta> repuestas;
     private Escalon escalon; // pq
     private String resultado; // para q (no creo que haga falta usarlo, nota)
     private Date fecha;
@@ -20,8 +20,8 @@ public class Ronda {
         this.idRonda = idRonda;
         this.idJuego = idJuego;
         this.jugadores = jugadores;
-        //this.preguntas = new ArrayList<>(18);
-        //this.repuestas = new ArrayList<>(36);
+        this.preguntas = new ArrayList<>(18);
+        this.repuestas = new ArrayList<>(36);
         this.escalon = escalon;
         this.fecha = new Date();
         this.estado = "en curso";
@@ -29,7 +29,6 @@ public class Ronda {
 
 
     public void iniciarRonda() {
-        inicializarPuntos();
         for(int i = 1; i<3;i++){
             System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
             realizarPreguntas();
@@ -39,22 +38,23 @@ public class Ronda {
     }
 
     private void realizarPreguntas() {
-        ArrayList<MultipleChoicePregunta> pregMult = new ArrayList<>();
-        //metodo para llenar
         for (Jugador jugador : jugadores) {
-            MultipleChoicePregunta pregunta = pregMult.get(new Random().nextInt(pregMult.size()));
+            Pregunta pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
+            while (pregunta.getTipoPregunta() != "multiple choice"){
+                pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
+            }
             System.out.println("Pregunta para " + jugador.getNombre() + ": "+"\n" + pregunta.getEnunciado());
-            pregunta.imprimirOpciones();
+            
             // La respuesta se obtiene de un botón. 
             // Simular respuesta del jugador
             String respuesta = "Opción A"; // Ejemplo de respuesta
-            if (pregunta.getRespuestaCorrecta() == respuesta) {
+            if (pregunta.esCorrecta(respuesta)) {
                 System.out.println("Respuesta correcta");
                 jugador.incrementarPuntaje();
             } else {
                 System.out.println("Respuesta incorrecta");
             }
-            pregMult.remove(pregunta);
+            preguntas.remove(pregunta);
         }
     }
     
@@ -65,6 +65,7 @@ public class Ronda {
     private void determinarResultado() {
         // Lógica para determinar el resultado de la ronda
         // Por ejemplo, eliminar al jugador con menos puntaje
+        Boolean desempate = false;
         Jugador jugadorMenorPuntaje = jugadores.get(1);
         for (Jugador jugador : jugadores) {
             if (jugador.getPuntaje() < jugadorMenorPuntaje.getPuntaje()) {
@@ -79,37 +80,35 @@ public class Ronda {
         if (empatados.size()== 1){
             eliminarJugador(empatados.get(1));
         }else{
-            desempatar();
+            desempate = true;
         }
     }
 
     private void desempatar() {
-        ArrayList<PreguntaAproximacion> pregAprox = new ArrayList<>();
         System.out.println("A continuación, ¡Evaluaremos el desempate!");
+        inicializarPuntos();
         Boolean eliminado = true;
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> rtas = new ArrayList<>(empatados.size());
         while (eliminado) {
-            PreguntaAproximacion pregunta = pregAprox.get(new Random().nextInt(pregAprox.size()));
+            Pregunta pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
+            while (pregunta.getTipoPregunta() != "aproximación"){
+                pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
+            }
             System.out.println("Pregunta desempate " + ": "+"\n" + pregunta.getEnunciado());
             int i = 0;
             for (Jugador jugador : empatados){
                 System.out.println("Responde el jugador " + jugador.getNombre());
                 i = i + 1;
-                rtas.set(i, sc.nextInt());
+                rtas.set(i, preguntas.get(i).getValorAproximado() -sc.nextInt());
             }
-            int peorRta = 0;
-            Integer pos = 0;
-            for(int j = 1; j< (rtas.size() + 1); j++){
-                if ((pregunta.getValorAproximado() - rtas.get(j)) < peorRta) {
-                    peorRta = rtas.get(j);
-                    pos= j;
-                }
+
+            for(Integer rta : rtas){
+                Integer 
             }
-            eliminarJugador(empatados.get(pos));
-            pregAprox.remove(pregunta);
+
+            preguntas.remove(pregunta);
         }
-        sc.close();
     }
 
     private void eliminarJugador(Jugador jugador){
@@ -122,6 +121,8 @@ public class Ronda {
             jug.setPuntaje(0);
         }
     }
+
+    private void preguntasTematica (ArrayList<Jugador> jugadores)
 
     // Getters y Setters
 
@@ -171,6 +172,10 @@ public class Ronda {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public void addPreguntas(Pregunta pregunta) {
+        preguntas.add(pregunta);
     }
 
     public void addEmpatados(Jugador jugador) {
