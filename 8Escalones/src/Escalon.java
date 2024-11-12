@@ -19,11 +19,11 @@ public class Escalon {
         System.out.println("La categoría del escalón " + numeroEscalon + " es " + tematica.getNombre() + ".");
         Ronda ronda = new Ronda(/* numeroEscalon, */ juego.getIdJuego(), jugadores, this);
         ronda.iniciarRonda();
-        participantes();
+        quienesSuben();
     }
 
-    private void participantes() {
-        System.out.println("Ganadores de este escalón:");
+    private void quienesSuben() {
+        System.out.println("Suben los siguientes participantes:");
         for (Jugador jugador: jugadores) {
             System.out.println(jugador.getNombre());
         }
