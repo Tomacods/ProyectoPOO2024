@@ -24,15 +24,30 @@ public class App {
             // MultipleChoicePregunta mcejemplo = new MultipleChoicePregunta(0, "Prueba dao
             // 2", "prueba2", opciones, respuestaCorrecta, 1);
             // PreguntaMCDAO preguntaMCDAO = new PreguntaMCDAO(connection);
-            PreguntaDAO preguntadao = new PreguntaDAO(connection);
+        //    PreguntaDAO preguntadao = new PreguntaDAO(connection);
             // JugadorDAOImpl jug = new JugadorDAOImpl(connection);
             // jug.obtenerJugadores();
-            ArrayList<Object[]> preguntas = preguntadao.obtenerPreguntasMCPorTematica("deporte");
+          //  ArrayList<Object[]> preguntas = preguntadao.obtenerPreguntasMCPorTematica("deporte");
+          RespuestaDAO rta = new RespuestaDAO(connection);
+          try {
+            List<Respuesta> respuestas =  rta.obtenerRespuestasPorPregunta(1);
+            for (Respuesta respuesta : respuestas) {
+                System.out.println("ID Respuesta: " + respuesta.getIdRespuesta() +
+                                   ", ID Pregunta: " + respuesta.getIdPregunta() +
+                                   ", Texto: " + respuesta.getTexto() +
+                                   ", Correcta: " + respuesta.isEsCorrecta());
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
-            for (Object[] pregunta : preguntas) {
+          
+
+         /*   for (Object[] pregunta : preguntas) {
                 System.out.println("ID: " + pregunta[0] + ", Contenido: " + pregunta[1] +
                           ", Temática: " + pregunta[2]);
-            }
+            }*/ 
             // preguntadao.obtenerPreguntasAprox("historia");
             // preguntadao.obtenerOpcionesMC(1);
             // preguntadao.obtenerRtaCorrecta(1);
