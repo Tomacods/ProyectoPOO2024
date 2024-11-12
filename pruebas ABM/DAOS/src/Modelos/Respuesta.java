@@ -1,3 +1,5 @@
+package Modelos;
+
 public class Respuesta {
     private int idRespuesta;
     private int idPregunta;
@@ -10,6 +12,8 @@ public class Respuesta {
         this.idPregunta = idPregunta;
         this.texto = texto;
         this.esCorrecta = esCorrecta;
+    }
+    public Respuesta(){
     }
 
     //setters y getters

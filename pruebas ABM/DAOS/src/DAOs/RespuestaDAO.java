@@ -1,11 +1,12 @@
 package DAOs;
-import Modelos.Respuesta;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import Modelos.Respuesta;
 
 
 public class RespuestaDAO {
