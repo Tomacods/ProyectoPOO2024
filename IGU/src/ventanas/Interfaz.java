@@ -2,7 +2,7 @@ package ventanas;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
+import ventanas.Fondo;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -15,6 +15,20 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Cursor;
+import javax.swing.BoxLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.CardLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.util.HashSet;
+import java.util.Set;
+import javax.swing.SpringLayout;
+import java.awt.Component;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 
 public class Interfaz extends JFrame {
 
@@ -41,51 +55,69 @@ public class Interfaz extends JFrame {
 	 * Create the frame.
 	 */
 	public Interfaz() {
+		setTitle("Los 8 Escalones");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 600);
-		contentPane = new JPanel();
+		int resoX = 1024;
+		int resoY = 768;
+		setBounds(100, 100, resoX, resoY);
+		contentPane = new Fondo();
+		contentPane.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		
-		JButton btnHistorial = new JButton("HISTORIAL");
-		btnHistorial.setBounds(470, 443, 207, 66);
-		btnHistorial.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		contentPane.setLayout(null);
-		btnHistorial.setForeground(Color.MAGENTA);
-		btnHistorial.setFont(new Font("Segoe UI Black", Font.PLAIN, 30));
-		contentPane.add(btnHistorial);
+		JPanel panel = new JPanel();
+		panel.setOpaque(false);
+		panel.setAlignmentY(Component.BOTTOM_ALIGNMENT);
+		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+            
+		
+		JButton btnNewButton = new JButton("JUGAR");
+		btnNewButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		panel.add(btnNewButton);
+		btnNewButton.setForeground(Color.MAGENTA);
+		btnNewButton.setFont(new Font("Segoe UI Black", Font.PLAIN, 30));
 		
 		JButton btnOpciones = new JButton("OPCIONES");
-		btnOpciones.setBounds(470, 367, 207, 66);
+		btnOpciones.setAlignmentX(Component.CENTER_ALIGNMENT);
+		panel.add(btnOpciones);
 		btnOpciones.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		btnOpciones.setForeground(Color.MAGENTA);
 		btnOpciones.setFont(new Font("Segoe UI Black", Font.PLAIN, 30));
-		contentPane.add(btnOpciones);
 		
-		JButton btnNewButton = new JButton("JUGAR");
-		btnNewButton.setBounds(470, 291, 207, 66);
-		btnNewButton.setForeground(Color.MAGENTA);
-		btnNewButton.setFont(new Font("Segoe UI Black", Font.PLAIN, 30));
-		contentPane.add(btnNewButton);
-		
-		JLabel lblTitulo2 = new JLabel("8 ESCALONES");
-		lblTitulo2.setEnabled(false);
-		lblTitulo2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTitulo2.setBounds(60, 203, 325, 108);
-		lblTitulo2.setForeground(Color.CYAN);
-		lblTitulo2.setFont(new Font("Segoe UI Black", Font.BOLD, 45));
-		contentPane.add(lblTitulo2);
+		JButton btnHistorial = new JButton("HISTORIAL");
+		btnHistorial.setAlignmentX(Component.CENTER_ALIGNMENT);
+		panel.add(btnHistorial);
+		btnHistorial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnHistorial.setForeground(Color.MAGENTA);
+		btnHistorial.setFont(new Font("Segoe UI Black", Font.PLAIN, 30));
 		
 		JLabel lblFondo = new JLabel("");
-		lblFondo.setBounds(-10, -10, 786, 563);
-		lblFondo.setIcon(new ImageIcon("MenuPrincipal.png"));
-		contentPane.add(lblFondo);
+		ImageIcon imgFondo = new ImageIcon(new ImageIcon("MenuPrincipal.png").getImage().getScaledInstance(resoY, resoX, Image.SCALE_DEFAULT));
+		lblFondo.setIcon(imgFondo);
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addComponent(lblFondo, GroupLayout.PREFERRED_SIZE, 1010, GroupLayout.PREFERRED_SIZE)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(375, 375, 375)
+					.addComponent(panel, GroupLayout.DEFAULT_SIZE, 284, GroupLayout.PREFERRED_SIZE))
+					.addGap(375, 375, 375)
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addComponent(lblFondo, GroupLayout.PREFERRED_SIZE, 731, GroupLayout.PREFERRED_SIZE)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(490, 490, 490)
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 230, GroupLayout.PREFERRED_SIZE))
+					.addGap(490, 490, 490)
+		);
+		contentPane.setLayout(gl_contentPane);
 	}
 }

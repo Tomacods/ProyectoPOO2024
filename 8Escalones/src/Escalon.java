@@ -1,15 +1,15 @@
 import java.util.ArrayList;
 
 public class Escalon {
-    private int idEscalon;
+    //private int idEscalon;
     private int numeroEscalon;
     private String estado;
     private ArrayList<Jugador> jugadores;
     private Tematica tematica;
     private Juego juego;
 
-    public Escalon(int idEscalon, int numeroEscalon, String estado, Tematica tematica /*int idTematica*/) {
-        this.idEscalon = idEscalon;
+    public Escalon(/* int idEscalon,  */int numeroEscalon, String estado, Tematica tematica /*int idTematica*/) {
+        //this.idEscalon = idEscalon;
         this.numeroEscalon = numeroEscalon;
         this.estado = estado;
         this.tematica = tematica;
@@ -17,13 +17,13 @@ public class Escalon {
 
     public void jugarEscalon() {
         System.out.println("La categoría del escalón " + numeroEscalon + " es " + tematica.getNombre() + ".");
-        Ronda ronda = new Ronda(idEscalon, juego.getIdJuego(), jugadores, this);
+        Ronda ronda = new Ronda(/* numeroEscalon, */ juego.getIdJuego(), jugadores, this);
         ronda.iniciarRonda();
-        participantes();
+        quienesSuben();
     }
 
-    private void participantes() {
-        System.out.println("Ganadores de este escalón:");
+    private void quienesSuben() {
+        System.out.println("Suben los siguientes participantes:");
         for (Jugador jugador: jugadores) {
             System.out.println(jugador.getNombre());
         }
@@ -33,9 +33,9 @@ public class Escalon {
         jugadores.remove(jugador);
     }
 
-    public int getIdEscalon() {
+    /* public int getIdEscalon() {
         return idEscalon;
-    }
+    } */
 
     public int getNumeroEscalon() {
         return numeroEscalon;
@@ -49,7 +49,7 @@ public class Escalon {
         return tematica;
     }
 
-    public void setIdEscalon(int idEscalon) {
+    /* public void setIdEscalon(int idEscalon) {
         this.idEscalon = idEscalon;
-    }
+    } */
 }

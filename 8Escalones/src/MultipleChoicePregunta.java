@@ -1,18 +1,19 @@
 import java.util.ArrayList;
+import java.util.List;
+//import DAOs.RespuestaDAO;
 
 public class MultipleChoicePregunta {
     private int idPregunta;
     private String enunciado;
     private int idTematica;
-    private ArrayList<Respuesta> opciones;
+    private List<Respuesta> opciones;
     private String respuestaCorrecta;
 
-    public MultipleChoicePregunta(int idPregunta, String enunciado, int idTematica, String respuestaCorrecta) {
+    public MultipleChoicePregunta(int idPregunta, String enunciado, int idTematica) {
         this.idPregunta = idPregunta;
         this.enunciado = enunciado;
         this.idTematica = idTematica;
-        this.opciones = new ArrayList<>();
-        this.respuestaCorrecta = respuestaCorrecta;
+        this.opciones = new ArrayList<>();//guardarOpciones();
     }
 
     public void imprimirOpciones() {
@@ -24,17 +25,14 @@ public class MultipleChoicePregunta {
         }
     }
 
-    public void guardarOpciones(int idPregunta) {
-        /* for (Respuesta rep: bd){
-            if (rep.getIdPregunta() == idPregunta){
-                opciones.add(rep);
-            }
-        } */
-    }
+    /* private List<Respuesta> guardarOpciones() {
+        //List<Respuesta> mcPreg = obtenerRespuestasPorPregunta(idPregunta);
+        return obtenerRespuestasPorPregunta(idPregunta);
+    } */
 
     // getters y setters
 
-    public ArrayList<Respuesta> getOpciones() {
+    public List<Respuesta> getOpciones() {
         return opciones;
     }
 

@@ -78,4 +78,37 @@ public AproximacionDAO(Connection connection){
         }
         return preguntas;
     }
+    //devolver pregunta por id
+    public List<PreguntaAproximacion> obtenerPreguntasPorTematica(int idTematica) throws SQLException {
+        List<PreguntaAproximacion> preguntas = new ArrayList<>();
+        String query = "SELECT * FROM Pregunta_aproximacion WHERE ID_Tematica = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, idTematica);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    PreguntaAproximacion pregunta = new PreguntaAproximacion(
+                        resultSet.getInt("ID_Pregunta"),
+                        resultSet.getString("Enunciado"),
+                        resultSet.getInt("Valor_Aproximado"),
+                        resultSet.getInt("ID_Tematica")
+                    );
+                    preguntas.add(pregunta);
+                }
+            }
+        }
+        return preguntas;
+    }
+    //metodo para obtener la respuesta correcta de una pregunta
+    public int obtenerValorAproximado(int idPregunta) throws SQLException {
+        String query = "SELECT Valor_Aproximado FROM Pregunta_aproximacion WHERE ID_Pregunta = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, idPregunta);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getInt("Valor_Aproximado");
+                }
+            }
+        }
+        return -1;
+    }
 }
