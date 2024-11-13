@@ -1,3 +1,4 @@
+package DAOs;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +8,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import Modelos.*;
-import DAOs.*;
+import Modelos.MultipleChoicePregunta;
+import Modelos.Respuesta;
 
 public class App {
     public static void main(String[] args) {
