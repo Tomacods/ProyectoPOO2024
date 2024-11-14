@@ -11,12 +11,12 @@ import javax.swing.ImageIcon;
  *
  * @author Maria
  */
-public class gameplay extends javax.swing.JFrame {
+public class Gameplay extends javax.swing.JFrame {
 
     /**
      * Creates new form gameplay
      */
-    public gameplay() {
+    public Gameplay() {
         initComponents();
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/azul.png");
@@ -41,20 +41,20 @@ public class gameplay extends javax.swing.JFrame {
         jButtonExit = new javax.swing.JButton();
         jButtonConfig = new javax.swing.JButton();
         jLabelIconUser = new javax.swing.JLabel();
-        jLabelTurnoJugador = new javax.swing.JLabel();
-        jTextFieldPregunta = new javax.swing.JTextField();
+        jLabelJugador = new javax.swing.JLabel();
+        jTextFieldJugador = new javax.swing.JTextField();
         jButtonRtaA = new javax.swing.JButton();
         jButtonRtaB = new javax.swing.JButton();
         jButtonRtaC = new javax.swing.JButton();
         jButtonRtaD = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelRonda = new javax.swing.JLabel();
+        jLabelEscalon = new javax.swing.JLabel();
         jLabelRtaA = new javax.swing.JLabel();
         jLabelRtaB = new javax.swing.JLabel();
         jLabelRtaC = new javax.swing.JLabel();
         jLabelRtaD = new javax.swing.JLabel();
         jLabelTurnoDe = new javax.swing.JLabel();
-        jTextFieldTurnoJugador = new javax.swing.JTextField();
+        jTextFieldPregunta = new javax.swing.JTextField();
         jProgressBarTiempo = new javax.swing.JProgressBar();
         jLabelTematica = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
@@ -88,28 +88,28 @@ public class gameplay extends javax.swing.JFrame {
         jPanel1.add(jButtonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
         jPanel1.add(jLabelIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 60, 50));
 
-        jLabelTurnoJugador.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jLabelTurnoJugador.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTurnoJugador.setText("Jugador N");
-        jPanel1.add(jLabelTurnoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 100, 30));
+        jLabelJugador.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jLabelJugador.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelJugador.setText("Jugador N");
+        jPanel1.add(jLabelJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 100, 30));
 
-        jTextFieldPregunta.setEditable(false);
-        jTextFieldPregunta.setBackground(new java.awt.Color(0, 0, 153));
-        jTextFieldPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        jTextFieldPregunta.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldPregunta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldPregunta.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldJugador.setEditable(false);
+        jTextFieldJugador.setBackground(new java.awt.Color(0, 0, 153));
+        jTextFieldJugador.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        jTextFieldJugador.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldJugador.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldPreguntaActionPerformed(evt);
+                jTextFieldJugadorActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 170, 50));
+        jPanel1.add(jTextFieldJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 170, 50));
 
         jButtonRtaA.setBackground(new java.awt.Color(0, 0, 153));
         jButtonRtaA.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaA.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaA.setText("Respuesta");
-        jPanel1.add(jButtonRtaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 530, 240, 30));
+        jPanel1.add(jButtonRtaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 490, 240, 30));
 
         jButtonRtaB.setBackground(new java.awt.Color(0, 0, 153));
         jButtonRtaB.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
@@ -132,17 +132,17 @@ public class gameplay extends javax.swing.JFrame {
                 jButtonRtaDActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonRtaD, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 490, 240, 30));
+        jPanel1.add(jButtonRtaD, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 530, 240, 30));
 
-        jLabel2.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("(1/2)");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, 30));
+        jLabelRonda.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        jLabelRonda.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelRonda.setText("(1/2)");
+        jPanel1.add(jLabelRonda, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, 30));
 
-        jLabel1.setFont(new java.awt.Font("Roboto Medium", 2, 30)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("ESCALON N");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 170, 60));
+        jLabelEscalon.setFont(new java.awt.Font("Roboto Medium", 2, 30)); // NOI18N
+        jLabelEscalon.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEscalon.setText("ESCALON N");
+        jPanel1.add(jLabelEscalon, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 170, 60));
 
         jLabelRtaA.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabelRtaA.setForeground(new java.awt.Color(255, 255, 255));
@@ -169,18 +169,18 @@ public class gameplay extends javax.swing.JFrame {
         jLabelTurnoDe.setText("Turno de");
         jPanel1.add(jLabelTurnoDe, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, 40));
 
-        jTextFieldTurnoJugador.setEditable(false);
-        jTextFieldTurnoJugador.setBackground(new java.awt.Color(0, 0, 153));
-        jTextFieldTurnoJugador.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldTurnoJugador.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldTurnoJugador.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldTurnoJugador.setText("Pregunta");
-        jTextFieldTurnoJugador.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldPregunta.setEditable(false);
+        jTextFieldPregunta.setBackground(new java.awt.Color(0, 0, 153));
+        jTextFieldPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldPregunta.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldPregunta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldPregunta.setText("Pregunta");
+        jTextFieldPregunta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldTurnoJugadorActionPerformed(evt);
+                jTextFieldPreguntaActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldTurnoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 580, 70));
+        jPanel1.add(jTextFieldPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 580, 70));
 
         jProgressBarTiempo.setForeground(new java.awt.Color(0, 0, 153));
         jProgressBarTiempo.setMaximum(30);
@@ -214,17 +214,17 @@ public class gameplay extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonRtaDActionPerformed
 
-    private void jTextFieldTurnoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTurnoJugadorActionPerformed
+    private void jTextFieldPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPreguntaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldTurnoJugadorActionPerformed
+    }//GEN-LAST:event_jTextFieldPreguntaActionPerformed
 
     private void jButtonConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfigActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonConfigActionPerformed
 
-    private void jTextFieldPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPreguntaActionPerformed
+    private void jTextFieldJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldJugadorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldPreguntaActionPerformed
+    }//GEN-LAST:event_jTextFieldJugadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,20 +243,21 @@ public class gameplay extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(gameplay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Gameplay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(gameplay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Gameplay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(gameplay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Gameplay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(gameplay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Gameplay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new gameplay().setVisible(true);
+                new Gameplay().setVisible(true);
             }
         });
     }
@@ -268,22 +269,22 @@ public class gameplay extends javax.swing.JFrame {
     private javax.swing.JButton jButtonRtaB;
     private javax.swing.JButton jButtonRtaC;
     private javax.swing.JButton jButtonRtaD;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelConfig;
+    private javax.swing.JLabel jLabelEscalon;
     private javax.swing.JLabel jLabelExit;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelIconUser;
+    private javax.swing.JLabel jLabelJugador;
+    private javax.swing.JLabel jLabelRonda;
     private javax.swing.JLabel jLabelRtaA;
     private javax.swing.JLabel jLabelRtaB;
     private javax.swing.JLabel jLabelRtaC;
     private javax.swing.JLabel jLabelRtaD;
     private javax.swing.JLabel jLabelTematica;
     private javax.swing.JLabel jLabelTurnoDe;
-    private javax.swing.JLabel jLabelTurnoJugador;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JProgressBar jProgressBarTiempo;
+    private javax.swing.JTextField jTextFieldJugador;
     private javax.swing.JTextField jTextFieldPregunta;
-    private javax.swing.JTextField jTextFieldTurnoJugador;
     // End of variables declaration//GEN-END:variables
 }
