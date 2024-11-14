@@ -2,6 +2,7 @@ package Modelos;
 
 import DAOs.TematicaDAOImpl;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Tematica {
     private int id;
@@ -13,16 +14,17 @@ public class Tematica {
         this.nombre = nombre;
     }
     
-    public Tematica(int id){
-        TematicaDAOImpl tem  = new TematicaDAOImpl();
-    try {
-        tem.obtenerTematica(id);
-    } catch (SQLException e) {
-
-        e.printStackTrace();
-    }
-        
-        
+    public Tematica(int id) {
+        TematicaDAOImpl tematicaDAO = new TematicaDAOImpl();
+        try {
+            Tematica tematica = tematicaDAO.obtenerTematica(id);
+            if (tematica != null) {
+                this.id = tematica.getId();
+                this.nombre = tematica.getNombre();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -43,17 +45,24 @@ public class Tematica {
     } 
     //select MAX (id_tematica) from tematica
 
-    public static void GetTematicas()
-    {
-        Tematica.GetTematicas()
-        var dao = new Dao();
-        var arrelo = dao.obtenerTematicas();
+    // public static void GetTematicas()
+    // {
+    //     Tematica.GetTematicas()
+    //     var dao = new Dao();
+    //     var arrelo = dao.obtenerTematicas();
 
-        for(int i=0; i < arrelo.size(); i++){
-            new Tematica(arrelo[i][0])
+    //     for(int i=0; i < arrelo.size(); i++){
+    //         new Tematica(arrelo[i][0])
+    //     }
+    //     return result;
+
+    // }
+    public static void getTematicas() {
+        TematicaDAOImpl dao = new TematicaDAOImpl();
+        ArrayList<Object[]> arreglo = dao.obtenerTematicas();
+
+        for (Object[] row : arreglo) {
+            new Tematica((int) row[0], (String) row[1]);
         }
-
-        return result;
-
     }
 }
