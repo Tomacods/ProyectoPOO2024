@@ -106,25 +106,25 @@ public class gameplay extends javax.swing.JFrame {
         jPanel1.add(jTextFieldPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 170, 50));
 
         jButtonRtaA.setBackground(new java.awt.Color(0, 0, 153));
-        jButtonRtaA.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
+        jButtonRtaA.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaA.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaA.setText("Respuesta");
         jPanel1.add(jButtonRtaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 530, 240, 30));
 
         jButtonRtaB.setBackground(new java.awt.Color(0, 0, 153));
-        jButtonRtaB.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
+        jButtonRtaB.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaB.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaB.setText("Respuesta");
         jPanel1.add(jButtonRtaB, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 530, 240, 30));
 
         jButtonRtaC.setBackground(new java.awt.Color(0, 0, 153));
-        jButtonRtaC.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
+        jButtonRtaC.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaC.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaC.setText("Respuesta");
         jPanel1.add(jButtonRtaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 240, 30));
 
         jButtonRtaD.setBackground(new java.awt.Color(0, 0, 153));
-        jButtonRtaD.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
+        jButtonRtaD.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaD.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaD.setText("Respuesta");
         jButtonRtaD.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +190,7 @@ public class gameplay extends javax.swing.JFrame {
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jLabelFondo.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, -30, 660, 630));
+        jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -390, 660, 990));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -76,7 +76,7 @@ public class gameplay_aproximacion extends javax.swing.JFrame {
                 jTextFieldTurnoJugadorActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldTurnoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 580, 60));
+        jPanel1.add(jTextFieldTurnoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 580, 40));
         jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
 
         jButtonExit.setBackground(new java.awt.Color(255, 204, 51));
@@ -110,10 +110,10 @@ public class gameplay_aproximacion extends javax.swing.JFrame {
         jLabelRtaA.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabelRtaA.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRtaA.setText("A.");
-        jPanel1.add(jLabelRtaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 30, 20));
+        jPanel1.add(jLabelRtaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 30, 20));
 
         jButtonRtaD1.setBackground(new java.awt.Color(255, 204, 51));
-        jButtonRtaD1.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
+        jButtonRtaD1.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaD1.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaD1.setText("Respuesta");
         jButtonRtaD1.addActionListener(new java.awt.event.ActionListener() {
@@ -121,15 +121,15 @@ public class gameplay_aproximacion extends javax.swing.JFrame {
                 jButtonRtaD1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonRtaD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 490, 380, 20));
+        jPanel1.add(jButtonRtaD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 430, 30));
 
         jLabelRtaA1.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabelRtaA1.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRtaA1.setText("B.");
-        jPanel1.add(jLabelRtaA1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 30, 20));
+        jPanel1.add(jLabelRtaA1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 480, 30, 20));
 
         jButtonRtaD2.setBackground(new java.awt.Color(255, 204, 51));
-        jButtonRtaD2.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
+        jButtonRtaD2.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaD2.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaD2.setText("Respuesta");
         jButtonRtaD2.addActionListener(new java.awt.event.ActionListener() {
@@ -137,20 +137,20 @@ public class gameplay_aproximacion extends javax.swing.JFrame {
                 jButtonRtaD2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonRtaD2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 520, 380, 20));
+        jPanel1.add(jButtonRtaD2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 430, 30));
 
         jLabelRtaA2.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabelRtaA2.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRtaA2.setText("C.");
-        jPanel1.add(jLabelRtaA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 30, 20));
+        jPanel1.add(jLabelRtaA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, 30, 20));
 
         jLabelRtaA3.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabelRtaA3.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRtaA3.setText("E.");
-        jPanel1.add(jLabelRtaA3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 550, 30, 20));
+        jPanel1.add(jLabelRtaA3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, 30, 20));
 
         jButtonRtaD3.setBackground(new java.awt.Color(255, 204, 51));
-        jButtonRtaD3.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
+        jButtonRtaD3.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaD3.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaD3.setText("Respuesta");
         jButtonRtaD3.addActionListener(new java.awt.event.ActionListener() {
@@ -158,10 +158,10 @@ public class gameplay_aproximacion extends javax.swing.JFrame {
                 jButtonRtaD3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonRtaD3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 550, 380, 20));
+        jPanel1.add(jButtonRtaD3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 430, 30));
 
         jButtonRtaD5.setBackground(new java.awt.Color(255, 204, 51));
-        jButtonRtaD5.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
+        jButtonRtaD5.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaD5.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaD5.setText("Respuesta");
         jButtonRtaD5.addActionListener(new java.awt.event.ActionListener() {
@@ -169,7 +169,7 @@ public class gameplay_aproximacion extends javax.swing.JFrame {
                 jButtonRtaD5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonRtaD5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 380, 20));
+        jPanel1.add(jButtonRtaD5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, 430, 30));
 
         jLabelFinal1.setFont(new java.awt.Font("Roboto Medium", 2, 30)); // NOI18N
         jLabelFinal1.setForeground(new java.awt.Color(255, 255, 255));
