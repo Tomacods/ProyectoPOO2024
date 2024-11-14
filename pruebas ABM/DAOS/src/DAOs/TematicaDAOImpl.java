@@ -1,5 +1,6 @@
 package DAOs;
 import Modelos.Tematica;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,16 +8,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class TematicaDAOImpl {
-    private Connection connection;
+    private BaseDeDatos connection = BaseDeDatos.obtenerInstancia();
 
-    public TematicaDAOImpl(Connection connection) {
-        this.connection = connection;
-
-    }
 //ABM
     public void insertarTematica(Tematica tematica) {
+        
         String query = "INSERT INTO tematica(nombre_tematica)";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
+        try (PreparedStatement statement = connection.insert(query)) {
             statement.setString(1, tematica.getNombre());
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -25,6 +23,7 @@ public class TematicaDAOImpl {
     }
 
     public void actualizarTematica(Tematica tematica) {
+        BaseDeDatos connection = BaseDeDatos.obtenerInstancia();
         String query = "UPDATE tematica SET nombre_tematica = ? WHERE id_tematica = ?";
         try (
                 PreparedStatement statement = connection.prepareStatement(query)) {
@@ -39,7 +38,7 @@ public class TematicaDAOImpl {
     public void eliminarTematica(int id_tematica) {
         String query = "DELETE FROM tematica WHERE id_tematica = ?";
         try (
-                PreparedStatement statement = connection.prepareStatement(query)) {
+                PreparedStatement statement = connection.getConnection().prepareStatement(query)) {
             statement.setInt(1, id_tematica);
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -52,8 +51,8 @@ public class TematicaDAOImpl {
         ArrayList<Object[]> tematicas = new ArrayList<>();
         String query = "select * from tematica";
 
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
-            ResultSet resultSet = statement.executeQuery();
+        try (PreparedStatement statement = connection.getConnection().prepareStatement(query)) {
+            ResultSet resultSet = connection.query(statement);
 
             while (resultSet.next()) {
                 Object[] row = {
