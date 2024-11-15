@@ -18,8 +18,23 @@ public class App {
         TematicaDAOImpl tem = new TematicaDAOImpl();
         Tematica nuevaT = new Tematica(0, "Prueba dao"); //FIJARSE SI PODEMOS HACER OTRO CONSTRUCTOR Q PASE SOLO EL NOMBRE
       //  tem.insertarTematica(nuevaT);
-      tem.eliminarTematica(9);
-   /*    MultipleChoiceDAO mcd = new MultipleChoiceDAO();
+    //  tem.eliminarTematica(9);
+  //  Respuesta rta = new Respuesta();
+        List <Respuesta> opciones = new ArrayList<>();
+        opciones.add(new Respuesta("rta 1.0", false));
+        opciones.add(new Respuesta("rta 2.0", false));
+        opciones.add(new Respuesta("rta 3.0", true));
+        opciones.add(new Respuesta("rta 4.0", false));
+            
+
+
+        MultipleChoiceDAO mcd = new MultipleChoiceDAO();
+        MultipleChoicePregunta pregunta = new MultipleChoicePregunta(0, "prueba2", 1);
+        // mcd.insertarPreguntaMultipleChoise(pregunta, opciones);
+         //  mcd.eliminarPreguntaMC(87); 
+
+
+   /*    
       try {
        MultipleChoicePregunta pregunta= mcd.obtenerPreguntaMC(1);
         if (pregunta != null) {

@@ -12,27 +12,25 @@ public class MultipleChoiceDAO {
 /* private Connection connection;
 private RespuestaDAO rta; */
 private final BaseDeDatos connection = BaseDeDatos.obtenerInstancia();
-private  RespuestaDAO rta;
+private  final  RespuestaDAO rta;
 
 /* public MultipleChoiceDAO(Connection connection, RespuestaDAO rta){
     this.connection= connection;
     this.rta= rta;
 } */
-public MultipleChoiceDAO(RespuestaDAO rta){
-    this.rta= rta;
-
-}
-
 public MultipleChoiceDAO(){
-    
+    this.rta= new RespuestaDAO(); //para inicializar 
+
 }
+
+
 
 
 
 public void insertarPreguntaMultipleChoise(MultipleChoicePregunta pregunta, List<Respuesta> respuestas) throws SQLException {
         String queryPregunta = "INSERT INTO Pregunta_multiple_choise (Enunciado, ID_Tematica) VALUES (?, ?)";
         
-        try (PreparedStatement statementPregunta = connection.prepareStatement(queryPregunta, PreparedStatement.RETURN_GENERATED_KEYS)) {
+        try (PreparedStatement statementPregunta = BaseDeDatos.prepareStatement(queryPregunta, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
             statementPregunta.setString(1, pregunta.getEnunciado());
             statementPregunta.setInt(2, pregunta.getIdTematica());
@@ -43,7 +41,6 @@ public void insertarPreguntaMultipleChoise(MultipleChoicePregunta pregunta, List
                 if (generatedKeys.next()) {
                     int idPregunta = generatedKeys.getInt(1);
 
-                    // Insertar las respuestas asociadas a la pregunta
                     for (Respuesta respuesta : respuestas) {
                         respuesta.setIdPregunta(idPregunta);
                         rta.insertarRespuesta(respuesta);
@@ -81,6 +78,7 @@ public void insertarPreguntaMultipleChoise(MultipleChoicePregunta pregunta, List
             }
 
     public void eliminarPreguntaMC(int id){
+        rta.eliminarRespuestaPregunta(id);
         String query="DELETE FROM pregunta_multiple_choise WHERE id_pregunta_mc= ?";
         try(PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
             statement.setInt(1, id);

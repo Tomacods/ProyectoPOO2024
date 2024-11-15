@@ -15,6 +15,10 @@ public class Respuesta {
     }
     public Respuesta(){
     }
+    public Respuesta(String texto, boolean esCorrecta) {
+        this.texto = texto;
+        this.esCorrecta = esCorrecta;
+    }
 
     //setters y getters
 
