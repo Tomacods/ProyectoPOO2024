@@ -14,7 +14,7 @@ public class Tematica {
         this.nombre = nombre;
     }
     
-    public Tematica(int id) {
+    public Tematica(int id) { 
         TematicaDAOImpl tematicaDAO = new TematicaDAOImpl();
         try {
             Tematica tematica = tematicaDAO.obtenerTematica(id);
@@ -43,6 +43,7 @@ public class Tematica {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     } 
+
     //select MAX (id_tematica) from tematica
 
     // public static void GetTematicas()
@@ -57,12 +58,27 @@ public class Tematica {
     //     return result;
 
     // }
-    public static void getTematicas() {
+    public static ArrayList<Tematica> obtenerTematicas() {
         TematicaDAOImpl dao = new TematicaDAOImpl();
         ArrayList<Object[]> arreglo = dao.obtenerTematicas();
+        ArrayList <Tematica> tematicas = new ArrayList<>();
 
         for (Object[] row : arreglo) {
-            new Tematica((int) row[0], (String) row[1]);
+            Tematica tematica = new Tematica((int) row[0], (String) row[1]);
+            tematicas.add(tematica);
         }
+        return tematicas;
+    }
+
+    public static Tematica obtenerTematica(int id_tematica){
+        TematicaDAOImpl dao = new TematicaDAOImpl();
+        Tematica tematica = null; 
+        try {
+            tematica = dao.obtenerTematica(id_tematica);
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+        return tematica;
     }
 }

@@ -46,7 +46,7 @@ public void eliminarRespuesta(int idRespuesta) throws SQLException {
     }
 }
 
-public void eliminarRespuestaPregunta(int id_pregunta){
+public void eliminarRespuestaPregunta(int id_pregunta){ //se usa al eliminar una pregunta
     String query = "DELETE FROM respuesta WHERE ID_Pregunta = ?";
     try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
         statement.setInt(1, id_pregunta);

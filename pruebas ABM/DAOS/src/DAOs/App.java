@@ -14,8 +14,15 @@ import Modelos.Tematica;
 
 public class App {
     public static void main(String[] args) {
-
-        TematicaDAOImpl tem = new TematicaDAOImpl();
+       // Tematica tem = new Tematica(0);
+       ArrayList<Tematica> tematicas = new ArrayList<>();
+       tematicas = Tematica.obtenerTematicas();
+       for (Tematica tematica : tematicas) {
+        System.out.println("ID: " + tematica.getId() + ", Nombre: " + tematica.getNombre());
+    }
+    Tematica tematica = Tematica.obtenerTematica(1);
+    System.out.println(tematica.getNombre());
+      /*   TematicaDAOImpl tem = new TematicaDAOImpl();
         Tematica nuevaT = new Tematica(0, "Prueba dao"); //FIJARSE SI PODEMOS HACER OTRO CONSTRUCTOR Q PASE SOLO EL NOMBRE
       //  tem.insertarTematica(nuevaT);
     //  tem.eliminarTematica(9);
@@ -30,7 +37,7 @@ public class App {
 
         MultipleChoiceDAO mcd = new MultipleChoiceDAO();
         MultipleChoicePregunta pregunta = new MultipleChoicePregunta(0, "prueba2", 1);
-        // mcd.insertarPreguntaMultipleChoise(pregunta, opciones);
+        // mcd.insertarPreguntaMultipleChoise(pregunta, opciones); */
          //  mcd.eliminarPreguntaMC(87); 
 
 
