@@ -1,7 +1,6 @@
 package DAOs;
 
 import Modelos.Respuesta;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,16 +9,15 @@ import java.util.List;
 
 
 public class RespuestaDAO {
-    private Connection connection;
+    private final BaseDeDatos connection = BaseDeDatos.obtenerInstancia();
 
-public RespuestaDAO(Connection connection){
-        this.connection = connection;
+public RespuestaDAO(){
     }
 
 //ABM
 public void insertarRespuesta(Respuesta respuesta) throws SQLException {
     String query = "INSERT INTO Respuesta (ID_Pregunta, Texto, Correcta) VALUES (?, ?, ?)";
-    try (PreparedStatement statement = connection.prepareStatement(query)) {
+    try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
         statement.setInt(1, respuesta.getIdPregunta());
         statement.setString(2, respuesta.getTexto());
         statement.setBoolean(3, respuesta.isEsCorrecta());
@@ -31,7 +29,7 @@ public void insertarRespuesta(Respuesta respuesta) throws SQLException {
 
 public void actualizarRespuesta(Respuesta respuesta) throws SQLException {
     String query = "UPDATE Respuesta SET ID_Pregunta = ?, Texto = ?, Correcta = ? WHERE ID_Respuesta = ?";
-    try (PreparedStatement statement = connection.prepareStatement(query)) {
+    try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
         statement.setInt(1, respuesta.getIdPregunta());
         statement.setString(2, respuesta.getTexto());
         statement.setBoolean(3, respuesta.isEsCorrecta());
@@ -42,7 +40,7 @@ public void actualizarRespuesta(Respuesta respuesta) throws SQLException {
 
 public void eliminarRespuesta(int idRespuesta) throws SQLException {
     String query = "DELETE FROM Respuesta WHERE ID_Respuesta = ?";
-    try (PreparedStatement statement = connection.prepareStatement(query)) {
+    try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
         statement.setInt(1, idRespuesta);
         statement.executeUpdate();
     }
@@ -52,7 +50,7 @@ public void eliminarRespuesta(int idRespuesta) throws SQLException {
 
 public Respuesta obtenerRespuesta (int idRespuesta) throws SQLException {
     String query = "SELECT * FROM Respuesta WHERE ID_Respuesta = ?";
-    try (PreparedStatement statement = connection.prepareStatement(query)) {
+    try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
         statement.setInt(1, idRespuesta);
         try (ResultSet resultSet = statement.executeQuery()) {
             if (resultSet.next()) {
@@ -72,7 +70,7 @@ public Respuesta obtenerRespuesta (int idRespuesta) throws SQLException {
 public List<Respuesta> obtenerRespuestasPorPregunta(int idPregunta) throws SQLException {
     List<Respuesta> respuestas = new ArrayList<>();
     String query = "SELECT * FROM Respuesta WHERE ID_Pregunta = ?";
-    try (PreparedStatement statement = connection.prepareStatement(query)) {
+    try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
         statement.setInt(1, idPregunta);
         try (ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
@@ -93,7 +91,7 @@ public List<Respuesta> obtenerRespuestasPorPregunta(int idPregunta) throws SQLEx
 public List<Respuesta> obtenerTodasLasRespuestas() throws SQLException {
     List<Respuesta> respuestas = new ArrayList<>();
     String query = "SELECT * FROM Respuesta";
-    try (PreparedStatement statement = connection.prepareStatement(query);
+    try (PreparedStatement statement = BaseDeDatos.prepareStatement(query);
         ResultSet resultSet = statement.executeQuery()) {
         while (resultSet.next()) {
             Respuesta respuesta = new Respuesta(
@@ -112,7 +110,7 @@ public List<Respuesta> obtenerTodasLasRespuestas() throws SQLException {
 public int obtenerIdRtaCorrectaMC(int id_pregunta){
     String query = "select  id_respuesta, texto from respuesta inner join pregunta_multiple_choise p on p.id_pregunta_mc = respuesta.id_pregunta\n" + //
     "where  p.id_pregunta_mc=? and respuesta.correcta = 'True'";
-    try(PreparedStatement statement = connection.prepareStatement(query)){
+    try(PreparedStatement statement = BaseDeDatos.prepareStatement(query)){
         statement.setInt(1, id_pregunta);
         ResultSet resultSet = statement.executeQuery();
         while (resultSet.next()){

@@ -1,13 +1,11 @@
 package DAOs;
-import java.sql.Connection;
+import Modelos.MultipleChoicePregunta;
+import Modelos.Respuesta;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import Modelos.MultipleChoicePregunta;
-import Modelos.Respuesta;
 
 public class MultipleChoiceDAO {
 
@@ -59,7 +57,7 @@ public void insertarPreguntaMultipleChoise(MultipleChoicePregunta pregunta, List
 
     public void insertarPregunta(MultipleChoicePregunta pregunta){
                 String query="INSERT INTO pregunta_multiple_choise(enunciado, id_tematica) VALUES (?,?)";
-                try(PreparedStatement statement = connection.prepareStatement(query)) {
+                try(PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
                 statement.setString(1, pregunta.getEnunciado());
                 statement.setInt(2, pregunta.getIdTematica());
                 statement.executeUpdate(); 
@@ -71,7 +69,7 @@ public void insertarPreguntaMultipleChoise(MultipleChoicePregunta pregunta, List
 
     public void actualizarPreguntaMC(MultipleChoicePregunta pregunta){
                 String query="UPDATE pregunta_multiple_choise SET enunciado=?, id_tematica=? WHERE id_pregunta_mc =?";
-                try(PreparedStatement statement = connection.prepareStatement(query)) {
+                try(PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
                 statement.setString(1, pregunta.getEnunciado());
                 statement.setInt(2, pregunta.getIdTematica());
                 statement.setInt(3, pregunta.getIdPregunta());
@@ -84,7 +82,7 @@ public void insertarPreguntaMultipleChoise(MultipleChoicePregunta pregunta, List
 
     public void eliminarPreguntaMC(int id){
         String query="DELETE FROM pregunta_multiple_choise WHERE id_pregunta_mc= ?";
-        try(PreparedStatement statement = connection.prepareStatement(query)) {
+        try(PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
             statement.setInt(1, id);
             statement.executeUpdate();
             
@@ -98,7 +96,7 @@ public void insertarPreguntaMultipleChoise(MultipleChoicePregunta pregunta, List
     //QUERYS
     public MultipleChoicePregunta obtenerPreguntaMC (int id_pregunta) throws SQLException {
         String query = "SELECT * FROM pregunta_multiple_choise WHERE id_pregunta_mc = ?";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
+        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
             statement.setInt(1, id_pregunta);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
@@ -119,7 +117,7 @@ public void insertarPreguntaMultipleChoise(MultipleChoicePregunta pregunta, List
         ArrayList<Object[]> preguntas = new ArrayList<>();
         String query = "select p.id_pregunta_mc,  p.enunciado, p.id_tematica from pregunta_multiple_choise p inner join tematica t on p.id_tematica = t.id_tematica where t.id_tematica=?";
         
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
+        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
 
