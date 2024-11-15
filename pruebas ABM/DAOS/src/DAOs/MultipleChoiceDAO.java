@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Modelos.MultipleChoicePregunta;
-import Modelos.Pregunta;
 import Modelos.PreguntaAproximacion;
 import Modelos.Respuesta;
 
@@ -96,7 +95,7 @@ public void insertarPreguntaMultipleChoise(MultipleChoicePregunta pregunta, List
                     return new MultipleChoicePregunta(
                             resultSet.getInt("ID_pregunta_mc"),
                             resultSet.getString("enunciado"),
-                            resultSet.getInt("id_tematica"),
+                            resultSet.getInt("id_tematica")
                             //ver q hacer lo del la rta corecta q esta en el cosntructor de mc
                     );
                 }

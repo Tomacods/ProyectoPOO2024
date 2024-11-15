@@ -10,14 +10,28 @@ import java.util.List;
 
 import Modelos.MultipleChoicePregunta;
 import Modelos.Respuesta;
+import Modelos.Tematica;
 
 public class App {
     public static void main(String[] args) {
 
-        BaseDeDatos bd = BaseDeDatos.obtenerInstancia();
-        Connection connection = bd.getConnection();
+        TematicaDAOImpl tem = new TematicaDAOImpl();
+        Tematica nuevaT = new Tematica(0, "Prueba dao");
+        tem.insertarTematica(nuevaT);
 
-        if (connection != null) {
+
+
+
+
+
+
+
+
+/* 
+        BaseDeDatos bd = BaseDeDatos.obtenerInstancia();
+        Connection connection = bd.getConnection(); */
+
+       /*  if (connection != null) {
             System.out.println("conexión exitosa con la BDD");
             RespuestaDAO rtadao = new RespuestaDAO(connection);
             MultipleChoiceDAO mcdao = new MultipleChoiceDAO(connection, rtadao);
@@ -35,7 +49,7 @@ public class App {
                 e.printStackTrace();
             }
 
-            System.out.println("insertado");
+            System.out.println("insertado"); */
             // List<String> opciones = Arrays.asList("Opción A 2", "Opción B 2", "Opción C
             // 2", "Opción D 2");
             // String respuestaCorrecta = "Opción B";
@@ -91,7 +105,7 @@ public class App {
         }
     }
 
-}
+
 /*
  * CREATE OR REPLACE FUNCTION obtener_preguntas_por_tematica(
  * tipo_pregunta VARCHAR,

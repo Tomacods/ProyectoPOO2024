@@ -9,11 +9,11 @@ import java.sql.Statement;
 //Singleton
 public class BaseDeDatos {
     private static Connection connection;
-        private static BaseDeDatos bd;
-        private String url = "jdbc:postgresql://localhost/"; //SI LO VAN A USAR TIENEN Q CAMBIAR LOS DATOS CON SU COMPU
-        private String nombre="Los8Escalones";
-        private String usuario="postgres";
-        private String clave="7508";
+    private static BaseDeDatos bd;
+    private String url = "jdbc:postgresql://localhost/"; //SI LO VAN A USAR TIENEN Q CAMBIAR LOS DATOS CON SU COMPU
+    private String nombre="Los8Escalones";
+    private String usuario="postgres";
+    private String clave="7508";
     
         private BaseDeDatos() {
             try {
@@ -36,11 +36,10 @@ public class BaseDeDatos {
         return bd;
     }
     
-    
-    
     private void setConnection(Connection connection) {
         this.connection = connection;
     }
+
     public ResultSet query(PreparedStatement querysStatement) {
                 ResultSet rs= null;
                 try {
@@ -69,6 +68,7 @@ public class BaseDeDatos {
     public Connection getConnection() {
                 return connection;
             }
+            
     public static PreparedStatement prepareStatement(String query) throws SQLException {
                 return connection.prepareStatement(query);
         }
