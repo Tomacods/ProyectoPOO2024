@@ -1,7 +1,6 @@
 package DAOs;
 
 import Modelos.PreguntaAproximacion;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,14 +9,13 @@ import java.util.List;
 
 
 public class AproximacionDAO {
-    Connection  connection;
-public AproximacionDAO(Connection connection){
-        this.connection = connection;
+    private BaseDeDatos connection = BaseDeDatos.obtenerInstancia();
+public AproximacionDAO(){
     }
 
     public void insertarPreguntaAproximacion(PreguntaAproximacion pregunta) throws SQLException {
         String query = "INSERT INTO Pregunta_aproximacion (Enunciado, Valor_Aproximado, ID_Tematica) VALUES (?, ?, ?)";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
+        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
             statement.setString(1, pregunta.getEnunciado());
             statement.setInt(2, pregunta.getValorAproximado());
             statement.setInt(3, pregunta.getIdTematica());
@@ -27,7 +25,7 @@ public AproximacionDAO(Connection connection){
 
     public void actualizarPreguntaAproximacion(PreguntaAproximacion pregunta) throws SQLException {
         String query = "UPDATE Pregunta_aproximacion SET Enunciado = ?, Valor_Aproximado = ?, ID_Tematica = ? WHERE ID_Pregunta = ?";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
+        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
             statement.setString(1, pregunta.getEnunciado());
             statement.setInt(2, pregunta.getValorAproximado());
             statement.setInt(3, pregunta.getIdTematica());
@@ -38,7 +36,7 @@ public AproximacionDAO(Connection connection){
 
     public void eliminarPreguntaAproximacion(int idPregunta) throws SQLException {
         String query = "DELETE FROM Pregunta_aproximacion WHERE ID_Pregunta = ?";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
+        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
             statement.setInt(1, idPregunta);
             statement.executeUpdate();
         }
@@ -46,7 +44,7 @@ public AproximacionDAO(Connection connection){
 
     public PreguntaAproximacion obtenerPreguntaAproximacion(int idPregunta) throws SQLException {
         String query = "SELECT * FROM Pregunta_aproximacion WHERE ID_Pregunta = ?";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
+        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
             statement.setInt(1, idPregunta);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
@@ -64,7 +62,7 @@ public AproximacionDAO(Connection connection){
     public List<PreguntaAproximacion> obtenerTodasLasPreguntasAproximacion() throws SQLException {
         List<PreguntaAproximacion> preguntas = new ArrayList<>();
         String query = "SELECT * FROM Pregunta_aproximacion";
-        try (PreparedStatement statement = connection.prepareStatement(query);
+        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
                 PreguntaAproximacion pregunta = new PreguntaAproximacion(
@@ -82,7 +80,7 @@ public AproximacionDAO(Connection connection){
     public List<PreguntaAproximacion> obtenerPreguntasPorTematica(int idTematica) throws SQLException {
         List<PreguntaAproximacion> preguntas = new ArrayList<>();
         String query = "SELECT * FROM Pregunta_aproximacion WHERE ID_Tematica = ?";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
+        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
             statement.setInt(1, idTematica);
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
@@ -101,7 +99,7 @@ public AproximacionDAO(Connection connection){
     //metodo para obtener la respuesta correcta de una pregunta
     public int obtenerValorAproximado(int idPregunta) throws SQLException {
         String query = "SELECT Valor_Aproximado FROM Pregunta_aproximacion WHERE ID_Pregunta = ?";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
+        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
             statement.setInt(1, idPregunta);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
