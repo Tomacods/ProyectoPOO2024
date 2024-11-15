@@ -4,24 +4,28 @@
  */
 package ventanas;
 
-import java.awt.Image;
-import javax.swing.ImageIcon;
+import javax.swing.Timer; 
+import java.awt.event.ActionEvent; 
+import java.awt.event.ActionListener; 
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Maria
  */
 public class Gameplay extends javax.swing.JFrame {
-
+    private Timer timer; 
+    private int tiempo;
     /**
      * Creates new form gameplay
      */
     public Gameplay() {
         initComponents();
+        iniciarCronometro();
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/azul.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "src/imagenes/historia.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser, "src/imagenes/guido.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser, "src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelConfig, "src/imagenes/config.png");
     }
@@ -53,8 +57,8 @@ public class Gameplay extends javax.swing.JFrame {
         jLabelRtaB = new javax.swing.JLabel();
         jLabelRtaC = new javax.swing.JLabel();
         jLabelRtaD = new javax.swing.JLabel();
-        jLabelTurnoDe = new javax.swing.JLabel();
         jTextFieldPregunta = new javax.swing.JTextField();
+        jLabelTiempo = new javax.swing.JLabel();
         jProgressBarTiempo = new javax.swing.JProgressBar();
         jLabelTematica = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
@@ -64,8 +68,8 @@ public class Gameplay extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
-        jPanel1.add(jLabelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
+        jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
+        jPanel1.add(jLabelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 30, 20));
 
         jButtonExit.setBackground(new java.awt.Color(0, 0, 153));
         jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
@@ -75,7 +79,7 @@ public class Gameplay extends javax.swing.JFrame {
                 jButtonExitActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+        jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
 
         jButtonConfig.setBackground(new java.awt.Color(0, 0, 153));
         jButtonConfig.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
@@ -85,13 +89,13 @@ public class Gameplay extends javax.swing.JFrame {
                 jButtonConfigActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
-        jPanel1.add(jLabelIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 60, 50));
+        jPanel1.add(jButtonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 50, 40));
+        jPanel1.add(jLabelIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 40, 30));
 
         jLabelJugador.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jLabelJugador.setForeground(new java.awt.Color(255, 255, 255));
         jLabelJugador.setText("Jugador N");
-        jPanel1.add(jLabelJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 100, 30));
+        jPanel1.add(jLabelJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 100, 30));
 
         jTextFieldJugador.setEditable(false);
         jTextFieldJugador.setBackground(new java.awt.Color(0, 0, 153));
@@ -103,7 +107,7 @@ public class Gameplay extends javax.swing.JFrame {
                 jTextFieldJugadorActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 170, 50));
+        jPanel1.add(jTextFieldJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 170, 50));
 
         jButtonRtaA.setBackground(new java.awt.Color(0, 0, 153));
         jButtonRtaA.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
@@ -134,12 +138,12 @@ public class Gameplay extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonRtaD, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 530, 240, 30));
 
-        jLabelRonda.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        jLabelRonda.setFont(new java.awt.Font("Roboto Medium", 3, 15)); // NOI18N
         jLabelRonda.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRonda.setText("(1/2)");
         jPanel1.add(jLabelRonda, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, 30));
 
-        jLabelEscalon.setFont(new java.awt.Font("Roboto Medium", 2, 30)); // NOI18N
+        jLabelEscalon.setFont(new java.awt.Font("Roboto Medium", 3, 30)); // NOI18N
         jLabelEscalon.setForeground(new java.awt.Color(255, 255, 255));
         jLabelEscalon.setText("ESCALON N");
         jPanel1.add(jLabelEscalon, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 170, 60));
@@ -164,11 +168,6 @@ public class Gameplay extends javax.swing.JFrame {
         jLabelRtaD.setText("D.");
         jPanel1.add(jLabelRtaD, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 530, 30, -1));
 
-        jLabelTurnoDe.setFont(new java.awt.Font("Roboto Medium", 0, 36)); // NOI18N
-        jLabelTurnoDe.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTurnoDe.setText("Turno de");
-        jPanel1.add(jLabelTurnoDe, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, 40));
-
         jTextFieldPregunta.setEditable(false);
         jTextFieldPregunta.setBackground(new java.awt.Color(0, 0, 153));
         jTextFieldPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
@@ -181,6 +180,10 @@ public class Gameplay extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextFieldPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 580, 70));
+
+        jLabelTiempo.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        jLabelTiempo.setText("30");
+        jPanel1.add(jLabelTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, -1, -1));
 
         jProgressBarTiempo.setForeground(new java.awt.Color(0, 0, 153));
         jProgressBarTiempo.setMaximum(30);
@@ -281,10 +284,27 @@ public class Gameplay extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelRtaC;
     private javax.swing.JLabel jLabelRtaD;
     private javax.swing.JLabel jLabelTematica;
-    private javax.swing.JLabel jLabelTurnoDe;
+    private javax.swing.JLabel jLabelTiempo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JProgressBar jProgressBarTiempo;
     private javax.swing.JTextField jTextFieldJugador;
     private javax.swing.JTextField jTextFieldPregunta;
     // End of variables declaration//GEN-END:variables
+    private void iniciarCronometro(){
+    tiempo=30;
+    timer = new Timer(1000, new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) { 
+            tiempo--;
+            jLabelTiempo.setText(String.valueOf(tiempo)); 
+            jProgressBarTiempo.setValue(tiempo); 
+            if (tiempo <= 0) { 
+                timer.stop();
+                JOptionPane.showMessageDialog(null, "¡Se acabó el tiempo!"); 
+            }
+        }
+    });
+    timer.start();
+    }
 }
+

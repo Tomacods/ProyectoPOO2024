@@ -23,9 +23,9 @@ public class Puntuaciones extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelPodio, "src/imagenes/podio.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelConfig, "src/imagenes/config.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconGanador, "src/imagenes/guido.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconPodio3, "src/imagenes/guido2.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconPodio2, "src/imagenes/guido3.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconGanador, "src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconPodio3, "src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconPodio2, "src/imagenes/user.png");
     }
 
     /**
@@ -94,10 +94,10 @@ public class Puntuaciones extends javax.swing.JFrame {
 
         jLabelPuntuaciones.setFont(new java.awt.Font("Roboto Medium", 3, 30)); // NOI18N
         jLabelPuntuaciones.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPuntuaciones.setText("PUNTUACIONES");
-        jPanel1.add(jLabelPuntuaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 240, 60));
-        jPanel1.add(jLabelIconGanador, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 140, 120));
-        jPanel1.add(jLabelIconPodio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 70, 60));
+        jLabelPuntuaciones.setText("GANADOR");
+        jPanel1.add(jLabelPuntuaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 150, 60));
+        jPanel1.add(jLabelIconGanador, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 120, 90));
+        jPanel1.add(jLabelIconPodio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 70, 60));
         jPanel1.add(jLabelIconPodio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 70, 60));
 
         jTextFieldJugadorPodio2.setEditable(false);
