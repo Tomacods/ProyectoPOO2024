@@ -16,9 +16,21 @@ public class App {
     public static void main(String[] args) {
 
         TematicaDAOImpl tem = new TematicaDAOImpl();
-        Tematica nuevaT = new Tematica(0, "Prueba dao");
-        tem.insertarTematica(nuevaT);
-
+        Tematica nuevaT = new Tematica(0, "Prueba dao"); //FIJARSE SI PODEMOS HACER OTRO CONSTRUCTOR Q PASE SOLO EL NOMBRE
+      //  tem.insertarTematica(nuevaT);
+      tem.eliminarTematica(9);
+   /*    MultipleChoiceDAO mcd = new MultipleChoiceDAO();
+      try {
+       MultipleChoicePregunta pregunta= mcd.obtenerPreguntaMC(1);
+        if (pregunta != null) {
+            System.out.println("Enunciado de la pregunta: " + pregunta.getEnunciado());
+        } else {
+            System.out.println("Pregunta no encontrada.");
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+ */
 
 
 

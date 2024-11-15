@@ -7,18 +7,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Modelos.MultipleChoicePregunta;
-import Modelos.PreguntaAproximacion;
 import Modelos.Respuesta;
 
 public class MultipleChoiceDAO {
 
-private Connection connection;
-private RespuestaDAO rta;
+/* private Connection connection;
+private RespuestaDAO rta; */
+private final BaseDeDatos connection = BaseDeDatos.obtenerInstancia();
+private  RespuestaDAO rta;
 
-public MultipleChoiceDAO(Connection connection, RespuestaDAO rta){
+/* public MultipleChoiceDAO(Connection connection, RespuestaDAO rta){
     this.connection= connection;
     this.rta= rta;
+} */
+public MultipleChoiceDAO(RespuestaDAO rta){
+    this.rta= rta;
+
 }
+
+public MultipleChoiceDAO(){
+    
+}
+
 
 
 public void insertarPreguntaMultipleChoise(MultipleChoicePregunta pregunta, List<Respuesta> respuestas) throws SQLException {

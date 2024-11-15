@@ -8,13 +8,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class TematicaDAOImpl {
-    private final BaseDeDatos connectionb = BaseDeDatos.obtenerInstancia();
+    private final BaseDeDatos connection = BaseDeDatos.obtenerInstancia();
 
-    private final Connection connection;
+    //private final Connection connection;
 
-    // Constructor para inicializar la conexión
     public TematicaDAOImpl() {
-        this.connection = BaseDeDatos.obtenerInstancia().getConnection();
+
     }
 
 //ABM
