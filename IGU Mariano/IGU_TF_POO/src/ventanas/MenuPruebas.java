@@ -29,6 +29,7 @@ public class MenuPruebas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabelTitulo = new javax.swing.JLabel();
+        jButtonModoAdmin = new javax.swing.JButton();
         jButtonJugar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -42,6 +43,17 @@ public class MenuPruebas extends javax.swing.JFrame {
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setText("8 ESCALONES");
         jPanel1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 330, 70));
+
+        jButtonModoAdmin.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonModoAdmin.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        jButtonModoAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonModoAdmin.setText("MODO ADMIN");
+        jButtonModoAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModoAdminActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonModoAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 260, 50));
 
         jButtonJugar.setBackground(new java.awt.Color(0, 0, 153));
         jButtonJugar.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
@@ -77,6 +89,12 @@ public class MenuPruebas extends javax.swing.JFrame {
         newFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonJugarActionPerformed
+
+    private void jButtonModoAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModoAdminActionPerformed
+        ModoAdmin newFrame = new ModoAdmin();
+        newFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonModoAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,6 +136,7 @@ public class MenuPruebas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonJugar;
+    private javax.swing.JButton jButtonModoAdmin;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JPanel jPanel1;

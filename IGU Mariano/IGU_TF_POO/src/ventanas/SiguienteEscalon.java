@@ -32,15 +32,6 @@ public class SiguienteEscalon extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser7, "src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser8, "src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser9, "src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJ1, "src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJ2, "src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJ3, "src/imagenes/rojo.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJ4, "src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJ5, "src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJ6, "src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJ7, "src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJ8, "src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJ9, "src/imagenes/verde.png");
     }
 
     /**
@@ -90,7 +81,7 @@ public class SiguienteEscalon extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelLevelUp.setIcon(new javax.swing.ImageIcon("C:\\Users\\Maria\\Desktop\\level-up.gif")); // NOI18N
+        jLabelLevelUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/level-up.gif"))); // NOI18N
         jPanel1.add(jLabelLevelUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 220, 90));
 
         jProgressBarTiempo.setForeground(new java.awt.Color(0, 0, 153));
@@ -173,14 +164,32 @@ public class SiguienteEscalon extends javax.swing.JFrame {
         jTextFieldJ9.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ9.setText("Jugador 9");
         jPanel1.add(jTextFieldJ9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, -1, -1));
+
+        jLabelJ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/verde.png"))); // NOI18N
         jPanel1.add(jLabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 90, 90));
+
+        jLabelJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/verde.png"))); // NOI18N
         jPanel1.add(jLabelJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 90, 90));
+
+        jLabelJ3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/verde.png"))); // NOI18N
         jPanel1.add(jLabelJ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 90, 90));
+
+        jLabelJ4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/verde.png"))); // NOI18N
         jPanel1.add(jLabelJ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 90, 90));
+
+        jLabelJ5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/verde.png"))); // NOI18N
         jPanel1.add(jLabelJ5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 90, 90));
+
+        jLabelJ6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/verde.png"))); // NOI18N
         jPanel1.add(jLabelJ6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 90, 90));
+
+        jLabelJ7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rojo.png"))); // NOI18N
         jPanel1.add(jLabelJ7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 90, 90));
+
+        jLabelJ8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/verde.png"))); // NOI18N
         jPanel1.add(jLabelJ8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, 90, 90));
+
+        jLabelJ9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/verde.png"))); // NOI18N
         jPanel1.add(jLabelJ9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 90, 90));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N

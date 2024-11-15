@@ -22,6 +22,7 @@ public class Perfiles extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/azul.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "src/imagenes/celeste.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/back.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelConfig, "src/imagenes/config.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelEdit, "src/imagenes/lapiz.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTrash, "src/imagenes/basura.png");
@@ -48,8 +49,10 @@ public class Perfiles extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabelExit = new javax.swing.JLabel();
         jLabelConfig = new javax.swing.JLabel();
+        jLabelBack = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
         jButtonConfig = new javax.swing.JButton();
+        jButtonBack = new javax.swing.JButton();
         jLabelUser1 = new javax.swing.JLabel();
         jLabelUser2 = new javax.swing.JLabel();
         jLabelUser3 = new javax.swing.JLabel();
@@ -92,8 +95,9 @@ public class Perfiles extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
+        jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 30, 20));
         jPanel1.add(jLabelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
+        jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
 
         jButtonExit.setBackground(new java.awt.Color(0, 0, 153));
         jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
@@ -103,7 +107,7 @@ public class Perfiles extends javax.swing.JFrame {
                 jButtonExitActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+        jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 50, 40));
 
         jButtonConfig.setBackground(new java.awt.Color(0, 0, 153));
         jButtonConfig.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
@@ -114,6 +118,16 @@ public class Perfiles extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
+
+        jButtonBack.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonBack.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
+        jButtonBack.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBackActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
         jPanel1.add(jLabelUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 70, 70));
         jPanel1.add(jLabelUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 70, 70));
         jPanel1.add(jLabelUser3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 70, 70));
@@ -412,6 +426,12 @@ public class Perfiles extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAddActionPerformed
 
+    private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
+        MenuPruebas newFrame = new MenuPruebas();
+        newFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonBackActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -452,6 +472,7 @@ public class Perfiles extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdd;
+    private javax.swing.JButton jButtonBack;
     private javax.swing.JButton jButtonConfig;
     private javax.swing.JButton jButtonEdit;
     private javax.swing.JButton jButtonExit;
@@ -466,6 +487,7 @@ public class Perfiles extends javax.swing.JFrame {
     private javax.swing.JButton jButtonJUser9;
     private javax.swing.JButton jButtonRemove;
     private javax.swing.JLabel jLabelAdd;
+    private javax.swing.JLabel jLabelBack;
     private javax.swing.JLabel jLabelConfig;
     private javax.swing.JLabel jLabelEdit;
     private javax.swing.JLabel jLabelEscalon;

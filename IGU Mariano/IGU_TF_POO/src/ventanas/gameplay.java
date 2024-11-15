@@ -52,6 +52,7 @@ public class Gameplay extends javax.swing.JFrame {
         jButtonRtaC = new javax.swing.JButton();
         jButtonRtaD = new javax.swing.JButton();
         jLabelRonda = new javax.swing.JLabel();
+        jLabelTurnoDe = new javax.swing.JLabel();
         jLabelEscalon = new javax.swing.JLabel();
         jLabelRtaA = new javax.swing.JLabel();
         jLabelRtaB = new javax.swing.JLabel();
@@ -68,8 +69,8 @@ public class Gameplay extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
-        jPanel1.add(jLabelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 30, 20));
+        jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
+        jPanel1.add(jLabelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
 
         jButtonExit.setBackground(new java.awt.Color(0, 0, 153));
         jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
@@ -79,7 +80,7 @@ public class Gameplay extends javax.swing.JFrame {
                 jButtonExitActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
+        jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
         jButtonConfig.setBackground(new java.awt.Color(0, 0, 153));
         jButtonConfig.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
@@ -89,13 +90,13 @@ public class Gameplay extends javax.swing.JFrame {
                 jButtonConfigActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 50, 40));
-        jPanel1.add(jLabelIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 40, 30));
+        jPanel1.add(jButtonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
+        jPanel1.add(jLabelIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 40, 30));
 
         jLabelJugador.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jLabelJugador.setForeground(new java.awt.Color(255, 255, 255));
         jLabelJugador.setText("Jugador N");
-        jPanel1.add(jLabelJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 100, 30));
+        jPanel1.add(jLabelJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 100, 30));
 
         jTextFieldJugador.setEditable(false);
         jTextFieldJugador.setBackground(new java.awt.Color(0, 0, 153));
@@ -107,7 +108,7 @@ public class Gameplay extends javax.swing.JFrame {
                 jTextFieldJugadorActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 170, 50));
+        jPanel1.add(jTextFieldJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 170, 50));
 
         jButtonRtaA.setBackground(new java.awt.Color(0, 0, 153));
         jButtonRtaA.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
@@ -142,6 +143,11 @@ public class Gameplay extends javax.swing.JFrame {
         jLabelRonda.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRonda.setText("(1/2)");
         jPanel1.add(jLabelRonda, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, 30));
+
+        jLabelTurnoDe.setFont(new java.awt.Font("Roboto Medium", 1, 30)); // NOI18N
+        jLabelTurnoDe.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelTurnoDe.setText("Turno de");
+        jPanel1.add(jLabelTurnoDe, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 140, 50));
 
         jLabelEscalon.setFont(new java.awt.Font("Roboto Medium", 3, 30)); // NOI18N
         jLabelEscalon.setForeground(new java.awt.Color(255, 255, 255));
@@ -285,6 +291,7 @@ public class Gameplay extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelRtaD;
     private javax.swing.JLabel jLabelTematica;
     private javax.swing.JLabel jLabelTiempo;
+    private javax.swing.JLabel jLabelTurnoDe;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JProgressBar jProgressBarTiempo;
     private javax.swing.JTextField jTextFieldJugador;
