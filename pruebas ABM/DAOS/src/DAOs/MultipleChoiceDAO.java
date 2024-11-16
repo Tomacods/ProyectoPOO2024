@@ -52,7 +52,7 @@ public void insertarPreguntaMultipleChoise(MultipleChoicePregunta pregunta, List
         }
     }
 
-    public void insertarPregunta(MultipleChoicePregunta pregunta){
+/*     public void insertarPregunta(MultipleChoicePregunta pregunta){
                 String query="INSERT INTO pregunta_multiple_choise(enunciado, id_tematica) VALUES (?,?)";
                 try(PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
                 statement.setString(1, pregunta.getEnunciado());
@@ -62,7 +62,7 @@ public void insertarPreguntaMultipleChoise(MultipleChoicePregunta pregunta, List
                     e.printStackTrace();
                 }
                 
-            }
+            } */
 
     public void actualizarPreguntaMC(MultipleChoicePregunta pregunta){
                 String query="UPDATE pregunta_multiple_choise SET enunciado=?, id_tematica=? WHERE id_pregunta_mc =?";
@@ -102,7 +102,6 @@ public void insertarPreguntaMultipleChoise(MultipleChoicePregunta pregunta, List
                             resultSet.getInt("ID_pregunta_mc"),
                             resultSet.getString("enunciado"),
                             resultSet.getInt("id_tematica")
-                            //ver q hacer lo del la rta corecta q esta en el cosntructor de mc
                     );
                 }
             }
@@ -135,8 +134,33 @@ public void insertarPreguntaMultipleChoise(MultipleChoicePregunta pregunta, List
     }
 
     
+    public MultipleChoicePregunta obtenerPreguntaConRespuestas(int id_pregunta) throws SQLException {
+        String queryPregunta = "SELECT * FROM pregunta_multiple_choise WHERE id_pregunta_mc = ?";
+        MultipleChoicePregunta pregunta = null;
 
+        try (PreparedStatement statementPregunta = BaseDeDatos.prepareStatement(queryPregunta)) {
+            statementPregunta.setInt(1, id_pregunta);
+            try (ResultSet resultSetPregunta = statementPregunta.executeQuery()) {
+                if (resultSetPregunta.next()) {
+                    pregunta = new MultipleChoicePregunta(
+                        resultSetPregunta.getInt("ID_pregunta_mc"),
+                        resultSetPregunta.getString("enunciado"),
+                        resultSetPregunta.getInt("id_tematica")
+                    );
+                }
+            }
+        }
+        if (pregunta != null) {
+            List<Respuesta> respuestas = rta.obtenerRespuestasPorPregunta(id_pregunta);
+            for (Respuesta respuesta : respuestas) {
+                pregunta.agregarRespuesta(respuesta);
+            }
+        }
+
+        return pregunta;  
+    }
 }
+
 /* public MultipleChoiceDAO(Connection Connection){
     this.connection= connection;
 }

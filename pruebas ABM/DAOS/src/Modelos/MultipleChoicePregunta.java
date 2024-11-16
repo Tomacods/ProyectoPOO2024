@@ -1,7 +1,10 @@
 package Modelos;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import DAOs.MultipleChoiceDAO;
 
 public class MultipleChoicePregunta {
     private int idPregunta;
@@ -55,5 +58,44 @@ public class MultipleChoicePregunta {
     public int getIdTematica() {
         return idTematica;
     }
+
+    public static ArrayList<MultipleChoicePregunta> obtenerPreguntasMC(int id_tematica){
+        MultipleChoiceDAO dao = new MultipleChoiceDAO();
+        ArrayList<Object[]> arreglo = dao.obtenerPreguntasMCPorTematica(id_tematica);
+        ArrayList <MultipleChoicePregunta> preguntasMC = new ArrayList<>();
+
+        for (Object[] row : arreglo) {
+            MultipleChoicePregunta pregunta = new MultipleChoicePregunta((int) row[0], (String) row[1], (int) row[2]);
+            preguntasMC.add(pregunta);
+        }
+        return preguntasMC;
+        
+    }
+
+    public static MultipleChoicePregunta obtenerPreguntaMC(int id_pregunta) throws SQLException{
+        MultipleChoiceDAO dao = new MultipleChoiceDAO();
+        MultipleChoicePregunta pregunta = dao.obtenerPreguntaMC(id_pregunta);
+        return pregunta;
+    }
+
+    public void agregarRespuesta(Respuesta respuesta) {
+        this.opciones.add(respuesta);
+    }
+
+    public static MultipleChoicePregunta obtenerPreguntaConRtas(int id_pregunta) throws SQLException{
+        MultipleChoiceDAO dao = new MultipleChoiceDAO();
+        MultipleChoicePregunta pregunta = dao.obtenerPreguntaConRespuestas(id_pregunta);
+        return pregunta;
+
+    }
+    public void imprimirPreguntaYRespuestas() { //para ver si funciona el obtenerPreguntasConRtas
+        System.out.println("Pregunta: " + enunciado);
+        if (opciones != null) {
+            for (Respuesta r : opciones) {
+                System.out.println(" - " + r.getTexto() + " (Correcta: " + r.isEsCorrecta() + ")");
+            }
+        }
+    }
+
 
 }

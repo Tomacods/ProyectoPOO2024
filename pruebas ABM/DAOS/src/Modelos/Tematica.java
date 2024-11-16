@@ -14,7 +14,7 @@ public class Tematica {
         this.nombre = nombre;
     }
     
-    public Tematica(int id) { 
+    public Tematica(int id) { //creo q esto no va. soy mora
         TematicaDAOImpl tematicaDAO = new TematicaDAOImpl();
         try {
             Tematica tematica = tematicaDAO.obtenerTematica(id);

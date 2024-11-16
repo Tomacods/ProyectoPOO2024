@@ -13,15 +13,17 @@ import Modelos.Respuesta;
 import Modelos.Tematica;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+        MultipleChoicePregunta pregunta = MultipleChoicePregunta.obtenerPreguntaConRtas(1);
+        pregunta.imprimirPreguntaYRespuestas();
        // Tematica tem = new Tematica(0);
-       ArrayList<Tematica> tematicas = new ArrayList<>();
+       /* ArrayList<Tematica> tematicas = new ArrayList<>();
        tematicas = Tematica.obtenerTematicas();
        for (Tematica tematica : tematicas) {
         System.out.println("ID: " + tematica.getId() + ", Nombre: " + tematica.getNombre());
     }
     Tematica tematica = Tematica.obtenerTematica(1);
-    System.out.println(tematica.getNombre());
+    System.out.println(tematica.getNombre()); */
       /*   TematicaDAOImpl tem = new TematicaDAOImpl();
         Tematica nuevaT = new Tematica(0, "Prueba dao"); //FIJARSE SI PODEMOS HACER OTRO CONSTRUCTOR Q PASE SOLO EL NOMBRE
       //  tem.insertarTematica(nuevaT);
