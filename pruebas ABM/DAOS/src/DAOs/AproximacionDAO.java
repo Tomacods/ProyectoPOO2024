@@ -59,19 +59,20 @@ public AproximacionDAO(){
         }
         return null;
     }
-    public List<PreguntaAproximacion> obtenerTodasLasPreguntasAproximacion() throws SQLException {
-        List<PreguntaAproximacion> preguntas = new ArrayList<>();
+    public ArrayList<Object[]> obtenerTodasLasPreguntasAproximacion() throws SQLException {
+        ArrayList<Object[]> preguntas = new ArrayList<>();
         String query = "SELECT * FROM Pregunta_aproximacion";
         try (PreparedStatement statement = BaseDeDatos.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
-                PreguntaAproximacion pregunta = new PreguntaAproximacion(
+                Object[] row = {
                     resultSet.getInt("ID_Pregunta"),
                     resultSet.getString("Enunciado"),
                     resultSet.getInt("Valor_Aproximado"),
                     resultSet.getInt("ID_Tematica")
-                );
-                preguntas.add(pregunta);
+                
+                };
+                preguntas.add(row);
             }
         }
         return preguntas;
