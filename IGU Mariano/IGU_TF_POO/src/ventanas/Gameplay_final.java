@@ -216,7 +216,8 @@ public class Gameplay_final extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonExitActionPerformed
 
     private void jButtonConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfigActionPerformed
-        // TODO add your handling code here:
+        Opciones newFrame = new Opciones();
+        newFrame.setVisible(true);
     }//GEN-LAST:event_jButtonConfigActionPerformed
 
     private void jTextFieldPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPreguntaActionPerformed
