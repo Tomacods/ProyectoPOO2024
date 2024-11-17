@@ -2,8 +2,6 @@ package Controlador;
 
 import java.awt.EventQueue;
 
-import Vista.PantallaCarga;
-
 public class App {
     
     public static void main(String[] args) {
