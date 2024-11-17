@@ -1,8 +1,9 @@
 package Modelos;
 
-import DAOs.TematicaDAOImpl;
-import java.sql.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
+
+import DAOs.TematicaDAOImpl;
 
 public class Tematica {
     private int id;
