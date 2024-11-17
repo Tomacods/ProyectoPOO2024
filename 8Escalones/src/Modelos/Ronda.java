@@ -1,5 +1,6 @@
 package Modelos;
 import java.util.Date;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -27,7 +28,7 @@ public class Ronda {
     }
 
 
-    public void iniciarRonda() {
+    public void iniciarRonda() throws SQLException {
         inicializarPuntos();
         for(int i = 1; i<3;i++){
             System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
@@ -39,7 +40,7 @@ public class Ronda {
 
     private void realizarPreguntas() {
         ArrayList<MultipleChoicePregunta> pregMult = new ArrayList<>();
-        //metodo para llenar
+        pregMult = MultipleChoicePregunta.obtenerPreguntasMC(this.escalon.getTematica().getId());//Trae las preguntas MC de la BD
         for (Jugador jugador : jugadores) {
             MultipleChoicePregunta pregunta = pregMult.get(new Random().nextInt(pregMult.size()));
             System.out.println("Pregunta para " + jugador.getNombre() + ": "+"\n" + pregunta.getEnunciado());
@@ -61,7 +62,7 @@ public class Ronda {
     //recorro la lista de jugadores y de las respuestas que me dicen compararlas con la respuesta correcta, la que mas se aproxime es la que se toma como correcta y el queda en el escalon
 
 
-    private void determinarResultado() {
+    private void determinarResultado() throws SQLException {
         // Lógica para determinar el resultado de la ronda
         // Por ejemplo, eliminar al jugador con menos puntaje
         Jugador jugadorMenorPuntaje = jugadores.get(1);
@@ -82,8 +83,9 @@ public class Ronda {
         }
     }
 
-    private void desempatar() {
+    private void desempatar() throws SQLException {
         ArrayList<PreguntaAproximacion> pregAprox = new ArrayList<>();
+        pregAprox = PreguntaAproximacion.obtenerPreguntasAprox();
         System.out.println("A continuación, ¡Evaluaremos el desempate!");
         Boolean eliminado = true;
         Scanner sc = new Scanner(System.in);

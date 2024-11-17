@@ -2,6 +2,7 @@ package Modelos;
 import java.util.Date;
 import java.util.Random;
 import java.util.ArrayList;
+import DAOs.TematicaDAOImpl;
 
 public class Juego {
     private int idJuego;
@@ -19,7 +20,8 @@ public class Juego {
 
     public void comenzarJuego(){
         Random rnd = new Random();
-        //ArrayList<Tematica> tematicas = obtenerTematicas();//Bajar todas las tematicas, NECESITAMOS METODOS DAOS
+        ArrayList<Tematica> tematicas = new ArrayList<>();//Bajar todas las tematicas, NECESITAMOS METODOS DAOS
+        tematicas = Tematica.obtenerTematicas();
         Escalon escalon = new Escalon(0,"sin comenzar",null);
         for (int i=1;i<=8; i++){
             Tematica tematica =  tematicas.get(rnd.nextInt(tematicas.size()));
