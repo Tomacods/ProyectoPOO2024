@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": [
+        "12\\src"
+    ],
+    "java.project.referencedLibraries": [
+        "12\\RSScaleLabel.jar"
+    ]
+}
