@@ -19,7 +19,7 @@ public class Escalon {
 
     public void jugarEscalon() throws SQLException {
         System.out.println("La categoría del escalón " + numeroEscalon + " es " + tematica.getNombre() + ".");
-        Ronda ronda = new Ronda(/* numeroEscalon, */ juego.getIdJuego(), jugadores, this);
+        Ronda ronda = new Ronda(juego.getIdJuego(), jugadores, this);
         ronda.iniciarRonda();
         quienesSuben();
     }

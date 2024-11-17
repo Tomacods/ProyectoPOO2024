@@ -31,7 +31,6 @@ public class Juego {
             escalon = new Escalon(i,"Comenzado",tematica,jugadores);
             escalon.jugarEscalon();
         }
-        
     }
 
 

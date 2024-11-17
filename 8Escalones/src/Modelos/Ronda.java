@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Ronda {
-    //private int idRonda;
     private int idJuego;
     private ArrayList<Jugador> jugadores;
     private Escalon escalon;
@@ -18,8 +17,7 @@ public class Ronda {
     private ArrayList<Jugador> empatados;
 
 
-    public Ronda(/* int idRonda,  */int idJuego, ArrayList<Jugador> jugadores ,Escalon escalon) {
-        //this.idRonda = idRonda;
+    public Ronda(int idJuego, ArrayList<Jugador> jugadores ,Escalon escalon) {
         this.idJuego = idJuego;
         this.jugadores = jugadores;
         this.escalon = escalon;
@@ -78,6 +76,7 @@ public class Ronda {
         }
         if (empatados.size()== 1){
             eliminarJugador(empatados.get(0));
+            
         }else{
             desempatar();
         }
@@ -128,6 +127,7 @@ public class Ronda {
 
     private void eliminarJugador(Jugador jugador){
         jugadores.remove(jugador);
+        jugador.setEstado("Eliminado");
         System.out.println("Jugador eliminado: " + jugador.getNombre());
     }
 
