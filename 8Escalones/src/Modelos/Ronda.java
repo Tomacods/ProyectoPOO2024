@@ -1,3 +1,4 @@
+package Modelos;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.Random;
@@ -136,14 +137,14 @@ public class Ronda {
 
     // Getters y Setters
 
-    public int getIdRonda() {
+    /* public int getIdRonda() {
         return idRonda;
     }
 
     public void setIdRonda(int idRonda) {
         this.idRonda = idRonda;
     }
-
+ */
     public int getIdJuego() {
         return idJuego;
     }
