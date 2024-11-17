@@ -1,3 +1,10 @@
+package Modelos;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import DAOs.JugadorDAOImpl;
+
 public class Jugador {
     private int id_jugador;
     private String nombre;
@@ -51,5 +58,23 @@ public class Jugador {
     public void incrementarPuntaje() {
         this.puntaje++;
     }
+
+    public static Jugador obtenerJugador(int id_jugador) throws SQLException{
+        JugadorDAOImpl dao = new JugadorDAOImpl();
+        Jugador jugador = dao.obtenerJugador(id_jugador);
+        return jugador;
+    }
     
+    public static ArrayList<Jugador> obtenerJugadores(){
+        JugadorDAOImpl dao = new JugadorDAOImpl();
+        ArrayList<Object[]> arreglo = dao.obtenerJugadores();
+        ArrayList<Jugador> jugadores = new ArrayList<>();
+        for (Object[] row : arreglo) {
+            Jugador jugador = new Jugador((int) row[0], (String) row[1], (int) row[2], (String) row[3]);
+            jugadores.add(jugador);
+            
+        }
+        return jugadores;
+    }
+
 }
