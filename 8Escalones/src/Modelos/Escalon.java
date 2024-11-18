@@ -1,4 +1,5 @@
 package Modelos;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Escalon {
@@ -9,16 +10,16 @@ public class Escalon {
     private Tematica tematica;
     private Juego juego;
 
-    public Escalon(/* int idEscalon,  */int numeroEscalon, String estado, Tematica tematica /*int idTematica*/) {
-        //this.idEscalon = idEscalon;
+    public Escalon(int numeroEscalon, String estado, Tematica tematica,ArrayList<Jugador> jugadores ) {
         this.numeroEscalon = numeroEscalon;
         this.estado = estado;
         this.tematica = tematica;
+        this.jugadores = jugadores;
     }
 
-    public void jugarEscalon() {
+    public void jugarEscalon() throws SQLException {
         System.out.println("La categoría del escalón " + numeroEscalon + " es " + tematica.getNombre() + ".");
-        Ronda ronda = new Ronda(/* numeroEscalon, */ juego.getIdJuego(), jugadores, this);
+        Ronda ronda = new Ronda(juego.getIdJuego(), jugadores, this);
         ronda.iniciarRonda();
         quienesSuben();
     }

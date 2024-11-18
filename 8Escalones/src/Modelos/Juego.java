@@ -1,6 +1,7 @@
 package Modelos;
 import java.util.Date;
 import java.util.Random;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Juego {
@@ -17,17 +18,19 @@ public class Juego {
         this.idJugadorGanador = idJugadorGanador;
     }
 
-    public void comenzarJuego(){
+    public void comenzarJuego() throws SQLException{
         Random rnd = new Random();
-        //ArrayList<Tematica> tematicas = obtenerTematicas();//Bajar todas las tematicas, NECESITAMOS METODOS DAOS
-        Escalon escalon = new Escalon(0,"sin comenzar",null);
+        ArrayList<Tematica> tematicas = new ArrayList<>();//Bajar todas las tematicas, NECESITAMOS METODOS DAOS
+        tematicas = Tematica.obtenerTematicas();
+        ArrayList<Jugador> jugadores = new ArrayList<>();
+        jugadores = Jugador.obtenerJugadores();
+        Escalon escalon = new Escalon(0,"sin comenzar",null,jugadores);
         for (int i=1;i<=8; i++){
             Tematica tematica =  tematicas.get(rnd.nextInt(tematicas.size()));
             tematicas.remove(tematica);
-            escalon = new Escalon(i, "en curso", tematica);
+            escalon = new Escalon(i,"Comenzado",tematica,jugadores);
             escalon.jugarEscalon();
         }
-        
     }
 
 
