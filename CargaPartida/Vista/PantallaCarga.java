@@ -1,55 +1,50 @@
 package Vista;
-import java.net.URL;
 
+import java.net.URL;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import Controlador.ControladorCargaPantalla;
-
 
 public class PantallaCarga extends JFrame {
 
     private ControladorCargaPantalla controlador;
     private JPanel borde;
     private JLabel fondoPantallaGif;
-    //private JLabel cargando;
-    //private JLabel puntosCarga;
 
-    public PantallaCarga(ControladorCargaPantalla controlador){
+    public PantallaCarga(ControladorCargaPantalla controlador) {
         setTitle("Pantalla Carga");
         setControlador(controlador);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //setSize(800, 600);
-        //setBounds(100, 100, 800, 600);
-        setBounds(100, 100, 917, 440);
-        setUndecorated(false); // Ocultar bordes y barra de título
+
+        // Establecer tamaño ventana
+        setBounds(100, 100, 800, 600); // Ventana de 800x600
         setLayout(null);
 
+        // Icono de la ventana
         URL urlIcono = getClass().getResource("/Imagenes/logo8escalones.png");
         ImageIcon icono = new ImageIcon(urlIcono);
         setIconImage(icono.getImage());
+        
         borde = new JPanel();
         borde.setBorder(new EmptyBorder(5, 5, 5, 5));
-        setContentPane(borde);
         borde.setLayout(null);
+        setContentPane(borde);
 
-        fondoPantallaGif = new JLabel("Cargando partida");
-        //fondoPantallaGif.addMouseListener(getControlador());
-		fondoPantallaGif.setBounds(340, 25, 490, 301);
-        fondoPantallaGif.setHorizontalAlignment(SwingConstants.CENTER);
-		
-        //fondoPantallaGif.setIcon(new ImageIcon(getClass().getResource("/Imagenes/8EscalonesCarga.gif")));
-        URL urlGif = getClass().getResource("/Imagenes/8EscalonesCargaResize.gif");
-        ImageIcon gifIcon = new ImageIcon(urlGif);
-        fondoPantallaGif.setIcon(gifIcon);
+        // GIF de fondo
+        fondoPantallaGif = new JLabel();
+        fondoPantallaGif.setBounds(0, 0, 800, 600); // Tamaño de la ventana
+
+        // Escala el GIF al tamaño de la ventana
+        URL urlGif = getClass().getResource("/Imagenes/8EscalonesCarga.gif");
+        ImageIcon gifIcono = new ImageIcon(urlGif);
+        Image scaledGif = gifIcono.getImage().getScaledInstance(800,600,Image.SCALE_DEFAULT);
+        fondoPantallaGif.setIcon(new ImageIcon(scaledGif));
         borde.add(fondoPantallaGif);
-        fondoPantallaGif.setText("");
-
     }
 
     public ControladorCargaPantalla getControlador() {
@@ -67,5 +62,4 @@ public class PantallaCarga extends JFrame {
     public void setFondoPantallaGif(JLabel fondoPantallaGif) {
         this.fondoPantallaGif = fondoPantallaGif;
     }
-
 }

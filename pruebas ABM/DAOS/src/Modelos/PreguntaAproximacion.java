@@ -1,5 +1,9 @@
 package Modelos;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import DAOs.AproximacionDAO;
 
 public class PreguntaAproximacion {
     private int idPregunta;
@@ -33,6 +37,17 @@ public class PreguntaAproximacion {
 
     public int getIdTematica() {
         return idTematica;
+    }
+
+    public static ArrayList<PreguntaAproximacion> obtenerPreguntasAprox() throws SQLException{
+        AproximacionDAO dao = new AproximacionDAO();
+        ArrayList<Object[]> arreglo = dao.obtenerTodasLasPreguntasAproximacion();
+        ArrayList<PreguntaAproximacion> preguntas = new ArrayList<>();
+        for (Object[] row : arreglo) {
+            PreguntaAproximacion pregunta = new PreguntaAproximacion((int) row[0], (String) row[1], (int) row[2], (int) row[3]);
+            preguntas.add(pregunta);
+        }
+        return preguntas;
     }
 
 }
