@@ -8,18 +8,24 @@ public class Escalon {
     private Tematica tematica;
     private Juego juego;
 
-    public Escalon(/* int idEscalon,  */int numeroEscalon, String estado, Tematica tematica /*int idTematica*/) {
+    public Escalon(/* int idEscalon,  */int numeroEscalon, String estado, Tematica tematica, ArrayList<Jugador> jugadores) {
         //this.idEscalon = idEscalon;
         this.numeroEscalon = numeroEscalon;
         this.estado = estado;
         this.tematica = tematica;
+        this.jugadores = jugadores;
     }
 
     public void jugarEscalon() {
         System.out.println("La categoría del escalón " + numeroEscalon + " es " + tematica.getNombre() + ".");
         Ronda ronda = new Ronda(/* numeroEscalon, */ juego.getIdJuego(), jugadores, this);
         ronda.iniciarRonda();
-        quienesSuben();
+        if (jugadores.size() == 1){
+            System.out.println("El ganador es: " + jugadores.get(0).getNombre());
+            
+        } else {
+            quienesSuben();
+        }
     }
 
     private void quienesSuben() {
