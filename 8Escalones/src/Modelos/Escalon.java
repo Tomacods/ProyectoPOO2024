@@ -21,7 +21,12 @@ public class Escalon {
         System.out.println("La categoría del escalón " + numeroEscalon + " es " + tematica.getNombre() + ".");
         Ronda ronda = new Ronda(juego.getIdJuego(), jugadores, this);
         ronda.iniciarRonda();
-        quienesSuben();
+        if (jugadores.size() == 1){
+            System.out.println("El ganador es: " + jugadores.get(0).getNombre());
+            
+        } else {
+            quienesSuben();
+        }
     }
 
     private void quienesSuben() {
@@ -35,10 +40,6 @@ public class Escalon {
         jugadores.remove(jugador);
     }
 
-    /* public int getIdEscalon() {
-        return idEscalon;
-    } */
-
     public int getNumeroEscalon() {
         return numeroEscalon;
     }
@@ -50,8 +51,4 @@ public class Escalon {
     public Tematica getTematica() { //tendria que llamar al Dao de Tematica para obtener la tematica
         return tematica;
     }
-
-    /* public void setIdEscalon(int idEscalon) {
-        this.idEscalon = idEscalon;
-    } */
 }

@@ -8,6 +8,7 @@ public class Juego {
     private int idJuego;
     private Date fecha;
     private String estado;
+    private ArrayList<Jugador> jugadores;
     private int idJugadorGanador;
 
     // Constructor
@@ -35,6 +36,8 @@ public class Juego {
 
 
     // Getters y Setters
+
+    public
     public int getIdJuego() {
         return idJuego;
     }

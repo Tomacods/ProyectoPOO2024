@@ -427,7 +427,7 @@ public class Perfiles extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAddActionPerformed
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-        MenuPruebas newFrame = new MenuPruebas();
+        MenuPrincipal newFrame = new MenuPrincipal();
         newFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonBackActionPerformed
