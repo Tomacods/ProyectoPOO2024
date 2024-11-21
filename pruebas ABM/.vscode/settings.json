@@ -1,5 +1,5 @@
 {
-    "java.project.referencedLibraries": [
+    "java.project.referencedLibraries": [ //acá se agregan las librerías que se quiera usar en el proyecto
         "lib/**/*.jar",
         "DAOS/commons-codec-1.17.1.jar",
         "DAOS/flatlaf-3.5.1.jar",
