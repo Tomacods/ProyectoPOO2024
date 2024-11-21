@@ -267,9 +267,6 @@ public class Puntuaciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-        MenuPrincipal newFrame = new MenuPrincipal();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonExitActionPerformed
 
     private void jButtonConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfigActionPerformed

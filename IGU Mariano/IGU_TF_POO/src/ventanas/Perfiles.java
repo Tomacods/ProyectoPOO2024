@@ -19,8 +19,8 @@ public class Perfiles extends javax.swing.JFrame {
     public Perfiles() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/azul.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "src/imagenes/celeste.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/MenuPrincipal3.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "src/imagenes/violeta.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/back.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelConfig, "src/imagenes/config.png");
@@ -86,7 +86,7 @@ public class Perfiles extends javax.swing.JFrame {
         jTextFieldJ7 = new javax.swing.JTextField();
         jTextFieldJ8 = new javax.swing.JTextField();
         jTextFieldJ9 = new javax.swing.JTextField();
-        jLabelEscalon = new javax.swing.JLabel();
+        jTextFieldSeleccionarPerfil = new javax.swing.JTextField();
         jLabelTematica = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -99,7 +99,7 @@ public class Perfiles extends javax.swing.JFrame {
         jPanel1.add(jLabelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
 
-        jButtonExit.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonExit.setBackground(new java.awt.Color(153, 0, 102));
         jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
         jButtonExit.setForeground(new java.awt.Color(255, 255, 255));
         jButtonExit.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +109,7 @@ public class Perfiles extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 50, 40));
 
-        jButtonConfig.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonConfig.setBackground(new java.awt.Color(153, 0, 102));
         jButtonConfig.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
         jButtonConfig.setForeground(new java.awt.Color(255, 255, 255));
         jButtonConfig.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +119,7 @@ public class Perfiles extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
 
-        jButtonBack.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonBack.setBackground(new java.awt.Color(153, 0, 102));
         jButtonBack.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
         jButtonBack.setForeground(new java.awt.Color(255, 255, 255));
         jButtonBack.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +138,7 @@ public class Perfiles extends javax.swing.JFrame {
         jPanel1.add(jLabelUser8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 70, 70));
         jPanel1.add(jLabelUser9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 70, 70));
 
-        jButtonJ1.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonJ1.setBackground(new java.awt.Color(153, 0, 102));
         jButtonJ1.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonJ1.setForeground(new java.awt.Color(255, 255, 255));
         jButtonJ1.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +148,7 @@ public class Perfiles extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 90, 90));
 
-        jButtonJ2.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonJ2.setBackground(new java.awt.Color(153, 0, 102));
         jButtonJ2.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonJ2.setForeground(new java.awt.Color(255, 255, 255));
         jButtonJ2.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +158,7 @@ public class Perfiles extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 90, 90));
 
-        jButtonJ3.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonJ3.setBackground(new java.awt.Color(153, 0, 102));
         jButtonJ3.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonJ3.setForeground(new java.awt.Color(255, 255, 255));
         jButtonJ3.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +168,7 @@ public class Perfiles extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonJ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 90, 90));
 
-        jButtonJ4.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonJ4.setBackground(new java.awt.Color(153, 0, 102));
         jButtonJ4.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonJ4.setForeground(new java.awt.Color(255, 255, 255));
         jButtonJ4.addActionListener(new java.awt.event.ActionListener() {
@@ -178,7 +178,7 @@ public class Perfiles extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonJ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 90, 90));
 
-        jButtonJ5.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonJ5.setBackground(new java.awt.Color(153, 0, 102));
         jButtonJ5.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonJ5.setForeground(new java.awt.Color(255, 255, 255));
         jButtonJ5.addActionListener(new java.awt.event.ActionListener() {
@@ -188,7 +188,7 @@ public class Perfiles extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonJ5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 90, 90));
 
-        jButtonJ6.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonJ6.setBackground(new java.awt.Color(153, 0, 102));
         jButtonJ6.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonJ6.setForeground(new java.awt.Color(255, 255, 255));
         jButtonJ6.addActionListener(new java.awt.event.ActionListener() {
@@ -198,7 +198,7 @@ public class Perfiles extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonJ6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 90, 90));
 
-        jButtonJ7.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonJ7.setBackground(new java.awt.Color(153, 0, 102));
         jButtonJ7.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonJ7.setForeground(new java.awt.Color(255, 255, 255));
         jButtonJ7.addActionListener(new java.awt.event.ActionListener() {
@@ -208,7 +208,7 @@ public class Perfiles extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonJ7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 90, 90));
 
-        jButtonJ8.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonJ8.setBackground(new java.awt.Color(153, 0, 102));
         jButtonJ8.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonJ8.setForeground(new java.awt.Color(255, 255, 255));
         jButtonJ8.addActionListener(new java.awt.event.ActionListener() {
@@ -218,7 +218,7 @@ public class Perfiles extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonJ8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 90, 90));
 
-        jButtonJUser9.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonJUser9.setBackground(new java.awt.Color(153, 0, 102));
         jButtonJUser9.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonJUser9.setForeground(new java.awt.Color(255, 255, 255));
         jButtonJUser9.addActionListener(new java.awt.event.ActionListener() {
@@ -235,7 +235,7 @@ public class Perfiles extends javax.swing.JFrame {
         jPanel1.add(jLabelEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 510, 40, 30));
         jPanel1.add(jLabelTrash, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 510, 40, 30));
 
-        jButtonEdit.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonEdit.setBackground(new java.awt.Color(153, 0, 102));
         jButtonEdit.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonEdit.setForeground(new java.awt.Color(255, 255, 255));
         jButtonEdit.addActionListener(new java.awt.event.ActionListener() {
@@ -245,7 +245,7 @@ public class Perfiles extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 500, 60, 50));
 
-        jButtonRemove.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonRemove.setBackground(new java.awt.Color(153, 0, 102));
         jButtonRemove.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRemove.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRemove.addActionListener(new java.awt.event.ActionListener() {
@@ -255,7 +255,7 @@ public class Perfiles extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 500, 60, 50));
 
-        jButtonAdd.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonAdd.setBackground(new java.awt.Color(153, 0, 102));
         jButtonAdd.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonAdd.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -266,72 +266,80 @@ public class Perfiles extends javax.swing.JFrame {
         jPanel1.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 90, 90));
 
         jTextFieldJ1.setEditable(false);
-        jTextFieldJ1.setBackground(new java.awt.Color(0, 0, 153));
+        jTextFieldJ1.setBackground(new java.awt.Color(153, 0, 102));
         jTextFieldJ1.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jTextFieldJ1.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ1.setText("Jugador 1");
         jPanel1.add(jTextFieldJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
         jTextFieldJ2.setEditable(false);
-        jTextFieldJ2.setBackground(new java.awt.Color(0, 0, 153));
+        jTextFieldJ2.setBackground(new java.awt.Color(153, 0, 102));
         jTextFieldJ2.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jTextFieldJ2.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ2.setText("Jugador 2");
         jPanel1.add(jTextFieldJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, -1, -1));
 
         jTextFieldJ3.setEditable(false);
-        jTextFieldJ3.setBackground(new java.awt.Color(0, 0, 153));
+        jTextFieldJ3.setBackground(new java.awt.Color(153, 0, 102));
         jTextFieldJ3.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jTextFieldJ3.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ3.setText("Jugador 3");
         jPanel1.add(jTextFieldJ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, -1, -1));
 
         jTextFieldJ4.setEditable(false);
-        jTextFieldJ4.setBackground(new java.awt.Color(0, 0, 153));
+        jTextFieldJ4.setBackground(new java.awt.Color(153, 0, 102));
         jTextFieldJ4.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jTextFieldJ4.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ4.setText("Jugador 4");
         jPanel1.add(jTextFieldJ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, -1, -1));
 
         jTextFieldJ5.setEditable(false);
-        jTextFieldJ5.setBackground(new java.awt.Color(0, 0, 153));
+        jTextFieldJ5.setBackground(new java.awt.Color(153, 0, 102));
         jTextFieldJ5.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jTextFieldJ5.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ5.setText("Jugador 5");
         jPanel1.add(jTextFieldJ5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, -1, -1));
 
         jTextFieldJ6.setEditable(false);
-        jTextFieldJ6.setBackground(new java.awt.Color(0, 0, 153));
+        jTextFieldJ6.setBackground(new java.awt.Color(153, 0, 102));
         jTextFieldJ6.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jTextFieldJ6.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ6.setText("Jugador 6");
         jPanel1.add(jTextFieldJ6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
 
         jTextFieldJ7.setEditable(false);
-        jTextFieldJ7.setBackground(new java.awt.Color(0, 0, 153));
+        jTextFieldJ7.setBackground(new java.awt.Color(153, 0, 102));
         jTextFieldJ7.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jTextFieldJ7.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ7.setText("Jugador 7");
         jPanel1.add(jTextFieldJ7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, -1, -1));
 
         jTextFieldJ8.setEditable(false);
-        jTextFieldJ8.setBackground(new java.awt.Color(0, 0, 153));
+        jTextFieldJ8.setBackground(new java.awt.Color(153, 0, 102));
         jTextFieldJ8.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jTextFieldJ8.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ8.setText("Jugador 8");
         jPanel1.add(jTextFieldJ8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, -1, -1));
 
         jTextFieldJ9.setEditable(false);
-        jTextFieldJ9.setBackground(new java.awt.Color(0, 0, 153));
+        jTextFieldJ9.setBackground(new java.awt.Color(153, 0, 102));
         jTextFieldJ9.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jTextFieldJ9.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ9.setText("Jugador 9");
         jPanel1.add(jTextFieldJ9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, -1, -1));
 
-        jLabelEscalon.setFont(new java.awt.Font("Roboto Medium", 3, 30)); // NOI18N
-        jLabelEscalon.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelEscalon.setText("SELECCIONAR PERFIL");
-        jPanel1.add(jLabelEscalon, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 330, 60));
+        jTextFieldSeleccionarPerfil.setEditable(false);
+        jTextFieldSeleccionarPerfil.setBackground(new java.awt.Color(153, 0, 102));
+        jTextFieldSeleccionarPerfil.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldSeleccionarPerfil.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldSeleccionarPerfil.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldSeleccionarPerfil.setText("SELECCIONAR PERFIL");
+        jTextFieldSeleccionarPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldSeleccionarPerfilActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextFieldSeleccionarPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 270, 40));
         jPanel1.add(jLabelTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 580, 480));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -353,13 +361,9 @@ public class Perfiles extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-        System.exit(0);
     }//GEN-LAST:event_jButtonExitActionPerformed
 
     private void jButtonJ4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ4ActionPerformed
-        Gameplay newFrame = new Gameplay();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonJ4ActionPerformed
 
     private void jButtonConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfigActionPerformed
@@ -367,39 +371,21 @@ public class Perfiles extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfigActionPerformed
 
     private void jButtonJ2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ2ActionPerformed
-        Gameplay newFrame = new Gameplay();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonJ2ActionPerformed
 
     private void jButtonJ1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ1ActionPerformed
-        Gameplay newFrame = new Gameplay();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonJ1ActionPerformed
 
     private void jButtonJ5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ5ActionPerformed
-        Gameplay newFrame = new Gameplay();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonJ5ActionPerformed
 
     private void jButtonJ7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ7ActionPerformed
-        Gameplay newFrame = new Gameplay();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonJ7ActionPerformed
 
     private void jButtonJ8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ8ActionPerformed
-        Gameplay newFrame = new Gameplay();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonJ8ActionPerformed
 
     private void jButtonJ3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ3ActionPerformed
-        Gameplay newFrame = new Gameplay();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonJ3ActionPerformed
 
     private void jButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditActionPerformed
@@ -407,15 +393,9 @@ public class Perfiles extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEditActionPerformed
 
     private void jButtonJ6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ6ActionPerformed
-        Gameplay newFrame = new Gameplay();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonJ6ActionPerformed
 
     private void jButtonJUser9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJUser9ActionPerformed
-        Gameplay newFrame = new Gameplay();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonJUser9ActionPerformed
 
     private void jButtonRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveActionPerformed
@@ -427,10 +407,11 @@ public class Perfiles extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAddActionPerformed
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-        MenuPrincipal newFrame = new MenuPrincipal();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonBackActionPerformed
+
+    private void jTextFieldSeleccionarPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSeleccionarPerfilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldSeleccionarPerfilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -490,7 +471,6 @@ public class Perfiles extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelBack;
     private javax.swing.JLabel jLabelConfig;
     private javax.swing.JLabel jLabelEdit;
-    private javax.swing.JLabel jLabelEscalon;
     private javax.swing.JLabel jLabelExit;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelTematica;
@@ -514,5 +494,6 @@ public class Perfiles extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldJ7;
     private javax.swing.JTextField jTextFieldJ8;
     private javax.swing.JTextField jTextFieldJ9;
+    private javax.swing.JTextField jTextFieldSeleccionarPerfil;
     // End of variables declaration//GEN-END:variables
 }

@@ -45,7 +45,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonJugar.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonJugar.setBackground(new java.awt.Color(153, 0, 102));
         jButtonJugar.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonJugar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonJugar.setText("JUGAR");
@@ -56,7 +56,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 260, 50));
 
-        jButtonOpciones.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonOpciones.setBackground(new java.awt.Color(153, 0, 102));
         jButtonOpciones.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonOpciones.setForeground(new java.awt.Color(255, 255, 255));
         jButtonOpciones.setText("OPCIONES");
@@ -67,7 +67,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, 260, 50));
 
-        jButtonPuntuaciones.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonPuntuaciones.setBackground(new java.awt.Color(153, 0, 102));
         jButtonPuntuaciones.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonPuntuaciones.setForeground(new java.awt.Color(255, 255, 255));
         jButtonPuntuaciones.setText("PUNTUACIONES");
@@ -88,7 +88,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1.add(jButtonAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 58, 10, 8));
         jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
 
-        jButtonExit.setBackground(new java.awt.Color(0, 0, 156));
+        jButtonExit.setBackground(new java.awt.Color(153, 0, 102));
         jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
         jButtonExit.setForeground(new java.awt.Color(255, 255, 255));
         jButtonExit.addActionListener(new java.awt.event.ActionListener() {
@@ -117,31 +117,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOpcionesActionPerformed
-        Opciones newFrame = new Opciones();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonOpcionesActionPerformed
 
     private void jButtonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJugarActionPerformed
-        Perfiles newFrame = new Perfiles();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonJugarActionPerformed
 
     private void jButtonPuntuacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPuntuacionesActionPerformed
-        Puntuaciones newFrame = new Puntuaciones();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonPuntuacionesActionPerformed
 
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-        System.exit(0);
     }//GEN-LAST:event_jButtonExitActionPerformed
 
     private void jButtonAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdminActionPerformed
-        ModoAdmin newFrame = new ModoAdmin();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonAdminActionPerformed
 
     /**

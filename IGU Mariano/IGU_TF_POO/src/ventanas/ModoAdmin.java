@@ -120,27 +120,15 @@ public class ModoAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
-        OpcionesAdmin newFrame = new OpcionesAdmin();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonAgregarActionPerformed
 
     private void jButtonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarActionPerformed
-        OpcionesAdmin newFrame = new OpcionesAdmin();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonModificarActionPerformed
 
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
-        OpcionesAdmin newFrame = new OpcionesAdmin();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-        MenuPrincipal newFrame = new MenuPrincipal();
-        newFrame.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonBackActionPerformed
 
     /**
