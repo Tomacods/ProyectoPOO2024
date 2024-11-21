@@ -1,5 +1,4 @@
 package Modelos;
-
 public class Respuesta {
     private int idRespuesta;
     private int idPregunta;

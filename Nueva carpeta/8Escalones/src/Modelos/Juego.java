@@ -1,8 +1,8 @@
 package Modelos;
-import java.util.Date;
-import java.util.Random;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
 
 public class Juego {
     private int idJuego;
@@ -37,7 +37,6 @@ public class Juego {
 
     // Getters y Setters
 
-    public
     public int getIdJuego() {
         return idJuego;
     }
