@@ -25,11 +25,11 @@ public class Juego {
         tematicas = Tematica.obtenerTematicas();
         ArrayList<Jugador> jugadores = new ArrayList<>();
         jugadores = Jugador.obtenerJugadores();
-        Escalon escalon = new Escalon(0,"sin comenzar",null,jugadores);
+        Escalon escalon = new Escalon(0,"sin comenzar",null,jugadores,this);
         for (int i=1;i<=8; i++){
             Tematica tematica =  tematicas.get(rnd.nextInt(tematicas.size()));
             tematicas.remove(tematica);
-            escalon = new Escalon(i,"Comenzado",tematica,jugadores);
+            escalon = new Escalon(i,"Comenzado",tematica,jugadores,this);
             escalon.jugarEscalon();
         }
     }
@@ -38,7 +38,7 @@ public class Juego {
     // Getters y Setters
 
     public int getIdJuego() {
-        return idJuego;
+        return this.idJuego;
     }
 
     public void setIdJuego(int idJuego) {

@@ -10,11 +10,12 @@ public class Escalon {
     private Tematica tematica;
     private Juego juego;
 
-    public Escalon(int numeroEscalon, String estado, Tematica tematica,ArrayList<Jugador> jugadores ) {
+    public Escalon(int numeroEscalon, String estado, Tematica tematica,ArrayList<Jugador> jugadores,Juego juego ) {
         this.numeroEscalon = numeroEscalon;
         this.estado = estado;
         this.tematica = tematica;
         this.jugadores = jugadores;
+        this.juego = juego;
     }
 
     public void jugarEscalon() throws SQLException {
