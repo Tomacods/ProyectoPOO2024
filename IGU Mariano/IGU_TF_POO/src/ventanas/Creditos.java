@@ -74,27 +74,27 @@ public class Creditos extends javax.swing.JFrame {
 
         jLabelN1.setFont(new java.awt.Font("Roboto Medium", 0, 50)); // NOI18N
         jLabelN1.setText("Cesar");
-        jPanel1.add(jLabelN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 140, 70));
+        jPanel1.add(jLabelN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 140, 70));
 
         jLabelN2.setFont(new java.awt.Font("Roboto Medium", 0, 50)); // NOI18N
         jLabelN2.setText("Javier");
-        jPanel1.add(jLabelN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 150, 70));
+        jPanel1.add(jLabelN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 150, 70));
 
         jLabelN3.setFont(new java.awt.Font("Roboto Medium", 0, 50)); // NOI18N
         jLabelN3.setText("Tomas");
-        jPanel1.add(jLabelN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 160, 70));
+        jPanel1.add(jLabelN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 160, 70));
 
         jLabelN4.setFont(new java.awt.Font("Roboto Medium", 0, 50)); // NOI18N
         jLabelN4.setText("Tomas");
-        jPanel1.add(jLabelN4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 190, 70));
+        jPanel1.add(jLabelN4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 160, 70));
 
         jLabeln5.setFont(new java.awt.Font("Roboto Medium", 0, 50)); // NOI18N
         jLabeln5.setText("Mariano");
-        jPanel1.add(jLabeln5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 190, 70));
+        jPanel1.add(jLabeln5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 190, 70));
 
         jLabelN6.setFont(new java.awt.Font("Roboto Medium", 0, 50)); // NOI18N
         jLabelN6.setText("Mora");
-        jPanel1.add(jLabelN6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 120, 70));
+        jPanel1.add(jLabelN6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 120, 70));
 
         jLabelN7.setFont(new java.awt.Font("Roboto Medium", 0, 50)); // NOI18N
         jLabelN7.setText("Federica");
@@ -102,11 +102,11 @@ public class Creditos extends javax.swing.JFrame {
 
         jLabelN8.setFont(new java.awt.Font("Roboto Medium", 0, 50)); // NOI18N
         jLabelN8.setText("Lucas");
-        jPanel1.add(jLabelN8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 190, 70));
+        jPanel1.add(jLabelN8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 140, 70));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jLabelFondo.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -390, 660, 990));
+        jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

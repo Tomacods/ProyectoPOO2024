@@ -32,11 +32,11 @@ public class ModoAdmin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabelTitulo = new javax.swing.JLabel();
         jLabelTitulo1 = new javax.swing.JLabel();
-        jButtonAgregar = new javax.swing.JButton();
-        jButtonModificar = new javax.swing.JButton();
-        jButtonEliminar = new javax.swing.JButton();
+        jButtonABMPreguntas = new javax.swing.JButton();
+        jButtonABMTematicas = new javax.swing.JButton();
         jLabelBack = new javax.swing.JLabel();
         jButtonBack = new javax.swing.JButton();
+        jButtonABMJugadores = new javax.swing.JButton();
         jLabelIconAdmin = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -46,48 +46,37 @@ public class ModoAdmin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelTitulo.setFont(new java.awt.Font("Roboto Medium", 3, 40)); // NOI18N
+        jLabelTitulo.setFont(new java.awt.Font("Roboto Medium", 0, 40)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setText("MODO");
         jPanel1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 120, 40));
 
-        jLabelTitulo1.setFont(new java.awt.Font("Roboto Medium", 3, 40)); // NOI18N
+        jLabelTitulo1.setFont(new java.awt.Font("Roboto Medium", 0, 40)); // NOI18N
         jLabelTitulo1.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo1.setText("ADMIN");
         jPanel1.add(jLabelTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, -1, 40));
 
-        jButtonAgregar.setBackground(new java.awt.Color(51, 153, 0));
-        jButtonAgregar.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonAgregar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAgregar.setText("AGREGAR");
-        jButtonAgregar.addActionListener(new java.awt.event.ActionListener() {
+        jButtonABMPreguntas.setBackground(new java.awt.Color(51, 153, 0));
+        jButtonABMPreguntas.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
+        jButtonABMPreguntas.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonABMPreguntas.setText("ABM Preguntas");
+        jButtonABMPreguntas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAgregarActionPerformed(evt);
+                jButtonABMPreguntasActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 260, 50));
+        jPanel1.add(jButtonABMPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 260, 50));
 
-        jButtonModificar.setBackground(new java.awt.Color(51, 153, 0));
-        jButtonModificar.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonModificar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonModificar.setText("MODIFICAR");
-        jButtonModificar.addActionListener(new java.awt.event.ActionListener() {
+        jButtonABMTematicas.setBackground(new java.awt.Color(51, 153, 0));
+        jButtonABMTematicas.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
+        jButtonABMTematicas.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonABMTematicas.setText("ABM Tematicas");
+        jButtonABMTematicas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonModificarActionPerformed(evt);
+                jButtonABMTematicasActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 260, 50));
-
-        jButtonEliminar.setBackground(new java.awt.Color(51, 153, 0));
-        jButtonEliminar.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonEliminar.setText("ELIMINAR");
-        jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEliminarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 260, 50));
+        jPanel1.add(jButtonABMTematicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 260, 50));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
 
         jButtonBack.setBackground(new java.awt.Color(51, 153, 0));
@@ -99,11 +88,22 @@ public class ModoAdmin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+
+        jButtonABMJugadores.setBackground(new java.awt.Color(51, 153, 0));
+        jButtonABMJugadores.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
+        jButtonABMJugadores.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonABMJugadores.setText("ABM Jugadores");
+        jButtonABMJugadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonABMJugadoresActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonABMJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 260, 50));
         jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 110, 100));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jLabelFondo.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -390, 650, 990));
+        jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 590));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,17 +119,18 @@ public class ModoAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
-    }//GEN-LAST:event_jButtonAgregarActionPerformed
+    private void jButtonABMPreguntasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonABMPreguntasActionPerformed
+    }//GEN-LAST:event_jButtonABMPreguntasActionPerformed
 
-    private void jButtonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarActionPerformed
-    }//GEN-LAST:event_jButtonModificarActionPerformed
-
-    private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
-    }//GEN-LAST:event_jButtonEliminarActionPerformed
+    private void jButtonABMTematicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonABMTematicasActionPerformed
+    }//GEN-LAST:event_jButtonABMTematicasActionPerformed
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
     }//GEN-LAST:event_jButtonBackActionPerformed
+
+    private void jButtonABMJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonABMJugadoresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonABMJugadoresActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,10 +175,10 @@ public class ModoAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAgregar;
+    private javax.swing.JButton jButtonABMJugadores;
+    private javax.swing.JButton jButtonABMPreguntas;
+    private javax.swing.JButton jButtonABMTematicas;
     private javax.swing.JButton jButtonBack;
-    private javax.swing.JButton jButtonEliminar;
-    private javax.swing.JButton jButtonModificar;
     private javax.swing.JLabel jLabelBack;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelIconAdmin;

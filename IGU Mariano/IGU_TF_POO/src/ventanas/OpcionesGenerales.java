@@ -16,7 +16,9 @@ public class OpcionesGenerales extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/MenuPrincipal3.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo2, "src/imagenes/violeta.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/back.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelOpciones, "src/imagenes/config.png");
     }
 
     /**
@@ -30,11 +32,16 @@ public class OpcionesGenerales extends javax.swing.JFrame {
 
         botones_sonido = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
+        jLabelOptions = new javax.swing.JLabel();
         jLabelBack = new javax.swing.JLabel();
-        jSlider3 = new javax.swing.JSlider();
+        jLabelOpciones = new javax.swing.JLabel();
         jButtonBack = new javax.swing.JButton();
-        jTextFieldTurnoAproximacion = new javax.swing.JTextField();
-        jTextFieldTurnoAproximacion1 = new javax.swing.JTextField();
+        jButtonModoAdmin = new javax.swing.JButton();
+        jButtonSonido = new javax.swing.JButton();
+        jButtonCreditos = new javax.swing.JButton();
+        jButtonCreditos1 = new javax.swing.JButton();
+        jButtonOpciones = new javax.swing.JButton();
+        jLabelFondo2 = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -42,23 +49,15 @@ public class OpcionesGenerales extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelOptions.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
+        jLabelOptions.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelOptions.setText("OPCIONES");
+        jPanel1.add(jLabelOptions, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
+        jPanel1.add(jLabelOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 60, 50));
 
-        jSlider3.setBackground(new java.awt.Color(0, 0, 0));
-        jSlider3.setForeground(new java.awt.Color(102, 255, 255));
-        jSlider3.setMajorTickSpacing(10);
-        jSlider3.setMinorTickSpacing(10);
-        jSlider3.setPaintLabels(true);
-        jSlider3.setPaintTicks(true);
-        jSlider3.setToolTipText("");
-        jSlider3.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jSlider3StateChanged(evt);
-            }
-        });
-        jPanel1.add(jSlider3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 360, 40));
-
-        jButtonBack.setBackground(new java.awt.Color(153, 0, 102));
+        jButtonBack.setBackground(new java.awt.Color(102, 0, 102));
         jButtonBack.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
         jButtonBack.setForeground(new java.awt.Color(255, 255, 255));
         jButtonBack.addActionListener(new java.awt.event.ActionListener() {
@@ -68,35 +67,43 @@ public class OpcionesGenerales extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
-        jTextFieldTurnoAproximacion.setEditable(false);
-        jTextFieldTurnoAproximacion.setBackground(new java.awt.Color(153, 0, 102));
-        jTextFieldTurnoAproximacion.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldTurnoAproximacion.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldTurnoAproximacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldTurnoAproximacion.setText("VOLUMEN GENERAL");
-        jTextFieldTurnoAproximacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldTurnoAproximacionActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextFieldTurnoAproximacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 200, 40));
+        jButtonModoAdmin.setBackground(new java.awt.Color(102, 0, 102));
+        jButtonModoAdmin.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jButtonModoAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonModoAdmin.setText("MODO ADMIN");
+        jPanel1.add(jButtonModoAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 170, 60));
 
-        jTextFieldTurnoAproximacion1.setEditable(false);
-        jTextFieldTurnoAproximacion1.setBackground(new java.awt.Color(153, 0, 102));
-        jTextFieldTurnoAproximacion1.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
-        jTextFieldTurnoAproximacion1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldTurnoAproximacion1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldTurnoAproximacion1.setText("OPCIONES");
-        jTextFieldTurnoAproximacion1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSonido.setBackground(new java.awt.Color(102, 0, 102));
+        jButtonSonido.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jButtonSonido.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonSonido.setText("SONIDO");
+        jPanel1.add(jButtonSonido, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 170, 60));
+
+        jButtonCreditos.setBackground(new java.awt.Color(102, 0, 102));
+        jButtonCreditos.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jButtonCreditos.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonCreditos.setText("CREDITOS");
+        jPanel1.add(jButtonCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 170, 60));
+
+        jButtonCreditos1.setBackground(new java.awt.Color(102, 0, 102));
+        jButtonCreditos1.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonCreditos1.setText("X");
+        jPanel1.add(jButtonCreditos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 170, 60));
+
+        jButtonOpciones.setBackground(new java.awt.Color(102, 0, 102));
+        jButtonOpciones.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
+        jButtonOpciones.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonOpciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldTurnoAproximacion1ActionPerformed(evt);
+                jButtonOpcionesActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldTurnoAproximacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 310, 60));
+        jPanel1.add(jButtonOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 240, 70));
+        jPanel1.add(jLabelFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 580, 450));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jLabelFondo.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -390, 650, 790));
+        jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 570));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,17 +122,9 @@ public class OpcionesGenerales extends javax.swing.JFrame {
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
     }//GEN-LAST:event_jButtonBackActionPerformed
 
-    private void jSlider3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlider3StateChanged
+    private void jButtonOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOpcionesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jSlider3StateChanged
-
-    private void jTextFieldTurnoAproximacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTurnoAproximacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldTurnoAproximacionActionPerformed
-
-    private void jTextFieldTurnoAproximacion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTurnoAproximacion1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldTurnoAproximacion1ActionPerformed
+    }//GEN-LAST:event_jButtonOpcionesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -292,12 +291,17 @@ public class OpcionesGenerales extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup botones_sonido;
     private javax.swing.JButton jButtonBack;
+    private javax.swing.JButton jButtonCreditos;
+    private javax.swing.JButton jButtonCreditos1;
+    private javax.swing.JButton jButtonModoAdmin;
+    private javax.swing.JButton jButtonOpciones;
+    private javax.swing.JButton jButtonSonido;
     private javax.swing.JLabel jLabelBack;
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelFondo2;
+    private javax.swing.JLabel jLabelOpciones;
+    private javax.swing.JLabel jLabelOptions;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSlider jSlider3;
-    private javax.swing.JTextField jTextFieldTurnoAproximacion;
-    private javax.swing.JTextField jTextFieldTurnoAproximacion1;
     // End of variables declaration//GEN-END:variables
 }
 
