@@ -14,7 +14,7 @@ public class Ronda {
     private String resultado;
     private Date fecha;
     private String estado;
-    private ArrayList<Jugador> empatados;
+    private ArrayList<Jugador> empatados = new ArrayList<>();
 
 
     public Ronda(int idJuego, ArrayList<Jugador> jugadores ,Escalon escalon) {
@@ -132,7 +132,7 @@ public class Ronda {
     }
 
     private void inicializarPuntos() {
-        for (Jugador jug: empatados) {
+        for (Jugador jug: jugadores) {
             jug.setPuntaje(0);
         }
     }

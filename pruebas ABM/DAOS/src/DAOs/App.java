@@ -7,15 +7,31 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Date;
+import java.time.LocalDate;
 
+import Modelos.Escalon;
+import Modelos.Jugador;
 import Modelos.MultipleChoicePregunta;
 import Modelos.Respuesta;
 import Modelos.Tematica;
+import Modelos.Juego;
 
 public class App {
     public static void main(String[] args) throws SQLException {
-        MultipleChoicePregunta pregunta = MultipleChoicePregunta.obtenerPreguntaConRtas(1);
-        pregunta.imprimirPreguntaYRespuestas();
+        ArrayList<Jugador> jugadores = new ArrayList<>();
+        jugadores = Jugador.obtenerJugadores();
+        /* ArrayList<Tematica> tematicas = new ArrayList<>();
+        tematicas = Tematica.obtenerTematicas();
+       // Escalon escalon = new Escalon(1, "Comenzado", Tematica.obtenerTematica(1), jugadores);
+      //  escalon.jugarEscalon(); */
+        Date fechaActual = new Date();
+        Juego juego = new Juego(1, fechaActual, "Comenzado", 1);
+        juego.comenzarJuego();
+
+
+      //  MultipleChoicePregunta pregunta = MultipleChoicePregunta.obtenerPreguntaConRtas(1);
+      //  pregunta.imprimirPreguntaYRespuestas();
        // Tematica tem = new Tematica(0);
        /* ArrayList<Tematica> tematicas = new ArrayList<>();
        tematicas = Tematica.obtenerTematicas();
