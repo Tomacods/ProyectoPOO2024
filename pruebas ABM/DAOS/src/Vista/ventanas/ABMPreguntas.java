@@ -22,6 +22,8 @@ public class ABMPreguntas extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTematica, "src/imagenes/verde.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTipo, "src/imagenes/verde.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoPregunta, "src/imagenes/verde.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/back.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
     }
 
     /**
@@ -38,26 +40,22 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jTextFieldABMPreguntas = new javax.swing.JTextField();
         jTextFieldTematica = new javax.swing.JTextField();
         jComboBoxTematica = new javax.swing.JComboBox<>();
-        jTextFieldNuevaTematica = new javax.swing.JTextField();
         jTextFieldTipo = new javax.swing.JTextField();
         jComboBoxTipo = new javax.swing.JComboBox<>();
-        jTextFieldNuevoTipo = new javax.swing.JTextField();
-        jTextFieldPregunta = new javax.swing.JTextField();
         jComboBoxPregunta = new javax.swing.JComboBox<>();
         jTextFieldNuevaPregunta = new javax.swing.JTextField();
-        jButtonGuardarSalir = new javax.swing.JButton();
-        jButtonSalir = new javax.swing.JButton();
+        jLabelBack = new javax.swing.JLabel();
+        jLabelExit = new javax.swing.JLabel();
+        jButtonExit = new javax.swing.JButton();
+        jButtonBack = new javax.swing.JButton();
         jLabelIconEdit = new javax.swing.JLabel();
         jLabelIconDelete = new javax.swing.JLabel();
         jButtonEliminarPregunta = new javax.swing.JButton();
         jButtonModificarPregunta = new javax.swing.JButton();
-        jButtonAñadirTematica = new javax.swing.JButton();
-        jButtonAñadirPregunta = new javax.swing.JButton();
-        jButtonAñadirTipo = new javax.swing.JButton();
+        jButtonAgregarPregunta = new javax.swing.JButton();
         jLabelFondoTematica = new javax.swing.JLabel();
         jLabelFondoTipo = new javax.swing.JLabel();
         jLabelFondoPregunta = new javax.swing.JLabel();
-        jButtonAgregarPregunta = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -65,7 +63,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 60, 50));
+        jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 110, 100));
 
         jTextFieldABMPreguntas.setEditable(false);
         jTextFieldABMPreguntas.setBackground(new java.awt.Color(51, 153, 0));
@@ -73,7 +71,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jTextFieldABMPreguntas.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldABMPreguntas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldABMPreguntas.setText("PREGUNTAS");
-        jPanel1.add(jTextFieldABMPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 310, 70));
+        jPanel1.add(jTextFieldABMPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 300, 70));
 
         jTextFieldTematica.setEditable(false);
         jTextFieldTematica.setBackground(new java.awt.Color(51, 153, 0));
@@ -81,19 +79,12 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jTextFieldTematica.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldTematica.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldTematica.setText("Tematica");
-        jPanel1.add(jTextFieldTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 100, 60));
+        jPanel1.add(jTextFieldTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 100, 60));
 
         jComboBoxTematica.setBackground(new java.awt.Color(51, 153, 0));
         jComboBoxTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxTematica.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxTematica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arte", "Biologia", "Ciencia", "Deporte", "Entretenimiento", "Geografia", "Musica", "Historia" }));
-        jPanel1.add(jComboBoxTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 160, 60));
-
-        jTextFieldNuevaTematica.setBackground(new java.awt.Color(0, 102, 0));
-        jTextFieldNuevaTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldNuevaTematica.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldNuevaTematica.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextFieldNuevaTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 270, 40));
+        jPanel1.add(jComboBoxTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 160, 60));
 
         jTextFieldTipo.setEditable(false);
         jTextFieldTipo.setBackground(new java.awt.Color(51, 153, 0));
@@ -106,27 +97,13 @@ public class ABMPreguntas extends javax.swing.JFrame {
                 jTextFieldTipoActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 100, 60));
+        jPanel1.add(jTextFieldTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 80, 60));
 
         jComboBoxTipo.setBackground(new java.awt.Color(51, 153, 0));
         jComboBoxTipo.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxTipo.setForeground(new java.awt.Color(255, 255, 255));
         jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Multiple choice", "Aproximacion"}));
-        jPanel1.add(jComboBoxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 160, 60));
-
-        jTextFieldNuevoTipo.setBackground(new java.awt.Color(0, 102, 0));
-        jTextFieldNuevoTipo.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldNuevoTipo.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldNuevoTipo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextFieldNuevoTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, 270, 40));
-
-        jTextFieldPregunta.setEditable(false);
-        jTextFieldPregunta.setBackground(new java.awt.Color(51, 153, 0));
-        jTextFieldPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldPregunta.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldPregunta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldPregunta.setText("Pregunta");
-        jPanel1.add(jTextFieldPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 570, 50));
+        jPanel1.add(jComboBoxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 160, 60));
 
         jComboBoxPregunta.setBackground(new java.awt.Color(51, 153, 0));
         jComboBoxPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
@@ -137,37 +114,37 @@ public class ABMPreguntas extends javax.swing.JFrame {
                 jComboBoxPreguntaActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBoxPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 570, 50));
+        jPanel1.add(jComboBoxPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 570, 50));
 
         jTextFieldNuevaPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jTextFieldNuevaPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldNuevaPregunta.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldNuevaPregunta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextFieldNuevaPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 570, 570, 50));
+        jPanel1.add(jTextFieldNuevaPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, 570, 50));
+        jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 40, 30));
+        jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 40, 30));
 
-        jButtonGuardarSalir.setBackground(new java.awt.Color(0, 102, 0));
-        jButtonGuardarSalir.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButtonGuardarSalir.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonGuardarSalir.setText("GUARDAR Y SALIR");
-        jButtonGuardarSalir.addActionListener(new java.awt.event.ActionListener() {
+        jButtonExit.setBackground(new java.awt.Color(0, 102, 0));
+        jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jButtonExit.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGuardarSalirActionPerformed(evt);
+                jButtonExitActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGuardarSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 220, 30));
+        jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 60, 50));
 
-        jButtonSalir.setBackground(new java.awt.Color(0, 102, 0));
-        jButtonSalir.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonSalir.setText("SALIR SIN GUARDAR");
-        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+        jButtonBack.setBackground(new java.awt.Color(0, 102, 0));
+        jButtonBack.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jButtonBack.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSalirActionPerformed(evt);
+                jButtonBackActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 220, 30));
-        jPanel1.add(jLabelIconEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, 60, 50));
-        jPanel1.add(jLabelIconDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 60, 50));
+        jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, 50));
+        jPanel1.add(jLabelIconEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 60, 50));
+        jPanel1.add(jLabelIconDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 60, 50));
 
         jButtonEliminarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jButtonEliminarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
@@ -177,7 +154,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
                 jButtonEliminarPreguntaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonEliminarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 80, 70));
+        jPanel1.add(jButtonEliminarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 80, 70));
 
         jButtonModificarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jButtonModificarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
@@ -187,43 +164,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
                 jButtonModificarPreguntaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonModificarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 80, 70));
-
-        jButtonAñadirTematica.setBackground(new java.awt.Color(0, 102, 0));
-        jButtonAñadirTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButtonAñadirTematica.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAñadirTematica.setText("Añadir Tematica");
-        jButtonAñadirTematica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAñadirTematicaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonAñadirTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 270, 40));
-
-        jButtonAñadirPregunta.setBackground(new java.awt.Color(0, 102, 0));
-        jButtonAñadirPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButtonAñadirPregunta.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAñadirPregunta.setText("Añadir Pregunta");
-        jButtonAñadirPregunta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAñadirPreguntaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonAñadirPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 570, 50));
-
-        jButtonAñadirTipo.setBackground(new java.awt.Color(0, 102, 0));
-        jButtonAñadirTipo.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButtonAñadirTipo.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAñadirTipo.setText("Añadir Tipo");
-        jButtonAñadirTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAñadirTipoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonAñadirTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 270, 40));
-        jPanel1.add(jLabelFondoTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 290, 180));
-        jPanel1.add(jLabelFondoTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 290, 180));
-        jPanel1.add(jLabelFondoPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 590, 250));
+        jPanel1.add(jButtonModificarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 80, 70));
 
         jButtonAgregarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jButtonAgregarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 70)); // NOI18N
@@ -234,7 +175,10 @@ public class ABMPreguntas extends javax.swing.JFrame {
                 jButtonAgregarPreguntaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonAgregarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 80, 70));
+        jPanel1.add(jButtonAgregarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 80, 70));
+        jPanel1.add(jLabelFondoTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 290, 80));
+        jPanel1.add(jLabelFondoTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, 270, 80));
+        jPanel1.add(jLabelFondoPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 590, 130));
         jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 640));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -251,13 +195,9 @@ public class ABMPreguntas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+    private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSalirActionPerformed
-
-    private void jButtonGuardarSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarSalirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonGuardarSalirActionPerformed
+    }//GEN-LAST:event_jButtonBackActionPerformed
 
     private void jTextFieldTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTipoActionPerformed
         // TODO add your handling code here:
@@ -279,17 +219,9 @@ public class ABMPreguntas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxPreguntaActionPerformed
 
-    private void jButtonAñadirTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirTematicaActionPerformed
+    private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAñadirTematicaActionPerformed
-
-    private void jButtonAñadirPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirPreguntaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAñadirPreguntaActionPerformed
-
-    private void jButtonAñadirTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirTipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAñadirTipoActionPerformed
+    }//GEN-LAST:event_jButtonExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -343,16 +275,15 @@ public class ABMPreguntas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAgregarPregunta;
-    private javax.swing.JButton jButtonAñadirPregunta;
-    private javax.swing.JButton jButtonAñadirTematica;
-    private javax.swing.JButton jButtonAñadirTipo;
+    private javax.swing.JButton jButtonBack;
     private javax.swing.JButton jButtonEliminarPregunta;
-    private javax.swing.JButton jButtonGuardarSalir;
+    private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonModificarPregunta;
-    private javax.swing.JButton jButtonSalir;
     private javax.swing.JComboBox<String> jComboBoxPregunta;
     private javax.swing.JComboBox<String> jComboBoxTematica;
     private javax.swing.JComboBox<String> jComboBoxTipo;
+    private javax.swing.JLabel jLabelBack;
+    private javax.swing.JLabel jLabelExit;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelFondoPregunta;
     private javax.swing.JLabel jLabelFondoTematica;
@@ -363,9 +294,6 @@ public class ABMPreguntas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextFieldABMPreguntas;
     private javax.swing.JTextField jTextFieldNuevaPregunta;
-    private javax.swing.JTextField jTextFieldNuevaTematica;
-    private javax.swing.JTextField jTextFieldNuevoTipo;
-    private javax.swing.JTextField jTextFieldPregunta;
     private javax.swing.JTextField jTextFieldTematica;
     private javax.swing.JTextField jTextFieldTipo;
     // End of variables declaration//GEN-END:variables
