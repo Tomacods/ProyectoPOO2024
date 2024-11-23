@@ -5,7 +5,6 @@
 package ventanas;
 
 /**
- *
  * @author Maria
  */
 public class Gameplay extends javax.swing.JFrame {
