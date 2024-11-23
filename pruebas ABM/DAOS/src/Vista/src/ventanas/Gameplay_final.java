@@ -5,23 +5,18 @@
  */
 package ventanas;
 
-import javax.swing.Timer; 
-import java.awt.event.ActionEvent; 
-import java.awt.event.ActionListener; 
-import javax.swing.JOptionPane;
+
 /**
  *
  * @author Maria
  */
 public class Gameplay_final extends javax.swing.JFrame {
-    private Timer timer; 
-    private int tiempo;
+
     /**
      * Creates new form gameplay_aproximacion
      */
     public Gameplay_final() {
         initComponents();
-        iniciarCronometro();
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/dorado.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
@@ -40,8 +35,6 @@ public class Gameplay_final extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabelTiempo = new javax.swing.JLabel();
-        jProgressBarTiempo = new javax.swing.JProgressBar();
         jTextFieldPregunta = new javax.swing.JTextField();
         jLabelExit = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
@@ -68,14 +61,6 @@ public class Gameplay_final extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabelTiempo.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jLabelTiempo.setText("30");
-        jPanel1.add(jLabelTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, -1, -1));
-
-        jProgressBarTiempo.setMaximum(30);
-        jProgressBarTiempo.setValue(30);
-        jPanel1.add(jProgressBarTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 600, 20));
 
         jTextFieldPregunta.setEditable(false);
         jTextFieldPregunta.setBackground(new java.awt.Color(255, 204, 51));
@@ -292,28 +277,11 @@ public class Gameplay_final extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelRtaB;
     private javax.swing.JLabel jLabelRtaC;
     private javax.swing.JLabel jLabelRtaD;
-    private javax.swing.JLabel jLabelTiempo;
     private javax.swing.JLabel jLabelUser;
     private javax.swing.JLabel jLabelUser2;
     private javax.swing.JLabel jLabelVersus;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JProgressBar jProgressBarTiempo;
     private javax.swing.JTextField jTextFieldPregunta;
     // End of variables declaration//GEN-END:variables
-    
-    private void iniciarCronometro(){
-    tiempo=30;
-    timer = new Timer(1000, new ActionListener(){
-        @Override
-        public void actionPerformed(ActionEvent e) { 
-            tiempo--;
-            jLabelTiempo.setText(String.valueOf(tiempo)); 
-            jProgressBarTiempo.setValue(tiempo); 
-            if (tiempo <= 0) { 
-                timer.stop();
-            }
-        }
-    });
-    timer.start();
-    }
+ 
 }
