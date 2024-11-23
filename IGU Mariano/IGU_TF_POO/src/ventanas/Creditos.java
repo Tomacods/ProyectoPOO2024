@@ -172,19 +172,19 @@ public class Creditos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonConfig;
-    private javax.swing.JButton jButtonExit;
-    private javax.swing.JLabel jLabelConfig;
-    private javax.swing.JLabel jLabelExit;
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelN1;
-    private javax.swing.JLabel jLabelN2;
-    private javax.swing.JLabel jLabelN3;
-    private javax.swing.JLabel jLabelN4;
-    private javax.swing.JLabel jLabelN6;
-    private javax.swing.JLabel jLabelN7;
-    private javax.swing.JLabel jLabelN8;
-    private javax.swing.JLabel jLabeln5;
+    public javax.swing.JButton jButtonConfig;
+    public javax.swing.JButton jButtonExit;
+    public javax.swing.JLabel jLabelConfig;
+    public javax.swing.JLabel jLabelExit;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelN1;
+    public javax.swing.JLabel jLabelN2;
+    public javax.swing.JLabel jLabelN3;
+    public javax.swing.JLabel jLabelN4;
+    public javax.swing.JLabel jLabelN6;
+    public javax.swing.JLabel jLabelN7;
+    public javax.swing.JLabel jLabelN8;
+    public javax.swing.JLabel jLabeln5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

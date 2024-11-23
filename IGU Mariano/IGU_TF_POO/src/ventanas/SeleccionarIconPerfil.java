@@ -79,7 +79,6 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
         jButtonJ6 = new javax.swing.JButton();
         jButtonJ7 = new javax.swing.JButton();
         jButtonJ8 = new javax.swing.JButton();
-        jButtonJUser9 = new javax.swing.JButton();
         jButtonJ9 = new javax.swing.JButton();
         jButtonJ10 = new javax.swing.JButton();
         jButtonJ11 = new javax.swing.JButton();
@@ -87,6 +86,7 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
         jButtonJ13 = new javax.swing.JButton();
         jButtonJ14 = new javax.swing.JButton();
         jButtonJ15 = new javax.swing.JButton();
+        jButtonJ16 = new javax.swing.JButton();
         jLabelFondo2 = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -214,16 +214,6 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonJ8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 110, 110));
 
-        jButtonJUser9.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonJUser9.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonJUser9.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonJUser9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonJUser9ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonJUser9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 110, 110));
-
         jButtonJ9.setBackground(new java.awt.Color(102, 0, 102));
         jButtonJ9.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonJ9.setForeground(new java.awt.Color(255, 255, 255));
@@ -293,6 +283,16 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonJ15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 110, 110));
+
+        jButtonJ16.setBackground(new java.awt.Color(102, 0, 102));
+        jButtonJ16.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        jButtonJ16.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonJ16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonJ16ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonJ16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 110, 110));
         jPanel1.add(jLabelFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 540, 520));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -340,8 +340,8 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
     private void jButtonJ6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ6ActionPerformed
     }//GEN-LAST:event_jButtonJ6ActionPerformed
 
-    private void jButtonJUser9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJUser9ActionPerformed
-    }//GEN-LAST:event_jButtonJUser9ActionPerformed
+    private void jButtonJ16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ16ActionPerformed
+    }//GEN-LAST:event_jButtonJ16ActionPerformed
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
     }//GEN-LAST:event_jButtonBackActionPerformed
@@ -425,44 +425,44 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBack;
-    private javax.swing.JButton jButtonExit;
-    private javax.swing.JButton jButtonJ1;
-    private javax.swing.JButton jButtonJ10;
-    private javax.swing.JButton jButtonJ11;
-    private javax.swing.JButton jButtonJ12;
-    private javax.swing.JButton jButtonJ13;
-    private javax.swing.JButton jButtonJ14;
-    private javax.swing.JButton jButtonJ15;
-    private javax.swing.JButton jButtonJ2;
-    private javax.swing.JButton jButtonJ3;
-    private javax.swing.JButton jButtonJ4;
-    private javax.swing.JButton jButtonJ5;
-    private javax.swing.JButton jButtonJ6;
-    private javax.swing.JButton jButtonJ7;
-    private javax.swing.JButton jButtonJ8;
-    private javax.swing.JButton jButtonJ9;
-    private javax.swing.JButton jButtonJUser9;
-    private javax.swing.JLabel jLabelBack;
-    private javax.swing.JLabel jLabelExit;
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelFondo2;
-    private javax.swing.JLabel jLabelUser1;
-    private javax.swing.JLabel jLabelUser10;
-    private javax.swing.JLabel jLabelUser11;
-    private javax.swing.JLabel jLabelUser12;
-    private javax.swing.JLabel jLabelUser13;
-    private javax.swing.JLabel jLabelUser14;
-    private javax.swing.JLabel jLabelUser15;
-    private javax.swing.JLabel jLabelUser16;
-    private javax.swing.JLabel jLabelUser2;
-    private javax.swing.JLabel jLabelUser3;
-    private javax.swing.JLabel jLabelUser4;
-    private javax.swing.JLabel jLabelUser5;
-    private javax.swing.JLabel jLabelUser6;
-    private javax.swing.JLabel jLabelUser7;
-    private javax.swing.JLabel jLabelUser8;
-    private javax.swing.JLabel jLabelUser9;
+    public javax.swing.JButton jButtonBack;
+    public javax.swing.JButton jButtonExit;
+    public javax.swing.JButton jButtonJ1;
+    public javax.swing.JButton jButtonJ10;
+    public javax.swing.JButton jButtonJ11;
+    public javax.swing.JButton jButtonJ12;
+    public javax.swing.JButton jButtonJ13;
+    public javax.swing.JButton jButtonJ14;
+    public javax.swing.JButton jButtonJ15;
+    public javax.swing.JButton jButtonJ16;
+    public javax.swing.JButton jButtonJ2;
+    public javax.swing.JButton jButtonJ3;
+    public javax.swing.JButton jButtonJ4;
+    public javax.swing.JButton jButtonJ5;
+    public javax.swing.JButton jButtonJ6;
+    public javax.swing.JButton jButtonJ7;
+    public javax.swing.JButton jButtonJ8;
+    public javax.swing.JButton jButtonJ9;
+    public javax.swing.JLabel jLabelBack;
+    public javax.swing.JLabel jLabelExit;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelFondo2;
+    public javax.swing.JLabel jLabelUser1;
+    public javax.swing.JLabel jLabelUser10;
+    public javax.swing.JLabel jLabelUser11;
+    public javax.swing.JLabel jLabelUser12;
+    public javax.swing.JLabel jLabelUser13;
+    public javax.swing.JLabel jLabelUser14;
+    public javax.swing.JLabel jLabelUser15;
+    public javax.swing.JLabel jLabelUser16;
+    public javax.swing.JLabel jLabelUser2;
+    public javax.swing.JLabel jLabelUser3;
+    public javax.swing.JLabel jLabelUser4;
+    public javax.swing.JLabel jLabelUser5;
+    public javax.swing.JLabel jLabelUser6;
+    public javax.swing.JLabel jLabelUser7;
+    public javax.swing.JLabel jLabelUser8;
+    public javax.swing.JLabel jLabelUser9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,7 +17,7 @@ public class ABMRespuestaMC extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "src/imagenes/admin.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTematica, "src/imagenes/verde.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoPregunta, "src/imagenes/verde.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/guardar.png");
     }
@@ -33,22 +33,21 @@ public class ABMRespuestaMC extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jTextFieldABMPreguntas = new javax.swing.JTextField();
-        jTextFieldNuevaTematica = new javax.swing.JTextField();
+        jTextFieldPreguntaMC = new javax.swing.JTextField();
         jLabelBack = new javax.swing.JLabel();
         jButtonBack = new javax.swing.JButton();
         jLabelExit = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
-        jLabelIconAdmin1 = new javax.swing.JLabel();
         jLabelIconAdmin = new javax.swing.JLabel();
-        jTextFieldNuevaTematica1 = new javax.swing.JTextField();
-        jTextFieldNuevaTematica2 = new javax.swing.JTextField();
-        jTextFieldNuevaTematica3 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jLabelFondoTematica = new javax.swing.JLabel();
+        jTextFieldRtaA = new javax.swing.JTextField();
+        jTextFieldRtaB = new javax.swing.JTextField();
+        jTextFieldRtaC = new javax.swing.JTextField();
+        jTextFieldRtaD = new javax.swing.JTextField();
+        jRadioButtonRtaA = new javax.swing.JRadioButton();
+        jRadioButtonRtaC = new javax.swing.JRadioButton();
+        jRadioButtonRtaB = new javax.swing.JRadioButton();
+        jRadioButtonRtaD = new javax.swing.JRadioButton();
+        jLabelFondoPregunta = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,24 +56,13 @@ public class ABMRespuestaMC extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextFieldABMPreguntas.setEditable(false);
-        jTextFieldABMPreguntas.setBackground(new java.awt.Color(51, 153, 0));
-        jTextFieldABMPreguntas.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
-        jTextFieldABMPreguntas.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldABMPreguntas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldABMPreguntas.setText("Pregunta");
-        jPanel1.add(jTextFieldABMPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 310, 50));
-
-        jTextFieldNuevaTematica.setBackground(new java.awt.Color(0, 102, 0));
-        jTextFieldNuevaTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldNuevaTematica.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldNuevaTematica.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldNuevaTematica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNuevaTematicaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextFieldNuevaTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 240, 40));
+        jTextFieldPreguntaMC.setEditable(false);
+        jTextFieldPreguntaMC.setBackground(new java.awt.Color(51, 153, 0));
+        jTextFieldPreguntaMC.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
+        jTextFieldPreguntaMC.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldPreguntaMC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldPreguntaMC.setText("Pregunta");
+        jPanel1.add(jTextFieldPreguntaMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 310, 50));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 40, 30));
 
         jButtonBack.setBackground(new java.awt.Color(0, 102, 0));
@@ -97,39 +85,49 @@ public class ABMRespuestaMC extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 60, 50));
-        jPanel1.add(jLabelIconAdmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 110, 100));
         jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 110, 100));
 
-        jTextFieldNuevaTematica1.setBackground(new java.awt.Color(0, 102, 0));
-        jTextFieldNuevaTematica1.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldNuevaTematica1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldNuevaTematica1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextFieldNuevaTematica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 240, 40));
+        jTextFieldRtaA.setBackground(new java.awt.Color(0, 102, 0));
+        jTextFieldRtaA.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldRtaA.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldRtaA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldRtaA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldRtaAActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextFieldRtaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 240, 40));
 
-        jTextFieldNuevaTematica2.setBackground(new java.awt.Color(0, 102, 0));
-        jTextFieldNuevaTematica2.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldNuevaTematica2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldNuevaTematica2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextFieldNuevaTematica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 240, 40));
+        jTextFieldRtaB.setBackground(new java.awt.Color(0, 102, 0));
+        jTextFieldRtaB.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldRtaB.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldRtaB.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(jTextFieldRtaB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 240, 40));
 
-        jTextFieldNuevaTematica3.setBackground(new java.awt.Color(0, 102, 0));
-        jTextFieldNuevaTematica3.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldNuevaTematica3.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldNuevaTematica3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextFieldNuevaTematica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 240, 40));
+        jTextFieldRtaC.setBackground(new java.awt.Color(0, 102, 0));
+        jTextFieldRtaC.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldRtaC.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldRtaC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(jTextFieldRtaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 240, 40));
 
-        buttonGroup1.add(jRadioButton1);
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, -1, -1));
+        jTextFieldRtaD.setBackground(new java.awt.Color(0, 102, 0));
+        jTextFieldRtaD.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldRtaD.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldRtaD.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(jTextFieldRtaD, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 240, 40));
 
-        buttonGroup1.add(jRadioButton2);
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, -1, -1));
+        buttonGroup1.add(jRadioButtonRtaA);
+        jPanel1.add(jRadioButtonRtaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, -1, -1));
 
-        buttonGroup1.add(jRadioButton3);
-        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, -1, -1));
+        buttonGroup1.add(jRadioButtonRtaC);
+        jPanel1.add(jRadioButtonRtaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, -1, -1));
 
-        buttonGroup1.add(jRadioButton4);
-        jPanel1.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, -1, -1));
-        jPanel1.add(jLabelFondoTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 590, 230));
+        buttonGroup1.add(jRadioButtonRtaB);
+        jPanel1.add(jRadioButtonRtaB, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, -1, -1));
+
+        buttonGroup1.add(jRadioButtonRtaD);
+        jPanel1.add(jRadioButtonRtaD, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, -1, -1));
+        jPanel1.add(jLabelFondoPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 590, 230));
         jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 400));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -154,9 +152,9 @@ public class ABMRespuestaMC extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonExitActionPerformed
 
-    private void jTextFieldNuevaTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNuevaTematicaActionPerformed
+    private void jTextFieldRtaAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldRtaAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNuevaTematicaActionPerformed
+    }//GEN-LAST:event_jTextFieldRtaAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -706,24 +704,23 @@ public class ABMRespuestaMC extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButtonBack;
-    private javax.swing.JButton jButtonExit;
-    private javax.swing.JLabel jLabelBack;
-    private javax.swing.JLabel jLabelExit;
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelFondoTematica;
-    private javax.swing.JLabel jLabelIconAdmin;
-    private javax.swing.JLabel jLabelIconAdmin1;
+    public javax.swing.JButton jButtonBack;
+    public javax.swing.JButton jButtonExit;
+    public javax.swing.JLabel jLabelBack;
+    public javax.swing.JLabel jLabelExit;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelFondoPregunta;
+    public javax.swing.JLabel jLabelIconAdmin;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JTextField jTextFieldABMPreguntas;
-    private javax.swing.JTextField jTextFieldNuevaTematica;
-    private javax.swing.JTextField jTextFieldNuevaTematica1;
-    private javax.swing.JTextField jTextFieldNuevaTematica2;
-    private javax.swing.JTextField jTextFieldNuevaTematica3;
+    public javax.swing.JRadioButton jRadioButtonRtaA;
+    public javax.swing.JRadioButton jRadioButtonRtaB;
+    public javax.swing.JRadioButton jRadioButtonRtaC;
+    public javax.swing.JRadioButton jRadioButtonRtaD;
+    public javax.swing.JTextField jTextFieldPreguntaMC;
+    public javax.swing.JTextField jTextFieldRtaA;
+    public javax.swing.JTextField jTextFieldRtaB;
+    public javax.swing.JTextField jTextFieldRtaC;
+    public javax.swing.JTextField jTextFieldRtaD;
     // End of variables declaration//GEN-END:variables
 }
 
