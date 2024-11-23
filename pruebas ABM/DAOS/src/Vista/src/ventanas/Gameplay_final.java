@@ -20,7 +20,6 @@ public class Gameplay_final extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/dorado.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelConfig, "src/imagenes/config.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser2, "src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser, "src/imagenes/user.png");
     }
@@ -38,8 +37,6 @@ public class Gameplay_final extends javax.swing.JFrame {
         jTextFieldPregunta = new javax.swing.JTextField();
         jLabelExit = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
-        jLabelConfig = new javax.swing.JLabel();
-        jButtonConfig = new javax.swing.JButton();
         jLabelIconUser = new javax.swing.JLabel();
         jLabelIconUser2 = new javax.swing.JLabel();
         jLabelUser = new javax.swing.JLabel();
@@ -85,17 +82,6 @@ public class Gameplay_final extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
-        jPanel1.add(jLabelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
-
-        jButtonConfig.setBackground(new java.awt.Color(255, 204, 51));
-        jButtonConfig.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
-        jButtonConfig.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonConfig.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConfigActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
         jPanel1.add(jLabelIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 110, 90));
         jPanel1.add(jLabelIconUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 110, 100));
 
@@ -200,10 +186,6 @@ public class Gameplay_final extends javax.swing.JFrame {
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
     }//GEN-LAST:event_jButtonExitActionPerformed
 
-    private void jButtonConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfigActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonConfigActionPerformed
-
     private void jTextFieldPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPreguntaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldPreguntaActionPerformed
@@ -261,13 +243,11 @@ public class Gameplay_final extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonConfig;
     private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonRtaA;
     private javax.swing.JButton jButtonRtaB;
     private javax.swing.JButton jButtonRtaC;
     private javax.swing.JButton jButtonRtaD;
-    private javax.swing.JLabel jLabelConfig;
     private javax.swing.JLabel jLabelEscalonFinal;
     private javax.swing.JLabel jLabelExit;
     private javax.swing.JLabel jLabelFondo;

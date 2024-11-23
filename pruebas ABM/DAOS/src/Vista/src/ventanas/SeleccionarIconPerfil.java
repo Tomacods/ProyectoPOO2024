@@ -23,7 +23,6 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo2, "src/imagenes/violeta.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/back.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelConfig, "src/imagenes/config.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser1, "src/imagenes/IconUser1.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser2, "src/imagenes/IconUser2.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser3, "src/imagenes/IconUser3.png");
@@ -53,10 +52,8 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabelExit = new javax.swing.JLabel();
-        jLabelConfig = new javax.swing.JLabel();
         jLabelBack = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
-        jButtonConfig = new javax.swing.JButton();
         jButtonBack = new javax.swing.JButton();
         jLabelUser1 = new javax.swing.JLabel();
         jLabelUser2 = new javax.swing.JLabel();
@@ -99,7 +96,6 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 30, 20));
-        jPanel1.add(jLabelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
 
         jButtonExit.setBackground(new java.awt.Color(102, 0, 102));
@@ -111,16 +107,6 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 50, 40));
-
-        jButtonConfig.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonConfig.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
-        jButtonConfig.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonConfig.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConfigActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
 
         jButtonBack.setBackground(new java.awt.Color(102, 0, 102));
         jButtonBack.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
@@ -333,10 +319,6 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
     private void jButtonJ4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ4ActionPerformed
     }//GEN-LAST:event_jButtonJ4ActionPerformed
 
-    private void jButtonConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfigActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonConfigActionPerformed
-
     private void jButtonJ2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ2ActionPerformed
     }//GEN-LAST:event_jButtonJ2ActionPerformed
 
@@ -444,7 +426,6 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBack;
-    private javax.swing.JButton jButtonConfig;
     private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonJ1;
     private javax.swing.JButton jButtonJ10;
@@ -463,7 +444,6 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
     private javax.swing.JButton jButtonJ9;
     private javax.swing.JButton jButtonJUser9;
     private javax.swing.JLabel jLabelBack;
-    private javax.swing.JLabel jLabelConfig;
     private javax.swing.JLabel jLabelExit;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelFondo2;

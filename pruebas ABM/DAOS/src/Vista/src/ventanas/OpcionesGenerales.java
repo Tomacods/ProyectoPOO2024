@@ -37,9 +37,7 @@ public class OpcionesGenerales extends javax.swing.JFrame {
         jLabelOpciones = new javax.swing.JLabel();
         jButtonBack = new javax.swing.JButton();
         jButtonModoAdmin = new javax.swing.JButton();
-        jButtonSonido = new javax.swing.JButton();
         jButtonCreditos = new javax.swing.JButton();
-        jButtonCreditos1 = new javax.swing.JButton();
         jButtonOpciones = new javax.swing.JButton();
         jLabelFondo2 = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
@@ -73,22 +71,11 @@ public class OpcionesGenerales extends javax.swing.JFrame {
         jButtonModoAdmin.setText("MODO ADMIN");
         jPanel1.add(jButtonModoAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 170, 60));
 
-        jButtonSonido.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonSonido.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jButtonSonido.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonSonido.setText("SONIDO");
-        jPanel1.add(jButtonSonido, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 170, 60));
-
         jButtonCreditos.setBackground(new java.awt.Color(102, 0, 102));
         jButtonCreditos.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jButtonCreditos.setForeground(new java.awt.Color(255, 255, 255));
         jButtonCreditos.setText("CREDITOS");
         jPanel1.add(jButtonCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 170, 60));
-
-        jButtonCreditos1.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonCreditos1.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonCreditos1.setText("X");
-        jPanel1.add(jButtonCreditos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 170, 60));
 
         jButtonOpciones.setBackground(new java.awt.Color(102, 0, 102));
         jButtonOpciones.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
@@ -99,7 +86,7 @@ public class OpcionesGenerales extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 240, 70));
-        jPanel1.add(jLabelFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 580, 450));
+        jPanel1.add(jLabelFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 390, 360));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jLabelFondo.setForeground(new java.awt.Color(255, 255, 255));
@@ -292,10 +279,8 @@ public class OpcionesGenerales extends javax.swing.JFrame {
     private javax.swing.ButtonGroup botones_sonido;
     private javax.swing.JButton jButtonBack;
     private javax.swing.JButton jButtonCreditos;
-    private javax.swing.JButton jButtonCreditos1;
     private javax.swing.JButton jButtonModoAdmin;
     private javax.swing.JButton jButtonOpciones;
-    private javax.swing.JButton jButtonSonido;
     private javax.swing.JLabel jLabelBack;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelFondo2;
