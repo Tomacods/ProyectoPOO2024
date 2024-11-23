@@ -19,7 +19,6 @@ public class GameplayAproximacion extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "src/imagenes/historia.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser, "src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelConfig, "src/imagenes/config.png");
     }
 
     /**
@@ -33,9 +32,7 @@ public class GameplayAproximacion extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabelExit = new javax.swing.JLabel();
-        jLabelConfig = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
-        jButtonConfig = new javax.swing.JButton();
         jLabelIconUser = new javax.swing.JLabel();
         jLabelJugador = new javax.swing.JLabel();
         jTextFieldJugador = new javax.swing.JTextField();
@@ -51,7 +48,6 @@ public class GameplayAproximacion extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
-        jPanel1.add(jLabelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
 
         jButtonExit.setBackground(new java.awt.Color(102, 0, 102));
         jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
@@ -62,16 +58,6 @@ public class GameplayAproximacion extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
-
-        jButtonConfig.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonConfig.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
-        jButtonConfig.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonConfig.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConfigActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
         jPanel1.add(jLabelIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 40, 30));
 
         jLabelJugador.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
@@ -143,28 +129,25 @@ public class GameplayAproximacion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-    }//GEN-LAST:event_jButtonExitActionPerformed
-
-    private void jTextFieldPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPreguntaActionPerformed
+    private void jTextFieldTurnoAproximacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTurnoAproximacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldPreguntaActionPerformed
-
-    private void jButtonConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfigActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonConfigActionPerformed
-
-    private void jTextFieldJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldJugadorActionPerformed
+    }//GEN-LAST:event_jTextFieldTurnoAproximacionActionPerformed
 
     private void jTextFieldRespuestaAproxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldRespuestaAproxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldRespuestaAproxActionPerformed
 
-    private void jTextFieldTurnoAproximacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTurnoAproximacionActionPerformed
+    private void jTextFieldPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPreguntaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldTurnoAproximacionActionPerformed
+    }//GEN-LAST:event_jTextFieldPreguntaActionPerformed
+
+    private void jTextFieldJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldJugadorActionPerformed
+
+    private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
+
+    }//GEN-LAST:event_jButtonExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,16 +188,14 @@ public class GameplayAproximacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonConfig;
     private javax.swing.JButton jButtonExit;
-    private javax.swing.JLabel jLabelConfig;
     private javax.swing.JLabel jLabelExit;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelIconUser;
     private javax.swing.JLabel jLabelJugador;
     private javax.swing.JLabel jLabelTematica;
     private javax.swing.JPanel jPanel1;
-    public javax.swing.JTextField jTextFieldJugador;
+    private javax.swing.JTextField jTextFieldJugador;
     private javax.swing.JTextField jTextFieldPregunta;
     private javax.swing.JTextField jTextFieldRespuestaAprox;
     private javax.swing.JTextField jTextFieldTurnoAproximacion;

@@ -36,7 +36,6 @@ public class ModoAdmin extends javax.swing.JFrame {
         jButtonABMTematicas = new javax.swing.JButton();
         jLabelBack = new javax.swing.JLabel();
         jButtonBack = new javax.swing.JButton();
-        jButtonABMJugadores = new javax.swing.JButton();
         jLabelIconAdmin = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -88,17 +87,6 @@ public class ModoAdmin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
-
-        jButtonABMJugadores.setBackground(new java.awt.Color(51, 153, 0));
-        jButtonABMJugadores.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
-        jButtonABMJugadores.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonABMJugadores.setText("ABM Jugadores");
-        jButtonABMJugadores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonABMJugadoresActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonABMJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 260, 50));
         jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 110, 100));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -127,10 +115,6 @@ public class ModoAdmin extends javax.swing.JFrame {
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
     }//GEN-LAST:event_jButtonBackActionPerformed
-
-    private void jButtonABMJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonABMJugadoresActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonABMJugadoresActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,7 +159,6 @@ public class ModoAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonABMJugadores;
     private javax.swing.JButton jButtonABMPreguntas;
     private javax.swing.JButton jButtonABMTematicas;
     private javax.swing.JButton jButtonBack;

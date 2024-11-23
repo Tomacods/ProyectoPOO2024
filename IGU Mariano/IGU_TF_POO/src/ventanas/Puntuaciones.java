@@ -22,7 +22,6 @@ public class Puntuaciones extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/rojo.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelPodio, "src/imagenes/podio.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelConfig, "src/imagenes/config.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconGanador, "src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconPodio3, "src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconPodio2, "src/imagenes/user.png");
@@ -39,9 +38,7 @@ public class Puntuaciones extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabelExit = new javax.swing.JLabel();
-        jLabelConfig = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
-        jButtonConfig = new javax.swing.JButton();
         jLabelPuntuaciones = new javax.swing.JLabel();
         jLabelIconGanador = new javax.swing.JLabel();
         jLabelIconPodio2 = new javax.swing.JLabel();
@@ -70,7 +67,6 @@ public class Puntuaciones extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
-        jPanel1.add(jLabelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
 
         jButtonExit.setBackground(new java.awt.Color(255, 0, 0));
         jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
@@ -81,16 +77,6 @@ public class Puntuaciones extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
-
-        jButtonConfig.setBackground(new java.awt.Color(255, 0, 0));
-        jButtonConfig.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
-        jButtonConfig.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonConfig.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConfigActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
 
         jLabelPuntuaciones.setFont(new java.awt.Font("Roboto Medium", 3, 30)); // NOI18N
         jLabelPuntuaciones.setForeground(new java.awt.Color(255, 255, 255));
@@ -269,10 +255,6 @@ public class Puntuaciones extends javax.swing.JFrame {
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
     }//GEN-LAST:event_jButtonExitActionPerformed
 
-    private void jButtonConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfigActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonConfigActionPerformed
-
     private void jTextFieldJugadorGanadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldJugadorGanadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldJugadorGanadorActionPerformed
@@ -348,7 +330,6 @@ public class Puntuaciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonConfig;
     private javax.swing.JButton jButtonExit;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -356,7 +337,6 @@ public class Puntuaciones extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelConfig;
     private javax.swing.JLabel jLabelExit;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelIconGanador;

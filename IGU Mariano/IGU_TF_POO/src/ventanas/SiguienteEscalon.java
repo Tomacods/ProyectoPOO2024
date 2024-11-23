@@ -4,23 +4,17 @@
  */
 package ventanas;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.Timer;
 
 /**
  *
  * @author Maria
  */
 public class SiguienteEscalon extends javax.swing.JFrame {
-        private Timer timer; 
-        private int tiempo;
     /**
      * Creates new form gameplay
      */
     public SiguienteEscalon() {
         initComponents();
-        iniciarCronometro();
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/MenuPrincipal3.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo2, "src/imagenes/violeta.png");
@@ -46,7 +40,6 @@ public class SiguienteEscalon extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabelLevelUp = new javax.swing.JLabel();
-        jProgressBarTiempo = new javax.swing.JProgressBar();
         jLabelUser1 = new javax.swing.JLabel();
         jLabelUser2 = new javax.swing.JLabel();
         jLabelUser3 = new javax.swing.JLabel();
@@ -85,10 +78,6 @@ public class SiguienteEscalon extends javax.swing.JFrame {
 
         jLabelLevelUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/level-up.gif"))); // NOI18N
         jPanel1.add(jLabelLevelUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 220, 90));
-
-        jProgressBarTiempo.setForeground(new java.awt.Color(0, 0, 153));
-        jProgressBarTiempo.setMaximum(5);
-        jPanel1.add(jProgressBarTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 20));
         jPanel1.add(jLabelUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 70, 70));
         jPanel1.add(jLabelUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 70, 70));
         jPanel1.add(jLabelUser3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 70, 70));
@@ -278,7 +267,6 @@ public class SiguienteEscalon extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelUser8;
     private javax.swing.JLabel jLabelUser9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JProgressBar jProgressBarTiempo;
     private javax.swing.JTextField jTextFieldJ1;
     private javax.swing.JTextField jTextFieldJ2;
     private javax.swing.JTextField jTextFieldJ3;
@@ -289,19 +277,5 @@ public class SiguienteEscalon extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldJ8;
     private javax.swing.JTextField jTextFieldJ9;
     // End of variables declaration//GEN-END:variables
-    private void iniciarCronometro(){
-    tiempo=5;
-    timer = new Timer(1000, new ActionListener(){
-        @Override
-        public void actionPerformed(ActionEvent e) { 
-            tiempo--;
-            jProgressBarTiempo.setValue(tiempo); 
-            if (tiempo <= 0) { 
-                timer.stop();
-            }
-        }
-    });
-    timer.start();
-    }
 }
 
