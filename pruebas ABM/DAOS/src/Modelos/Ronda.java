@@ -1,11 +1,11 @@
 package Modelos;
-import java.util.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Ronda {
     private int idJuego;
@@ -100,7 +100,7 @@ public class Ronda {
             for(Map.Entry<Jugador, Integer> entry : respuestas.entrySet()){
                 if (valorAbsoluto((pregunta.getValorAproximado() - entry.getValue())) > peorRta) {
                     /* removeEmpatado(empatados.get(j)); */
-                    peorRta = entry.getValue();
+                    peorRta = valorAbsoluto((pregunta.getValorAproximado() - entry.getValue()));
                 }
             }
             for(Map.Entry<Jugador, Integer> entry : respuestas.entrySet()){
@@ -112,11 +112,10 @@ public class Ronda {
                 eliminarJugador(empatados.get(0));
                 eliminado= false;
             }
-
             pregAprox.remove(pregunta);
         }
-        sc.close();
-    }
+/*         sc.close();
+ */    }
     private int valorAbsoluto(int numero){
         if (numero>=0){
             return numero;
