@@ -159,14 +159,14 @@ public class ModoAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonABMPreguntas;
-    private javax.swing.JButton jButtonABMTematicas;
-    private javax.swing.JButton jButtonBack;
-    private javax.swing.JLabel jLabelBack;
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelIconAdmin;
-    private javax.swing.JLabel jLabelTitulo;
-    private javax.swing.JLabel jLabelTitulo1;
+    public javax.swing.JButton jButtonABMPreguntas;
+    public javax.swing.JButton jButtonABMTematicas;
+    public javax.swing.JButton jButtonBack;
+    public javax.swing.JLabel jLabelBack;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelIconAdmin;
+    public javax.swing.JLabel jLabelTitulo;
+    public javax.swing.JLabel jLabelTitulo1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

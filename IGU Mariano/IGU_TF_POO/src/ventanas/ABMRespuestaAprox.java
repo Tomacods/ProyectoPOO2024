@@ -17,7 +17,7 @@ public class ABMRespuestaAprox extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "src/imagenes/admin.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTematica, "src/imagenes/verde.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoPregunta, "src/imagenes/verde.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/guardar.png");
     }
@@ -32,15 +32,14 @@ public class ABMRespuestaAprox extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextFieldABMPreguntas = new javax.swing.JTextField();
-        jTextFieldNuevaTematica = new javax.swing.JTextField();
+        jTextFieldPreguntaAprox = new javax.swing.JTextField();
+        jTextFieldEditarPreguntaAprox = new javax.swing.JTextField();
         jLabelBack = new javax.swing.JLabel();
         jButtonBack = new javax.swing.JButton();
         jLabelExit = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
-        jLabelIconAdmin1 = new javax.swing.JLabel();
         jLabelIconAdmin = new javax.swing.JLabel();
-        jLabelFondoTematica = new javax.swing.JLabel();
+        jLabelFondoPregunta = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,24 +48,24 @@ public class ABMRespuestaAprox extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextFieldABMPreguntas.setEditable(false);
-        jTextFieldABMPreguntas.setBackground(new java.awt.Color(51, 153, 0));
-        jTextFieldABMPreguntas.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
-        jTextFieldABMPreguntas.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldABMPreguntas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldABMPreguntas.setText("Pregunta");
-        jPanel1.add(jTextFieldABMPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 310, 50));
+        jTextFieldPreguntaAprox.setEditable(false);
+        jTextFieldPreguntaAprox.setBackground(new java.awt.Color(51, 153, 0));
+        jTextFieldPreguntaAprox.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
+        jTextFieldPreguntaAprox.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldPreguntaAprox.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldPreguntaAprox.setText("Pregunta");
+        jPanel1.add(jTextFieldPreguntaAprox, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 310, 50));
 
-        jTextFieldNuevaTematica.setBackground(new java.awt.Color(0, 102, 0));
-        jTextFieldNuevaTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldNuevaTematica.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldNuevaTematica.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldNuevaTematica.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldEditarPreguntaAprox.setBackground(new java.awt.Color(0, 102, 0));
+        jTextFieldEditarPreguntaAprox.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldEditarPreguntaAprox.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldEditarPreguntaAprox.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldEditarPreguntaAprox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNuevaTematicaActionPerformed(evt);
+                jTextFieldEditarPreguntaAproxActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldNuevaTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 310, 40));
+        jPanel1.add(jTextFieldEditarPreguntaAprox, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 310, 40));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 40, 30));
 
         jButtonBack.setBackground(new java.awt.Color(0, 102, 0));
@@ -89,9 +88,8 @@ public class ABMRespuestaAprox extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 60, 50));
-        jPanel1.add(jLabelIconAdmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 110, 100));
         jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 110, 100));
-        jPanel1.add(jLabelFondoTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 590, 160));
+        jPanel1.add(jLabelFondoPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 590, 160));
         jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 400));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -116,9 +114,9 @@ public class ABMRespuestaAprox extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonExitActionPerformed
 
-    private void jTextFieldNuevaTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNuevaTematicaActionPerformed
+    private void jTextFieldEditarPreguntaAproxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEditarPreguntaAproxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNuevaTematicaActionPerformed
+    }//GEN-LAST:event_jTextFieldEditarPreguntaAproxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -411,17 +409,16 @@ public class ABMRespuestaAprox extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBack;
-    private javax.swing.JButton jButtonExit;
-    private javax.swing.JLabel jLabelBack;
-    private javax.swing.JLabel jLabelExit;
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelFondoTematica;
-    private javax.swing.JLabel jLabelIconAdmin;
-    private javax.swing.JLabel jLabelIconAdmin1;
+    public javax.swing.JButton jButtonBack;
+    public javax.swing.JButton jButtonExit;
+    public javax.swing.JLabel jLabelBack;
+    public javax.swing.JLabel jLabelExit;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelFondoPregunta;
+    public javax.swing.JLabel jLabelIconAdmin;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextFieldABMPreguntas;
-    private javax.swing.JTextField jTextFieldNuevaTematica;
+    public javax.swing.JTextField jTextFieldEditarPreguntaAprox;
+    public javax.swing.JTextField jTextFieldPreguntaAprox;
     // End of variables declaration//GEN-END:variables
 }
 
