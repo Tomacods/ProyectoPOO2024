@@ -4,24 +4,16 @@
  */
 package ventanas;
 
-import javax.swing.Timer; 
-import java.awt.event.ActionEvent; 
-import java.awt.event.ActionListener; 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Maria
  */
 public class GameplayAproximacion extends javax.swing.JFrame {
-    private Timer timer; 
-    private int tiempo;
     /**
      * Creates new form gameplay
      */
     public GameplayAproximacion() {
         initComponents();
-        iniciarCronometro();
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/MenuPrincipal3.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "src/imagenes/historia.png");
@@ -48,8 +40,6 @@ public class GameplayAproximacion extends javax.swing.JFrame {
         jLabelJugador = new javax.swing.JLabel();
         jTextFieldJugador = new javax.swing.JTextField();
         jTextFieldPregunta = new javax.swing.JTextField();
-        jLabelTiempo = new javax.swing.JLabel();
-        jProgressBarTiempo = new javax.swing.JProgressBar();
         jLabelTematica = new javax.swing.JLabel();
         jTextFieldRespuestaAprox = new javax.swing.JTextField();
         jTextFieldTurnoAproximacion = new javax.swing.JTextField();
@@ -113,15 +103,6 @@ public class GameplayAproximacion extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextFieldPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 580, 70));
-
-        jLabelTiempo.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jLabelTiempo.setText("30");
-        jPanel1.add(jLabelTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, -1, -1));
-
-        jProgressBarTiempo.setForeground(new java.awt.Color(0, 0, 153));
-        jProgressBarTiempo.setMaximum(30);
-        jProgressBarTiempo.setValue(30);
-        jPanel1.add(jProgressBarTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 580, 20));
         jPanel1.add(jLabelTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 580, 300));
 
         jTextFieldRespuestaAprox.addActionListener(new java.awt.event.ActionListener() {
@@ -232,29 +213,11 @@ public class GameplayAproximacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelIconUser;
     private javax.swing.JLabel jLabelJugador;
     private javax.swing.JLabel jLabelTematica;
-    private javax.swing.JLabel jLabelTiempo;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JProgressBar jProgressBarTiempo;
     public javax.swing.JTextField jTextFieldJugador;
     private javax.swing.JTextField jTextFieldPregunta;
     private javax.swing.JTextField jTextFieldRespuestaAprox;
     private javax.swing.JTextField jTextFieldTurnoAproximacion;
     // End of variables declaration//GEN-END:variables
-    private void iniciarCronometro(){
-    tiempo=30;
-    timer = new Timer(1000, new ActionListener(){
-        @Override
-        public void actionPerformed(ActionEvent e) { 
-            tiempo--;
-            jLabelTiempo.setText(String.valueOf(tiempo)); 
-            jProgressBarTiempo.setValue(tiempo); 
-            if (tiempo <= 0) { 
-                timer.stop();
-                JOptionPane.showMessageDialog(null, "¡Se acabó el tiempo!"); 
-            }
-        }
-    });
-    timer.start();
-    }
 }
 

@@ -8,11 +8,11 @@ package ventanas;
  *
  * @author Maria
  */
-public class ABMTematicas extends javax.swing.JFrame {   
+public class ABMJugadores extends javax.swing.JFrame {   
     /**
      * Creates new form gameplay
      */
-    public ABMTematicas() {
+    public ABMJugadores() {
         initComponents();
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
@@ -63,7 +63,7 @@ public class ABMTematicas extends javax.swing.JFrame {
         jTextFieldABMPreguntas.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
         jTextFieldABMPreguntas.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldABMPreguntas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldABMPreguntas.setText("TEMATICAS");
+        jTextFieldABMPreguntas.setText("JUGADORES");
         jPanel1.add(jTextFieldABMPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 310, 70));
 
         jTextFieldTematica.setEditable(false);
@@ -71,20 +71,24 @@ public class ABMTematicas extends javax.swing.JFrame {
         jTextFieldTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldTematica.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldTematica.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldTematica.setText("Tematica");
-        jPanel1.add(jTextFieldTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 100, 60));
+        jTextFieldTematica.setText("Jugadores");
+        jPanel1.add(jTextFieldTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 120, 60));
 
         jComboBoxTematica.setBackground(new java.awt.Color(51, 153, 0));
         jComboBoxTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxTematica.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxTematica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arte", "Biologia", "Ciencia", "Deporte", "Entretenimiento", "Geografia", "Musica", "Historia" }));
-        jPanel1.add(jComboBoxTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 160, 60));
+        jComboBoxTematica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxTematicaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComboBoxTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 160, 60));
 
         jTextFieldNuevaTematica.setBackground(new java.awt.Color(0, 102, 0));
         jTextFieldNuevaTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldNuevaTematica.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldNuevaTematica.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextFieldNuevaTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 270, 40));
+        jPanel1.add(jTextFieldNuevaTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 290, 40));
         jPanel1.add(jLabelIconEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 60, 50));
         jPanel1.add(jLabelIconDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 60, 50));
 
@@ -107,7 +111,7 @@ public class ABMTematicas extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonModificarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 80, 70));
-        jPanel1.add(jLabelFondoTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 290, 130));
+        jPanel1.add(jLabelFondoTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 310, 130));
 
         jButtonAgregarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jButtonAgregarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 70)); // NOI18N
@@ -179,6 +183,10 @@ public class ABMTematicas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonExitActionPerformed
 
+    private void jComboBoxTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTematicaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxTematicaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -196,14 +204,46 @@ public class ABMTematicas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ABMTematicas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ABMJugadores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ABMTematicas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ABMJugadores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ABMTematicas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ABMJugadores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ABMTematicas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ABMJugadores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -240,7 +280,7 @@ public class ABMTematicas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ABMTematicas().setVisible(true);
+                new ABMJugadores().setVisible(true);
             }
         });
     }
