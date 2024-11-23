@@ -9,8 +9,8 @@ public class MostrarVistaQA {
         this.mostrar = mostrar;
     }
 
-    public void ejecutar(String tipo) {
-        if(tipo == "Multiple choice") {
+    public void ejecutar(/* String tipo */) {
+        /* if(tipo == "Multiple choice") {
             mostrar = new StrategyMC();
         } else {
             if (tipo == "Aproximacion") {
@@ -18,7 +18,7 @@ public class MostrarVistaQA {
             } else {
                 throw new IllegalArgumentException("Tipo ingresado erroneamente.");
             }
-        }
+        } */
         mostrar.mostrarVista();
     }
 }
