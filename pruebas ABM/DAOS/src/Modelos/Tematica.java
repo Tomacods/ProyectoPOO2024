@@ -43,20 +43,21 @@ public class Tematica {
         this.nombre = nombre;
     } 
 
-    //select MAX (id_tematica) from tematica
+    //ABM
+    public static void insertarTematica(Tematica tematica){
+        TematicaDAOImpl dao = new TematicaDAOImpl();
+        dao.insertarTematica(tematica);
+    }
+    public static void eliminarTematica(int id){
+        TematicaDAOImpl dao = new TematicaDAOImpl();
+        dao.eliminarTematica(id);
+    }
+    public static void actualizarTematica(Tematica tematica){
+        TematicaDAOImpl dao = new TematicaDAOImpl();
+        dao.actualizarTematica(tematica);
+    }
 
-    // public static void GetTematicas()
-    // {
-    //     Tematica.GetTematicas()
-    //     var dao = new Dao();
-    //     var arrelo = dao.obtenerTematicas();
 
-    //     for(int i=0; i < arrelo.size(); i++){
-    //         new Tematica(arrelo[i][0])
-    //     }
-    //     return result;
-
-    // }
     public static ArrayList<Tematica> obtenerTematicas() {
         TematicaDAOImpl dao = new TematicaDAOImpl();
         ArrayList<Object[]> arreglo = dao.obtenerTematicas();
@@ -81,3 +82,17 @@ public class Tematica {
         return tematica;
     }
 }
+    //select MAX (id_tematica) from tematica
+
+    // public static void GetTematicas()
+    // {
+    //     Tematica.GetTematicas()
+    //     var dao = new Dao();
+    //     var arrelo = dao.obtenerTematicas();
+
+    //     for(int i=0; i < arrelo.size(); i++){
+    //         new Tematica(arrelo[i][0])
+    //     }
+    //     return result;
+
+    // }
