@@ -279,7 +279,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
     private javax.swing.JButton jButtonEliminarPregunta;
     private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonModificarPregunta;
-    private javax.swing.JComboBox<String> jComboBoxPregunta;
+    public javax.swing.JComboBox<String> jComboBoxPregunta;
     private javax.swing.JComboBox<String> jComboBoxTematica;
     private javax.swing.JComboBox<String> jComboBoxTipo;
     private javax.swing.JLabel jLabelBack;
