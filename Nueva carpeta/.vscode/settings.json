@@ -1,8 +1,0 @@
-{
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "DAOS/commons-codec-1.17.1.jar",
-        "DAOS/flatlaf-3.5.1.jar",
-        "DAOS/postgresql-42.7.4.jar"
-    ]
-}
