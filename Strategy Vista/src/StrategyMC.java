@@ -1,7 +1,10 @@
+
+import vista.ABMRespuestaMC;
+
 public class StrategyMC implements MostrarQA {
-    
+    private ABMRespuestaMC abmRespuestaMC;
     @Override
     public void mostrarVista() {
-        System.out.println("Acá se mostraría la vista de MC.");
+        abmRespuestaMC.setVisible(true);
     }
 }

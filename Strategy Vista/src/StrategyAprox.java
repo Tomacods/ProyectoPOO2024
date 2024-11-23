@@ -1,7 +1,8 @@
+import vista.ABMRespuestaAprox;
 public class StrategyAprox implements  MostrarQA {
-
+    private ABMRespuestaAprox abmRespuestaAprox;
     @Override
     public void mostrarVista() {
-        System.out.println("Acá se mostraría la vista de Aproximación.");
+        abmRespuestaAprox.setVisible(true);
     }
 }
