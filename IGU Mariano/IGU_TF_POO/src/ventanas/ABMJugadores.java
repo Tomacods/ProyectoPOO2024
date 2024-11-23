@@ -76,11 +76,6 @@ public class ABMJugadores extends javax.swing.JFrame {
         jComboBoxJugadores.setBackground(new java.awt.Color(51, 153, 0));
         jComboBoxJugadores.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJugadores.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJugadores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxJugadoresActionPerformed(evt);
-            }
-        });
         jPanel1.add(jComboBoxJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 160, 60));
 
         jTextFieldEditarJugador.setBackground(new java.awt.Color(0, 102, 0));
@@ -94,21 +89,11 @@ public class ABMJugadores extends javax.swing.JFrame {
         jButtonEliminar.setBackground(new java.awt.Color(0, 102, 0));
         jButtonEliminar.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jButtonEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEliminarActionPerformed(evt);
-            }
-        });
         jPanel1.add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 80, 70));
 
         jButtonEditar.setBackground(new java.awt.Color(0, 102, 0));
         jButtonEditar.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jButtonEditar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEditarActionPerformed(evt);
-            }
-        });
         jPanel1.add(jButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 80, 70));
         jPanel1.add(jLabelFondoJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 310, 130));
 
@@ -116,33 +101,18 @@ public class ABMJugadores extends javax.swing.JFrame {
         jButtonAgregarJugador.setFont(new java.awt.Font("Roboto Medium", 0, 70)); // NOI18N
         jButtonAgregarJugador.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAgregarJugador.setText("+");
-        jButtonAgregarJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAgregarJugadorActionPerformed(evt);
-            }
-        });
         jPanel1.add(jButtonAgregarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 80, 70));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 40, 30));
 
         jButtonBack.setBackground(new java.awt.Color(0, 102, 0));
         jButtonBack.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jButtonBack.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBackActionPerformed(evt);
-            }
-        });
         jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, 50));
         jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 40, 30));
 
         jButtonExit.setBackground(new java.awt.Color(0, 102, 0));
         jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jButtonExit.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonExitActionPerformed(evt);
-            }
-        });
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 60, 50));
         jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 110, 100));
         jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 400));
@@ -160,30 +130,6 @@ public class ABMJugadores extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonEliminarActionPerformed
-
-    private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonEditarActionPerformed
-
-    private void jButtonAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAgregarJugadorActionPerformed
-
-    private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonBackActionPerformed
-
-    private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonExitActionPerformed
-
-    private void jComboBoxJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxJugadoresActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxJugadoresActionPerformed
 
     /**
      * @param args the command line arguments
