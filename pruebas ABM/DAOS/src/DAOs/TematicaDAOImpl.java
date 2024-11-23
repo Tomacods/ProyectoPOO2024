@@ -16,7 +16,8 @@ public class TematicaDAOImpl {
 
     }
 
-//ABM
+//ABM 
+
 public void insertarTematica(Tematica tematica) {
     String query = "INSERT INTO tematica (nombre_tematica) VALUES (?)";
     try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
