@@ -35,6 +35,7 @@ public class AdminContraseña extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         jTextFieldContraseña = new javax.swing.JTextField();
         jLabelIconAdmin = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,15 +62,22 @@ public class AdminContraseña extends javax.swing.JFrame {
                 jPasswordField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 400, 30));
+        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 400, 30));
 
+        jTextFieldContraseña.setEditable(false);
         jTextFieldContraseña.setBackground(new java.awt.Color(51, 153, 0));
         jTextFieldContraseña.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldContraseña.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldContraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldContraseña.setText("CONTRASEÑA");
-        jPanel1.add(jTextFieldContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 400, -1));
-        jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 110, 100));
+        jPanel1.add(jTextFieldContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 400, -1));
+        jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 110, 100));
+
+        jButton1.setBackground(new java.awt.Color(51, 153, 0));
+        jButton1.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("INGRESAR");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 130, -1));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jLabelFondo.setForeground(new java.awt.Color(255, 255, 255));
@@ -258,6 +266,7 @@ public class AdminContraseña extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonBack;
     private javax.swing.JLabel jLabelBack;
     private javax.swing.JLabel jLabelFondo;
