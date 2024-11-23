@@ -1,9 +1,6 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "src/ventanas/RSScaleLabel.jar",
-        "e:\\Elapachenes\\NetBeans-23\\netbeans\\java\\modules\\ext\\AbsoluteLayout.jar",
-        "src/Librerias/AbsoluteLayout.jar",
-        "src/Librerias/RSScaleLabel.jar"
+        "c:\\Users\\Maria\\Documents\\GitHub\\ProyectoPOO2024\\IGU Mariano\\RSScaleLabel.jar"
     ]
 }

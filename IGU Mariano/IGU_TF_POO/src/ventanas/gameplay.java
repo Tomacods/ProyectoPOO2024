@@ -23,8 +23,8 @@ public class Gameplay extends javax.swing.JFrame {
         initComponents();
         iniciarCronometro();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/azul.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "src/imagenes/historia.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/MenuPrincipal3.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "src/imagenes/entretenimiento.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser, "src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelConfig, "src/imagenes/config.png");
@@ -52,13 +52,13 @@ public class Gameplay extends javax.swing.JFrame {
         jButtonRtaC = new javax.swing.JButton();
         jButtonRtaD = new javax.swing.JButton();
         jLabelRonda = new javax.swing.JLabel();
-        jLabelTurnoDe = new javax.swing.JLabel();
         jLabelEscalon = new javax.swing.JLabel();
         jLabelRtaA = new javax.swing.JLabel();
         jLabelRtaB = new javax.swing.JLabel();
         jLabelRtaC = new javax.swing.JLabel();
         jLabelRtaD = new javax.swing.JLabel();
         jTextFieldPregunta = new javax.swing.JTextField();
+        jTextFieldTurnoAproximacion = new javax.swing.JTextField();
         jLabelTiempo = new javax.swing.JLabel();
         jProgressBarTiempo = new javax.swing.JProgressBar();
         jLabelTematica = new javax.swing.JLabel();
@@ -72,7 +72,7 @@ public class Gameplay extends javax.swing.JFrame {
         jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
         jPanel1.add(jLabelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
 
-        jButtonExit.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonExit.setBackground(new java.awt.Color(102, 0, 102));
         jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
         jButtonExit.setForeground(new java.awt.Color(255, 255, 255));
         jButtonExit.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +82,7 @@ public class Gameplay extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
-        jButtonConfig.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonConfig.setBackground(new java.awt.Color(102, 0, 102));
         jButtonConfig.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
         jButtonConfig.setForeground(new java.awt.Color(255, 255, 255));
         jButtonConfig.addActionListener(new java.awt.event.ActionListener() {
@@ -91,15 +91,15 @@ public class Gameplay extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
-        jPanel1.add(jLabelIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 40, 30));
+        jPanel1.add(jLabelIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 40, 30));
 
         jLabelJugador.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jLabelJugador.setForeground(new java.awt.Color(255, 255, 255));
         jLabelJugador.setText("Jugador N");
-        jPanel1.add(jLabelJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 100, 30));
+        jPanel1.add(jLabelJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 100, 30));
 
         jTextFieldJugador.setEditable(false);
-        jTextFieldJugador.setBackground(new java.awt.Color(0, 0, 153));
+        jTextFieldJugador.setBackground(new java.awt.Color(102, 0, 102));
         jTextFieldJugador.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jTextFieldJugador.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJugador.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -108,27 +108,32 @@ public class Gameplay extends javax.swing.JFrame {
                 jTextFieldJugadorActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 170, 50));
+        jPanel1.add(jTextFieldJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 170, 50));
 
-        jButtonRtaA.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonRtaA.setBackground(new java.awt.Color(102, 0, 102));
         jButtonRtaA.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaA.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaA.setText("Respuesta");
-        jPanel1.add(jButtonRtaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 490, 240, 30));
+        jButtonRtaA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRtaAActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonRtaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 510, 240, 30));
 
-        jButtonRtaB.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonRtaB.setBackground(new java.awt.Color(102, 0, 102));
         jButtonRtaB.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaB.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaB.setText("Respuesta");
-        jPanel1.add(jButtonRtaB, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 530, 240, 30));
+        jPanel1.add(jButtonRtaB, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 550, 240, 30));
 
-        jButtonRtaC.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonRtaC.setBackground(new java.awt.Color(102, 0, 102));
         jButtonRtaC.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaC.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaC.setText("Respuesta");
-        jPanel1.add(jButtonRtaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 240, 30));
+        jPanel1.add(jButtonRtaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 240, 30));
 
-        jButtonRtaD.setBackground(new java.awt.Color(0, 0, 153));
+        jButtonRtaD.setBackground(new java.awt.Color(102, 0, 102));
         jButtonRtaD.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaD.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaD.setText("Respuesta");
@@ -137,45 +142,40 @@ public class Gameplay extends javax.swing.JFrame {
                 jButtonRtaDActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonRtaD, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 530, 240, 30));
+        jPanel1.add(jButtonRtaD, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 240, 30));
 
         jLabelRonda.setFont(new java.awt.Font("Roboto Medium", 3, 15)); // NOI18N
         jLabelRonda.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRonda.setText("(1/2)");
-        jPanel1.add(jLabelRonda, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, 30));
-
-        jLabelTurnoDe.setFont(new java.awt.Font("Roboto Medium", 1, 30)); // NOI18N
-        jLabelTurnoDe.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTurnoDe.setText("Turno de");
-        jPanel1.add(jLabelTurnoDe, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 140, 50));
+        jPanel1.add(jLabelRonda, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, -1, 30));
 
         jLabelEscalon.setFont(new java.awt.Font("Roboto Medium", 3, 30)); // NOI18N
         jLabelEscalon.setForeground(new java.awt.Color(255, 255, 255));
         jLabelEscalon.setText("ESCALON N");
-        jPanel1.add(jLabelEscalon, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 170, 60));
+        jPanel1.add(jLabelEscalon, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 170, 60));
 
         jLabelRtaA.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabelRtaA.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRtaA.setText("A.");
-        jPanel1.add(jLabelRtaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 30, 30));
+        jPanel1.add(jLabelRtaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 30, 30));
 
         jLabelRtaB.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabelRtaB.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRtaB.setText("B.");
-        jPanel1.add(jLabelRtaB, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 30, 30));
+        jPanel1.add(jLabelRtaB, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 30, 30));
 
         jLabelRtaC.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabelRtaC.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRtaC.setText("C.");
-        jPanel1.add(jLabelRtaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 490, 30, -1));
+        jPanel1.add(jLabelRtaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, 30, -1));
 
         jLabelRtaD.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabelRtaD.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRtaD.setText("D.");
-        jPanel1.add(jLabelRtaD, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 530, 30, -1));
+        jPanel1.add(jLabelRtaD, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 550, 30, -1));
 
         jTextFieldPregunta.setEditable(false);
-        jTextFieldPregunta.setBackground(new java.awt.Color(0, 0, 153));
+        jTextFieldPregunta.setBackground(new java.awt.Color(102, 0, 102));
         jTextFieldPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldPregunta.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldPregunta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -185,21 +185,34 @@ public class Gameplay extends javax.swing.JFrame {
                 jTextFieldPreguntaActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 580, 70));
+        jPanel1.add(jTextFieldPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 580, 70));
+
+        jTextFieldTurnoAproximacion.setEditable(false);
+        jTextFieldTurnoAproximacion.setBackground(new java.awt.Color(102, 0, 102));
+        jTextFieldTurnoAproximacion.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldTurnoAproximacion.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldTurnoAproximacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldTurnoAproximacion.setText("TURNO ACTUAL");
+        jTextFieldTurnoAproximacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTurnoAproximacionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextFieldTurnoAproximacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 170, 40));
 
         jLabelTiempo.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jLabelTiempo.setText("30");
-        jPanel1.add(jLabelTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, -1, -1));
+        jPanel1.add(jLabelTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, -1, -1));
 
         jProgressBarTiempo.setForeground(new java.awt.Color(0, 0, 153));
         jProgressBarTiempo.setMaximum(30);
         jProgressBarTiempo.setValue(30);
-        jPanel1.add(jProgressBarTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 580, 20));
-        jPanel1.add(jLabelTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 580, 300));
+        jPanel1.add(jProgressBarTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 580, 20));
+        jPanel1.add(jLabelTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 580, 300));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jLabelFondo.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -390, 660, 990));
+        jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -370, 650, 990));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -216,7 +229,6 @@ public class Gameplay extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-        System.exit(0);
     }//GEN-LAST:event_jButtonExitActionPerformed
 
     private void jButtonRtaDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRtaDActionPerformed
@@ -234,6 +246,14 @@ public class Gameplay extends javax.swing.JFrame {
     private void jTextFieldJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldJugadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldJugadorActionPerformed
+
+    private void jButtonRtaAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRtaAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonRtaAActionPerformed
+
+    private void jTextFieldTurnoAproximacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTurnoAproximacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldTurnoAproximacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,11 +311,11 @@ public class Gameplay extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelRtaD;
     private javax.swing.JLabel jLabelTematica;
     private javax.swing.JLabel jLabelTiempo;
-    private javax.swing.JLabel jLabelTurnoDe;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JProgressBar jProgressBarTiempo;
-    private javax.swing.JTextField jTextFieldJugador;
+    public javax.swing.JTextField jTextFieldJugador;
     private javax.swing.JTextField jTextFieldPregunta;
+    private javax.swing.JTextField jTextFieldTurnoAproximacion;
     // End of variables declaration//GEN-END:variables
     private void iniciarCronometro(){
     tiempo=30;

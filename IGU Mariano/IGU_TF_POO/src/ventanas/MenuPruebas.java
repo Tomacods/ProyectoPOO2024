@@ -170,10 +170,10 @@ public class MenuPruebas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonJugar1;
-    private javax.swing.JButton jButtonModoAdmin;
-    private javax.swing.JButton jButtonOpciones;
-    private javax.swing.JButton jButtonSalir;
+    public javax.swing.JButton jButtonJugar1;
+    public javax.swing.JButton jButtonModoAdmin;
+    public javax.swing.JButton jButtonOpciones;
+    public javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JPanel jPanel1;

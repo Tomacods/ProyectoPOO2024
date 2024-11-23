@@ -152,14 +152,14 @@
         <Component class="javax.swing.JLabel" name="jLabelIconUser">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="40" y="90" width="150" height="150"/>
+              <AbsoluteConstraints x="60" y="140" width="110" height="90"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelIconUser2">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="430" y="90" width="150" height="160"/>
+              <AbsoluteConstraints x="450" y="140" width="110" height="100"/>
             </Constraint>
           </Constraints>
         </Component>

@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -110,8 +111,8 @@ public class Gameplay_final extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
-        jPanel1.add(jLabelIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 150, 150));
-        jPanel1.add(jLabelIconUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 150, 160));
+        jPanel1.add(jLabelIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 110, 90));
+        jPanel1.add(jLabelIconUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 110, 100));
 
         jLabelUser.setFont(new java.awt.Font("Roboto Medium", 3, 30)); // NOI18N
         jLabelUser.setForeground(new java.awt.Color(255, 255, 255));
@@ -212,12 +213,10 @@ public class Gameplay_final extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-        System.exit(0);
     }//GEN-LAST:event_jButtonExitActionPerformed
 
     private void jButtonConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfigActionPerformed
-        Opciones newFrame = new Opciones();
-        newFrame.setVisible(true);
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonConfigActionPerformed
 
     private void jTextFieldPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPreguntaActionPerformed
@@ -304,7 +303,6 @@ public class Gameplay_final extends javax.swing.JFrame {
     
     private void iniciarCronometro(){
     tiempo=30;
-    Puntuaciones ganador = new Puntuaciones();
     timer = new Timer(1000, new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) { 
@@ -313,7 +311,6 @@ public class Gameplay_final extends javax.swing.JFrame {
             jProgressBarTiempo.setValue(tiempo); 
             if (tiempo <= 0) { 
                 timer.stop();
-                ganador.setVisible(true);
             }
         }
     });
