@@ -1,4 +1,3 @@
-
 import vista.ABMRespuestaMC;
 
 public class StrategyMC implements MostrarQA {

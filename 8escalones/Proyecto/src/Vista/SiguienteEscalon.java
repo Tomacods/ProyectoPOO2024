@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vista;
+package Vista;
 
 
 /**
@@ -245,37 +245,37 @@ public class SiguienteEscalon extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelFondo2;
-    private javax.swing.JLabel jLabelJ1;
-    private javax.swing.JLabel jLabelJ2;
-    private javax.swing.JLabel jLabelJ3;
-    private javax.swing.JLabel jLabelJ4;
-    private javax.swing.JLabel jLabelJ5;
-    private javax.swing.JLabel jLabelJ6;
-    private javax.swing.JLabel jLabelJ7;
-    private javax.swing.JLabel jLabelJ8;
-    private javax.swing.JLabel jLabelJ9;
-    private javax.swing.JLabel jLabelLevelUp;
-    private javax.swing.JLabel jLabelUser1;
-    private javax.swing.JLabel jLabelUser2;
-    private javax.swing.JLabel jLabelUser3;
-    private javax.swing.JLabel jLabelUser4;
-    private javax.swing.JLabel jLabelUser5;
-    private javax.swing.JLabel jLabelUser6;
-    private javax.swing.JLabel jLabelUser7;
-    private javax.swing.JLabel jLabelUser8;
-    private javax.swing.JLabel jLabelUser9;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelFondo2;
+    public javax.swing.JLabel jLabelJ1;
+    public javax.swing.JLabel jLabelJ2;
+    public javax.swing.JLabel jLabelJ3;
+    public javax.swing.JLabel jLabelJ4;
+    public javax.swing.JLabel jLabelJ5;
+    public javax.swing.JLabel jLabelJ6;
+    public javax.swing.JLabel jLabelJ7;
+    public javax.swing.JLabel jLabelJ8;
+    public javax.swing.JLabel jLabelJ9;
+    public javax.swing.JLabel jLabelLevelUp;
+    public javax.swing.JLabel jLabelUser1;
+    public javax.swing.JLabel jLabelUser2;
+    public javax.swing.JLabel jLabelUser3;
+    public javax.swing.JLabel jLabelUser4;
+    public javax.swing.JLabel jLabelUser5;
+    public javax.swing.JLabel jLabelUser6;
+    public javax.swing.JLabel jLabelUser7;
+    public javax.swing.JLabel jLabelUser8;
+    public javax.swing.JLabel jLabelUser9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextFieldJ1;
-    private javax.swing.JTextField jTextFieldJ2;
-    private javax.swing.JTextField jTextFieldJ3;
-    private javax.swing.JTextField jTextFieldJ4;
-    private javax.swing.JTextField jTextFieldJ5;
-    private javax.swing.JTextField jTextFieldJ6;
-    private javax.swing.JTextField jTextFieldJ7;
-    private javax.swing.JTextField jTextFieldJ8;
-    private javax.swing.JTextField jTextFieldJ9;
+    public javax.swing.JTextField jTextFieldJ1;
+    public javax.swing.JTextField jTextFieldJ2;
+    public javax.swing.JTextField jTextFieldJ3;
+    public javax.swing.JTextField jTextFieldJ4;
+    public javax.swing.JTextField jTextFieldJ5;
+    public javax.swing.JTextField jTextFieldJ6;
+    public javax.swing.JTextField jTextFieldJ7;
+    public javax.swing.JTextField jTextFieldJ8;
+    public javax.swing.JTextField jTextFieldJ9;
     // End of variables declaration//GEN-END:variables
 }
 

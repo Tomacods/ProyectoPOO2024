@@ -164,7 +164,7 @@ public class Gameplay_final extends javax.swing.JFrame {
         jLabelEscalonFinal.setText("¡ESCALON FINAL!");
         jPanel1.add(jLabelEscalonFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 270, 60));
 
-        jLabelVersus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/versus.gif"))); // NOI18N
+        jLabelVersus.setIcon(new javax.swing.ImageIcon(getClass().getResource("src/imagenes/versus.gif")));
         jLabelVersus.setText("ESCALON FINAL");
         jPanel1.add(jLabelVersus, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 0, 690, 370));
         jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 600));

@@ -1,18 +1,50 @@
 package controlador;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-import ventanas.ABMPreguntas;
-import ventanas.ABMTematicas;
+import java.util.ArrayList;
+import Vista.ABMTematicas;
+import Modelos.Tematica;
+
 
 public class ControladorABMTematica {
 
-private Tematica tematica;
+
 private ABMTematicas vistaABMTematicas;
 
-public ControladorABMTematica(Tematica tematica, ABMTematicas vistAbmTematicas){
-    this.tematica= tematica;
-    this.vistaABMTematicas= vistAbmTematicas;
+public ControladorABMTematica(){
+    super();
+    this.vistaABMTematicas= new ABMTematicas(this);
+    vistaABMTematicas.setVisible(true);
+    this.vistaABMTematicas.agregarListenerAgregarTematica(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            insertarTematica();
+        }
+    });
+
+}
+
+private void traerTematicasCB(){
+    ArrayList<Tematica> tematicas = Tematica.obtenerTematicas(); 
+        for (Tematica tematica : tematicas) {
+            vistaABMTematicas.getComboBoxTematica().addItem(tematica.getNombre());
+        }
+
+
+}
+
+private void insertarTematica() {
+    String nuevaTematica = vistaABMTematicas.getTextFieldNuevaTematica().getText();
+    if (!nuevaTematica.isEmpty()) { 
+        Tematica tematicaIns = new Tematica(0, nuevaTematica);
+        Tematica.insertarTematica(tematicaIns); 
+        traerTematicasCB();
+    } else {
+        System.out.println("El campo de la nueva temática está vacío.");
+    }
 }
 
 
-    
+
 }

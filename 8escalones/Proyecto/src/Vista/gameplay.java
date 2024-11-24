@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vista;
+package Vista;
 
 /**
+ *
  * @author Maria
  */
 public class Gameplay extends javax.swing.JFrame {
@@ -46,7 +47,7 @@ public class Gameplay extends javax.swing.JFrame {
         jLabelRtaC = new javax.swing.JLabel();
         jLabelRtaD = new javax.swing.JLabel();
         jTextFieldPregunta = new javax.swing.JTextField();
-        jTextFieldTurnoAproximacion = new javax.swing.JTextField();
+        jTextFieldTurnoActual = new javax.swing.JTextField();
         jLabelTematica = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -162,18 +163,18 @@ public class Gameplay extends javax.swing.JFrame {
         });
         jPanel1.add(jTextFieldPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 580, 70));
 
-        jTextFieldTurnoAproximacion.setEditable(false);
-        jTextFieldTurnoAproximacion.setBackground(new java.awt.Color(102, 0, 102));
-        jTextFieldTurnoAproximacion.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldTurnoAproximacion.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldTurnoAproximacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldTurnoAproximacion.setText("TURNO ACTUAL");
-        jTextFieldTurnoAproximacion.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldTurnoActual.setEditable(false);
+        jTextFieldTurnoActual.setBackground(new java.awt.Color(102, 0, 102));
+        jTextFieldTurnoActual.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldTurnoActual.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldTurnoActual.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldTurnoActual.setText("TURNO ACTUAL");
+        jTextFieldTurnoActual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldTurnoAproximacionActionPerformed(evt);
+                jTextFieldTurnoActualActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldTurnoAproximacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 170, 40));
+        jPanel1.add(jTextFieldTurnoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 170, 40));
         jPanel1.add(jLabelTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 580, 300));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -213,9 +214,9 @@ public class Gameplay extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonRtaAActionPerformed
 
-    private void jTextFieldTurnoAproximacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTurnoAproximacionActionPerformed
+    private void jTextFieldTurnoActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTurnoActualActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldTurnoAproximacionActionPerformed
+    }//GEN-LAST:event_jTextFieldTurnoActualActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,26 +255,26 @@ public class Gameplay extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonExit;
-    private javax.swing.JButton jButtonRtaA;
-    private javax.swing.JButton jButtonRtaB;
-    private javax.swing.JButton jButtonRtaC;
-    private javax.swing.JButton jButtonRtaD;
-    private javax.swing.JLabel jLabelEscalon;
-    private javax.swing.JLabel jLabelExit;
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelIconUser;
-    private javax.swing.JLabel jLabelJugador;
-    private javax.swing.JLabel jLabelRonda;
-    private javax.swing.JLabel jLabelRtaA;
-    private javax.swing.JLabel jLabelRtaB;
-    private javax.swing.JLabel jLabelRtaC;
-    private javax.swing.JLabel jLabelRtaD;
-    private javax.swing.JLabel jLabelTematica;
+    public javax.swing.JButton jButtonExit;
+    public javax.swing.JButton jButtonRtaA;
+    public javax.swing.JButton jButtonRtaB;
+    public javax.swing.JButton jButtonRtaC;
+    public javax.swing.JButton jButtonRtaD;
+    public javax.swing.JLabel jLabelEscalon;
+    public javax.swing.JLabel jLabelExit;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelIconUser;
+    public javax.swing.JLabel jLabelJugador;
+    public javax.swing.JLabel jLabelRonda;
+    public javax.swing.JLabel jLabelRtaA;
+    public javax.swing.JLabel jLabelRtaB;
+    public javax.swing.JLabel jLabelRtaC;
+    public javax.swing.JLabel jLabelRtaD;
+    public javax.swing.JLabel jLabelTematica;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField jTextFieldJugador;
-    private javax.swing.JTextField jTextFieldPregunta;
-    private javax.swing.JTextField jTextFieldTurnoAproximacion;
+    public javax.swing.JTextField jTextFieldPregunta;
+    public javax.swing.JTextField jTextFieldTurnoActual;
     // End of variables declaration//GEN-END:variables
 }
 

@@ -19,7 +19,7 @@ public class ABMJugadores extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "src/imagenes/admin.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconEdit, "src/imagenes/lapiz.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconDelete, "src/imagenes/basura.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTematica, "src/imagenes/verde.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoJugadores, "src/imagenes/verde.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/back.png");
     }
@@ -34,21 +34,20 @@ public class ABMJugadores extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextFieldABMPreguntas = new javax.swing.JTextField();
-        jTextFieldTematica = new javax.swing.JTextField();
-        jComboBoxTematica = new javax.swing.JComboBox<>();
-        jTextFieldNuevaTematica = new javax.swing.JTextField();
+        jTextFieldJugadores = new javax.swing.JTextField();
+        jTextFieldJugadores2 = new javax.swing.JTextField();
+        jComboBoxJugadores = new javax.swing.JComboBox<>();
+        jTextFieldEditarJugador = new javax.swing.JTextField();
         jLabelIconEdit = new javax.swing.JLabel();
         jLabelIconDelete = new javax.swing.JLabel();
-        jButtonEliminarPregunta = new javax.swing.JButton();
-        jButtonModificarPregunta = new javax.swing.JButton();
-        jLabelFondoTematica = new javax.swing.JLabel();
-        jButtonAgregarPregunta = new javax.swing.JButton();
+        jButtonEliminar = new javax.swing.JButton();
+        jButtonEditar = new javax.swing.JButton();
+        jLabelFondoJugadores = new javax.swing.JLabel();
+        jButtonAgregarJugador = new javax.swing.JButton();
         jLabelBack = new javax.swing.JLabel();
         jButtonBack = new javax.swing.JButton();
         jLabelExit = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
-        jLabelIconAdmin1 = new javax.swing.JLabel();
         jLabelIconAdmin = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -58,71 +57,71 @@ public class ABMJugadores extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextFieldABMPreguntas.setEditable(false);
-        jTextFieldABMPreguntas.setBackground(new java.awt.Color(51, 153, 0));
-        jTextFieldABMPreguntas.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
-        jTextFieldABMPreguntas.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldABMPreguntas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldABMPreguntas.setText("JUGADORES");
-        jPanel1.add(jTextFieldABMPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 310, 70));
+        jTextFieldJugadores.setEditable(false);
+        jTextFieldJugadores.setBackground(new java.awt.Color(51, 153, 0));
+        jTextFieldJugadores.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
+        jTextFieldJugadores.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldJugadores.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldJugadores.setText("JUGADORES");
+        jPanel1.add(jTextFieldJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 310, 70));
 
-        jTextFieldTematica.setEditable(false);
-        jTextFieldTematica.setBackground(new java.awt.Color(51, 153, 0));
-        jTextFieldTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldTematica.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldTematica.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldTematica.setText("Jugadores");
-        jPanel1.add(jTextFieldTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 120, 60));
+        jTextFieldJugadores2.setEditable(false);
+        jTextFieldJugadores2.setBackground(new java.awt.Color(51, 153, 0));
+        jTextFieldJugadores2.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldJugadores2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldJugadores2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldJugadores2.setText("Jugadores");
+        jPanel1.add(jTextFieldJugadores2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 120, 60));
 
-        jComboBoxTematica.setBackground(new java.awt.Color(51, 153, 0));
-        jComboBoxTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jComboBoxTematica.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxTematica.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxJugadores.setBackground(new java.awt.Color(51, 153, 0));
+        jComboBoxJugadores.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jComboBoxJugadores.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBoxJugadores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxTematicaActionPerformed(evt);
+                jComboBoxJugadoresActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBoxTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 160, 60));
+        jPanel1.add(jComboBoxJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 160, 60));
 
-        jTextFieldNuevaTematica.setBackground(new java.awt.Color(0, 102, 0));
-        jTextFieldNuevaTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldNuevaTematica.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldNuevaTematica.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextFieldNuevaTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 290, 40));
+        jTextFieldEditarJugador.setBackground(new java.awt.Color(0, 102, 0));
+        jTextFieldEditarJugador.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldEditarJugador.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldEditarJugador.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(jTextFieldEditarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 290, 40));
         jPanel1.add(jLabelIconEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 60, 50));
         jPanel1.add(jLabelIconDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 60, 50));
 
-        jButtonEliminarPregunta.setBackground(new java.awt.Color(0, 102, 0));
-        jButtonEliminarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButtonEliminarPregunta.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonEliminarPregunta.addActionListener(new java.awt.event.ActionListener() {
+        jButtonEliminar.setBackground(new java.awt.Color(0, 102, 0));
+        jButtonEliminar.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jButtonEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEliminarPreguntaActionPerformed(evt);
+                jButtonEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonEliminarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 80, 70));
+        jPanel1.add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 80, 70));
 
-        jButtonModificarPregunta.setBackground(new java.awt.Color(0, 102, 0));
-        jButtonModificarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButtonModificarPregunta.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonModificarPregunta.addActionListener(new java.awt.event.ActionListener() {
+        jButtonEditar.setBackground(new java.awt.Color(0, 102, 0));
+        jButtonEditar.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jButtonEditar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonModificarPreguntaActionPerformed(evt);
+                jButtonEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonModificarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 80, 70));
-        jPanel1.add(jLabelFondoTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 310, 130));
+        jPanel1.add(jButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 80, 70));
+        jPanel1.add(jLabelFondoJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 310, 130));
 
-        jButtonAgregarPregunta.setBackground(new java.awt.Color(0, 102, 0));
-        jButtonAgregarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 70)); // NOI18N
-        jButtonAgregarPregunta.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAgregarPregunta.setText("+");
-        jButtonAgregarPregunta.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAgregarJugador.setBackground(new java.awt.Color(0, 102, 0));
+        jButtonAgregarJugador.setFont(new java.awt.Font("Roboto Medium", 0, 70)); // NOI18N
+        jButtonAgregarJugador.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonAgregarJugador.setText("+");
+        jButtonAgregarJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAgregarPreguntaActionPerformed(evt);
+                jButtonAgregarJugadorActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonAgregarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 80, 70));
+        jPanel1.add(jButtonAgregarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 80, 70));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 40, 30));
 
         jButtonBack.setBackground(new java.awt.Color(0, 102, 0));
@@ -145,7 +144,6 @@ public class ABMJugadores extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 60, 50));
-        jPanel1.add(jLabelIconAdmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 110, 100));
         jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 110, 100));
         jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 400));
 
@@ -163,17 +161,17 @@ public class ABMJugadores extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonEliminarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarPreguntaActionPerformed
+    private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonEliminarPreguntaActionPerformed
+    }//GEN-LAST:event_jButtonEliminarActionPerformed
 
-    private void jButtonModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarPreguntaActionPerformed
+    private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonModificarPreguntaActionPerformed
+    }//GEN-LAST:event_jButtonEditarActionPerformed
 
-    private void jButtonAgregarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarPreguntaActionPerformed
+    private void jButtonAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarJugadorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAgregarPreguntaActionPerformed
+    }//GEN-LAST:event_jButtonAgregarJugadorActionPerformed
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
         // TODO add your handling code here:
@@ -183,9 +181,9 @@ public class ABMJugadores extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonExitActionPerformed
 
-    private void jComboBoxTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTematicaActionPerformed
+    private void jComboBoxJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxJugadoresActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxTematicaActionPerformed
+    }//GEN-LAST:event_jComboBoxJugadoresActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,24 +284,23 @@ public class ABMJugadores extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAgregarPregunta;
-    private javax.swing.JButton jButtonBack;
-    private javax.swing.JButton jButtonEliminarPregunta;
-    private javax.swing.JButton jButtonExit;
-    private javax.swing.JButton jButtonModificarPregunta;
-    private javax.swing.JComboBox<String> jComboBoxTematica;
-    private javax.swing.JLabel jLabelBack;
-    private javax.swing.JLabel jLabelExit;
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelFondoTematica;
-    private javax.swing.JLabel jLabelIconAdmin;
-    private javax.swing.JLabel jLabelIconAdmin1;
-    private javax.swing.JLabel jLabelIconDelete;
-    private javax.swing.JLabel jLabelIconEdit;
+    public javax.swing.JButton jButtonAgregarJugador;
+    public javax.swing.JButton jButtonBack;
+    public javax.swing.JButton jButtonEditar;
+    public javax.swing.JButton jButtonEliminar;
+    public javax.swing.JButton jButtonExit;
+    public javax.swing.JComboBox<String> jComboBoxJugadores;
+    public javax.swing.JLabel jLabelBack;
+    public javax.swing.JLabel jLabelExit;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelFondoJugadores;
+    public javax.swing.JLabel jLabelIconAdmin;
+    public javax.swing.JLabel jLabelIconDelete;
+    public javax.swing.JLabel jLabelIconEdit;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextFieldABMPreguntas;
-    private javax.swing.JTextField jTextFieldNuevaTematica;
-    private javax.swing.JTextField jTextFieldTematica;
+    public javax.swing.JTextField jTextFieldEditarJugador;
+    public javax.swing.JTextField jTextFieldJugadores;
+    public javax.swing.JTextField jTextFieldJugadores2;
     // End of variables declaration//GEN-END:variables
 }
 

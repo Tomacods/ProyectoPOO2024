@@ -1,8 +1,13 @@
 {
-    "java.project.referencedLibraries": [ //acá se agregan las librerías que se quiera usar en el proyecto
+    "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "DAOS/commons-codec-1.17.1.jar",
         "DAOS/flatlaf-3.5.1.jar",
-        "DAOS/postgresql-42.7.4.jar"
+        "DAOS/postgresql-42.7.4.jar",
+        "Proyecto/AbsoluteLayout.jar",
+        "Proyecto/RSScaleLabel.jar",
+        "Proyecto/commons-codec-1.17.1.jar",
+        "Proyecto/flatlaf-3.5.1.jar",
+        "Proyecto/postgresql-42.7.4.jar"
     ]
 }
