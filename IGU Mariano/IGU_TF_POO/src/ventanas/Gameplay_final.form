@@ -361,8 +361,8 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelVersus">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imagenes/versus.gif"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;src/imagenes/versus.gif&quot;))" type="code"/>
             </Property>
             <Property name="text" type="java.lang.String" value="ESCALON FINAL"/>
           </Properties>

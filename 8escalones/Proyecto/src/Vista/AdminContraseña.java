@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vista;
+package Vista;
 
 /**
  *
@@ -32,10 +32,10 @@ public class AdminContraseña extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabelBack = new javax.swing.JLabel();
         jButtonBack = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jPasswordField = new javax.swing.JPasswordField();
         jTextFieldContraseña = new javax.swing.JTextField();
         jLabelIconAdmin = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jButtonIngresar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,14 +55,14 @@ public class AdminContraseña extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
-        jPasswordField1.setBackground(new java.awt.Color(51, 153, 0));
-        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        jPasswordField.setBackground(new java.awt.Color(51, 153, 0));
+        jPasswordField.setForeground(new java.awt.Color(255, 255, 255));
+        jPasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                jPasswordFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 400, 30));
+        jPanel1.add(jPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 400, 30));
 
         jTextFieldContraseña.setEditable(false);
         jTextFieldContraseña.setBackground(new java.awt.Color(51, 153, 0));
@@ -73,11 +73,11 @@ public class AdminContraseña extends javax.swing.JFrame {
         jPanel1.add(jTextFieldContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 400, -1));
         jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 110, 100));
 
-        jButton1.setBackground(new java.awt.Color(51, 153, 0));
-        jButton1.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("INGRESAR");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 130, -1));
+        jButtonIngresar.setBackground(new java.awt.Color(51, 153, 0));
+        jButtonIngresar.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jButtonIngresar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonIngresar.setText("INGRESAR");
+        jPanel1.add(jButtonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 130, -1));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jLabelFondo.setForeground(new java.awt.Color(255, 255, 255));
@@ -100,8 +100,8 @@ public class AdminContraseña extends javax.swing.JFrame {
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
     }//GEN-LAST:event_jButtonBackActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldActionPerformed
+    }//GEN-LAST:event_jPasswordFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -266,14 +266,14 @@ public class AdminContraseña extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButtonBack;
-    private javax.swing.JLabel jLabelBack;
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelIconAdmin;
+    public javax.swing.JButton jButtonBack;
+    public javax.swing.JButton jButtonIngresar;
+    public javax.swing.JLabel jLabelBack;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelIconAdmin;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextFieldContraseña;
+    public javax.swing.JPasswordField jPasswordField;
+    public javax.swing.JTextField jTextFieldContraseña;
     // End of variables declaration//GEN-END:variables
 }
 
