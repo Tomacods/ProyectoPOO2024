@@ -1,7 +1,7 @@
-import vista.ABMPreguntas;
+/* import vista.ABMPreguntas;
 import vista.ABMRespuestaAprox;
 import vista.ABMRespuestaMC;
-import javax.swing.*;
+import javax.swing.*; */
 
 public class SeleccionarAccion {
     
@@ -11,14 +11,37 @@ public class SeleccionarAccion {
     //llamar vista
 
     public String accion;
+    public String tematica;
+    public String tipoPreg;
 
     public SeleccionarAccion(String accion) {
         this.accion = accion;
     }
 
     public void seleccionar(String accion) {
-        if (accion == "editar") {
-
+        switch (accion) {
+            case "editar": {
+                EditarPreg editar = new EditarPreg();
+                editar.selecTipo(tipoPreg);
+                editar.selectTematica(tematica);
+                editar.editarPregunta();
+                break;
+            }
+            case "crear": {
+                CrearPreg crear = new CrearPreg();
+                crear.selecTipo(tipoPreg);
+                crear.selectTematica(tematica);
+                crear.crearPregunta();
+                break;
+            }
+            case "borrar": {
+                BorrarPreg borrar = new BorrarPreg();
+                borrar.selecTipo(tipoPreg);
+                borrar.selectTematica(tematica);
+                borrar.borrarPregunta();
+                break;
+            }
+            default: throw new IllegalArgumentException("Acción ingresada erroneamente.");
         }
     }
 }
