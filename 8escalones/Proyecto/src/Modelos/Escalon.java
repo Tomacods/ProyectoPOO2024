@@ -29,6 +29,10 @@ public class Escalon {
             quienesSuben();
         }
     }
+    public void jugarEscalonFinal() {
+        System.out.println("¡¡Bienvenidos al Escalon Final!!");
+        Ronda ronda = new Ronda(juego.getIdJuego(), jugadores, this);
+    }
 
     private void quienesSuben() {
         System.out.println("Suben los siguientes participantes:");

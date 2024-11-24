@@ -32,6 +32,7 @@ public class Juego {
             escalon = new Escalon(i,"Comenzado",tematica,jugadores,this);
             escalon.jugarEscalon();
         }
+        escalon.jugarEscalonFinal();
     }
 
 
