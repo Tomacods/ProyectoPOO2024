@@ -3,6 +3,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import DAOs.AproximacionDAO;
+import DAOs.MultipleChoiceDAO;
+import DAOs.TematicaDAOImpl;
 
 public class PreguntaAproximacion {
     private int idPregunta;
@@ -48,5 +50,32 @@ public class PreguntaAproximacion {
         }
         return preguntas;
     }
+
+    public static ArrayList<PreguntaAproximacion> obtenerPreguntasAproximacionTematica(int id_tematica) throws SQLException{
+        AproximacionDAO dao = new AproximacionDAO();
+        ArrayList<Object[]> arreglo = dao.obtenerPreguntasPorTematica(id_tematica);
+        ArrayList <PreguntaAproximacion> preguntas = new ArrayList<>();
+
+        for (Object[] row : arreglo) {
+            PreguntaAproximacion pregunta = new PreguntaAproximacion((int) row[0], (String) row[1], (int) row[2], (int) row[3]);
+            preguntas.add(pregunta);
+        }
+        return preguntas;
+        
+    }
+public static void insertarPreguntaAproximacion(PreguntaAproximacion preguntaAproximacion) throws SQLException{
+        AproximacionDAO dao = new AproximacionDAO();
+        dao.insertarPreguntaAproximacion(preguntaAproximacion);
+    }
+    public static void eliminarPreguntaAprox(int id) throws SQLException{
+        AproximacionDAO dao = new AproximacionDAO();
+        dao.eliminarPreguntaAproximacion(id);
+    }
+    public static void actualizarPreguntaAprox(PreguntaAproximacion preguntaAproximacion) throws SQLException{
+        AproximacionDAO dao = new AproximacionDAO();
+        dao.actualizarPreguntaAproximacion(preguntaAproximacion);
+    }
+
+
 
 }
