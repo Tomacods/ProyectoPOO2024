@@ -25,47 +25,20 @@ public class Ronda {
         this.estado = "en curso";
     }
 
-    public void rondaFinal(){
-        inicializarPuntos();
-        Random random = new Random();
-        ArrayList<MultipleChoicePregunta> pregMult = new ArrayList<>();
-        ArrayList<Tematica> tematicas = new ArrayList<>();
-        tematicas = Tematica.obtenerTematicas();
-        for (int i = 1; i<=5; i++){
-            System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
-            realizarPreguntas(tematicas.get(random.nextInt(tematicas.size())).getId());
-            if (Math.abs(jugadores.get(0).getPuntaje() - jugadores.get(1).getPuntaje()) >= 3) {
-                System.out.println("\n¡" + (jugadores.get(0).getPuntaje() > jugadores.get(1).getPuntaje() ? jugadores.get(0).getNombre() : jugadores.get(1).getNombre()) + " ES EL GANADOR DE LOS 8 ESCALONES!");
-                break; // Salir del for
-            }
-        }
-        if (jugadores.get(0).getPuntaje() == jugadores.get(1).getPuntaje()) {
-            System.out.println("Chemendro empate de "+jugadores.get(0).getNombre()+jugadores.get(1).getNombre()+" causas!!!");
-            /* while (jugadores.get(0).getPuntaje() == jugadores.get(1).getPuntaje()) {
-                realizarPreguntas(tematicas.get(random.nextInt(tematicas.size())).getId());
-            } */
-        }
-        if (jugadores.get(0).getPuntaje() > jugadores.get(1).getPuntaje()) {
-            System.out.println("\n¡" + jugadores.get(0).getNombre()  + " ES EL GANADOR DE LOS 8 ESCALONES!");
-        } else {
-            System.out.println("\n¡" + jugadores.get(1).getNombre()  + " ES EL GANADOR DE LOS 8 ESCALONES!");
-        }
-    }
-
 
     public void iniciarRonda() throws SQLException {
         inicializarPuntos();
-        for(int i = 1; i<=2;i++){
+        for(int i = 1; i<3;i++){
             System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
-            realizarPreguntas(this.escalon.getTematica().getId());
+            realizarPreguntas();
         }
         determinarResultado();
         this.estado = "finalizado";
     }
 
-    private void realizarPreguntas(int idEscalon) {
+    private void realizarPreguntas() {
         ArrayList<MultipleChoicePregunta> pregMult = new ArrayList<>();
-        pregMult = MultipleChoicePregunta.obtenerPreguntasMC(idEscalon);//Trae las preguntas MC de la BD
+        pregMult = MultipleChoicePregunta.obtenerPreguntasMC(this.escalon.getTematica().getId());//Trae las preguntas MC de la BD
         for (Jugador jugador : jugadores) {
             MultipleChoicePregunta pregunta = pregMult.get(new Random().nextInt(pregMult.size()));
             System.out.println("Pregunta para " + jugador.getNombre() + ": "+"\n" + pregunta.getEnunciado());
@@ -105,13 +78,13 @@ public class Ronda {
             eliminarJugador(empatados.get(0));
             
         }else{
-            desempatar(this.escalon.getTematica().getId());
+            desempatar();
         }
     }
 
-    private void desempatar(int idEscalon) throws SQLException {
+    private void desempatar() throws SQLException {
         ArrayList<PreguntaAproximacion> pregAprox = new ArrayList<>();
-        pregAprox = PreguntaAproximacion.obtenerPreguntasAproximacionTematica(idEscalon);
+        pregAprox = PreguntaAproximacion.obtenerPreguntasAprox();
         System.out.println("A continuación, ¡Evaluaremos el desempate!");
         Boolean eliminado = true;
         Scanner sc = new Scanner(System.in);

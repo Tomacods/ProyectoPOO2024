@@ -1,12 +1,28 @@
 public class EditarPreg {
     
-    private String tematica;
-    private String tipoPreg;
-
-    public EditarPreg() {
-        this.tematica = "null";
-        this.tipoPreg = "null";
+    public EditarPreg(){
+        
     }
 
-    public selecTipo()
+    public void selecTipo(String tipoPreg) {
+        MostrarVistaQA mostrar = new MostrarVistaQA();
+        if(tipoPreg == "Multiple choice") {
+            mostrar.setStrategy(new StrategyMC());
+        } else {
+            if (tipoPreg == "Aproximacion") {
+                mostrar.setStrategy(new StrategyAprox());
+            } else {
+                throw new IllegalArgumentException("Tipo ingresado erroneamente.");
+            }
+        }
+        mostrar.ejecutar();
+    }
+
+    public void selectTematica(String tematica){
+
+    }
+
+    public void editarPregunta(){
+
+    }
 }
