@@ -1,9 +1,9 @@
 package Controlador;
 
-import vista.MenuPrincipal;
-import vista.SeleccionarJugador;
-import vista.OpcionesGenerales;
-import vista.ABMJugadores;
+import Vista.MenuPrincipal;
+import Vista.SeleccionarJugador;
+import Vista.OpcionesGenerales;
+import Vista.ABMJugadores;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
