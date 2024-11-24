@@ -3,7 +3,7 @@ import vista.ABMRespuestaAprox;
 import vista.ABMRespuestaMC;
 import javax.swing.*;
 
-public class Main {
+public class SeleccionarAccion {
     
     //metodo para obtener tematica
     //metodo para obtener tipo pregunta ==> settear estrategia
@@ -12,11 +12,15 @@ public class Main {
 
     public String tematica;
     public String tipoPreg;
+    public String accion;
 
-    public Main(String tematica, String tipoPreg) {
-        this.tematica = tematica;
-        this.tipoPreg = tipoPreg;
+    public SeleccionarAccion(String accion) {
+        this.accion = accion;
     }
 
-    public ejecutar()
+    public void seleccionar(String accion) {
+        if (accion == "editar") {
+            
+        }
+    }
 }
