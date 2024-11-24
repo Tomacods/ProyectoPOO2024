@@ -107,14 +107,15 @@ public class OpcionesGenerales extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
+    
     }//GEN-LAST:event_jButtonBackActionPerformed
 
     private void jButtonModoAdminKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButtonModoAdminKeyPressed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButtonModoAdminKeyPressed
 
     private void jTextFieldOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldOpcionesActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextFieldOpcionesActionPerformed
 
     /**
