@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import DAOs.JugadorDAOImpl;
+import DAOs.TematicaDAOImpl;
 
 public class Jugador {
     private int id_jugador;
@@ -58,6 +59,21 @@ public class Jugador {
     public void incrementarPuntaje() {
         this.puntaje++;
     }
+
+    //ABM
+    public static void insertarJugador (Jugador jugador){
+        JugadorDAOImpl dao = new JugadorDAOImpl();
+        dao.insertarJugador(jugador);
+    }
+    public static void eliminarJugador(int id){
+        JugadorDAOImpl dao = new JugadorDAOImpl();
+        dao.eliminarJugador(id);
+    }
+    public static void actualizarJugador(Jugador jugador){
+        JugadorDAOImpl dao = new JugadorDAOImpl();
+        dao.actualizarJugador(jugador);
+    }
+
 
     public static Jugador obtenerJugador(int id_jugador) throws SQLException{
         JugadorDAOImpl dao = new JugadorDAOImpl();
