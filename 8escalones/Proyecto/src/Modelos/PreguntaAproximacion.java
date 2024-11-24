@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import DAOs.AproximacionDAO;
 import DAOs.MultipleChoiceDAO;
+import DAOs.TematicaDAOImpl;
 
 public class PreguntaAproximacion {
     private int idPregunta;
@@ -62,5 +63,19 @@ public class PreguntaAproximacion {
         return preguntas;
         
     }
+public static void insertarPreguntaAproximacion(PreguntaAproximacion preguntaAproximacion) throws SQLException{
+        AproximacionDAO dao = new AproximacionDAO();
+        dao.insertarPreguntaAproximacion(preguntaAproximacion);
+    }
+    public static void eliminarPreguntaAprox(int id) throws SQLException{
+        AproximacionDAO dao = new AproximacionDAO();
+        dao.eliminarPreguntaAproximacion(id);
+    }
+    public static void actualizarPreguntaAprox(PreguntaAproximacion preguntaAproximacion) throws SQLException{
+        AproximacionDAO dao = new AproximacionDAO();
+        dao.actualizarPreguntaAproximacion(preguntaAproximacion);
+    }
+
+
 
 }
