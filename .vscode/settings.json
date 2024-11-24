@@ -5,6 +5,16 @@
         "pruebas ABM/DAOS/RSScaleLabel.jar",
         "pruebas ABM/DAOS/commons-codec-1.17.1.jar",
         "pruebas ABM/DAOS/flatlaf-3.5.1.jar",
-        "pruebas ABM/DAOS/postgresql-42.7.4.jar"
+        "pruebas ABM/DAOS/postgresql-42.7.4.jar",
+        "8escalones/Proyecto/AbsoluteLayout.jar",
+        "8escalones/Proyecto/commons-codec-1.17.1.jar",
+        "8escalones/Proyecto/flatlaf-3.5.1.jar",
+        "8escalones/Proyecto/postgresql-42.7.4.jar",
+        "8escalones/Proyecto/RSScaleLabel.jar"
+    ],
+    "java.project.sourcePaths": [
+        "pruebas ABM/DAOS/src/Vista/src",
+        "8Escalones/src",
+        "8escalones/Proyecto/src/Vista"
     ]
 }
