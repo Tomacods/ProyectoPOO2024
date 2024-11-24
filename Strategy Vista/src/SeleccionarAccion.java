@@ -1,7 +1,7 @@
-import vista.ABMPreguntas;
+/* import vista.ABMPreguntas;
 import vista.ABMRespuestaAprox;
 import vista.ABMRespuestaMC;
-import javax.swing.*;
+import javax.swing.*; */
 
 public class SeleccionarAccion {
     
@@ -17,8 +17,20 @@ public class SeleccionarAccion {
     }
 
     public void seleccionar(String accion) {
-        if (accion == "editar") {
-
+        switch (accion) {
+            case "editar": {
+                EditarPreg preg = new EditarPreg();
+                break;
+            }
+            case "crear": {
+                CrearPreg preg = new CrearPreg();
+                break;
+            }
+            case "borrar": {
+                BorrarPreg preg = new BorrarPreg();
+                break;
+            }
+            default: System.out.println("Invalid day");
         }
     }
 }
