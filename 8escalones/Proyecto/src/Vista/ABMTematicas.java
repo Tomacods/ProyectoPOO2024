@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vista;
+
 
 /**
  *
@@ -12,7 +12,7 @@ public class ABMTematicas extends javax.swing.JFrame {
     /**
      * Creates new form gameplay
      */
-    public ABMTematicas() {
+    public ABMTematicas(ControladorABMTematica controlador) {
         initComponents();
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
@@ -240,7 +240,10 @@ public class ABMTematicas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ABMTematicas().setVisible(true);
+                ControladorABMTematica controlador = new ControladorABMTematica();
+                // Crear la vista, pasándole el controlador
+                ABMTematicas vista = new ABMTematicas(controlador);
+                new ABMTematicas(controlador).setVisible(true);
             }
         });
     }
