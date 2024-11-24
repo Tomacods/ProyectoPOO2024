@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vista;
+package ventanas;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -39,13 +39,13 @@ public class Puntuaciones extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabelExit = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
-        jLabelPuntuaciones = new javax.swing.JLabel();
+        jLabelGanador = new javax.swing.JLabel();
         jLabelIconGanador = new javax.swing.JLabel();
         jLabelIconPodio2 = new javax.swing.JLabel();
         jLabelIconPodio3 = new javax.swing.JLabel();
+        jTextFieldJugadorGanador = new javax.swing.JTextField();
         jTextFieldJugadorPodio2 = new javax.swing.JTextField();
         jTextFieldJugadorPodio3 = new javax.swing.JTextField();
-        jTextFieldJugadorGanador = new javax.swing.JTextField();
         jTextFieldJugadorPodio4 = new javax.swing.JTextField();
         jTextFieldJugadorPodio5 = new javax.swing.JTextField();
         jTextFieldJugadorPodio6 = new javax.swing.JTextField();
@@ -78,13 +78,26 @@ public class Puntuaciones extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
-        jLabelPuntuaciones.setFont(new java.awt.Font("Roboto Medium", 3, 30)); // NOI18N
-        jLabelPuntuaciones.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPuntuaciones.setText("GANADOR");
-        jPanel1.add(jLabelPuntuaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 150, 60));
+        jLabelGanador.setFont(new java.awt.Font("Roboto Medium", 3, 30)); // NOI18N
+        jLabelGanador.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelGanador.setText("GANADOR");
+        jPanel1.add(jLabelGanador, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 150, 60));
         jPanel1.add(jLabelIconGanador, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 120, 90));
         jPanel1.add(jLabelIconPodio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 70, 60));
         jPanel1.add(jLabelIconPodio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 70, 60));
+
+        jTextFieldJugadorGanador.setEditable(false);
+        jTextFieldJugadorGanador.setBackground(new java.awt.Color(255, 0, 0));
+        jTextFieldJugadorGanador.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        jTextFieldJugadorGanador.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldJugadorGanador.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldJugadorGanador.setText("Jugador N");
+        jTextFieldJugadorGanador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldJugadorGanadorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextFieldJugadorGanador, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, 30));
 
         jTextFieldJugadorPodio2.setEditable(false);
         jTextFieldJugadorPodio2.setBackground(new java.awt.Color(255, 0, 0));
@@ -111,19 +124,6 @@ public class Puntuaciones extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextFieldJugadorPodio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, -1, 30));
-
-        jTextFieldJugadorGanador.setEditable(false);
-        jTextFieldJugadorGanador.setBackground(new java.awt.Color(255, 0, 0));
-        jTextFieldJugadorGanador.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jTextFieldJugadorGanador.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldJugadorGanador.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldJugadorGanador.setText("Jugador N");
-        jTextFieldJugadorGanador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldJugadorGanadorActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextFieldJugadorGanador, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, 30));
 
         jTextFieldJugadorPodio4.setEditable(false);
         jTextFieldJugadorPodio4.setBackground(new java.awt.Color(255, 0, 0));
@@ -330,29 +330,29 @@ public class Puntuaciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonExit;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelExit;
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelIconGanador;
-    private javax.swing.JLabel jLabelIconPodio2;
-    private javax.swing.JLabel jLabelIconPodio3;
-    private javax.swing.JLabel jLabelPodio;
-    private javax.swing.JLabel jLabelPuntuaciones;
+    public javax.swing.JButton jButtonExit;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel7;
+    public javax.swing.JLabel jLabel8;
+    public javax.swing.JLabel jLabel9;
+    public javax.swing.JLabel jLabelExit;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelGanador;
+    public javax.swing.JLabel jLabelIconGanador;
+    public javax.swing.JLabel jLabelIconPodio2;
+    public javax.swing.JLabel jLabelIconPodio3;
+    public javax.swing.JLabel jLabelPodio;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextFieldJugadorGanador;
-    private javax.swing.JTextField jTextFieldJugadorPodio2;
-    private javax.swing.JTextField jTextFieldJugadorPodio3;
-    private javax.swing.JTextField jTextFieldJugadorPodio4;
-    private javax.swing.JTextField jTextFieldJugadorPodio5;
-    private javax.swing.JTextField jTextFieldJugadorPodio6;
-    private javax.swing.JTextField jTextFieldJugadorPodio7;
-    private javax.swing.JTextField jTextFieldJugadorPodio8;
-    private javax.swing.JTextField jTextFieldJugadorPodio9;
+    public javax.swing.JTextField jTextFieldJugadorGanador;
+    public javax.swing.JTextField jTextFieldJugadorPodio2;
+    public javax.swing.JTextField jTextFieldJugadorPodio3;
+    public javax.swing.JTextField jTextFieldJugadorPodio4;
+    public javax.swing.JTextField jTextFieldJugadorPodio5;
+    public javax.swing.JTextField jTextFieldJugadorPodio6;
+    public javax.swing.JTextField jTextFieldJugadorPodio7;
+    public javax.swing.JTextField jTextFieldJugadorPodio8;
+    public javax.swing.JTextField jTextFieldJugadorPodio9;
     // End of variables declaration//GEN-END:variables
 }

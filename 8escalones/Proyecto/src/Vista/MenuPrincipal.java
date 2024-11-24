@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vista;
+package ventanas;
 
 /**
  *
@@ -35,7 +35,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jButtonJugar = new javax.swing.JButton();
         jButtonPerfil = new javax.swing.JButton();
         jButtonAyuda = new javax.swing.JButton();
-        jButtonPuntuaciones = new javax.swing.JButton();
+        jButtonSalir = new javax.swing.JButton();
         jButtonOpciones = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -83,16 +83,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 470, 200, 40));
 
-        jButtonPuntuaciones.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonPuntuaciones.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonPuntuaciones.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonPuntuaciones.setText("SALIR");
-        jButtonPuntuaciones.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSalir.setBackground(new java.awt.Color(102, 0, 102));
+        jButtonSalir.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonSalir.setText("SALIR");
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPuntuacionesActionPerformed(evt);
+                jButtonSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonPuntuaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, 200, 40));
+        jPanel1.add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, 200, 40));
 
         jButtonOpciones.setBackground(new java.awt.Color(102, 0, 102));
         jButtonOpciones.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
@@ -131,9 +131,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAyudaActionPerformed
     }//GEN-LAST:event_jButtonAyudaActionPerformed
 
-    private void jButtonPuntuacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPuntuacionesActionPerformed
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonPuntuacionesActionPerformed
+    }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOpcionesActionPerformed
         // TODO add your handling code here:
@@ -184,14 +184,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-         javax.swing.JButton jButtonAyuda;
-    private javax.swing.JButton jButtonJugar;
-    private javax.swing.JButton jButtonOpciones;
-    private javax.swing.JButton jButtonPerfil;
-    private javax.swing.JButton jButtonPuntuaciones;
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelIconJugar;
-    private javax.swing.JLabel jLabelJugar;
+    public javax.swing.JButton jButtonAyuda;
+    public javax.swing.JButton jButtonJugar;
+    public javax.swing.JButton jButtonOpciones;
+    public javax.swing.JButton jButtonPerfil;
+    public javax.swing.JButton jButtonSalir;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelIconJugar;
+    public javax.swing.JLabel jLabelJugar;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

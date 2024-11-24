@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vista;
+package ventanas;
 
 /**
  *
@@ -188,17 +188,17 @@ public class GameplayAproximacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonExit;
-    private javax.swing.JLabel jLabelExit;
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelIconUser;
-    private javax.swing.JLabel jLabelJugador;
-    private javax.swing.JLabel jLabelTematica;
+    public javax.swing.JButton jButtonExit;
+    public javax.swing.JLabel jLabelExit;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelIconUser;
+    public javax.swing.JLabel jLabelJugador;
+    public javax.swing.JLabel jLabelTematica;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextFieldJugador;
-    private javax.swing.JTextField jTextFieldPregunta;
-    private javax.swing.JTextField jTextFieldRespuestaAprox;
-    private javax.swing.JTextField jTextFieldTurnoAproximacion;
+    public javax.swing.JTextField jTextFieldJugador;
+    public javax.swing.JTextField jTextFieldPregunta;
+    public javax.swing.JTextField jTextFieldRespuestaAprox;
+    public javax.swing.JTextField jTextFieldTurnoAproximacion;
     // End of variables declaration//GEN-END:variables
 }
 
