@@ -10,8 +10,6 @@ public class SeleccionarAccion {
     //metodo para obtener preguntas por temática y tipo de pregunta
     //llamar vista
 
-    public String tematica;
-    public String tipoPreg;
     public String accion;
 
     public SeleccionarAccion(String accion) {
@@ -20,7 +18,7 @@ public class SeleccionarAccion {
 
     public void seleccionar(String accion) {
         if (accion == "editar") {
-            
+
         }
     }
 }
