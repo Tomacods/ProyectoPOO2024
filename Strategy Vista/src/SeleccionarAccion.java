@@ -21,24 +21,24 @@ public class SeleccionarAccion {
     public void seleccionar(String accion) {
         switch (accion) {
             case "editar": {
-                EditarPreg preg = new EditarPreg();
-                preg.selecTipo(tipoPreg);
-                preg.selectTematica(tematica);
-                preg.editarPregunta();
+                EditarPreg editar = new EditarPreg();
+                editar.selecTipo(tipoPreg);
+                editar.selectTematica(tematica);
+                editar.editarPregunta();
                 break;
             }
             case "crear": {
-                CrearPreg preg = new CrearPreg();
-                /* preg.selecTipo(tipoPreg);
-                preg.selectTematica(tematica);
-                preg.crearPregunta(); */
+                CrearPreg crear = new CrearPreg();
+                crear.selecTipo(tipoPreg);
+                crear.selectTematica(tematica);
+                crear.crearPregunta();
                 break;
             }
             case "borrar": {
-                BorrarPreg preg = new BorrarPreg();
-                preg.selecTipo(tipoPreg);
-                preg.selectTematica(tematica);
-                preg.borrarPregunta();
+                BorrarPreg borrar = new BorrarPreg();
+                borrar.selecTipo(tipoPreg);
+                borrar.selectTematica(tematica);
+                borrar.borrarPregunta();
                 break;
             }
             default: throw new IllegalArgumentException("Acción ingresada erroneamente.");
