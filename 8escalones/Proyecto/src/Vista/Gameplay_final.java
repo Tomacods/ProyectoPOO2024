@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vista;
+package ventanas;
 
 
 /**
@@ -243,25 +243,25 @@ public class Gameplay_final extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonExit;
-    private javax.swing.JButton jButtonRtaA;
-    private javax.swing.JButton jButtonRtaB;
-    private javax.swing.JButton jButtonRtaC;
-    private javax.swing.JButton jButtonRtaD;
-    private javax.swing.JLabel jLabelEscalonFinal;
-    private javax.swing.JLabel jLabelExit;
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelIconUser;
-    private javax.swing.JLabel jLabelIconUser2;
-    private javax.swing.JLabel jLabelRtaA;
-    private javax.swing.JLabel jLabelRtaB;
-    private javax.swing.JLabel jLabelRtaC;
-    private javax.swing.JLabel jLabelRtaD;
-    private javax.swing.JLabel jLabelUser;
-    private javax.swing.JLabel jLabelUser2;
-    private javax.swing.JLabel jLabelVersus;
+    public javax.swing.JButton jButtonExit;
+    public javax.swing.JButton jButtonRtaA;
+    public javax.swing.JButton jButtonRtaB;
+    public javax.swing.JButton jButtonRtaC;
+    public javax.swing.JButton jButtonRtaD;
+    public javax.swing.JLabel jLabelEscalonFinal;
+    public javax.swing.JLabel jLabelExit;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelIconUser;
+    public javax.swing.JLabel jLabelIconUser2;
+    public javax.swing.JLabel jLabelRtaA;
+    public javax.swing.JLabel jLabelRtaB;
+    public javax.swing.JLabel jLabelRtaC;
+    public javax.swing.JLabel jLabelRtaD;
+    public javax.swing.JLabel jLabelUser;
+    public javax.swing.JLabel jLabelUser2;
+    public javax.swing.JLabel jLabelVersus;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextFieldPregunta;
+    public javax.swing.JTextField jTextFieldPregunta;
     // End of variables declaration//GEN-END:variables
  
 }

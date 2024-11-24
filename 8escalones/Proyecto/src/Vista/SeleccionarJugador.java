@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vista;
+package ventanas;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -23,7 +23,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo2, "src/imagenes/violeta.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/back.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelDerecha, "src/imagenes/derecha.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJugar, "src/imagenes/derecha.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser1, "src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser2, "src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser3, "src/imagenes/user.png");
@@ -46,10 +46,10 @@ public class SeleccionarJugador extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabelExit = new javax.swing.JLabel();
-        jLabelDerecha = new javax.swing.JLabel();
+        jLabelJugar = new javax.swing.JLabel();
         jLabelBack = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
-        jButtonDerecha = new javax.swing.JButton();
+        jButtonJugar = new javax.swing.JButton();
         jButtonBack = new javax.swing.JButton();
         jLabelUser1 = new javax.swing.JLabel();
         jLabelUser2 = new javax.swing.JLabel();
@@ -68,8 +68,8 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jButtonJ6 = new javax.swing.JButton();
         jButtonJ7 = new javax.swing.JButton();
         jButtonJ8 = new javax.swing.JButton();
-        jButtonJUser9 = new javax.swing.JButton();
-        jTextFieldSeleccionarPerfil = new javax.swing.JTextField();
+        jButtonJ9 = new javax.swing.JButton();
+        jTextFieldSeleccionarJugador = new javax.swing.JTextField();
         jComboBoxJ1 = new javax.swing.JComboBox<>();
         jComboBoxJ2 = new javax.swing.JComboBox<>();
         jComboBoxJ3 = new javax.swing.JComboBox<>();
@@ -88,7 +88,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 30, 20));
-        jPanel1.add(jLabelDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
+        jPanel1.add(jLabelJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
 
         jButtonExit.setBackground(new java.awt.Color(102, 0, 102));
@@ -101,15 +101,15 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 50, 40));
 
-        jButtonDerecha.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonDerecha.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
-        jButtonDerecha.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonDerecha.addActionListener(new java.awt.event.ActionListener() {
+        jButtonJugar.setBackground(new java.awt.Color(102, 0, 102));
+        jButtonJugar.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
+        jButtonJugar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonJugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDerechaActionPerformed(evt);
+                jButtonJugarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
+        jPanel1.add(jButtonJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
 
         jButtonBack.setBackground(new java.awt.Color(102, 0, 102));
         jButtonBack.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
@@ -138,7 +138,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
                 jButtonJ1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 450, 120, 120));
+        jPanel1.add(jButtonJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 120, 120));
 
         jButtonJ2.setBackground(new java.awt.Color(102, 0, 102));
         jButtonJ2.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
@@ -178,7 +178,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
                 jButtonJ5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonJ5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 120, 120));
+        jPanel1.add(jButtonJ5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 120, 120));
 
         jButtonJ6.setBackground(new java.awt.Color(102, 0, 102));
         jButtonJ6.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
@@ -210,28 +210,28 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonJ8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 120, 120));
 
-        jButtonJUser9.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonJUser9.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonJUser9.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonJUser9.addActionListener(new java.awt.event.ActionListener() {
+        jButtonJ9.setBackground(new java.awt.Color(102, 0, 102));
+        jButtonJ9.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        jButtonJ9.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonJ9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonJUser9ActionPerformed(evt);
+                jButtonJ9ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonJUser9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 120, 120));
+        jPanel1.add(jButtonJ9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 450, 120, 120));
 
-        jTextFieldSeleccionarPerfil.setEditable(false);
-        jTextFieldSeleccionarPerfil.setBackground(new java.awt.Color(102, 0, 102));
-        jTextFieldSeleccionarPerfil.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldSeleccionarPerfil.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldSeleccionarPerfil.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldSeleccionarPerfil.setText("SELECCIONAR JUGADORES");
-        jTextFieldSeleccionarPerfil.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldSeleccionarJugador.setEditable(false);
+        jTextFieldSeleccionarJugador.setBackground(new java.awt.Color(102, 0, 102));
+        jTextFieldSeleccionarJugador.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldSeleccionarJugador.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldSeleccionarJugador.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldSeleccionarJugador.setText("SELECCIONAR JUGADORES");
+        jTextFieldSeleccionarJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldSeleccionarPerfilActionPerformed(evt);
+                jTextFieldSeleccionarJugadorActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldSeleccionarPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 270, 40));
+        jPanel1.add(jTextFieldSeleccionarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 270, 40));
 
         jComboBoxJ1.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ1.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
@@ -357,9 +357,9 @@ public class SeleccionarJugador extends javax.swing.JFrame {
     private void jButtonJ4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ4ActionPerformed
     }//GEN-LAST:event_jButtonJ4ActionPerformed
 
-    private void jButtonDerechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDerechaActionPerformed
+    private void jButtonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJugarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonDerechaActionPerformed
+    }//GEN-LAST:event_jButtonJugarActionPerformed
 
     private void jButtonJ2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ2ActionPerformed
     }//GEN-LAST:event_jButtonJ2ActionPerformed
@@ -382,15 +382,15 @@ public class SeleccionarJugador extends javax.swing.JFrame {
     private void jButtonJ6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ6ActionPerformed
     }//GEN-LAST:event_jButtonJ6ActionPerformed
 
-    private void jButtonJUser9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJUser9ActionPerformed
-    }//GEN-LAST:event_jButtonJUser9ActionPerformed
+    private void jButtonJ9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ9ActionPerformed
+    }//GEN-LAST:event_jButtonJ9ActionPerformed
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
     }//GEN-LAST:event_jButtonBackActionPerformed
 
-    private void jTextFieldSeleccionarPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSeleccionarPerfilActionPerformed
+    private void jTextFieldSeleccionarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSeleccionarJugadorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldSeleccionarPerfilActionPerformed
+    }//GEN-LAST:event_jTextFieldSeleccionarJugadorActionPerformed
 
     private void jComboBoxJ1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxJ1ActionPerformed
         // TODO add your handling code here:
@@ -471,42 +471,42 @@ public class SeleccionarJugador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBack;
-    private javax.swing.JButton jButtonDerecha;
-    private javax.swing.JButton jButtonExit;
-    private javax.swing.JButton jButtonJ1;
-    private javax.swing.JButton jButtonJ2;
-    private javax.swing.JButton jButtonJ3;
-    private javax.swing.JButton jButtonJ4;
-    private javax.swing.JButton jButtonJ5;
-    private javax.swing.JButton jButtonJ6;
-    private javax.swing.JButton jButtonJ7;
-    private javax.swing.JButton jButtonJ8;
-    private javax.swing.JButton jButtonJUser9;
-    private javax.swing.JComboBox<String> jComboBoxJ1;
-    private javax.swing.JComboBox<String> jComboBoxJ2;
-    private javax.swing.JComboBox<String> jComboBoxJ3;
-    private javax.swing.JComboBox<String> jComboBoxJ4;
-    private javax.swing.JComboBox<String> jComboBoxJ5;
-    private javax.swing.JComboBox<String> jComboBoxJ6;
-    private javax.swing.JComboBox<String> jComboBoxJ7;
-    private javax.swing.JComboBox<String> jComboBoxJ8;
-    private javax.swing.JComboBox<String> jComboBoxJ9;
-    private javax.swing.JLabel jLabelBack;
-    private javax.swing.JLabel jLabelDerecha;
-    private javax.swing.JLabel jLabelExit;
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelFondo2;
-    private javax.swing.JLabel jLabelUser1;
-    private javax.swing.JLabel jLabelUser2;
-    private javax.swing.JLabel jLabelUser3;
-    private javax.swing.JLabel jLabelUser4;
-    private javax.swing.JLabel jLabelUser5;
-    private javax.swing.JLabel jLabelUser6;
-    private javax.swing.JLabel jLabelUser7;
-    private javax.swing.JLabel jLabelUser8;
-    private javax.swing.JLabel jLabelUser9;
+    public javax.swing.JButton jButtonBack;
+    public javax.swing.JButton jButtonExit;
+    public javax.swing.JButton jButtonJ1;
+    public javax.swing.JButton jButtonJ2;
+    public javax.swing.JButton jButtonJ3;
+    public javax.swing.JButton jButtonJ4;
+    public javax.swing.JButton jButtonJ5;
+    public javax.swing.JButton jButtonJ6;
+    public javax.swing.JButton jButtonJ7;
+    public javax.swing.JButton jButtonJ8;
+    public javax.swing.JButton jButtonJ9;
+    public javax.swing.JButton jButtonJugar;
+    public javax.swing.JComboBox<String> jComboBoxJ1;
+    public javax.swing.JComboBox<String> jComboBoxJ2;
+    public javax.swing.JComboBox<String> jComboBoxJ3;
+    public javax.swing.JComboBox<String> jComboBoxJ4;
+    public javax.swing.JComboBox<String> jComboBoxJ5;
+    public javax.swing.JComboBox<String> jComboBoxJ6;
+    public javax.swing.JComboBox<String> jComboBoxJ7;
+    public javax.swing.JComboBox<String> jComboBoxJ8;
+    public javax.swing.JComboBox<String> jComboBoxJ9;
+    public javax.swing.JLabel jLabelBack;
+    public javax.swing.JLabel jLabelExit;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelFondo2;
+    public javax.swing.JLabel jLabelJugar;
+    public javax.swing.JLabel jLabelUser1;
+    public javax.swing.JLabel jLabelUser2;
+    public javax.swing.JLabel jLabelUser3;
+    public javax.swing.JLabel jLabelUser4;
+    public javax.swing.JLabel jLabelUser5;
+    public javax.swing.JLabel jLabelUser6;
+    public javax.swing.JLabel jLabelUser7;
+    public javax.swing.JLabel jLabelUser8;
+    public javax.swing.JLabel jLabelUser9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextFieldSeleccionarPerfil;
+    public javax.swing.JTextField jTextFieldSeleccionarJugador;
     // End of variables declaration//GEN-END:variables
 }
