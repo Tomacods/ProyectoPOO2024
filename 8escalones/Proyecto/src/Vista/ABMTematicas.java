@@ -3,14 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-
+package Vista;
 /**
  *
  * @author Maria
  */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import controlador.ControladorABMTematica;
 
 public class ABMTematicas extends javax.swing.JFrame {   
     /**
