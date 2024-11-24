@@ -29,7 +29,6 @@ public class OpcionesGenerales extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botones_sonido = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabelOptions = new javax.swing.JLabel();
         jLabelBack = new javax.swing.JLabel();
@@ -67,6 +66,11 @@ public class OpcionesGenerales extends javax.swing.JFrame {
         jButtonModoAdmin.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         jButtonModoAdmin.setForeground(new java.awt.Color(255, 255, 255));
         jButtonModoAdmin.setText("MODO ADMIN");
+        jButtonModoAdmin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButtonModoAdminKeyPressed(evt);
+            }
+        });
         jPanel1.add(jButtonModoAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 240, 80));
 
         jButtonCreditos.setBackground(new java.awt.Color(102, 0, 102));
@@ -77,6 +81,11 @@ public class OpcionesGenerales extends javax.swing.JFrame {
 
         jTextFieldOpciones.setEditable(false);
         jTextFieldOpciones.setBackground(new java.awt.Color(102, 0, 102));
+        jTextFieldOpciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldOpcionesActionPerformed(evt);
+            }
+        });
         jPanel1.add(jTextFieldOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 240, 70));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -99,6 +108,14 @@ public class OpcionesGenerales extends javax.swing.JFrame {
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
     }//GEN-LAST:event_jButtonBackActionPerformed
+
+    private void jButtonModoAdminKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButtonModoAdminKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonModoAdminKeyPressed
+
+    private void jTextFieldOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldOpcionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldOpcionesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,7 +280,6 @@ public class OpcionesGenerales extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup botones_sonido;
     public javax.swing.JButton jButtonBack;
     public javax.swing.JButton jButtonCreditos;
     public javax.swing.JButton jButtonModoAdmin;
