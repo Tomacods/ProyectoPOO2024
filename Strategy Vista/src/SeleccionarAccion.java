@@ -11,6 +11,8 @@ public class SeleccionarAccion {
     //llamar vista
 
     public String accion;
+    public String tematica;
+    public String tipoPreg;
 
     public SeleccionarAccion(String accion) {
         this.accion = accion;
@@ -20,17 +22,26 @@ public class SeleccionarAccion {
         switch (accion) {
             case "editar": {
                 EditarPreg preg = new EditarPreg();
+                preg.selecTipo(tipoPreg);
+                preg.selectTematica(tematica);
+                preg.editarPregunta();
                 break;
             }
             case "crear": {
                 CrearPreg preg = new CrearPreg();
+                /* preg.selecTipo(tipoPreg);
+                preg.selectTematica(tematica);
+                preg.crearPregunta(); */
                 break;
             }
             case "borrar": {
                 BorrarPreg preg = new BorrarPreg();
+                preg.selecTipo(tipoPreg);
+                preg.selectTematica(tematica);
+                preg.borrarPregunta();
                 break;
             }
-            default: System.out.println("Invalid day");
+            default: throw new IllegalArgumentException("Acción ingresada erroneamente.");
         }
     }
 }

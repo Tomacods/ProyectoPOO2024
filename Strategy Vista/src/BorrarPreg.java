@@ -7,18 +7,18 @@ public class BorrarPreg {
     public void selecTipo(String tipoPreg) {
         MostrarVistaQA mostrar = new MostrarVistaQA();
         if(tipoPreg == "Multiple choice") {
-            mostrar = new StrategyMC();
+            mostrar.setStrategy(new StrategyMC());
         } else {
             if (tipoPreg == "Aproximacion") {
-                mostrar = new StrategyAprox();
+                mostrar.setStrategy(new StrategyAprox());
             } else {
                 throw new IllegalArgumentException("Tipo ingresado erroneamente.");
             }
         }
-        mostrar.mostrarVista();
+        mostrar.ejecutar();
     }
 
-    public void selectTemarica(String tematica){
+    public void selectTematica(String tematica){
 
     }
 
