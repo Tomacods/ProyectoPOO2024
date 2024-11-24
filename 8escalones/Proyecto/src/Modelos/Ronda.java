@@ -40,9 +40,10 @@ public class Ronda {
             }
         }
         if (jugadores.get(0).getPuntaje() == jugadores.get(1).getPuntaje()) {
-            while (jugadores.get(0).getPuntaje() == jugadores.get(1).getPuntaje()) {
+            System.out.println("Chemendro empate de "+jugadores.get(0).getNombre()+jugadores.get(1).getNombre()+" causas!!!");
+            /* while (jugadores.get(0).getPuntaje() == jugadores.get(1).getPuntaje()) {
                 realizarPreguntas(tematicas.get(random.nextInt(tematicas.size())).getId());
-            }
+            } */
         }
         if (jugadores.get(0).getPuntaje() > jugadores.get(1).getPuntaje()) {
             System.out.println("\n¡" + jugadores.get(0).getNombre()  + " ES EL GANADOR DE LOS 8 ESCALONES!");
@@ -104,13 +105,13 @@ public class Ronda {
             eliminarJugador(empatados.get(0));
             
         }else{
-            desempatar();
+            desempatar(this.escalon.getTematica().getId());
         }
     }
 
-    private void desempatar() throws SQLException {
+    private void desempatar(int idEscalon) throws SQLException {
         ArrayList<PreguntaAproximacion> pregAprox = new ArrayList<>();
-        pregAprox = PreguntaAproximacion.obtenerPreguntasAprox();
+        pregAprox = PreguntaAproximacion.obtenerPreguntasAproximacionTematica(idEscalon);
         System.out.println("A continuación, ¡Evaluaremos el desempate!");
         Boolean eliminado = true;
         Scanner sc = new Scanner(System.in);

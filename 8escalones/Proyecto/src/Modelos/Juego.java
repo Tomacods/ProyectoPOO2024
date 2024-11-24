@@ -26,7 +26,7 @@ public class Juego {
         ArrayList<Jugador> jugadores = new ArrayList<>();
         jugadores = Jugador.obtenerJugadores();
         Escalon escalon = new Escalon(0,"sin comenzar",null,jugadores,this);
-        for (int i=1;i<=8; i++){
+        for (int i=1;i<=7; i++){
             Tematica tematica =  tematicas.get(rnd.nextInt(tematicas.size()));
             tematicas.remove(tematica);
             escalon = new Escalon(i,"Comenzado",tematica,jugadores,this);
