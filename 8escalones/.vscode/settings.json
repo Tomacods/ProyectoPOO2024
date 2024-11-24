@@ -5,6 +5,9 @@
         "DAOS/flatlaf-3.5.1.jar",
         "DAOS/postgresql-42.7.4.jar",
         "Proyecto/AbsoluteLayout.jar",
-        "Proyecto/RSScaleLabel.jar"
+        "Proyecto/RSScaleLabel.jar",
+        "Proyecto/commons-codec-1.17.1.jar",
+        "Proyecto/flatlaf-3.5.1.jar",
+        "Proyecto/postgresql-42.7.4.jar"
     ]
 }
