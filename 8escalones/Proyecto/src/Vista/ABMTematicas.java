@@ -10,14 +10,19 @@ package Vista;
  */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JTextField;
+
 import controlador.ControladorABMTematica;
 
 public class ABMTematicas extends javax.swing.JFrame {   
+private ControladorABMTematica controlador;
     /**
      * Creates new form gameplay
      */
     public ABMTematicas(ControladorABMTematica controlador) {
         initComponents();
+        this.controlador= controlador;
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "src/imagenes/admin.png");
@@ -44,7 +49,7 @@ public class ABMTematicas extends javax.swing.JFrame {
         jTextFieldNuevaTematica = new javax.swing.JTextField();
         jLabelIconEdit = new javax.swing.JLabel();
         jLabelIconDelete = new javax.swing.JLabel();
-        jButtonEliminarPregunta = new javax.swing.JButton();
+        jButtonEliminarTematica = new javax.swing.JButton();
         jButtonModificarPregunta = new javax.swing.JButton();
         jLabelFondoTematica = new javax.swing.JLabel();
         jButtonAgregarTematica = new javax.swing.JButton();
@@ -82,6 +87,21 @@ public class ABMTematicas extends javax.swing.JFrame {
         jComboBoxTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxTematica.setForeground(new java.awt.Color(255, 255, 255));
         jComboBoxTematica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+
+
+        jComboBoxTematica.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               // ControladorABMTematica controlador = new ControladorABMTematica();
+                String selectedTematica = (String) jComboBoxTematica.getSelectedItem();
+
+                if (selectedTematica != null) {
+                    controlador.seleccionarTematica(selectedTematica);  
+                }
+            }
+        });
+
+
         jPanel1.add(jComboBoxTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 160, 60));
 
         jTextFieldNuevaTematica.setBackground(new java.awt.Color(0, 102, 0));
@@ -92,15 +112,15 @@ public class ABMTematicas extends javax.swing.JFrame {
         jPanel1.add(jLabelIconEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 60, 50));
         jPanel1.add(jLabelIconDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 60, 50));
 
-        jButtonEliminarPregunta.setBackground(new java.awt.Color(0, 102, 0));
-        jButtonEliminarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButtonEliminarPregunta.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonEliminarPregunta.addActionListener(new java.awt.event.ActionListener() {
+        jButtonEliminarTematica.setBackground(new java.awt.Color(0, 102, 0));
+        jButtonEliminarTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jButtonEliminarTematica.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonEliminarTematica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEliminarPreguntaActionPerformed(evt);
+                System.out.println("Botón ELIMINAR tematica presionado");
             }
         });
-        jPanel1.add(jButtonEliminarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 80, 70));
+        jPanel1.add(jButtonEliminarTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 80, 70));
 
         jButtonModificarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jButtonModificarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
@@ -165,9 +185,9 @@ public class ABMTematicas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonEliminarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarPreguntaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonEliminarPreguntaActionPerformed
+    public void agregarListenerEliminarTematica(ActionListener listener) {
+        jButtonEliminarTematica.addActionListener(listener);
+    }
 
     private void jButtonModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarPreguntaActionPerformed
         // TODO add your handling code here:
@@ -176,7 +196,9 @@ public class ABMTematicas extends javax.swing.JFrame {
     public void agregarListenerAgregarTematica(ActionListener listener) {
         jButtonAgregarTematica.addActionListener(listener);
     }
-    
+    public void listenerBotonTematica(ActionListener listener) {
+        jButtonTematica.addActionListener(listener);
+    }
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
         // TODO add your handling code here:
@@ -258,7 +280,7 @@ public class ABMTematicas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAgregarTematica;
     private javax.swing.JButton jButtonBack;
-    private javax.swing.JButton jButtonEliminarPregunta;
+    private javax.swing.JButton jButtonEliminarTematica;
     private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonModificarPregunta;
     private javax.swing.JComboBox<String> jComboBoxTematica;
@@ -274,6 +296,8 @@ public class ABMTematicas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldABMPreguntas;
     private javax.swing.JTextField jTextFieldNuevaTematica;
     private javax.swing.JTextField jTextFieldTematica;
+
+    private JTextField jButtonTematica;
     // End of variables declaration//GEN-END:variables
     public javax.swing.JComboBox<String> getComboBoxTematica() {
         return jComboBoxTematica;

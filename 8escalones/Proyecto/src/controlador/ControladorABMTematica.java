@@ -16,22 +16,69 @@ public ControladorABMTematica(){
     super();
     this.vistaABMTematicas= new ABMTematicas(this);
     vistaABMTematicas.setVisible(true);
+    traerTematicasCB();
+    listenerAgregarTematica();
+    listenerComboBoxTematica();
+    listenerEliminarTematica();
+
+}
+
+private void listenerComboBoxTematica() {
+    this.vistaABMTematicas.getComboBoxTematica().addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String selectedTematica = (String) vistaABMTematicas.getComboBoxTematica().getSelectedItem();
+            seleccionarTematica(selectedTematica); // Delegamos la acción al controlador
+        }
+    });
+}
+
+private void listenerAgregarTematica() {
     this.vistaABMTematicas.agregarListenerAgregarTematica(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             insertarTematica();
         }
     });
-
 }
 
-private void traerTematicasCB(){
+private void listenerEliminarTematica() {
+    this.vistaABMTematicas.agregarListenerEliminarTematica(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            eliminarTematica();  // Llamamos al método eliminarTematica()
+        }
+    });
+}
+
+private void traerTematicasCB(){ 
     ArrayList<Tematica> tematicas = Tematica.obtenerTematicas(); 
         for (Tematica tematica : tematicas) {
             vistaABMTematicas.getComboBoxTematica().addItem(tematica.getNombre());
         }
 
 
+}
+public void seleccionarTematica(String tematicaSeleccionada) {
+    // Buscar la temática seleccionada en la lista de temáticas
+    Tematica tematica = obtenerTematicaPorNombre(tematicaSeleccionada);
+
+    if (tematica != null) {
+        int idTematica = tematica.getId();
+        System.out.println("Temática seleccionada: " + tematicaSeleccionada + ", ID: " + idTematica);
+        
+    }
+}
+
+// Método auxiliar para obtener la temática por nombre
+private Tematica obtenerTematicaPorNombre(String nombre) {
+    ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
+    for (Tematica tematica : tematicas) {
+        if (tematica.getNombre().equals(nombre)) {
+            return tematica;
+        }
+    }
+    return null;  
 }
 
 private void insertarTematica() {
@@ -43,6 +90,25 @@ private void insertarTematica() {
     } else {
         System.out.println("El campo de la nueva temática está vacío.");
     }
+}
+
+private void eliminarTematica(){
+
+            String selectedTematica = (String) vistaABMTematicas.getComboBoxTematica().getSelectedItem();
+            if (selectedTematica != null) {
+                Tematica tematica = obtenerTematicaPorNombre(selectedTematica);
+                if (tematica != null) {
+                    int idTematica = tematica.getId();
+                    System.out.println("Temática seleccionada para eliminar: " + selectedTematica + ", ID: " + idTematica);
+
+                    Tematica.eliminarTematica(idTematica);
+                    System.out.println("Temática eliminada: " + selectedTematica + ", ID: " + idTematica);
+
+                    traerTematicasCB();
+                }
+            }
+
+
 }
 
 
