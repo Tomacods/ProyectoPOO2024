@@ -2,6 +2,8 @@ package Modelos;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import DAOs.JugadorDAOImpl;
 import DAOs.MultipleChoiceDAO;
 
 public class MultipleChoicePregunta {
@@ -53,6 +55,22 @@ public class MultipleChoicePregunta {
 
     public int getIdTematica() {
         return idTematica;
+    }
+
+
+    //ABM
+        //ABM
+    public static void insertarPregunta (MultipleChoicePregunta pregunta, List<Respuesta> respuestas) throws SQLException{
+        MultipleChoiceDAO dao = new MultipleChoiceDAO();
+        dao.insertarPreguntaMultipleChoise(pregunta, respuestas);
+    }
+    public static void eliminarPregunta(int id){
+        MultipleChoiceDAO dao = new MultipleChoiceDAO();
+        dao.eliminarPreguntaMC(id);
+    }
+    public static void actualizarPregunta(MultipleChoicePregunta pregunta){
+        MultipleChoiceDAO dao = new MultipleChoiceDAO();
+        dao.actualizarPreguntaMC(pregunta);
     }
 
     public static ArrayList<MultipleChoicePregunta> obtenerPreguntasMC(int id_tematica){
