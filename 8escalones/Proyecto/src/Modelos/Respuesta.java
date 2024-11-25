@@ -1,4 +1,10 @@
 package Modelos;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import DAOs.RespuestaDAO;
+
 public class Respuesta {
     private int idRespuesta;
     private int idPregunta;
@@ -52,5 +58,24 @@ public class Respuesta {
     public void setEsCorrecta(boolean esCorrecta) {
         this.esCorrecta = esCorrecta;
     }
+
+    public static ArrayList<Respuesta> obtenerRespuestasPorPregunta(int idPregunta) throws SQLException {
+    RespuestaDAO dao = new RespuestaDAO(); // Instancia del DAO
+    ArrayList<Object[]> arreglo = dao.obtenerRespuestasPorPregunta(idPregunta); // Llamada al método DAO
+    ArrayList<Respuesta> respuestas = new ArrayList<>();
+
+    // Convertir las filas en objetos Respuesta
+    for (Object[] row : arreglo) {
+        Respuesta respuesta = new Respuesta(
+            (int) row[0],        // ID_Respuesta
+            (int) row[1],        // ID_Pregunta
+            (String) row[2],     // Texto
+            (boolean) row[3]     // Correcta
+        );
+        respuestas.add(respuesta);
+    }
+    return respuestas;
+}
+
     
 }

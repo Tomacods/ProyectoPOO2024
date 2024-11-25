@@ -57,7 +57,7 @@ public class ControladorSeleccionarJugadores {
     }
 
     private void jugar(){
-        Gameplay gameplay = new Gameplay();
+        Gameplay gameplay = new Gameplay(null);
         gameplay.setVisible(true);
         vistaSeleccionarJugador.dispose();
     }
@@ -79,5 +79,6 @@ public class ControladorSeleccionarJugadores {
     private void seleccionarJugador() {
         this.jugadorSeleccionado = (Jugador) vistaSeleccionarJugador.jComboBoxJ1.getSelectedItem();
         jugadores.remove(jugadorSeleccionado);
+        traerJugadoresCB();
     }
 }
