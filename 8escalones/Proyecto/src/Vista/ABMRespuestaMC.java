@@ -703,7 +703,7 @@ public class ABMRespuestaMC extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
+    public javax.swing.ButtonGroup buttonGroup1;
     public javax.swing.JButton jButtonBack;
     public javax.swing.JButton jButtonExit;
     public javax.swing.JLabel jLabelBack;
