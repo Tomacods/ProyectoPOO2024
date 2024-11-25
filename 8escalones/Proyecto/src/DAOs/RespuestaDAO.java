@@ -77,19 +77,20 @@ public Respuesta obtenerRespuesta (int idRespuesta) throws SQLException {
     }
     return null;
 }
-public List<Respuesta> obtenerRespuestasPorPregunta(int idPregunta) throws SQLException {
-    List<Respuesta> respuestas = new ArrayList<>();
+public ArrayList<Object[]> obtenerRespuestasPorPregunta(int idPregunta) throws SQLException {
+    ArrayList<Object[]> respuestas = new ArrayList<>();
     String query = "SELECT * FROM Respuesta WHERE ID_Pregunta = ?";
     try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
         statement.setInt(1, idPregunta);
         try (ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
-                respuestas.add(new Respuesta(
-                        resultSet.getInt("ID_Respuesta"),
-                        resultSet.getInt("ID_Pregunta"),
-                        resultSet.getString("Texto"),
-                        resultSet.getBoolean("Correcta")
-                ));
+                Object[] fila = new Object[]{
+                    resultSet.getInt("ID_Respuesta"),
+                    resultSet.getInt("ID_Pregunta"),
+                    resultSet.getString("Texto"),
+                    resultSet.getBoolean("Correcta")
+                };
+                respuestas.add(fila);
             }
         }
     }catch (SQLException ex){

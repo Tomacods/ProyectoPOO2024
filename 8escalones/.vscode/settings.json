@@ -9,5 +9,6 @@
         "Proyecto/commons-codec-1.17.1.jar",
         "Proyecto/flatlaf-3.5.1.jar",
         "Proyecto/postgresql-42.7.4.jar"
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }
