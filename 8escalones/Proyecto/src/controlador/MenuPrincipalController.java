@@ -1,4 +1,4 @@
-package Controlador;
+package controlador;
 
 import Vista.MenuPrincipal;
 import Vista.SeleccionarJugador;
@@ -27,7 +27,7 @@ public class MenuPrincipalController {
         this.menuPrincipal.jButtonPerfil.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                abrirABMJugadores();
+              //  abrirABMJugadores();
             }
         });
         this.menuPrincipal.jButtonSalir.addActionListener(new ActionListener() {

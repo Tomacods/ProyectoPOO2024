@@ -1,6 +1,6 @@
 import Vista.MenuPrincipal;
 
-public static void main(String[] args) {
+public static void Main(String[] args) {
     java.awt.EventQueue.invokeLater(() -> {
 try {
 MenuPrincipal frame = new MenuPrincipal();

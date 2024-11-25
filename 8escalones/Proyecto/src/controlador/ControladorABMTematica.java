@@ -20,6 +20,7 @@ public ControladorABMTematica(){
     listenerAgregarTematica();
     listenerComboBoxTematica();
     listenerEliminarTematica();
+    listenerModificarTematica();
 
 }
 
@@ -28,7 +29,7 @@ private void listenerComboBoxTematica() {
         @Override
         public void actionPerformed(ActionEvent e) {
             String selectedTematica = (String) vistaABMTematicas.getComboBoxTematica().getSelectedItem();
-            seleccionarTematica(selectedTematica); // Delegamos la acción al controlador
+            seleccionarTematica(selectedTematica); 
         }
     });
 }
@@ -46,10 +47,38 @@ private void listenerEliminarTematica() {
     this.vistaABMTematicas.agregarListenerEliminarTematica(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            eliminarTematica();  // Llamamos al método eliminarTematica()
+            eliminarTematica(); 
         }
     });
 }
+
+private void listenerModificarTematica() {
+    this.vistaABMTematicas.listenerBotonTematica(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        modificarTematica();
+        }
+    });
+}
+
+private void modificarTematica(){
+    String selectedTematica = (String) vistaABMTematicas.getComboBoxTematica().getSelectedItem();
+    Tematica tematica = obtenerTematicaPorNombre(selectedTematica);
+    Tematica.actualizarTematica(tematica);
+    /* if (selectedTematica != null) {
+        Tematica tematica = obtenerTematicaPorNombre(selectedTematica);
+        if (tematica != null) {
+            int idTematica = tematica.getId();
+            System.out.println("Temática seleccionada para eliminar: " + selectedTematica + ", ID: " + idTematica);
+
+            Tematica.eliminarTematica(idTematica);
+            System.out.println("Temática eliminada: " + selectedTematica + ", ID: " + idTematica);
+
+            traerTematicasCB();
+        } */
+    }
+
+
 
 private void traerTematicasCB(){ 
     ArrayList<Tematica> tematicas = Tematica.obtenerTematicas(); 
@@ -60,7 +89,6 @@ private void traerTematicasCB(){
 
 }
 public void seleccionarTematica(String tematicaSeleccionada) {
-    // Buscar la temática seleccionada en la lista de temáticas
     Tematica tematica = obtenerTematicaPorNombre(tematicaSeleccionada);
 
     if (tematica != null) {
@@ -70,7 +98,6 @@ public void seleccionarTematica(String tematicaSeleccionada) {
     }
 }
 
-// Método auxiliar para obtener la temática por nombre
 private Tematica obtenerTematicaPorNombre(String nombre) {
     ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
     for (Tematica tematica : tematicas) {
@@ -110,7 +137,6 @@ private void eliminarTematica(){
 
 
 }
-
-
-
 }
+
+
