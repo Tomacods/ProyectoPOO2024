@@ -2,6 +2,7 @@ package controlador;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import Vista.MenuPrincipal;
 import Vista.OpcionesGenerales;
 import java.awt.*;
 import javax.swing.*;
@@ -12,11 +13,14 @@ public class ControladorOpcionesGenerales {
     private JButton botonCreditos;
     private JButton botonAdmin;
     
-    public ControladorOpcionesGenerales (){
+    public ControladorOpcionesGenerales ( ){ 
         this.menuOpciones = new OpcionesGenerales();
         this.menuOpciones.jButtonBack.addActionListener(new ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt){
-            };
+                menuOpciones.setVisible(false);
+                MenuPrincipal menuPrincipal = new MenuPrincipal();
+                menuPrincipal.setVisible(true);
+            }
         });
         this.menuOpciones.jButtonCreditos.addActionListener(new ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt){};
