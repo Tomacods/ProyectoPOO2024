@@ -112,6 +112,11 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jComboBoxTipo.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxTipo.setForeground(new java.awt.Color(255, 255, 255));
         jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Multiple choice", "Aproximacion"}));
+        jComboBoxTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                System.out.println("tipo presionado");
+            }
+        });
         jPanel1.add(jComboBoxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 160, 60));
 
         jComboBoxPregunta.setBackground(new java.awt.Color(51, 153, 0));
@@ -233,6 +238,9 @@ public class ABMPreguntas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonExitActionPerformed
     public void listenerTematica(ActionListener listener) {
         jComboBoxTematica.addActionListener(listener);
+    }
+    public void listenerTipo(ActionListener listener) {
+        jComboBoxTipo.addActionListener(listener);
     }
     /**
      * @param args the command line arguments

@@ -1,10 +1,12 @@
 package controlador;
 
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 import Modelos.MultipleChoicePregunta;
+import Modelos.PreguntaAproximacion;
 import Modelos.Tematica;
 import Vista.ABMPreguntas;
 
@@ -27,13 +29,26 @@ private void traerTematicasCB(){
 }
 
 private void listeners(){
-    this.vista.listenerTematica(new ActionListener() {
+    
+    vista.listenerTematica(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             String tematicaSeleccionada = (String) vista.getjComboBoxTematica().getSelectedItem();
             if (tematicaSeleccionada != null) {
-                int id_tem = obtenerIdPorNombre(tematicaSeleccionada); // Método para obtener el ID
-                traerPreguntasMC(id_tem); // Actualizar preguntas
+                int idTematica = obtenerIdPorNombre(tematicaSeleccionada);
+                actualizarPreguntas(idTematica);
+            }
+        }
+    });
+
+    // Listener para el tipo de pregunta seleccionada
+    vista.listenerTipo(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String tematicaSeleccionada = (String) vista.getjComboBoxTematica().getSelectedItem();
+            if (tematicaSeleccionada != null) {
+                int idTematica = obtenerIdPorNombre(tematicaSeleccionada);
+                actualizarPreguntas(idTematica);
             }
         }
     });
@@ -45,6 +60,22 @@ public static int obtenerIdPorNombre(String nombre) {
         }
     }
     throw new IllegalArgumentException("Temática no encontrada: " + nombre);
+    
+}
+private void actualizarPreguntas(int idTematica) {
+    String tipoSeleccionado = (String) vista.getjComboBoxTipo().getSelectedItem();
+    if (tipoSeleccionado != null) {
+        vista.getjComboBoxPregunta().removeAllItems(); 
+        try {
+            if (tipoSeleccionado.equals("Multiple choice")) {
+                traerPreguntasMC(idTematica);
+            } else if (tipoSeleccionado.equals("Aproximacion")) {
+                traerPreguntasAprox(idTematica);
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error al obtener preguntas: " + ex.getMessage());
+        }
+    }
 }
 private void traerPreguntasMC(int id_tem){
     vista.getjComboBoxPregunta().removeAllItems(); 
@@ -52,6 +83,14 @@ private void traerPreguntasMC(int id_tem){
     for (MultipleChoicePregunta pregunta : preguntas) {
         vista.getjComboBoxPregunta().addItem(pregunta.getEnunciado());
     }
+}
+private void traerPreguntasAprox(int id_tem) throws SQLException{
+    vista.getjComboBoxPregunta().removeAllItems(); 
+    ArrayList<PreguntaAproximacion> preguntas = PreguntaAproximacion.obtenerPreguntasAproximacionTematica(id_tem);
+    for (PreguntaAproximacion pregunta : preguntas) {
+        vista.getjComboBoxPregunta().addItem(pregunta.getEnunciado());
+    }
+
 }
 
 
