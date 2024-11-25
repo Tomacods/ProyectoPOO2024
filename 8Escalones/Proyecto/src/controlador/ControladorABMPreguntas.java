@@ -1,4 +1,5 @@
 package controlador;
+
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
@@ -7,6 +8,7 @@ import Modelos.MultipleChoicePregunta;
 import Modelos.PreguntaAproximacion;
 import Modelos.Tematica;
 import Vista.ABMPreguntas;
+
 public class ControladorABMPreguntas {
     private ABMPreguntas vista;
 
@@ -50,13 +52,23 @@ public class ControladorABMPreguntas {
         vista.listenerActualizar(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                modificarPregunta();
+                try {
+                    modificarPregunta();
+                } catch (SQLException e1) {
+
+                    e1.printStackTrace();
+                }
             }
         });
         vista.listenerEliminar(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                eliminarPregunta();
+                try {
+                    eliminarPregunta();
+                } catch (SQLException e1) {
+
+                    e1.printStackTrace();
+                }
             }
         });
         vista.listenerInsertar(new ActionListener() {
@@ -116,37 +128,71 @@ public class ControladorABMPreguntas {
     }
 
     private void insertarPregunta() throws SQLException {
-        String nuevaPregunta = vista.getjTextFieldNuevaPregunta().getText();
-        String tematicaSeleccionada = (String) vista.getjComboBoxTematica().getSelectedItem();
-        if (!nuevaPregunta.isEmpty() && tematicaSeleccionada != null) {
-            // Obtener el ID de la temática seleccionada
-            int idTematica = obtenerIdPorNombre(tematicaSeleccionada);
-            
-            // Crear una nueva pregunta con el idTematica correcto
-            MultipleChoicePregunta preguntaIns = new MultipleChoicePregunta(0, nuevaPregunta, idTematica);
-            
-            // Insertar la pregunta
-            MultipleChoicePregunta.insertarPregunta(preguntaIns, null);
-            
-            // Refrescar la lista de preguntas
-            traerPreguntasMC(idTematica);
-        } else {
-            System.out.println("El campo de la nueva pregunta o la temática está vacío.");
+        String tipoSeleccionado = (String) vista.getjComboBoxTipo().getSelectedItem();
+        if (tipoSeleccionado.equals("Multiple choice")) {
+            String nuevaPregunta = vista.getjTextFieldNuevaPregunta().getText();
+            String tematicaSeleccionada = (String) vista.getjComboBoxTematica().getSelectedItem();
+            if (!nuevaPregunta.isEmpty() && tematicaSeleccionada != null) {
+
+                int idTematica = obtenerIdPorNombre(tematicaSeleccionada);
+
+                MultipleChoicePregunta preguntaIns = new MultipleChoicePregunta(0, nuevaPregunta, idTematica);
+
+                MultipleChoicePregunta.insertarPregunta(preguntaIns, null);
+
+                traerPreguntasMC(idTematica);
+            } else {
+                System.out.println("El campo de la nueva pregunta o la temática está vacío.");
+            }
+        } else if (tipoSeleccionado.equals("Aproximacion")) {
+            String nuevaPregunta = vista.getjTextFieldNuevaPregunta().getText();
+            String tematicaSeleccionada = (String) vista.getjComboBoxTematica().getSelectedItem();
+            if (!nuevaPregunta.isEmpty() && tematicaSeleccionada != null) {
+
+                int idTematica = obtenerIdPorNombre(tematicaSeleccionada);
+
+                PreguntaAproximacion preguntaIns = new PreguntaAproximacion(0, nuevaPregunta, idTematica, 0);
+
+                PreguntaAproximacion.insertarPreguntaAproximacion(preguntaIns);
+
+                traerPreguntasAprox(idTematica);
+            } else {
+                System.out.println("El campo de la nueva pregunta o la temática está vacío.");
+            }
         }
     }
-    
 
-    private void eliminarPregunta() {
-        String selectedPregunta = (String) vista.getjComboBoxPregunta().getSelectedItem();
-        if (selectedPregunta != null) {
+    private void eliminarPregunta() throws SQLException {
+        String tipoSeleccionado = (String) vista.getjComboBoxTipo().getSelectedItem();
+
+        if (tipoSeleccionado.equals("Multiple choice")) {
+            String selectedPregunta = (String) vista.getjComboBoxPregunta().getSelectedItem();
+            if (selectedPregunta != null) {
+                int idTematica = obtenerIdPorNombre((String) vista.getjComboBoxTematica().getSelectedItem());
+                MultipleChoicePregunta pregunta = MultipleChoicePregunta.obtenerPreguntaPorEnunciado(selectedPregunta,
+                        idTematica);
+                if (pregunta != null) {
+                    int idPregunta = pregunta.getIdPregunta();
+                    System.out.println(
+                            "Pregunta seleccionada para eliminar: " + selectedPregunta + ", ID: " + idPregunta);
+                    MultipleChoicePregunta.eliminarPregunta(idPregunta); // Llamada a eliminar pregunta
+                    traerPreguntasMC(idTematica); // Refrescar la lista de preguntas
+                    System.out.println("Pregunta eliminada: " + selectedPregunta);
+                } else {
+                    System.out.println("No se encontró la pregunta con el enunciado seleccionado.");
+                }
+            }
+
+        } else if (tipoSeleccionado.equals("Aproximacion")) {
+            String selectedPregunta = (String) vista.getjComboBoxPregunta().getSelectedItem();
             int idTematica = obtenerIdPorNombre((String) vista.getjComboBoxTematica().getSelectedItem());
-            MultipleChoicePregunta pregunta = MultipleChoicePregunta.obtenerPreguntaPorEnunciado(selectedPregunta,
+            PreguntaAproximacion pregunta = PreguntaAproximacion.obtenerPreguntaPorEnunciado(selectedPregunta,
                     idTematica);
             if (pregunta != null) {
                 int idPregunta = pregunta.getIdPregunta();
                 System.out.println("Pregunta seleccionada para eliminar: " + selectedPregunta + ", ID: " + idPregunta);
-                MultipleChoicePregunta.eliminarPregunta(idPregunta); // Llamada a eliminar pregunta
-                traerPreguntasMC(idTematica); // Refrescar la lista de preguntas
+                PreguntaAproximacion.eliminarPreguntaAprox(idTematica); // Llamada a eliminar pregunta
+                traerPreguntasAprox(idTematica); // Refrescar la lista de preguntas
                 System.out.println("Pregunta eliminada: " + selectedPregunta);
             } else {
                 System.out.println("No se encontró la pregunta con el enunciado seleccionado.");
@@ -154,26 +200,52 @@ public class ControladorABMPreguntas {
         }
     }
 
-    private void modificarPregunta() {
-        String selectedPregunta = (String) vista.getjComboBoxPregunta().getSelectedItem();
-        if (selectedPregunta == null) {
-            System.out.println("No se ha seleccionado ninguna temática.");
-            return;
+    private void modificarPregunta() throws SQLException {
+        String tipoSeleccionado = (String) vista.getjComboBoxTipo().getSelectedItem();
+        if (tipoSeleccionado.equals("Multiple choice")) {
+
+            String selectedPregunta = (String) vista.getjComboBoxPregunta().getSelectedItem();
+            if (selectedPregunta == null) {
+                System.out.println("No se ha seleccionado ninguna temática.");
+                return;
+            }
+            MultipleChoicePregunta pregunta = MultipleChoicePregunta.obtenerPreguntaPorEnunciado(selectedPregunta, 1);
+            if (pregunta == null) {
+                System.out.println("No se encontró la temática seleccionada.");
+                return;
+            }
+            String nuevaPregunta = vista.getjTextFieldNuevaPregunta().getText();
+            if (nuevaPregunta.isEmpty()) {
+                System.out.println("El campo de la nueva temática está vacío.");
+                return;
+            }
+            pregunta.setEnunciado(nuevaPregunta);
+            MultipleChoicePregunta.actualizarPregunta(pregunta);
+            traerTematicasCB();
+            System.out.println("pregunta modificada exitosamente.");
+
+        } else if (tipoSeleccionado.equals("Aproximacion")) {
+            String selectedPregunta = (String) vista.getjComboBoxPregunta().getSelectedItem();
+            if (selectedPregunta == null) {
+                System.out.println("No se ha seleccionado ninguna temática.");
+                return;
+            }
+            PreguntaAproximacion pregunta = PreguntaAproximacion.obtenerPreguntaPorEnunciado(selectedPregunta, 1);
+            if (pregunta == null) {
+                System.out.println("No se encontró la temática seleccionada.");
+                return;
+            }
+            String nuevaPregunta = vista.getjTextFieldNuevaPregunta().getText();
+            if (nuevaPregunta.isEmpty()) {
+                System.out.println("El campo de la nueva temática está vacío.");
+                return;
+            }
+            pregunta.setEnunciado(nuevaPregunta);
+            PreguntaAproximacion.actualizarPreguntaAprox(pregunta);
+            traerTematicasCB();
+            System.out.println("pregunta modificada exitosamente.");
+
         }
-        MultipleChoicePregunta pregunta = MultipleChoicePregunta.obtenerPreguntaPorEnunciado(selectedPregunta, 1);
-        if (pregunta == null) {
-            System.out.println("No se encontró la temática seleccionada.");
-            return;
-        }
-        String nuevaPregunta = vista.getjTextFieldNuevaPregunta().getText();
-        if (nuevaPregunta.isEmpty()) {
-            System.out.println("El campo de la nueva temática está vacío.");
-            return;
-        }
-        pregunta.setEnunciado(nuevaPregunta);
-        MultipleChoicePregunta.actualizarPregunta(pregunta);
-        traerTematicasCB();
-        System.out.println("pregunta modificada exitosamente.");
     }
 
 }
