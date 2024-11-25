@@ -2,6 +2,8 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "Vista/Librerias/AbsoluteLayout.jar",
-        "Vista/Librerias/RSScaleLabel.jar"
+        "Vista/Librerias/RSScaleLabel.jar",
+        "Librerias/AbsoluteLayout.jar",
+        "Librerias/RSScaleLabel.jar"
     ]
 }

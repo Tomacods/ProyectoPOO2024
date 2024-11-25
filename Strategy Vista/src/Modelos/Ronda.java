@@ -45,11 +45,11 @@ public class Ronda {
                 realizarPreguntas(tematicas.get(random.nextInt(tematicas.size())).getId());
             } */
         }
-        /* if (jugadores.get(0).getPuntaje() > jugadores.get(1).getPuntaje()) {
+        if (jugadores.get(0).getPuntaje() > jugadores.get(1).getPuntaje()) {
             System.out.println("\n¡" + jugadores.get(0).getNombre()  + " ES EL GANADOR DE LOS 8 ESCALONES!");
         } else {
             System.out.println("\n¡" + jugadores.get(1).getNombre()  + " ES EL GANADOR DE LOS 8 ESCALONES!");
-        } */
+        }
     }
 
 
