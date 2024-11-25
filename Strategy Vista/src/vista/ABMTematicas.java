@@ -24,13 +24,13 @@ private ControladorABMTematica controlador;
         initComponents();
         this.controlador= controlador;
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "src/imagenes/admin.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconEdit, "src/imagenes/lapiz.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconDelete, "src/imagenes/basura.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTematica, "src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/back.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/codigo.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "Proyecto/src/imagenes/admin.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconEdit, "Proyecto/src/imagenes/lapiz.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconDelete, "Proyecto/src/imagenes/basura.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTematica, "Proyecto/src/imagenes/verde.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
     }
 
     /**
@@ -50,7 +50,7 @@ private ControladorABMTematica controlador;
         jLabelIconEdit = new javax.swing.JLabel();
         jLabelIconDelete = new javax.swing.JLabel();
         jButtonEliminarTematica = new javax.swing.JButton();
-        jButtonModificarPregunta = new javax.swing.JButton();
+        jButtonModificarTematica = new javax.swing.JButton();
         jLabelFondoTematica = new javax.swing.JLabel();
         jButtonAgregarTematica = new javax.swing.JButton();
         jLabelBack = new javax.swing.JLabel();
@@ -122,15 +122,15 @@ private ControladorABMTematica controlador;
         });
         jPanel1.add(jButtonEliminarTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 80, 70));
 
-        jButtonModificarPregunta.setBackground(new java.awt.Color(0, 102, 0));
-        jButtonModificarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButtonModificarPregunta.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonModificarPregunta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonModificarPreguntaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonModificarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 80, 70));
+        jButtonModificarTematica.setBackground(new java.awt.Color(0, 102, 0));
+        jButtonModificarTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jButtonModificarTematica.setForeground(new java.awt.Color(255, 255, 255));
+            jButtonModificarTematica.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    System.out.println("Botón MODIFICAR tematica presionado");
+                }
+            });
+        jPanel1.add(jButtonModificarTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 80, 70));
         jPanel1.add(jLabelFondoTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 290, 130));
 
         jButtonAgregarTematica.setBackground(new java.awt.Color(0, 102, 0));
@@ -198,6 +198,9 @@ private ControladorABMTematica controlador;
     }
     public void listenerBotonTematica(ActionListener listener) {
         jButtonTematica.addActionListener(listener);
+    }
+    public void listenerModificarTematica(ActionListener listener) {
+        jButtonModificarTematica.addActionListener(listener);
     }
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
@@ -282,7 +285,7 @@ private ControladorABMTematica controlador;
     private javax.swing.JButton jButtonBack;
     private javax.swing.JButton jButtonEliminarTematica;
     private javax.swing.JButton jButtonExit;
-    private javax.swing.JButton jButtonModificarPregunta;
+    private javax.swing.JButton jButtonModificarTematica;
     private javax.swing.JComboBox<String> jComboBoxTematica;
     private javax.swing.JLabel jLabelBack;
     private javax.swing.JLabel jLabelExit;
