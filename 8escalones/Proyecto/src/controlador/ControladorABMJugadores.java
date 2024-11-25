@@ -6,6 +6,7 @@ import java.lang.Exception;
 import Modelos.Jugador;
 import java.util.ArrayList;
 import Vista.ABMJugadores;
+import Vista.MenuPrincipal;
 
 public class ControladorABMJugadores {
     private ABMJugadores vista;
@@ -39,12 +40,6 @@ public class ControladorABMJugadores {
             @Override
             public void actionPerformed(ActionEvent evt) {
                 eliminarJugador();
-            }
-        });
-        this.vista.jButtonExit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                salir();
             }
         });
         this.vista.jComboBoxJugadores.addActionListener(new ActionListener() {
@@ -99,13 +94,13 @@ public class ControladorABMJugadores {
     private void seleccionarJugador() {
         this.jugadorSeleccionado = (Jugador) vista.jComboBoxJugadores.getSelectedItem();
         System.out.println("Jugador seleccionado: " + this.jugadorSeleccionado.getNombre());
-    }
-    
-    private void volver() {
+        }
+        
+        private void volver() {
+        // Assuming MenuPrincipal is another class that represents the main menu
+        MenuPrincipal menuPrincipal = new MenuPrincipal();
+        menuPrincipal.setVisible(true);
         this.vista.dispose();
-    }
+        }
 
-    private void salir() {
-        this.vista.dispose();
-    }
 }

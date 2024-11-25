@@ -10,13 +10,13 @@ public class ModoAdmin extends javax.swing.JFrame {
     /**
      * Creates new form gameplay
      */
-    public ModoAdmin(ControladorModoAdmin controlador) {
+    public ModoAdmin() {
         setLookandFeel();
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/back.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "src/imagenes/admin.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "proyecto/src/imagenes/codigo.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "proyecto/src/imagenes/back.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "proyecto/src/imagenes/admin.png");
 
     }
 
@@ -36,7 +36,7 @@ public class ModoAdmin extends javax.swing.JFrame {
         jButtonABMTematicas = new javax.swing.JButton(); //Cierra y abre vistaABMPTematicas
         jLabelBack = new javax.swing.JLabel();
         jButtonBack = new javax.swing.JButton();
-        jButtonABMJugadores = new javax.swing.JButton();
+        
         jLabelIconAdmin = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -89,16 +89,11 @@ public class ModoAdmin extends javax.swing.JFrame {
         });*/
         jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
-        jButtonABMJugadores.setBackground(new java.awt.Color(51, 153, 0));
-        jButtonABMJugadores.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
-        jButtonABMJugadores.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonABMJugadores.setText("ABM Jugadores");
         /*jButtonABMJugadores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonABMJugadoresActionPerformed(evt);
             }
         });*/
-        jPanel1.add(jButtonABMJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 260, 50));
         jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 110, 100));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -171,7 +166,6 @@ public class ModoAdmin extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonABMJugadores;
     private javax.swing.JButton jButtonABMPreguntas;
     private javax.swing.JButton jButtonABMTematicas;
     private javax.swing.JButton jButtonBack;
@@ -184,9 +178,7 @@ public class ModoAdmin extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     //Getters botones
-    public javax.swing.JButton getjButtonABMJugadores() {
-        return jButtonABMJugadores;
-    }
+
 
     public javax.swing.JButton getjButtonABMPreguntas() {
         return jButtonABMPreguntas;

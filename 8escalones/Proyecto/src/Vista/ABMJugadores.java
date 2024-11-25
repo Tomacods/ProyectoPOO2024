@@ -21,7 +21,6 @@ public class ABMJugadores extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconEdit, "Proyecto/src/imagenes/lapiz.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconDelete, "Proyecto/src/imagenes/basura.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoJugadores, "Proyecto/src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
     }
 
@@ -47,8 +46,6 @@ public class ABMJugadores extends javax.swing.JFrame {
         jButtonAgregarJugador = new javax.swing.JButton();
         jLabelBack = new javax.swing.JLabel();
         jButtonBack = new javax.swing.JButton();
-        jLabelExit = new javax.swing.JLabel();
-        jButtonExit = new javax.swing.JButton();
         jLabelIconAdmin = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -134,17 +131,8 @@ public class ABMJugadores extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, 50));
-        jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 40, 30));
-
-        jButtonExit.setBackground(new java.awt.Color(0, 102, 0));
-        jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButtonExit.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonExitActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 60, 50));
+    
+        
         jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 110, 100));
         jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 400));
 
@@ -289,10 +277,8 @@ public class ABMJugadores extends javax.swing.JFrame {
     public javax.swing.JButton jButtonBack;
     public javax.swing.JButton jButtonEditar;
     public javax.swing.JButton jButtonEliminar;
-    public javax.swing.JButton jButtonExit;
     public javax.swing.JComboBox<Jugador> jComboBoxJugadores;
     public javax.swing.JLabel jLabelBack;
-    public javax.swing.JLabel jLabelExit;
     public javax.swing.JLabel jLabelFondo;
     public javax.swing.JLabel jLabelFondoJugadores;
     public javax.swing.JLabel jLabelIconAdmin;

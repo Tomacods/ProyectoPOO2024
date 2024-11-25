@@ -17,8 +17,7 @@ public class Creditos extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/plantilla.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelConfig, "Proyecto/src/imagenes/config.png");
-    }
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,10 +29,8 @@ public class Creditos extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabelConfig = new javax.swing.JLabel();
         jLabelExit = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
-        jButtonConfig = new javax.swing.JButton();
         jLabelN1 = new javax.swing.JLabel();
         jLabelN2 = new javax.swing.JLabel();
         jLabelN3 = new javax.swing.JLabel();
@@ -49,7 +46,6 @@ public class Creditos extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jLabelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
         jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
 
         jButtonExit.setBackground(new java.awt.Color(51, 204, 0));
@@ -62,16 +58,7 @@ public class Creditos extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
-        jButtonConfig.setBackground(new java.awt.Color(51, 204, 0));
-        jButtonConfig.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
-        jButtonConfig.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonConfig.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConfigActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 50, 40));
-
+        
         jLabelN1.setFont(new java.awt.Font("Roboto Medium", 0, 50)); // NOI18N
         jLabelN1.setText("Cesar");
         jPanel1.add(jLabelN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 140, 70));
@@ -172,9 +159,7 @@ public class Creditos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButtonConfig;
     public javax.swing.JButton jButtonExit;
-    public javax.swing.JLabel jLabelConfig;
     public javax.swing.JLabel jLabelExit;
     public javax.swing.JLabel jLabelFondo;
     public javax.swing.JLabel jLabelN1;
