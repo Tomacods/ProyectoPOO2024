@@ -17,6 +17,7 @@ public class Main {
             frame.setVisible(true);
     } */
 
-    ControladorGameplay c = new ControladorGameplay();
+    //ControladorGameplay c = new ControladorGameplay();
+    ControladorABMPreguntas c = new ControladorABMPreguntas();
 }
 }

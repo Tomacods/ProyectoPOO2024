@@ -19,6 +19,7 @@ public class ControladorGameplay {
 
     private void traerTematica(){
 
+          //puedo sacar la tematica del modelo escalon
     }
 
     private void traerPregunta() throws SQLException{
@@ -29,6 +30,7 @@ public class ControladorGameplay {
 
     }
     private void getIdPregunta(){
+
 
 
     }

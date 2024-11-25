@@ -4,6 +4,10 @@
  */
 package Vista;
 
+import java.awt.event.ActionListener;
+
+import controlador.ControladorABMPreguntas;
+
 /**
  *
  * @author Maria
@@ -12,7 +16,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
     /**
      * Creates new form gameplay
      */
-    public ABMPreguntas() {
+    public ABMPreguntas(ControladorABMPreguntas controlador) {
         initComponents();
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/codigo.png");
@@ -108,7 +112,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jComboBoxPregunta.setBackground(new java.awt.Color(51, 153, 0));
         jComboBoxPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxPregunta.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxPregunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxPregunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
         jComboBoxPregunta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxPreguntaActionPerformed(evt);
@@ -222,7 +226,9 @@ public class ABMPreguntas extends javax.swing.JFrame {
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonExitActionPerformed
-
+    public void listenerTematica(ActionListener listener) {
+        jTextFieldTematica.addActionListener(listener);
+    }
     /**
      * @param args the command line arguments
      */
@@ -248,27 +254,11 @@ public class ABMPreguntas extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ABMPreguntas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ABMPreguntas().setVisible(true);
+                ControladorABMPreguntas c = new ControladorABMPreguntas();
+                new ABMPreguntas(c).setVisible(true);
             }
         });
     }
@@ -297,5 +287,16 @@ public class ABMPreguntas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldTematica;
     private javax.swing.JTextField jTextFieldTipo;
     // End of variables declaration//GEN-END:variables
+    public javax.swing.JComboBox<String> getjComboBoxPregunta() {
+        return jComboBoxPregunta;
+    }
+
+    public javax.swing.JComboBox<String> getjComboBoxTematica() {
+        return jComboBoxTematica;
+    }
+
+    public javax.swing.JComboBox<String> getjComboBoxTipo() {
+        return jComboBoxTipo;
+    }
 }
 

@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 
@@ -77,8 +78,9 @@ public class ControladorSeleccionarJugadores {
         vistaSeleccionarJugador.dispose();
     }
 
-    private void jugar() {
-        Gameplay gameplay = new Gameplay();
+    private void jugar() throws SQLException {
+        ControladorGameplay c = new ControladorGameplay();
+        Gameplay gameplay = new Gameplay(c);
         gameplay.setVisible(true);
         vistaSeleccionarJugador.dispose();
     }
