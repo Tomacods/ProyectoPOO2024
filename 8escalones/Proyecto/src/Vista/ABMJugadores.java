@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
+import Modelos.Jugador;
 
 /**
  *
@@ -289,7 +290,7 @@ public class ABMJugadores extends javax.swing.JFrame {
     public javax.swing.JButton jButtonEditar;
     public javax.swing.JButton jButtonEliminar;
     public javax.swing.JButton jButtonExit;
-    public javax.swing.JComboBox<String> jComboBoxJugadores;
+    public javax.swing.JComboBox<Jugador> jComboBoxJugadores;
     public javax.swing.JLabel jLabelBack;
     public javax.swing.JLabel jLabelExit;
     public javax.swing.JLabel jLabelFondo;
