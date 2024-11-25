@@ -53,7 +53,7 @@ private void listenerEliminarTematica() {
 }
 
 private void listenerModificarTematica() {
-    this.vistaABMTematicas.listenerBotonTematica(new ActionListener() {
+    this.vistaABMTematicas.listenerModificarTematica(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
         modificarTematica();
@@ -61,22 +61,37 @@ private void listenerModificarTematica() {
     });
 }
 
-private void modificarTematica(){
+private void modificarTematica() {
+
     String selectedTematica = (String) vistaABMTematicas.getComboBoxTematica().getSelectedItem();
-    Tematica tematica = obtenerTematicaPorNombre(selectedTematica);
-    Tematica.actualizarTematica(tematica);
-    /* if (selectedTematica != null) {
-        Tematica tematica = obtenerTematicaPorNombre(selectedTematica);
-        if (tematica != null) {
-            int idTematica = tematica.getId();
-            System.out.println("Temática seleccionada para eliminar: " + selectedTematica + ", ID: " + idTematica);
 
-            Tematica.eliminarTematica(idTematica);
-            System.out.println("Temática eliminada: " + selectedTematica + ", ID: " + idTematica);
-
-            traerTematicasCB();
-        } */
+    if (selectedTematica == null) {
+        System.out.println("No se ha seleccionado ninguna temática.");
+        return;
     }
+
+    Tematica tematica = obtenerTematicaPorNombre(selectedTematica);
+
+    if (tematica == null) {
+        System.out.println("No se encontró la temática seleccionada.");
+        return;
+    }
+
+    String nuevaTematica = vistaABMTematicas.getTextFieldNuevaTematica().getText();
+
+    if (nuevaTematica.isEmpty()) {
+        System.out.println("El campo de la nueva temática está vacío.");
+        return;
+    }
+
+    tematica.setNombre(nuevaTematica);
+
+    Tematica.actualizarTematica(tematica);
+
+    traerTematicasCB();
+    System.out.println("Temática modificada exitosamente.");
+}
+
 
 
 
