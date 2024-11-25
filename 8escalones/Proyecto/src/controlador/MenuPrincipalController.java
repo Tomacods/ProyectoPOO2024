@@ -1,4 +1,4 @@
-package Controlador;
+package controlador;
 
 import Vista.MenuPrincipal;
 import Vista.SeleccionarJugador;

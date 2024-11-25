@@ -1,6 +1,6 @@
 package Vista;
 
-import Controlador.MenuPrincipalController;
+import controlador.MenuPrincipalController;
 
 public class MenuPrincipal extends javax.swing.JFrame {
 
