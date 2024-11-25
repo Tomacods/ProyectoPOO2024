@@ -16,10 +16,11 @@ public class ControladorModoAdmin {
         this.vista.getjButtonBack().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                vista.dispose(); // Cierra la ventana actual
+               
                 MenuPrincipal menuPrincipal = new MenuPrincipal();
                 new MenuPrincipalController(menuPrincipal);
                 menuPrincipal.setVisible(true); // Abre la vista MenuPrincipal
+                vista.dispose(); // Cierra la ventana actual
             }
         });
 

@@ -43,12 +43,6 @@ public class ControladorABMJugadores {
                 eliminarJugador();
             }
         });
-        this.vista.jButtonExit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                salir();
-            }
-        });
         this.vista.jComboBoxJugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
@@ -104,13 +98,10 @@ public class ControladorABMJugadores {
         }
         
         private void volver() {
-        this.vista.dispose();
         // Assuming MenuPrincipal is another class that represents the main menu
         MenuPrincipal menuPrincipal = new MenuPrincipal();
         menuPrincipal.setVisible(true);
+        this.vista.dispose();
         }
 
-        private void salir() {
-        this.vista.dispose();
-    }
 }

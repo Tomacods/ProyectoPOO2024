@@ -58,7 +58,7 @@ private void insertarTematica() {
         Tematica.insertarTematica(tematicaIns); 
         traerTematicasCB();
     } else {
-        System.out.println("El campo de la nueva temática está vacío.");
+        javax.swing.JOptionPane.showMessageDialog(vistaABMTematicas, "El campo de la nueva temática está vacío.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
     }
 }
 
@@ -87,6 +87,7 @@ private void modificarTematica() {
     String selectedTematica = (String) vistaABMTematicas.getComboBoxTematica().getSelectedItem();
     if (selectedTematica == null) {
         System.out.println("No se ha seleccionado ninguna temática.");
+        javax.swing.JOptionPane.showMessageDialog(vistaABMTematicas, "No se ha seleccionado ninguna temática.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         return;
     }
     Tematica tematica = obtenerTematicaPorNombre(selectedTematica);
@@ -96,7 +97,7 @@ private void modificarTematica() {
     }
     String nuevaTematica = vistaABMTematicas.getTextFieldNuevaTematica().getText();
     if (nuevaTematica.isEmpty()) {
-        System.out.println("El campo de la nueva temática está vacío.");
+        javax.swing.JOptionPane.showMessageDialog(vistaABMTematicas, "El campo de la nueva temática está vacío.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         return;
     }
     tematica.setNombre(nuevaTematica);
