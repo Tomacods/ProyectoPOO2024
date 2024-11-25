@@ -12,7 +12,7 @@ public class ControladorSeleccionarJugadores {
 
     private SeleccionarJugador vistaSeleccionarJugador;
 
-    public ControladorSeleccionarJugadores(SeleccionarJugador vistaSeleccionarJugador) {  
+    public ControladorSeleccionarJugadores(SeleccionarJugador vistaSeleccionarJugador) {
         super();
         this.vistaSeleccionarJugador = vistaSeleccionarJugador;
         this.vistaSeleccionarJugador.setVisible(true);
@@ -59,6 +59,14 @@ public class ControladorSeleccionarJugadores {
         ArrayList<Jugador> jugadores = Jugador.obtenerJugadores(); 
             for (Jugador nombre_jugador : jugadores) {
                 vistaSeleccionarJugador.getComboBoxJ1().addItem(nombre_jugador.getNombre());
-            }
+                vistaSeleccionarJugador.getComboBoxJ2().addItem(nombre_jugador.getNombre());
+                vistaSeleccionarJugador.getComboBoxJ3().addItem(nombre_jugador.getNombre());
+                vistaSeleccionarJugador.getComboBoxJ4().addItem(nombre_jugador.getNombre());
+                vistaSeleccionarJugador.getComboBoxJ5().addItem(nombre_jugador.getNombre());
+                vistaSeleccionarJugador.getComboBoxJ6().addItem(nombre_jugador.getNombre());
+                vistaSeleccionarJugador.getComboBoxJ7().addItem(nombre_jugador.getNombre());
+                vistaSeleccionarJugador.getComboBoxJ8().addItem(nombre_jugador.getNombre());
+                vistaSeleccionarJugador.getComboBoxJ9().addItem(nombre_jugador.getNombre());
     }
+}
 }
