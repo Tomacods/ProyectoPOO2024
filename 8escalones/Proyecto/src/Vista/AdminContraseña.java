@@ -7,7 +7,7 @@ import controlador.*;
  */
 public class AdminContraseña extends javax.swing.JFrame {   
 
-    public AdminContraseña(controladorAdminContraseña controlador) {
+    public AdminContraseña(ControladorAdminContraseña controlador) {
         this.setControlador(this.controlador);
         setLookandFeel();
         initComponents();
@@ -140,14 +140,14 @@ public class AdminContraseña extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextFieldContraseña;
-    private controladorAdminContraseña controlador;
+    private ControladorAdminContraseña controlador;
     // End of variables declaration//GEN-END:variables
 
-    public controladorAdminContraseña getControlador() {
+    public ControladorAdminContraseña getControlador() {
         return controlador;
     }
 
-    public void setControlador(controladorAdminContraseña controlador) {
+    public void setControlador(ControladorAdminContraseña controlador) {
         this.controlador = controlador;
     }
 

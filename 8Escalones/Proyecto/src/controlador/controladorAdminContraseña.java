@@ -5,11 +5,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class controladorAdminContraseña implements ActionListener, MouseListener {
+public class ControladorAdminContraseña implements ActionListener, MouseListener {
     private AdminContraseña vista;
     private String contrasenia = "admin";
 
-    public controladorAdminContraseña( String contrasenia) {
+    public ControladorAdminContraseña(String contrasenia) {
         super();
         this.vista = new AdminContraseña(this);
         vista.setVisible(true);
@@ -54,7 +54,7 @@ public class controladorAdminContraseña implements ActionListener, MouseListene
             Boolean validarContrasenias = java.util.Arrays.equals(contraseniaIngresada, contraseniaValida);
             if (validarContrasenias) {
                 System.out.println("Ingreso sin problemas!");
-                new controladorModoAdmin();
+                new ControladorModoAdmin();
                 getVista().dispose();
                 
             } else {

@@ -1,14 +1,14 @@
 package controlador;
-import ventanas.ModoAdmin;
+import Vista.ModoAdmin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class controladorModoAdmin implements ActionListener, MouseListener {
+public class ControladorModoAdmin implements ActionListener, MouseListener {
     private ModoAdmin vistaModoAdmin;
 
-    public controladorModoAdmin(){
+    public ControladorModoAdmin(){
         super();
         this.vistaModoAdmin = new ModoAdmin(this);
         vistaModoAdmin.setVisible(true);
