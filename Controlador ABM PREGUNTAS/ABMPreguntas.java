@@ -1,18 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package Vista;
+
+package ventanas;
+
+import controlador.*;
 
 /**
  *
  * @author Maria
  */
 public class ABMPreguntas extends javax.swing.JFrame {   
-    /**
-     * Creates new form gameplay
-     */
-    public ABMPreguntas() {
+
+    public ABMPreguntas(controladorABMPreguntas controlador) {
+        setControlador(controlador);
+        setLookandFeel();
         initComponents();
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
@@ -92,11 +91,11 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jTextFieldTipo.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldTipo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldTipo.setText("Tipo");
-        jTextFieldTipo.addActionListener(new java.awt.event.ActionListener() {
+        /*jTextFieldTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldTipoActionPerformed(evt);
             }
-        });
+        });*/
         jPanel1.add(jTextFieldTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 80, 60));
 
         jComboBoxTipo.setBackground(new java.awt.Color(51, 153, 0));
@@ -109,11 +108,11 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jComboBoxPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxPregunta.setForeground(new java.awt.Color(255, 255, 255));
         jComboBoxPregunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBoxPregunta.addActionListener(new java.awt.event.ActionListener() {
+        /*jComboBoxPregunta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxPreguntaActionPerformed(evt);
             }
-        });
+        });*/
         jPanel1.add(jComboBoxPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 570, 50));
 
         jTextFieldNuevaPregunta.setBackground(new java.awt.Color(0, 102, 0));
@@ -127,21 +126,21 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jButtonExit.setBackground(new java.awt.Color(0, 102, 0));
         jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jButtonExit.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonExit.addActionListener(new java.awt.event.ActionListener() {
+        /*jButtonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonExitActionPerformed(evt);
             }
-        });
+        });*/
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 60, 50));
 
         jButtonBack.setBackground(new java.awt.Color(0, 102, 0));
         jButtonBack.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jButtonBack.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonBack.addActionListener(new java.awt.event.ActionListener() {
+        /*jButtonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonBackActionPerformed(evt);
             }
-        });
+        });*/
         jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, 50));
         jPanel1.add(jLabelIconEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 60, 50));
         jPanel1.add(jLabelIconDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 60, 50));
@@ -149,32 +148,32 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jButtonEliminarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jButtonEliminarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jButtonEliminarPregunta.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonEliminarPregunta.addActionListener(new java.awt.event.ActionListener() {
+        /*jButtonEliminarPregunta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEliminarPreguntaActionPerformed(evt);
             }
-        });
+        });*/
         jPanel1.add(jButtonEliminarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 80, 70));
 
         jButtonModificarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jButtonModificarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jButtonModificarPregunta.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonModificarPregunta.addActionListener(new java.awt.event.ActionListener() {
+        /*jButtonModificarPregunta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonModificarPreguntaActionPerformed(evt);
             }
-        });
+        });*/
         jPanel1.add(jButtonModificarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 80, 70));
 
         jButtonAgregarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jButtonAgregarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 70)); // NOI18N
         jButtonAgregarPregunta.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAgregarPregunta.setText("+");
-        jButtonAgregarPregunta.addActionListener(new java.awt.event.ActionListener() {
+        /*jButtonAgregarPregunta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAgregarPreguntaActionPerformed(evt);
             }
-        });
+        });*/
         jPanel1.add(jButtonAgregarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 80, 70));
         jPanel1.add(jLabelFondoTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 290, 80));
         jPanel1.add(jLabelFondoTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, 270, 80));
@@ -195,43 +194,24 @@ public class ABMPreguntas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonBackActionPerformed
+    //private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {}
 
-    private void jTextFieldTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldTipoActionPerformed
+    //private void jTextFieldTipoActionPerformed(java.awt.event.ActionEvent evt) {}
 
-    private void jButtonEliminarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarPreguntaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonEliminarPreguntaActionPerformed
+    //private void jButtonEliminarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {}
 
-    private void jButtonModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarPreguntaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonModificarPreguntaActionPerformed
+    //private void jButtonModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {}
 
-    private void jButtonAgregarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarPreguntaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAgregarPreguntaActionPerformed
+    //private void jButtonAgregarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {}
 
-    private void jComboBoxPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPreguntaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxPreguntaActionPerformed
+    //private void jComboBoxPreguntaActionPerformed(java.awt.event.ActionEvent evt) {}
 
-    private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonExitActionPerformed
+    //private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {}
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+    private void setLookandFeel(){
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -240,48 +220,33 @@ public class ABMPreguntas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ABMPreguntas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ABMPreguntas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ABMPreguntas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ABMPreguntas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ABMPreguntas().setVisible(true);
             }
-        });
+        });*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAgregarPregunta;
-    private javax.swing.JButton jButtonBack;
-    private javax.swing.JButton jButtonEliminarPregunta;
-    private javax.swing.JButton jButtonExit;
-    private javax.swing.JButton jButtonModificarPregunta;
-    private javax.swing.JComboBox<String> jComboBoxPregunta;
-    private javax.swing.JComboBox<String> jComboBoxTematica;
-    private javax.swing.JComboBox<String> jComboBoxTipo;
+    private javax.swing.JButton jButtonAgregarPregunta;      //Confirma y lo subo a la BD
+    private javax.swing.JButton jButtonBack;                 //Cierra y vuelve a Modo Admin?
+    private javax.swing.JButton jButtonEliminarPregunta;     //Ve la base y borra?
+    private javax.swing.JButton jButtonExit;                 //Cierra y vuelva a menu principal?
+    private javax.swing.JButton jButtonModificarPregunta;    //Ve la base y MODIFICA?
+    private javax.swing.JComboBox<String> jComboBoxPregunta;//Desconozco para que sirve
+    private javax.swing.JComboBox<String> jComboBoxTematica; //Tematicas son: DEPORTE,ARTE,HISTORIA,CIENCIA,GEOGRAFIA,MUSICA,BIOLOGIA,ENTRETENIMIENTO
+    private javax.swing.JComboBox<String> jComboBoxTipo; //Tipo: MultipleChoice o Aproximacion
     private javax.swing.JLabel jLabelBack;
     private javax.swing.JLabel jLabelExit;
     private javax.swing.JLabel jLabelFondo;
@@ -296,6 +261,81 @@ public class ABMPreguntas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNuevaPregunta;
     private javax.swing.JTextField jTextFieldTematica;
     private javax.swing.JTextField jTextFieldTipo;
+    private controladorABMPreguntas controlador;
     // End of variables declaration//GEN-END:variables
+
+    public controladorABMPreguntas getControlador() {
+        return controlador;
+    }
+
+    public void setControlador(controladorABMPreguntas controlador) {
+        this.controlador = controlador;
+    }
+
+    public javax.swing.JButton getjButtonAgregarPregunta() {
+        return jButtonAgregarPregunta;
+    }
+
+    public void setjButtonAgregarPregunta(javax.swing.JButton jButtonAgregarPregunta) {
+        this.jButtonAgregarPregunta = jButtonAgregarPregunta;
+    }
+
+    public javax.swing.JButton getjButtonBack() {
+        return jButtonBack;
+    }
+
+    public void setjButtonBack(javax.swing.JButton jButtonBack) {
+        this.jButtonBack = jButtonBack;
+    }
+
+    public javax.swing.JButton getjButtonEliminarPregunta() {
+        return jButtonEliminarPregunta;
+    }
+
+    public void setjButtonEliminarPregunta(javax.swing.JButton jButtonEliminarPregunta) {
+        this.jButtonEliminarPregunta = jButtonEliminarPregunta;
+    }
+
+    public javax.swing.JButton getjButtonExit() {
+        return jButtonExit;
+    }
+
+    public void setjButtonExit(javax.swing.JButton jButtonExit) {
+        this.jButtonExit = jButtonExit;
+    }
+
+    public javax.swing.JButton getjButtonModificarPregunta() {
+        return jButtonModificarPregunta;
+    }
+
+    public void setjButtonModificarPregunta(javax.swing.JButton jButtonModificarPregunta) {
+        this.jButtonModificarPregunta = jButtonModificarPregunta;
+    }
+
+    public javax.swing.JComboBox<String> getjComboBoxPregunta() {
+        return jComboBoxPregunta;
+    }
+
+    public void setjComboBoxPregunta(javax.swing.JComboBox<String> jComboBoxPregunta) {
+        this.jComboBoxPregunta = jComboBoxPregunta;
+    }
+
+    public javax.swing.JComboBox<String> getjComboBoxTematica() {
+        return jComboBoxTematica;
+    }
+
+    public void setjComboBoxTematica(javax.swing.JComboBox<String> jComboBoxTematica) {
+        this.jComboBoxTematica = jComboBoxTematica;
+    }
+
+    public javax.swing.JComboBox<String> getjComboBoxTipo() {
+        return jComboBoxTipo;
+    }
+
+    public void setjComboBoxTipo(javax.swing.JComboBox<String> jComboBoxTipo) {
+        this.jComboBoxTipo = jComboBoxTipo;
+    }
+
+
 }
 

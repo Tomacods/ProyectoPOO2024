@@ -6,7 +6,7 @@ import java.lang.Exception;
 import Modelos.Jugador;
 import java.lang.classfile.instruction.ThrowInstruction;
 import java.util.ArrayList;
-import ventanas.ABMJugadores;
+import Vista.ABMJugadores;
 
 public class ControladorABMJugadores {
     private ABMJugadores vista;
@@ -14,7 +14,7 @@ public class ControladorABMJugadores {
 
     public ControladorABMJugadores() {
         this.vista = new ABMJugadores();
-        this.jugadorSeleccionado = Jugador();
+        this.jugadorSeleccionado = new Jugador();
         
         cargarJugadores();
 
@@ -58,7 +58,7 @@ public class ControladorABMJugadores {
         iniciarVista();
     }
 
-    private void iniciarVista() {
+    public void iniciarVista() {
         this.vista.setVisible(true);
     }
 
@@ -72,7 +72,7 @@ public class ControladorABMJugadores {
             nuevoJugador.setPuntaje(0);
             nuevoJugador.setEstado("activo");
             Jugador.insertarJugador(nuevoJugador);
-            cargarJugadores();
+            this.vista.jComboBoxJugadores.addItem(nuevoJugador);
         } catch (Exception e){
             
         }
@@ -81,24 +81,25 @@ public class ControladorABMJugadores {
     private void editarJugador() {
         this.jugadorSeleccionado.setNombre(this.vista.jTextFieldEditarJugador.getText());
         Jugador.actualizarJugador(this.jugadorSeleccionado);
-        cargarJugadores();
     }
 
     private void eliminarJugador() {
         Jugador.eliminarJugador(this.jugadorSeleccionado.getId());
-        cargarJugadores();
+        int indice = this.vista.jComboBoxJugadores.getSelectedIndex();
+        this.vista.jComboBoxJugadores.removeItemAt(indice);;
     }
 
     private void cargarJugadores() {
         ArrayList <Jugador> lista = Jugador.obtenerJugadores();
-        vista.jComboBoxJugadores.removeAllItems();
         for (int i = 0; i < lista.size(); i++) {
             vista.jComboBoxJugadores.addItem(lista.get(i));
         }
     }
 
+
     private void seleccionarJugador() {
         this.jugadorSeleccionado = (Jugador) vista.jComboBoxJugadores.getSelectedItem();
+        System.out.println("Jugador seleccionado: " + this.jugadorSeleccionado.getNombre());
     }
     
     private void volver() {

@@ -93,11 +93,4 @@ public class Jugador {
         return jugadores;
     }
 
-    @Override
-    public String toString() {
-        return nombre;
-    }
-
-    
-
 }
