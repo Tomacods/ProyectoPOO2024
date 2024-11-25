@@ -10,7 +10,7 @@ public class ModoAdmin extends javax.swing.JFrame {
     /**
      * Creates new form gameplay
      */
-    public ModoAdmin(ControladorModoAdmin controlador) {
+    public ModoAdmin() {
         setLookandFeel();
         initComponents();
         this.setLocationRelativeTo(null);

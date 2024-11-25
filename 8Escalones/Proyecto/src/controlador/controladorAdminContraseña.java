@@ -1,60 +1,42 @@
 package controlador;
-import Vista.OpcionesGenerales;
+
 import Vista.AdminContraseña;
 import Vista.ModoAdmin;
+import Vista.OpcionesGenerales;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
-public class ControladorAdminContraseña implements ActionListener{
+public class ControladorAdminContraseña {
     private AdminContraseña vista;
-    private String contrasenia = "admin";
 
-    public ControladorAdminContraseña(String contrasenia) {
+    public ControladorAdminContraseña() {
         this.vista = new AdminContraseña();
-        vista.setVisible(true);
-        this.contrasenia = contrasenia;
-        this.vista.getjIngresar().addActionListener(this);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(getVista().getjIngresar())){
-            char[] contraseniaIngresada = vista.getjPasswordField1().getPassword();
-            char[] contraseniaValida = this.contrasenia.toCharArray();
-            Boolean validarContrasenias = java.util.Arrays.equals(contraseniaIngresada, contraseniaValida);
-            if (validarContrasenias) {
-                System.out.println("Ingreso sin problemas!");
-                new ControladorModoAdmin();
-                getVista().dispose();
-                
-            } else {
-                System.out.println("Contraseñia erronea, vuelva a intentarlo");
-                java.util.Arrays.fill(contraseniaIngresada, '\0'); //Limpia el texto ingresado
+        this.vista.setVisible(true);
+        this.vista.jButtonBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                vista.dispose(); // Cierra la ventana actual
+                OpcionesGenerales opcionesGenerales = new OpcionesGenerales();
+                opcionesGenerales.setVisible(true); // Abre la vista OpcionesGenerales
             }
-        }
-        if(e.getSource().equals(getVista().getjButtonBack())){
-            //New ControladorMenuPrincipal();
-            System.out.println("Abre ventana MENU PRINCIPAL");
-            getVista().dispose();
-        }
-    }
+        });
 
-    public AdminContraseña getVista() {
-        return vista;
+        this.vista.jButtonIngresar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String password = new String(vista.jPasswordField.getPassword());
+                if ("admin".equals(password)) {
+                    vista.dispose(); // Cierra la ventana actual
+                    ModoAdmin modoAdmin = new ModoAdmin();
+                    new ControladorModoAdmin(modoAdmin);
+                    modoAdmin.setVisible(true); // Abre la vista ModoAdmin
+                } else {
+                    // Mostrar mensaje de error o realizar alguna acción
+                    System.out.println("Contraseña incorrecta");
+                javax.swing.JOptionPane.showMessageDialog(vista, "Contraseña incorrecta", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
     }
-
-    public void setVista(AdminContraseña vista) {
-        this.vista = vista;
-    }
-
-    public String getContrasenia() {
-        return contrasenia;
-    }
-
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
-    }
-    
-    
 }

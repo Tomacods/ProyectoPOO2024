@@ -26,8 +26,8 @@ public class ControladorOpcionesGenerales {
         });
         this.menuOpciones.jButtonModoAdmin.addActionListener(new ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt){
-                new controladorAdminContraseña("admin");
-                menuOpciones.setVisible(false);
+                new ControladorAdminContraseña();
+                menuOpciones.dispose();
             }
         });
     }    
