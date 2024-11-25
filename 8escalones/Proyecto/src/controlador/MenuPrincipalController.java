@@ -6,6 +6,7 @@ import Vista.OpcionesGenerales;
 import Vista.ABMJugadores;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import controlador.ControladorOpcionesGenerales;
 
 public class MenuPrincipalController {
     private MenuPrincipal menuPrincipal;
@@ -45,9 +46,12 @@ public class MenuPrincipalController {
     }
 
     private void abrirOpcionesGenerales() {
+        
         OpcionesGenerales opcionesGenerales = new OpcionesGenerales();
-        opcionesGenerales.setVisible(true);
+        new ControladorOpcionesGenerales(opcionesGenerales);
         menuPrincipal.dispose();
+        opcionesGenerales.setVisible(true);
+    
     }
 
     private void abrirABMJugadores() {

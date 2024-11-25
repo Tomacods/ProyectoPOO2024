@@ -4,6 +4,7 @@
  */
 package Vista;
 
+import controlador.ControladorOpcionesGenerales;
 /**
  *
  * @author Maria

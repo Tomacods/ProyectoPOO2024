@@ -9,24 +9,26 @@ import javax.swing.*;
 
 public class ControladorOpcionesGenerales {
     private OpcionesGenerales menuOpciones;
-    private JButton botonAtras;
-    private JButton botonCreditos;
-    private JButton botonAdmin;
     
-    public ControladorOpcionesGenerales ( ){ 
-        this.menuOpciones = new OpcionesGenerales();
+    public ControladorOpcionesGenerales (OpcionesGenerales opcionesGenerales){ 
+        this.menuOpciones = opcionesGenerales;
         this.menuOpciones.jButtonBack.addActionListener(new ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt){
-                menuOpciones.setVisible(false);
+                menuOpciones.dispose();
                 MenuPrincipal menuPrincipal = new MenuPrincipal();
+                new MenuPrincipalController(menuPrincipal);
                 menuPrincipal.setVisible(true);
+                
             }
         });
         this.menuOpciones.jButtonCreditos.addActionListener(new ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt){};
         });
         this.menuOpciones.jButtonModoAdmin.addActionListener(new ActionListener(){
-            public void actionPerformed(java.awt.event.ActionEvent evt){};
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+                new controladorAdminContraseña("admin");
+                menuOpciones.setVisible(false);
+            }
         });
     }    
 }

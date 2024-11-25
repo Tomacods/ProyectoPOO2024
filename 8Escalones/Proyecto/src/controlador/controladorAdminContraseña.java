@@ -2,48 +2,17 @@ package controlador;
 import Vista.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
-public class ControladorAdminContraseña implements ActionListener, MouseListener {
+
+public class controladorAdminContraseña implements ActionListener{
     private AdminContraseña vista;
     private String contrasenia = "admin";
 
-    public ControladorAdminContraseña(String contrasenia) {
+    public controladorAdminContraseña( String contrasenia) {
         super();
         this.vista = new AdminContraseña(this);
         vista.setVisible(true);
         this.contrasenia = contrasenia;
-    }
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mouseClicked'");
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mousePressed'");
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mouseReleased'");
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mouseEntered'");
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mouseExited'");
     }
 
     @Override
@@ -54,7 +23,7 @@ public class ControladorAdminContraseña implements ActionListener, MouseListene
             Boolean validarContrasenias = java.util.Arrays.equals(contraseniaIngresada, contraseniaValida);
             if (validarContrasenias) {
                 System.out.println("Ingreso sin problemas!");
-                new ControladorModoAdmin();
+                new controladorModoAdmin();
                 getVista().dispose();
                 
             } else {

@@ -51,8 +51,8 @@ private void listeners(){
     this.vistaABMTematicas.listenerAtras(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            ControladorModoAdmin c = new ControladorModoAdmin();
-            ModoAdmin admin = new ModoAdmin(c);
+            vistaABMTematicas.dispose();
+            ModoAdmin admin = new ModoAdmin();
             admin.setVisible(true);
         } });
 }
