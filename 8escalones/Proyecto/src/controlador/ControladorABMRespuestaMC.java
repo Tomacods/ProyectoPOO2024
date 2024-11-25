@@ -17,6 +17,7 @@ public class ControladorABMRespuestaMC {
     public ControladorABMRespuestaMC(int id_pregunta) throws SQLException{
         this.vista = new ABMRespuestaMC();
         this.pregunta_actual = MultipleChoicePregunta.obtenerPreguntaConRtas(id_pregunta);
+        iniciarVista();
 
     }
 
