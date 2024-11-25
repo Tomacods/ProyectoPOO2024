@@ -9,16 +9,14 @@ import controlador.ControladorABMTematica;
 public class ABMTematicas extends javax.swing.JFrame {
     private ControladorABMTematica controlador;
 
-    public ABMTematicas(ControladorABMTematica controlador) {
+    public ABMTematicas() {
         initComponents();
-        this.controlador = controlador;
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/codigo.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "Proyecto/src/imagenes/admin.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconEdit, "Proyecto/src/imagenes/lapiz.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconDelete, "Proyecto/src/imagenes/basura.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTematica, "Proyecto/src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
     }
 
@@ -37,8 +35,6 @@ public class ABMTematicas extends javax.swing.JFrame {
         jButtonAgregarTematica = new javax.swing.JButton();
         jLabelBack = new javax.swing.JLabel();
         jButtonBack = new javax.swing.JButton();
-        jLabelExit = new javax.swing.JLabel();
-        jButtonExit = new javax.swing.JButton();
         jLabelIconAdmin1 = new javax.swing.JLabel();
         jLabelIconAdmin = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
@@ -135,17 +131,6 @@ public class ABMTematicas extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, 50));
-        jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 40, 30));
-
-        jButtonExit.setBackground(new java.awt.Color(0, 102, 0));
-        jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButtonExit.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                System.out.println("Botón salir presionado");
-            }
-        });
-        jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 60, 50));
         jPanel1.add(jLabelIconAdmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 110, 100));
         jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 110, 100));
         jPanel1.add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 400));
@@ -175,9 +160,7 @@ public class ABMTematicas extends javax.swing.JFrame {
     public void listenerModificarTematica(ActionListener listener) {
         jButtonModificarTematica.addActionListener(listener);
     }
-    public void listenerSalir(ActionListener listener) {
-        jButtonExit.addActionListener(listener);
-    }
+  
     public void listenerAtras(ActionListener listener) {
         jButtonBack.addActionListener(listener);
     }
@@ -207,8 +190,8 @@ public class ABMTematicas extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ControladorABMTematica controlador = new ControladorABMTematica();
-                new ABMTematicas(controlador).setVisible(true);
+               // ControladorABMTematica controlador = new ControladorABMTematica();
+                new ABMTematicas().setVisible(true);
             }
         });
     }
@@ -216,11 +199,10 @@ public class ABMTematicas extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAgregarTematica;
     private javax.swing.JButton jButtonBack;
     private javax.swing.JButton jButtonEliminarTematica;
-    private javax.swing.JButton jButtonExit;
+
     private javax.swing.JButton jButtonModificarTematica;
     private javax.swing.JComboBox<String> jComboBoxTematica;
     private javax.swing.JLabel jLabelBack;
-    private javax.swing.JLabel jLabelExit;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelFondoTematica;
     private javax.swing.JLabel jLabelIconAdmin;
