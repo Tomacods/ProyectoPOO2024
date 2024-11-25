@@ -41,7 +41,8 @@ public class MenuPrincipalController {
 
     private void abrirSeleccionarJugador() {
         SeleccionarJugador seleccionarJugador = new SeleccionarJugador();
-        seleccionarJugador.setVisible(true);
+        new ControladorSeleccionarJugadores(seleccionarJugador);
+        
         menuPrincipal.dispose();
     }
 

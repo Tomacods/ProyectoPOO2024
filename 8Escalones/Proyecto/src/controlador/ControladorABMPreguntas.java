@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+
 import Modelos.MultipleChoicePregunta;
 import Modelos.PreguntaAproximacion;
 import Modelos.Tematica;
@@ -12,17 +13,18 @@ import Vista.ABMPreguntas;
 public class ControladorABMPreguntas {
     private ABMPreguntas vista;
 
-    public ControladorABMPreguntas() {
-        this.vista = new ABMPreguntas();
+    public ControladorABMPreguntas(){
+        this.vista= new ABMPreguntas();
         vista.setVisible(true);
         traerTematicasCB();
         listeners();
     }
 
-    private void traerTematicasCB() {
-        ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
+private void traerTematicasCB(){ 
+    ArrayList<Tematica> tematicas = Tematica.obtenerTematicas(); 
         for (Tematica tematica : tematicas) {
             vista.getjComboBoxTematica().addItem(tematica.getNombre());
+           // traerPreguntasMC(tematica.getId());
         }
     }
 
