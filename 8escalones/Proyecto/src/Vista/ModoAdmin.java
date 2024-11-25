@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Vista;
+import controlador.*;
 
 /**
  *
@@ -12,7 +10,8 @@ public class ModoAdmin extends javax.swing.JFrame {
     /**
      * Creates new form gameplay
      */
-    public ModoAdmin() {
+    public ModoAdmin(ControladorModoAdmin controlador) {
+        setLookandFeel();
         initComponents();
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
@@ -32,10 +31,11 @@ public class ModoAdmin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabelTitulo = new javax.swing.JLabel();
         jLabelTitulo1 = new javax.swing.JLabel();
-        jButtonABMPreguntas = new javax.swing.JButton();
-        jButtonABMTematicas = new javax.swing.JButton();
+        jButtonABMPreguntas = new javax.swing.JButton(); //Cierra y abre vistaABMPreguntas
+        jButtonABMTematicas = new javax.swing.JButton(); //Cierra y abre vistaABMPTematicas
         jLabelBack = new javax.swing.JLabel();
         jButtonBack = new javax.swing.JButton();
+        jButtonABMJugadores = new javax.swing.JButton();
         jLabelIconAdmin = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -59,34 +59,45 @@ public class ModoAdmin extends javax.swing.JFrame {
         jButtonABMPreguntas.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
         jButtonABMPreguntas.setForeground(new java.awt.Color(255, 255, 255));
         jButtonABMPreguntas.setText("ABM Preguntas");
-        jButtonABMPreguntas.addActionListener(new java.awt.event.ActionListener() {
+        /*jButtonABMPreguntas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonABMPreguntasActionPerformed(evt);
             }
-        });
+        });*/
         jPanel1.add(jButtonABMPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 260, 50));
 
         jButtonABMTematicas.setBackground(new java.awt.Color(51, 153, 0));
         jButtonABMTematicas.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
         jButtonABMTematicas.setForeground(new java.awt.Color(255, 255, 255));
         jButtonABMTematicas.setText("ABM Tematicas");
-        jButtonABMTematicas.addActionListener(new java.awt.event.ActionListener() {
+        /*jButtonABMTematicas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonABMTematicasActionPerformed(evt);
             }
-        });
+        });*/
         jPanel1.add(jButtonABMTematicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 260, 50));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
 
         jButtonBack.setBackground(new java.awt.Color(51, 153, 0));
         jButtonBack.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
         jButtonBack.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonBack.addActionListener(new java.awt.event.ActionListener() {
+        /*jButtonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonBackActionPerformed(evt);
             }
-        });
+        });*/
         jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+
+        jButtonABMJugadores.setBackground(new java.awt.Color(51, 153, 0));
+        jButtonABMJugadores.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
+        jButtonABMJugadores.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonABMJugadores.setText("ABM Jugadores");
+        /*jButtonABMJugadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonABMJugadoresActionPerformed(evt);
+            }
+        });*/
+        jPanel1.add(jButtonABMJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 260, 50));
         jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 110, 100));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -105,26 +116,22 @@ public class ModoAdmin extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void jButtonABMPreguntasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonABMPreguntasActionPerformed
-    }//GEN-LAST:event_jButtonABMPreguntasActionPerformed
+    /*private void jButtonABMPreguntasActionPerformed(java.awt.event.ActionEvent evt) {
+    }
 
-    private void jButtonABMTematicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonABMTematicasActionPerformed
-    }//GEN-LAST:event_jButtonABMTematicasActionPerformed
+    private void jButtonABMTematicasActionPerformed(java.awt.event.ActionEvent evt) {}
 
-    private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-    }//GEN-LAST:event_jButtonBackActionPerformed
+    private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {}
+
+    private void jButtonABMJugadoresActionPerformed(java.awt.event.ActionEvent evt) {}*/
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
+    private void setLookandFeel(){
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -141,33 +148,55 @@ public class ModoAdmin extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ModoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ModoAdmin().setVisible(true);
-            }
-        });
     }
+    /*public static void main(String args[]) {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(ModoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(ModoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(ModoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(ModoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+    }*/
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButtonABMPreguntas;
-    public javax.swing.JButton jButtonABMTematicas;
-    public javax.swing.JButton jButtonBack;
-    public javax.swing.JLabel jLabelBack;
-    public javax.swing.JLabel jLabelFondo;
-    public javax.swing.JLabel jLabelIconAdmin;
-    public javax.swing.JLabel jLabelTitulo;
-    public javax.swing.JLabel jLabelTitulo1;
+    private javax.swing.JButton jButtonABMJugadores;
+    private javax.swing.JButton jButtonABMPreguntas;
+    private javax.swing.JButton jButtonABMTematicas;
+    private javax.swing.JButton jButtonBack;
+    private javax.swing.JLabel jLabelBack;
+    private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelIconAdmin;
+    private javax.swing.JLabel jLabelTitulo;
+    private javax.swing.JLabel jLabelTitulo1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    //Getters botones
+    public javax.swing.JButton getjButtonABMJugadores() {
+        return jButtonABMJugadores;
+    }
+
+    public javax.swing.JButton getjButtonABMPreguntas() {
+        return jButtonABMPreguntas;
+    }
+
+    public javax.swing.JButton getjButtonABMTematicas() {
+        return jButtonABMTematicas;
+    }
+
+    public javax.swing.JButton getjButtonBack() {
+        return jButtonBack;
+    }
 }
 

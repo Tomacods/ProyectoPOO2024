@@ -1,18 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista;
+import controlador.*;
 
 /**
  *
  * @author Maria
  */
 public class AdminContraseña extends javax.swing.JFrame {   
-    /**
-     * Creates new form gameplay
-     */
-    public AdminContraseña() {
+
+    public AdminContraseña(ControladorAdminContraseña controlador) {
+        this.setControlador(this.controlador);
+        setLookandFeel();
         initComponents();
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
@@ -32,10 +29,10 @@ public class AdminContraseña extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabelBack = new javax.swing.JLabel();
         jButtonBack = new javax.swing.JButton();
-        jPasswordField = new javax.swing.JPasswordField();
+        jPasswordField1 = new javax.swing.JPasswordField();
         jTextFieldContraseña = new javax.swing.JTextField();
         jLabelIconAdmin = new javax.swing.JLabel();
-        jButtonIngresar = new javax.swing.JButton();
+        jIngresar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,21 +45,23 @@ public class AdminContraseña extends javax.swing.JFrame {
         jButtonBack.setBackground(new java.awt.Color(51, 153, 0));
         jButtonBack.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
         jButtonBack.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonBack.addActionListener(new java.awt.event.ActionListener() {
+        /*jButtonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonBackActionPerformed(evt);
             }
-        });
+        });*/
         jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
-        jPasswordField.setBackground(new java.awt.Color(51, 153, 0));
-        jPasswordField.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField.addActionListener(new java.awt.event.ActionListener() {
+        jPasswordField1.setBackground(new java.awt.Color(51, 153, 0));
+        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
+        jPasswordField1.setEditable(true);
+        /*jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordFieldActionPerformed(evt);
+                jPasswordField1ActionPerformed(evt);
             }
-        });
-        jPanel1.add(jPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 400, 30));
+        });*/
+        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 400, 30));
+
 
         jTextFieldContraseña.setEditable(false);
         jTextFieldContraseña.setBackground(new java.awt.Color(51, 153, 0));
@@ -73,11 +72,11 @@ public class AdminContraseña extends javax.swing.JFrame {
         jPanel1.add(jTextFieldContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 400, -1));
         jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 110, 100));
 
-        jButtonIngresar.setBackground(new java.awt.Color(51, 153, 0));
-        jButtonIngresar.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButtonIngresar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonIngresar.setText("INGRESAR");
-        jPanel1.add(jButtonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 130, -1));
+        jIngresar.setBackground(new java.awt.Color(51, 153, 0));
+        jIngresar.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jIngresar.setForeground(new java.awt.Color(255, 255, 255));
+        jIngresar.setText("INGRESAR");
+        jPanel1.add(jIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 130, -1));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jLabelFondo.setForeground(new java.awt.Color(255, 255, 255));
@@ -97,21 +96,14 @@ public class AdminContraseña extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-    }//GEN-LAST:event_jButtonBackActionPerformed
+    //private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {}
 
-    private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldActionPerformed
-    }//GEN-LAST:event_jPasswordFieldActionPerformed
+    //private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {}
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+    private void setLookandFeel(){
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -120,160 +112,71 @@ public class AdminContraseña extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+    }
+
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AdminContraseña().setVisible(true);
             }
-        });
-    }
+        });*/
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButtonBack;
-    public javax.swing.JButton jButtonIngresar;
-    public javax.swing.JLabel jLabelBack;
-    public javax.swing.JLabel jLabelFondo;
-    public javax.swing.JLabel jLabelIconAdmin;
+    private javax.swing.JButton jIngresar;
+    private javax.swing.JButton jButtonBack;
+    private javax.swing.JLabel jLabelBack;
+    private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelIconAdmin;
     private javax.swing.JPanel jPanel1;
-    public javax.swing.JPasswordField jPasswordField;
-    public javax.swing.JTextField jTextFieldContraseña;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JTextField jTextFieldContraseña;
+    private ControladorAdminContraseña controlador;
     // End of variables declaration//GEN-END:variables
+
+    public ControladorAdminContraseña getControlador() {
+        return controlador;
+    }
+
+    public void setControlador(ControladorAdminContraseña controlador) {
+        this.controlador = controlador;
+    }
+
+    public javax.swing.JPasswordField getjPasswordField1() {
+        return jPasswordField1;
+    }
+
+    public void setjPasswordField1(javax.swing.JPasswordField jPasswordField1) {
+        this.jPasswordField1 = jPasswordField1;
+    }
+
+    public javax.swing.JButton getjIngresar() {
+        return jIngresar;
+    }
+
+    public void setjIngresar(javax.swing.JButton jIngresar) {
+        this.jIngresar = jIngresar;
+    }
+
+    public javax.swing.JButton getjButtonBack() {
+        return jButtonBack;
+    }
+
+    public void setjButtonBack(javax.swing.JButton jButtonBack) {
+        this.jButtonBack = jButtonBack;
+    }
+
+    
 }
+
+
 

@@ -19,26 +19,26 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
     public SeleccionarIconPerfil() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/MenuPrincipal3.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo2, "src/imagenes/violeta.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/back.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser1, "src/imagenes/IconUser1.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser2, "src/imagenes/IconUser2.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser3, "src/imagenes/IconUser3.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser4, "src/imagenes/IconUser4.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser5, "src/imagenes/IconUser5.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser6, "src/imagenes/IconUser6.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser7, "src/imagenes/IconUser7.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser8, "src/imagenes/IconUser8.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser9, "src/imagenes/IconUser9.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser10, "src/imagenes/IconUser10.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser11, "src/imagenes/IconUser11.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser12, "src/imagenes/IconUser12.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser13, "src/imagenes/IconUser13.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser14, "src/imagenes/IconUser14.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser15, "src/imagenes/IconUser15.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser16, "src/imagenes/IconUser16.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo2, "Proyecto/src/imagenes/violeta.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser1, "Proyecto/src/imagenes/IconUser1.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser2, "Proyecto/src/imagenes/IconUser2.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser3, "Proyecto/src/imagenes/IconUser3.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser4, "Proyecto/src/imagenes/IconUser4.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser5, "Proyecto/src/imagenes/IconUser5.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser6, "Proyecto/src/imagenes/IconUser6.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser7, "Proyecto/src/imagenes/IconUser7.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser8, "Proyecto/src/imagenes/IconUser8.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser9, "Proyecto/src/imagenes/IconUser9.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser10, "Proyecto/src/imagenes/IconUser10.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser11, "Proyecto/src/imagenes/IconUser11.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser12, "Proyecto/src/imagenes/IconUser12.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser13, "Proyecto/src/imagenes/IconUser13.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser14, "Proyecto/src/imagenes/IconUser14.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser15, "Proyecto/src/imagenes/IconUser15.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser16, "Proyecto/src/imagenes/IconUser16.png");
     }
 
     /**

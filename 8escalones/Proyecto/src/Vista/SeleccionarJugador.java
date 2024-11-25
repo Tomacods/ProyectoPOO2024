@@ -22,20 +22,20 @@ public class SeleccionarJugador extends javax.swing.JFrame {
     public SeleccionarJugador() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/MenuPrincipal3.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo2, "src/imagenes/violeta.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/back.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJugar, "src/imagenes/derecha.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser1, "src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser2, "src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser3, "src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser4, "src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser5, "src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser6, "src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser7, "src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser8, "src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser9, "src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo2, "Proyecto/src/imagenes/violeta.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJugar, "Proyecto/src/imagenes/derecha.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser1, "Proyecto/src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser2, "Proyecto/src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser3, "Proyecto/src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser4, "Proyecto/src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser5, "Proyecto//imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser6, "Proyecto/src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser7, "Proyecto//imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser8, "Proyecto/src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser9, "Proyecto/src/imagenes/user.png");
         new ControladorSeleccionarJugadores(this);
     }
 
