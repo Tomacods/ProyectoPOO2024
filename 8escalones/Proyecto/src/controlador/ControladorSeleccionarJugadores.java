@@ -19,7 +19,6 @@ public class ControladorSeleccionarJugadores {
     private boolean updating = false;  // Bandera para evitar eventos recursivos
 
     public ControladorSeleccionarJugadores(SeleccionarJugador vistaSeleccionarJugador) {
-        super();
         this.vistaSeleccionarJugador = vistaSeleccionarJugador;
         this.vistaSeleccionarJugador.setVisible(true);
         this.comboBoxes = new ArrayList<>();
@@ -35,12 +34,6 @@ public class ControladorSeleccionarJugadores {
         comboBoxes.add(vistaSeleccionarJugador.getComboBoxJ8());
         comboBoxes.add(vistaSeleccionarJugador.getComboBoxJ9());
 
-        this.vistaSeleccionarJugador.jButtonExit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                salirDelJuego();
-            }
-        });
         this.vistaSeleccionarJugador.jButtonBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -68,14 +61,13 @@ public class ControladorSeleccionarJugadores {
         }
     }
 
-    private void salirDelJuego() {
-        System.exit(0);
-    }
+    
 
     private void volverAtras() {
-        MenuPrincipal menu = new MenuPrincipal();
-        menu.setVisible(true);
-        vistaSeleccionarJugador.dispose();
+        MenuPrincipal menuPrincipal = new MenuPrincipal();
+        new MenuPrincipalController(menuPrincipal);
+        menuPrincipal.setVisible(true); // Abre la vista MenuPrincipal
+        vistaSeleccionarJugador.dispose(); // Cierra la ventana actual
     }
 
     private void jugar() {

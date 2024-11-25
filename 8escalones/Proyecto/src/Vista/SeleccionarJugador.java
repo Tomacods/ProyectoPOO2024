@@ -26,16 +26,15 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo2, "Proyecto/src/imagenes/violeta.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack,  "Proyecto/src/imagenes/back.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJugar, "Proyecto/src/imagenes/derecha.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser1, "Proyecto/src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser2, "Proyecto/src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser3, "Proyecto/src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser4, "Proyecto/src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser5, "Proyecto//imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser5, "Proyecto/src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser6, "Proyecto/src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser7, "Proyecto//imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser7, "Proyecto/src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser8, "Proyecto/src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser9, "Proyecto/src/imagenes/user.png");
       //  new ControladorSeleccionarJugadores(this);
@@ -51,10 +50,8 @@ public class SeleccionarJugador extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabelExit = new javax.swing.JLabel();
         jLabelJugar = new javax.swing.JLabel();
         jLabelBack = new javax.swing.JLabel();
-        jButtonExit = new javax.swing.JButton();
         jButtonJugar = new javax.swing.JButton();
         jButtonBack = new javax.swing.JButton();
         jLabelUser1 = new javax.swing.JLabel();
@@ -93,20 +90,11 @@ public class SeleccionarJugador extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 30, 20));
         jPanel1.add(jLabelJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
 
-        jButtonExit.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
-        jButtonExit.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonExitActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 50, 40));
-
+      
+     
         jButtonJugar.setBackground(new java.awt.Color(102, 0, 102));
         jButtonJugar.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
         jButtonJugar.setForeground(new java.awt.Color(255, 255, 255));
@@ -483,7 +471,6 @@ public class SeleccionarJugador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jButtonBack;
-    public javax.swing.JButton jButtonExit;
     public javax.swing.JButton jButtonJ1;
     public javax.swing.JButton jButtonJ2;
     public javax.swing.JButton jButtonJ3;
@@ -504,7 +491,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> jComboBoxJ8;
     public javax.swing.JComboBox<String> jComboBoxJ9;
     public javax.swing.JLabel jLabelBack;
-    public javax.swing.JLabel jLabelExit;
+
     public javax.swing.JLabel jLabelFondo;
     public javax.swing.JLabel jLabelFondo2;
     public javax.swing.JLabel jLabelJugar;

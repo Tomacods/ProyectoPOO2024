@@ -16,7 +16,7 @@ public class ControladorModoAdmin {
         this.vista.getjButtonBack().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               
+            
                 MenuPrincipal menuPrincipal = new MenuPrincipal();
                 new MenuPrincipalController(menuPrincipal);
                 menuPrincipal.setVisible(true); // Abre la vista MenuPrincipal
