@@ -1,18 +1,20 @@
 package controlador;
-import Vista.*;
+import Vista.OpcionesGenerales;
+import Vista.AdminContraseña;
+import Vista.ModoAdmin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class controladorAdminContraseña implements ActionListener{
+public class ControladorAdminContraseña implements ActionListener{
     private AdminContraseña vista;
     private String contrasenia = "admin";
 
-    public controladorAdminContraseña( String contrasenia) {
-        super();
-        this.vista = new AdminContraseña(this);
+    public ControladorAdminContraseña(String contrasenia) {
+        this.vista = new AdminContraseña();
         vista.setVisible(true);
         this.contrasenia = contrasenia;
+        this.vista.getjIngresar().addActionListener(this);
     }
 
     @Override
@@ -23,7 +25,7 @@ public class controladorAdminContraseña implements ActionListener{
             Boolean validarContrasenias = java.util.Arrays.equals(contraseniaIngresada, contraseniaValida);
             if (validarContrasenias) {
                 System.out.println("Ingreso sin problemas!");
-                new controladorModoAdmin();
+                new ControladorModoAdmin();
                 getVista().dispose();
                 
             } else {
