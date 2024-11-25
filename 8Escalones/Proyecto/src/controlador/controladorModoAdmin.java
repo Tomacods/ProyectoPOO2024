@@ -35,7 +35,8 @@ public class ControladorModoAdmin {
             @Override
             public void actionPerformed(ActionEvent e) {
                 vista.dispose(); // Cierra la ventana actual
-                new ABMTematicas(new ControladorABMTematica()).setVisible(true); // Abre la vista ABMTematicas
+                //new ABMTematicas(new ControladorABMTematica()).setVisible(true); // Abre la vista ABMTematicas
+                new ControladorABMTematica();
             }
         });
     }

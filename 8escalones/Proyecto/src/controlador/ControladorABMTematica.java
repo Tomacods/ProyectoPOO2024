@@ -9,8 +9,7 @@ public class ControladorABMTematica {
 private ABMTematicas vistaABMTematicas;
 
 public ControladorABMTematica(){
-    super();
-    this.vistaABMTematicas= new ABMTematicas(this);
+    this.vistaABMTematicas= new ABMTematicas();
     vistaABMTematicas.setVisible(true);
     listeners();
     traerTematicasCB();
@@ -42,12 +41,7 @@ private void listeners(){
         modificarTematica();
         }
     });
-    this.vistaABMTematicas.listenerSalir(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            System.exit(0);
-        }
-    });
+
     this.vistaABMTematicas.listenerAtras(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
