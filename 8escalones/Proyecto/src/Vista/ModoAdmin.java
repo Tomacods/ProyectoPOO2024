@@ -1,5 +1,5 @@
 
-package ventanas;
+package Vista;
 import controlador.*;
 
 /**
@@ -17,6 +17,7 @@ public class ModoAdmin extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/back.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "src/imagenes/admin.png");
+
     }
 
     /**
