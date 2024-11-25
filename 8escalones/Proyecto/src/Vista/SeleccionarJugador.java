@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+package Vista;
 
+import controlador.ControladorSeleccionarJugadores;
 import java.awt.Image;
 import java.awt.event.ActionListener;
 
@@ -27,7 +29,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack,  "Proyecto/src/imagenes/back.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJugar, "Proyecto/src/imagenes/derecha.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser1, "Proyecto/src/imagenes/IconUser1.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser2, "src/imagenes/IconUser2.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser2, "Proyecto/src/imagenes/IconUser2.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser3, "Proyecto/src/imagenes/IconUser3.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser4, "Proyecto/src/imagenes/IconUser4.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser5, "Proyecto/src/imagenes/IconUser5.png");
