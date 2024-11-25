@@ -81,7 +81,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-
         pack();
     }
 
@@ -95,6 +94,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public javax.swing.JLabel jLabelFondo;
     public javax.swing.JLabel jLabelIconJugar;
     public javax.swing.JLabel jLabelJugar;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel1;
     // End of variables declaration
 }
