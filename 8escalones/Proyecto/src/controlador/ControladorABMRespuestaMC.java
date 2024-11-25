@@ -14,9 +14,10 @@ public class ControladorABMRespuestaMC {
     private ABMRespuestaMC vista;
     private MultipleChoicePregunta pregunta_actual;
 
-    public ControladorABMRespuestaMC(int id_pregunta) throws SQLException{
+    public ControladorABMRespuestaMC(MultipleChoicePregunta pregunta) throws SQLException{
         this.vista = new ABMRespuestaMC();
-        this.pregunta_actual = MultipleChoicePregunta.obtenerPreguntaConRtas(id_pregunta);
+        this.pregunta_actual = pregunta;
+        iniciarVista();
 
     }
 
@@ -68,10 +69,10 @@ public class ControladorABMRespuestaMC {
         });
     }
 
-    private MultipleChoicePregunta volver() {
+    private List<Respuesta> volver() {
         cambiar_correcta();
         this.vista.dispose();
-        return this.pregunta_actual;
+        return this.pregunta_actual.getOpciones();
     }
 
     private void salir() {
