@@ -53,8 +53,6 @@ private void traerPreguntasMC(int id_tem){
         vista.getjComboBoxPregunta().addItem(pregunta.getEnunciado());
     }
 }
-
-
 }
 
 

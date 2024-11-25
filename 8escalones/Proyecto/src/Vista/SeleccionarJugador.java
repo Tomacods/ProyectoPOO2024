@@ -6,6 +6,8 @@ package Vista;
 
 import controlador.ControladorSeleccionarJugadores;
 import java.awt.Image;
+import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.*; 
 import java.awt.*;
@@ -36,7 +38,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser7, "Proyecto//imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser8, "Proyecto/src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser9, "Proyecto/src/imagenes/user.png");
-        new ControladorSeleccionarJugadores(this);
+      //  new ControladorSeleccionarJugadores(this);
     }
 
     /**
@@ -355,6 +357,11 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
+    public void listenerJugador(ActionListener listener) {
+        jComboBoxJ1.addActionListener(listener);
+    }
+    
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
     }//GEN-LAST:event_jButtonExitActionPerformed
 
@@ -548,5 +555,10 @@ public class SeleccionarJugador extends javax.swing.JFrame {
 
     public javax.swing.JComboBox<String> getComboBoxJ9() {
         return jComboBoxJ9;
+    }
+
+    public void jComboBoxJ1(ActionListener actionListener) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'jComboBoxJ1'");
     }
 }

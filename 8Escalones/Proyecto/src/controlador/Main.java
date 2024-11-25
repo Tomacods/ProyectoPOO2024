@@ -13,6 +13,7 @@ public class Main {
       //ventanas.AdminContraseña a = new AdminContraseña(null)
     // ControladorAdminContraseña c = new ControladorAdminContraseña();
           SeleccionarJugador sele = new SeleccionarJugador();
+          ControladorSeleccionarJugadores c = new ControladorSeleccionarJugadores(sele);
       /*       MenuPrincipal frame = new MenuPrincipal();
             frame.setVisible(true);
     } */
