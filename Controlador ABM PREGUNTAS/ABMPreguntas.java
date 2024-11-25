@@ -239,12 +239,12 @@ public class ABMPreguntas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAgregarPregunta;      //Confirma y lo subo a la BD
-    private javax.swing.JButton jButtonBack;                 //Cierra y vuelve a Modo Admin?
-    private javax.swing.JButton jButtonEliminarPregunta;     //Ve la base y borra?
-    private javax.swing.JButton jButtonExit;                 //Cierra y vuelva a menu principal?
-    private javax.swing.JButton jButtonModificarPregunta;    //Ve la base y MODIFICA?
-    private javax.swing.JComboBox<String> jComboBoxPregunta;//Desconozco para que sirve
+    private javax.swing.JButton jButtonAgregarPregunta;      //Confirma y lo subo a la BD               } en la carpeta modelos estan
+    private javax.swing.JButton jButtonBack;                 //Cierra y vuelve a Modo Admin? --si       } multiplechoicepregunta.java
+    private javax.swing.JButton jButtonEliminarPregunta;     //Ve la base y borra? --si                 } y preguntaaproximacion.java
+    private javax.swing.JButton jButtonExit;                 //Cierra y vuelva a menu principal? --si   } tienen métodos de insertar,
+    private javax.swing.JButton jButtonModificarPregunta;    //Ve la base y MODIFICA? --si              } eliminar y actualizar preguntas
+    private javax.swing.JComboBox<String> jComboBoxPregunta;//Desconozco para que sirve --se cargan las preguntas de la temática y tipo seleccionados en la lista del combobox
     private javax.swing.JComboBox<String> jComboBoxTematica; //Tematicas son: DEPORTE,ARTE,HISTORIA,CIENCIA,GEOGRAFIA,MUSICA,BIOLOGIA,ENTRETENIMIENTO
     private javax.swing.JComboBox<String> jComboBoxTipo; //Tipo: MultipleChoice o Aproximacion
     private javax.swing.JLabel jLabelBack;
