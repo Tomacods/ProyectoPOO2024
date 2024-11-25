@@ -55,6 +55,7 @@ public class controladorAdminContraseña implements ActionListener, MouseListene
             if (validarContrasenias) {
                 System.out.println("Ingreso sin problemas!");
                 new controladorModoAdmin();
+                getVista().dispose();
             } else {
                 System.out.println("Contraseñia erronea, vuelva a intentarlo");
                 java.util.Arrays.fill(contraseniaIngresada, '\0'); //Limpia el texto ingresado
