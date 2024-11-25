@@ -10,8 +10,8 @@ public class Main {
      // controladorModoAdmin a = new controladorModoAdmin();
       //ControladorABMJugadores c = new ControladorABMJugadores();
       //ventanas.AdminContraseña a = new AdminContraseña(null)
-     ControladorAdminContraseña c = new ControladorAdminContraseña();
-        //  SeleccionarJugador sele = new SeleccionarJugador();
+     //ControladorAdminContraseña c = new ControladorAdminContraseña();
+          SeleccionarJugador sele = new SeleccionarJugador();
       /*       MenuPrincipal frame = new MenuPrincipal();
             frame.setVisible(true);
     } */
