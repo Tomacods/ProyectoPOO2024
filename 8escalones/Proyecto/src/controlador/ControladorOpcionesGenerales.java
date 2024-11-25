@@ -28,6 +28,7 @@ public class ControladorOpcionesGenerales {
             public void actionPerformed(java.awt.event.ActionEvent evt){
                 new ControladorAdminContraseña();
                 menuOpciones.dispose();
+                
             }
         });
     }    

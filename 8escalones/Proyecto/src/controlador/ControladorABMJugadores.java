@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.Exception;
 import Modelos.Jugador;
-//import java.lang.classfile.instruction.ThrowInstruction;
 import java.util.ArrayList;
 import Vista.ABMJugadores;
 import Vista.MenuPrincipal;
@@ -41,12 +40,6 @@ public class ControladorABMJugadores {
             @Override
             public void actionPerformed(ActionEvent evt) {
                 eliminarJugador();
-            }
-        });
-        this.vista.jButtonExit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                salir();
             }
         });
         this.vista.jComboBoxJugadores.addActionListener(new ActionListener() {
@@ -104,13 +97,10 @@ public class ControladorABMJugadores {
         }
         
         private void volver() {
-        this.vista.dispose();
         // Assuming MenuPrincipal is another class that represents the main menu
         MenuPrincipal menuPrincipal = new MenuPrincipal();
         menuPrincipal.setVisible(true);
+        this.vista.dispose();
         }
 
-        private void salir() {
-        this.vista.dispose();
-    }
 }

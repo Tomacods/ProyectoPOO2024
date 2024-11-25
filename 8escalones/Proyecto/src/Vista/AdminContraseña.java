@@ -9,9 +9,9 @@ public class AdminContraseña extends javax.swing.JFrame {
     public AdminContraseña() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/back.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "src/imagenes/admin.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/codigo.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "Proyecto/src/imagenes/admin.png");
     }
 
     /**
