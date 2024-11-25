@@ -11,6 +11,9 @@ import java.util.ArrayList;
 public class ControladorSeleccionarJugadores {
 
     private SeleccionarJugador vistaSeleccionarJugador;
+    private Jugador jugadorSeleccionado;
+    ArrayList<Jugador> jugadores = Jugador.obtenerJugadores(); 
+
 
     public ControladorSeleccionarJugadores(SeleccionarJugador vistaSeleccionarJugador) {
         super();
@@ -35,13 +38,17 @@ public class ControladorSeleccionarJugadores {
             }
         });
         traerJugadoresCB();
+        this.vistaSeleccionarJugador.jButtonJugar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                seleccionarJugador();
+            }
+        });
     }
-
 
     private void salirDelJuego() {
         System.exit(0);
     }
-
 
     private void volverAtras() {
         MenuPrincipal menu = new MenuPrincipal();
@@ -56,7 +63,6 @@ public class ControladorSeleccionarJugadores {
     }
 
     private void traerJugadoresCB(){ 
-        ArrayList<Jugador> jugadores = Jugador.obtenerJugadores(); 
             for (Jugador nombre_jugador : jugadores) {
                 vistaSeleccionarJugador.getComboBoxJ1().addItem(nombre_jugador.getNombre());
                 vistaSeleccionarJugador.getComboBoxJ2().addItem(nombre_jugador.getNombre());
@@ -67,6 +73,11 @@ public class ControladorSeleccionarJugadores {
                 vistaSeleccionarJugador.getComboBoxJ7().addItem(nombre_jugador.getNombre());
                 vistaSeleccionarJugador.getComboBoxJ8().addItem(nombre_jugador.getNombre());
                 vistaSeleccionarJugador.getComboBoxJ9().addItem(nombre_jugador.getNombre());
+            }
     }
-}
+
+    private void seleccionarJugador() {
+        this.jugadorSeleccionado = (Jugador) vistaSeleccionarJugador.jComboBoxJ1.getSelectedItem();
+        jugadores.remove(jugadorSeleccionado);
+    }
 }
