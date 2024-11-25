@@ -28,7 +28,7 @@ public class MenuPrincipalController {
         this.menuPrincipal.jButtonPerfil.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              //  abrirABMJugadores();
+                abrirABMJugadores();
             }
         });
         this.menuPrincipal.jButtonSalir.addActionListener(new ActionListener() {
@@ -55,8 +55,7 @@ public class MenuPrincipalController {
     }
 
     private void abrirABMJugadores() {
-        ABMJugadores abmJugadores = new ABMJugadores();
-        abmJugadores.setVisible(true);
+        new ControladorABMJugadores();
         menuPrincipal.dispose();
     }
 

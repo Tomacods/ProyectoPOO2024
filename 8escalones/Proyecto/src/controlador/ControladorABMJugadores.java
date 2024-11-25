@@ -7,6 +7,7 @@ import Modelos.Jugador;
 //import java.lang.classfile.instruction.ThrowInstruction;
 import java.util.ArrayList;
 import Vista.ABMJugadores;
+import Vista.MenuPrincipal;
 
 public class ControladorABMJugadores {
     private ABMJugadores vista;
@@ -100,13 +101,16 @@ public class ControladorABMJugadores {
     private void seleccionarJugador() {
         this.jugadorSeleccionado = (Jugador) vista.jComboBoxJugadores.getSelectedItem();
         System.out.println("Jugador seleccionado: " + this.jugadorSeleccionado.getNombre());
-    }
-    
-    private void volver() {
+        }
+        
+        private void volver() {
         this.vista.dispose();
-    }
+        // Assuming MenuPrincipal is another class that represents the main menu
+        MenuPrincipal menuPrincipal = new MenuPrincipal();
+        menuPrincipal.setVisible(true);
+        }
 
-    private void salir() {
+        private void salir() {
         this.vista.dispose();
     }
 }
