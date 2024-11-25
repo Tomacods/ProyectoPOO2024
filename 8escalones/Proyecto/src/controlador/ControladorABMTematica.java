@@ -52,7 +52,7 @@ private void listeners(){
         @Override
         public void actionPerformed(ActionEvent e) {
             vistaABMTematicas.dispose();
-            ControladorModoAdmin c = new ControladorModoAdmin();
+            ControladorModoAdmin c = new ControladorModoAdmin(null);
             ModoAdmin admin = new ModoAdmin(c);
             admin.setVisible(true);
         } });

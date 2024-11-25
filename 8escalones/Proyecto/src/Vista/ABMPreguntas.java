@@ -16,7 +16,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
     /**
      * Creates new form gameplay
      */
-    public ABMPreguntas(ControladorABMPreguntas controlador) {
+    public ABMPreguntas() {
         initComponents();
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/codigo.png");
@@ -88,6 +88,11 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jComboBoxTematica.setBackground(new java.awt.Color(51, 153, 0));
         jComboBoxTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxTematica.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBoxTematica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                System.out.println("tematica presionado");
+            }
+        });
         jPanel1.add(jComboBoxTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 160, 60));
 
         jTextFieldTipo.setEditable(false);
@@ -227,7 +232,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonExitActionPerformed
     public void listenerTematica(ActionListener listener) {
-        jTextFieldTematica.addActionListener(listener);
+        jComboBoxTematica.addActionListener(listener);
     }
     /**
      * @param args the command line arguments
@@ -257,8 +262,8 @@ public class ABMPreguntas extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ControladorABMPreguntas c = new ControladorABMPreguntas();
-                new ABMPreguntas(c).setVisible(true);
+              //  ControladorABMPreguntas c = new ControladorABMPreguntas();
+                new ABMPreguntas().setVisible(true);
             }
         });
     }
