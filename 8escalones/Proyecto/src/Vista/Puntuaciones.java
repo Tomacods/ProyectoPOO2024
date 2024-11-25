@@ -19,12 +19,12 @@ public class Puntuaciones extends javax.swing.JFrame {
     public Puntuaciones() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/rojo.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelPodio, "src/imagenes/podio.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconGanador, "src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconPodio3, "src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconPodio2, "src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/rojo.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelPodio, "Proyecto/src/imagenes/podio.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconGanador, "Proyecto/src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconPodio3, "Proyecto/src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconPodio2, "Proyecto/src/imagenes/user.png");
     }
 
     /**
