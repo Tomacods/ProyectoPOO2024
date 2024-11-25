@@ -1,10 +1,12 @@
+/* import vista.ABMTematicas; */
+
 public class BorrarPreg {
     
     public BorrarPreg(){
 
     }
 
-    public void selecTipo(String tipoPreg) {
+    public void selectTipo(String tipoPreg) {
         MostrarVistaQA mostrar = new MostrarVistaQA();
         if(tipoPreg == "Multiple choice") {
             mostrar.setStrategy(new StrategyMC());

@@ -22,21 +22,21 @@ public class SeleccionarAccion {
         switch (accion) {
             case "editar": {
                 EditarPreg editar = new EditarPreg();
-                editar.selecTipo(tipoPreg);
+                editar.selectTipo(tipoPreg);
                 editar.selectTematica(tematica);
                 editar.editarPregunta();
                 break;
             }
             case "crear": {
                 CrearPreg crear = new CrearPreg();
-                crear.selecTipo(tipoPreg);
+                crear.selectTipo(tipoPreg);
                 crear.selectTematica(tematica);
                 crear.crearPregunta();
                 break;
             }
             case "borrar": {
                 BorrarPreg borrar = new BorrarPreg();
-                borrar.selecTipo(tipoPreg);
+                borrar.selectTipo(tipoPreg);
                 borrar.selectTematica(tematica);
                 borrar.borrarPregunta();
                 break;

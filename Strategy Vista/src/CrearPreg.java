@@ -1,10 +1,15 @@
+/* import vista.ABMTematicas;
+ */
+
+// creo q deberíamos traer el controlador de temáticas para tratarlas.
+
 public class CrearPreg {
     
     public CrearPreg(){
         
     }
 
-    public void selecTipo(String tipoPreg) {
+    public void selectTipo(String tipoPreg) {
         MostrarVistaQA mostrar = new MostrarVistaQA();
         if(tipoPreg == "Multiple choice") {
             mostrar.setStrategy(new StrategyMC());
@@ -19,7 +24,7 @@ public class CrearPreg {
     }
 
     public void selectTematica(String tematica){
-
+        
     }
 
     public void crearPregunta(){
