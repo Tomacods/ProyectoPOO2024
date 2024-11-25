@@ -53,6 +53,10 @@ public class MultipleChoicePregunta {
         return enunciado;
     }
 
+    public void setEnunciado(String enunciado) {
+        this.enunciado = enunciado;
+    }
+
     public int getIdTematica() {
         return idTematica;
     }
@@ -96,6 +100,22 @@ public class MultipleChoicePregunta {
         this.opciones.add(respuesta);
     }
 
+    public static MultipleChoicePregunta obtenerPreguntaPorEnunciado(String enunciado, int idTematica) {
+        // Obtener las preguntas de la temática específica
+        ArrayList<MultipleChoicePregunta> preguntas = obtenerPreguntasMC(idTematica);
+    
+        // Buscar la pregunta que coincide con el enunciado
+        for (MultipleChoicePregunta pregunta : preguntas) {
+            if (pregunta.getEnunciado().equals(enunciado)) {
+                return pregunta; // Devuelve la pregunta completa
+            }
+        }
+        
+        // Si no se encuentra, lanzar una excepción indicando que no se encontró
+        throw new IllegalArgumentException("No se encontró una pregunta con el enunciado: " + enunciado + " para la temática con ID: " + idTematica);
+    }
+    
+
     public static MultipleChoicePregunta obtenerPreguntaConRtas(int id_pregunta) throws SQLException{
         MultipleChoiceDAO dao = new MultipleChoiceDAO();
         MultipleChoicePregunta pregunta = dao.obtenerPreguntaConRespuestas(id_pregunta);
@@ -110,4 +130,5 @@ public class MultipleChoicePregunta {
             }
         }
     }
+    
 }

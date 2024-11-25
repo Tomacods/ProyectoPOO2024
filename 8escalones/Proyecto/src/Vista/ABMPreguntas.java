@@ -242,6 +242,15 @@ public class ABMPreguntas extends javax.swing.JFrame {
     public void listenerTipo(ActionListener listener) {
         jComboBoxTipo.addActionListener(listener);
     }
+    public void listenerInsertar(ActionListener listener) {
+        jButtonAgregarPregunta.addActionListener(listener);
+    }
+    public void listenerEliminar(ActionListener listener) {
+        jButtonEliminarPregunta.addActionListener(listener);
+    }
+    public void listenerActualizar(ActionListener listener) {
+        jButtonModificarPregunta.addActionListener(listener);
+    }
     /**
      * @param args the command line arguments
      */
@@ -299,6 +308,18 @@ public class ABMPreguntas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNuevaPregunta;
     private javax.swing.JTextField jTextFieldTematica;
     private javax.swing.JTextField jTextFieldTipo;
+    public javax.swing.JButton getjButtonAgregarPregunta() {
+        return jButtonAgregarPregunta;
+    }
+
+    public javax.swing.JButton getjButtonEliminarPregunta() {
+        return jButtonEliminarPregunta;
+    }
+
+    public javax.swing.JButton getjButtonModificarPregunta() {
+        return jButtonModificarPregunta;
+    }
+
     // End of variables declaration//GEN-END:variables
     public javax.swing.JComboBox<String> getjComboBoxPregunta() {
         return jComboBoxPregunta;
@@ -310,6 +331,10 @@ public class ABMPreguntas extends javax.swing.JFrame {
 
     public javax.swing.JComboBox<String> getjComboBoxTipo() {
         return jComboBoxTipo;
+    }
+
+    public javax.swing.JTextField getjTextFieldNuevaPregunta() {
+        return jTextFieldNuevaPregunta;
     }
 }
 
