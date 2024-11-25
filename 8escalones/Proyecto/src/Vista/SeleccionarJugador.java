@@ -2,9 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Vista;
 
-import controlador.ControladorSeleccionarJugadores;
 import java.awt.Image;
 import java.awt.event.ActionListener;
 
@@ -28,15 +26,15 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo2, "Proyecto/src/imagenes/violeta.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack,  "Proyecto/src/imagenes/back.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJugar, "Proyecto/src/imagenes/derecha.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser1, "Proyecto/src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser2, "Proyecto/src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser3, "Proyecto/src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser4, "Proyecto/src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser5, "Proyecto/src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser6, "Proyecto/src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser7, "Proyecto/src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser8, "Proyecto/src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser9, "Proyecto/src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser1, "Proyecto/src/imagenes/IconUser1.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser2, "src/imagenes/IconUser2.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser3, "Proyecto/src/imagenes/IconUser3.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser4, "Proyecto/src/imagenes/IconUser4.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser5, "Proyecto/src/imagenes/IconUser5.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser6, "Proyecto/src/imagenes/IconUser6.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser7, "Proyecto/src/imagenes/IconUser7.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser8, "Proyecto/src/imagenes/IconUser8.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser9, "Proyecto/src/imagenes/IconUser9.png");
       //  new ControladorSeleccionarJugadores(this);
     }
 
@@ -50,8 +48,10 @@ public class SeleccionarJugador extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabelExit = new javax.swing.JLabel();
         jLabelJugar = new javax.swing.JLabel();
         jLabelBack = new javax.swing.JLabel();
+        jButtonExit = new javax.swing.JButton();
         jButtonJugar = new javax.swing.JButton();
         jButtonBack = new javax.swing.JButton();
         jLabelUser1 = new javax.swing.JLabel();
@@ -63,15 +63,6 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jLabelUser7 = new javax.swing.JLabel();
         jLabelUser8 = new javax.swing.JLabel();
         jLabelUser9 = new javax.swing.JLabel();
-        jButtonJ1 = new javax.swing.JButton();
-        jButtonJ2 = new javax.swing.JButton();
-        jButtonJ3 = new javax.swing.JButton();
-        jButtonJ4 = new javax.swing.JButton();
-        jButtonJ5 = new javax.swing.JButton();
-        jButtonJ6 = new javax.swing.JButton();
-        jButtonJ7 = new javax.swing.JButton();
-        jButtonJ8 = new javax.swing.JButton();
-        jButtonJ9 = new javax.swing.JButton();
         jTextFieldSeleccionarJugador = new javax.swing.JTextField();
         jComboBoxJ1 = new javax.swing.JComboBox<>();
         jComboBoxJ2 = new javax.swing.JComboBox<>();
@@ -90,11 +81,20 @@ public class SeleccionarJugador extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 30, 20));
         jPanel1.add(jLabelJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 30, 20));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
 
-      
-     
+        jButtonExit.setBackground(new java.awt.Color(102, 0, 102));
+        jButtonExit.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
+        jButtonExit.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExitActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 50, 40));
+
         jButtonJugar.setBackground(new java.awt.Color(102, 0, 102));
         jButtonJugar.setFont(new java.awt.Font("Roboto Medium", 0, 10)); // NOI18N
         jButtonJugar.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,105 +114,15 @@ public class SeleccionarJugador extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
-        jPanel1.add(jLabelUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 100, 100));
-        jPanel1.add(jLabelUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 100, 100));
-        jPanel1.add(jLabelUser3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 100, 100));
-        jPanel1.add(jLabelUser4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 100, 100));
-        jPanel1.add(jLabelUser5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 100, 100));
-        jPanel1.add(jLabelUser6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 100, 100));
-        jPanel1.add(jLabelUser7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 100, 100));
-        jPanel1.add(jLabelUser8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 460, 100, 100));
-        jPanel1.add(jLabelUser9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, 100, 100));
-
-        jButtonJ1.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonJ1.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonJ1.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonJ1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonJ1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 120, 120));
-
-        jButtonJ2.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonJ2.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonJ2.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonJ2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonJ2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 120, 120));
-
-        jButtonJ3.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonJ3.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonJ3.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonJ3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonJ3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonJ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 120, 120));
-
-        jButtonJ4.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonJ4.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonJ4.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonJ4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonJ4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonJ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 120, 120));
-
-        jButtonJ5.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonJ5.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonJ5.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonJ5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonJ5ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonJ5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 120, 120));
-
-        jButtonJ6.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonJ6.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonJ6.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonJ6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonJ6ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonJ6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, 120, 120));
-
-        jButtonJ7.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonJ7.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonJ7.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonJ7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonJ7ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonJ7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 120, 120));
-
-        jButtonJ8.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonJ8.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonJ8.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonJ8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonJ8ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonJ8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 120, 120));
-
-        jButtonJ9.setBackground(new java.awt.Color(102, 0, 102));
-        jButtonJ9.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonJ9.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonJ9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonJ9ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonJ9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 450, 120, 120));
+        jPanel1.add(jLabelUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 120, 120));
+        jPanel1.add(jLabelUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 120, 120));
+        jPanel1.add(jLabelUser3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 120, 120));
+        jPanel1.add(jLabelUser4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 120, 110));
+        jPanel1.add(jLabelUser5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 120, 110));
+        jPanel1.add(jLabelUser6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, 120, 110));
+        jPanel1.add(jLabelUser7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 120, 110));
+        jPanel1.add(jLabelUser8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 120, 110));
+        jPanel1.add(jLabelUser9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 450, 120, 110));
 
         jTextFieldSeleccionarJugador.setEditable(false);
         jTextFieldSeleccionarJugador.setBackground(new java.awt.Color(102, 0, 102));
@@ -230,7 +140,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ1.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ1.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+        jComboBoxJ1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ1ActionPerformed(evt);
@@ -241,7 +151,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ2.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ2.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ2.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+        jComboBoxJ2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ2ActionPerformed(evt);
@@ -252,7 +162,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ3.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ3.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ3.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+        jComboBoxJ3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ3ActionPerformed(evt);
@@ -263,7 +173,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ4.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ4.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ4.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+        jComboBoxJ4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ4ActionPerformed(evt);
@@ -274,7 +184,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ5.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ5.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ5.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+        jComboBoxJ5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ5ActionPerformed(evt);
@@ -285,7 +195,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ6.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ6.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ6.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+        jComboBoxJ6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ6ActionPerformed(evt);
@@ -296,7 +206,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ7.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ7.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ7.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+        jComboBoxJ7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ7ActionPerformed(evt);
@@ -307,7 +217,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ8.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ8.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ8.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+        jComboBoxJ8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ8ActionPerformed(evt);
@@ -318,7 +228,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ9.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ9.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ9.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+        jComboBoxJ9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ9ActionPerformed(evt);
@@ -353,36 +263,9 @@ public class SeleccionarJugador extends javax.swing.JFrame {
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
     }//GEN-LAST:event_jButtonExitActionPerformed
 
-    private void jButtonJ4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ4ActionPerformed
-    }//GEN-LAST:event_jButtonJ4ActionPerformed
-
     private void jButtonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJugarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonJugarActionPerformed
-
-    private void jButtonJ2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ2ActionPerformed
-    }//GEN-LAST:event_jButtonJ2ActionPerformed
-
-    private void jButtonJ1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ1ActionPerformed
-    }//GEN-LAST:event_jButtonJ1ActionPerformed
-
-    private void jButtonJ5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ5ActionPerformed
-    }//GEN-LAST:event_jButtonJ5ActionPerformed
-
-    private void jButtonJ7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ7ActionPerformed
-    }//GEN-LAST:event_jButtonJ7ActionPerformed
-
-    private void jButtonJ8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ8ActionPerformed
-    }//GEN-LAST:event_jButtonJ8ActionPerformed
-
-    private void jButtonJ3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ3ActionPerformed
-    }//GEN-LAST:event_jButtonJ3ActionPerformed
-
-    private void jButtonJ6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ6ActionPerformed
-    }//GEN-LAST:event_jButtonJ6ActionPerformed
-
-    private void jButtonJ9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJ9ActionPerformed
-    }//GEN-LAST:event_jButtonJ9ActionPerformed
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
     }//GEN-LAST:event_jButtonBackActionPerformed
@@ -471,15 +354,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jButtonBack;
-    public javax.swing.JButton jButtonJ1;
-    public javax.swing.JButton jButtonJ2;
-    public javax.swing.JButton jButtonJ3;
-    public javax.swing.JButton jButtonJ4;
-    public javax.swing.JButton jButtonJ5;
-    public javax.swing.JButton jButtonJ6;
-    public javax.swing.JButton jButtonJ7;
-    public javax.swing.JButton jButtonJ8;
-    public javax.swing.JButton jButtonJ9;
+    public javax.swing.JButton jButtonExit;
     public javax.swing.JButton jButtonJugar;
     public javax.swing.JComboBox<String> jComboBoxJ1;
     public javax.swing.JComboBox<String> jComboBoxJ2;
@@ -491,7 +366,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> jComboBoxJ8;
     public javax.swing.JComboBox<String> jComboBoxJ9;
     public javax.swing.JLabel jLabelBack;
-
+    public javax.swing.JLabel jLabelExit;
     public javax.swing.JLabel jLabelFondo;
     public javax.swing.JLabel jLabelFondo2;
     public javax.swing.JLabel jLabelJugar;
