@@ -6,12 +6,12 @@ import java.awt.event.ActionListener;
 
 import controlador.ControladorABMTematica;
 
-public class ABMTematicas extends javax.swing.JFrame {   
-private ControladorABMTematica controlador;
+public class ABMTematicas extends javax.swing.JFrame {
+    private ControladorABMTematica controlador;
 
     public ABMTematicas(ControladorABMTematica controlador) {
         initComponents();
-        this.controlador= controlador;
+        this.controlador = controlador;
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/codigo.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "Proyecto/src/imagenes/admin.png");
@@ -70,19 +70,17 @@ private ControladorABMTematica controlador;
         jComboBoxTematica.setForeground(new java.awt.Color(255, 255, 255));
         jComboBoxTematica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
 
-
         jComboBoxTematica.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               // ControladorABMTematica controlador = new ControladorABMTematica();
+
                 String selectedTematica = (String) jComboBoxTematica.getSelectedItem();
 
                 if (selectedTematica != null) {
-                    controlador.seleccionarTematica(selectedTematica);  
+                  //  controlador.seleccionarTematica(selectedTematica);
                 }
             }
         });
-
 
         jPanel1.add(jComboBoxTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 160, 60));
 
@@ -107,11 +105,11 @@ private ControladorABMTematica controlador;
         jButtonModificarTematica.setBackground(new java.awt.Color(0, 102, 0));
         jButtonModificarTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jButtonModificarTematica.setForeground(new java.awt.Color(255, 255, 255));
-            jButtonModificarTematica.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    System.out.println("Botón MODIFICAR tematica presionado");
-                }
-            });
+        jButtonModificarTematica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                System.out.println("Botón MODIFICAR tematica presionado");
+            }
+        });
         jPanel1.add(jButtonModificarTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 80, 70));
         jPanel1.add(jLabelFondoTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 290, 130));
 
@@ -121,11 +119,10 @@ private ControladorABMTematica controlador;
         jButtonAgregarTematica.setText("+");
         jButtonAgregarTematica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                // Aquí no necesitas llamar a otro método, simplemente delega al listener registrado por el controlador
                 System.out.println("Botón Agregar Pregunta presionado");
             }
         });
-        
+
         jPanel1.add(jButtonAgregarTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 80, 70));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 40, 30));
 
@@ -134,7 +131,7 @@ private ControladorABMTematica controlador;
         jButtonBack.setForeground(new java.awt.Color(255, 255, 255));
         jButtonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBackActionPerformed(evt);
+                System.out.println("ATRAS presionado");
             }
         });
         jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, 50));
@@ -145,7 +142,7 @@ private ControladorABMTematica controlador;
         jButtonExit.setForeground(new java.awt.Color(255, 255, 255));
         jButtonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonExitActionPerformed(evt);
+                System.out.println("Botón salir presionado");
             }
         });
         jPanel1.add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 60, 50));
@@ -156,43 +153,36 @@ private ControladorABMTematica controlador;
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     public void agregarListenerEliminarTematica(ActionListener listener) {
         jButtonEliminarTematica.addActionListener(listener);
     }
 
-
     public void agregarListenerAgregarTematica(ActionListener listener) {
         jButtonAgregarTematica.addActionListener(listener);
     }
-/*     public void listenerBotonTematica(ActionListener listener) {
-        jButtonTematica.addActionListener(listener);
-    } */
+
     public void listenerModificarTematica(ActionListener listener) {
         jButtonModificarTematica.addActionListener(listener);
     }
+    public void listenerSalir(ActionListener listener) {
+        jButtonExit.addActionListener(listener);
+    }
+    public void listenerAtras(ActionListener listener) {
+        jButtonBack.addActionListener(listener);
+    }
 
-    private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonBackActionPerformed
 
-    private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonExitActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -202,13 +192,17 @@ private ControladorABMTematica controlador;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ABMTematicas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ABMTematicas.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ABMTematicas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ABMTematicas.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ABMTematicas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ABMTematicas.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ABMTematicas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ABMTematicas.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         }
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -219,7 +213,6 @@ private ControladorABMTematica controlador;
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAgregarTematica;
     private javax.swing.JButton jButtonBack;
     private javax.swing.JButton jButtonEliminarTematica;
@@ -239,9 +232,7 @@ private ControladorABMTematica controlador;
     private javax.swing.JTextField jTextFieldNuevaTematica;
     private javax.swing.JTextField jTextFieldTematica;
 
-/*     private javax.swing.JButton jButtonTematica; */
 
-    // End of variables declaration//GEN-END:variables
     public javax.swing.JComboBox<String> getComboBoxTematica() {
         return jComboBoxTematica;
     }
@@ -251,4 +242,3 @@ private ControladorABMTematica controlador;
     }
 
 }
-
