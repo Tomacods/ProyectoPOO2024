@@ -11,8 +11,9 @@ import controlador.ControladorOpcionesGenerales;
 public class MenuPrincipalController {
     private MenuPrincipal menuPrincipal;
 
-    public MenuPrincipalController(MenuPrincipal menuPrincipal) {
-        this.menuPrincipal = menuPrincipal;
+    public MenuPrincipalController() {
+        this.menuPrincipal = new MenuPrincipal();
+        this.menuPrincipal.setVisible(true);
         this.menuPrincipal.jButtonJugar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

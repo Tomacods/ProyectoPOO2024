@@ -19,8 +19,7 @@ public class Main {
     //ControladorABMPreguntas c = new ControladorABMPreguntas();
 
     //SeleccionarJugador sele = new SeleccionarJugador();
-          MenuPrincipal frame = new MenuPrincipal();
-            frame.setVisible(true);
+          new MenuPrincipalController();
   
 }
 }

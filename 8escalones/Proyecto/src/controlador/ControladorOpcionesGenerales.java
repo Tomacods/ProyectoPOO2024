@@ -13,9 +13,7 @@ public class ControladorOpcionesGenerales {
         this.menuOpciones.jButtonBack.addActionListener(new ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt){
                 menuOpciones.dispose();
-                MenuPrincipal menuPrincipal = new MenuPrincipal();
-                new MenuPrincipalController(menuPrincipal);
-                menuPrincipal.setVisible(true);
+                new MenuPrincipalController();
                 
             }
         });

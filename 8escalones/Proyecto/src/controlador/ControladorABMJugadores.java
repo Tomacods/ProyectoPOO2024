@@ -97,7 +97,7 @@ public class ControladorABMJugadores {
         }
         
         private void volver() {
-        // Assuming MenuPrincipal is another class that represents the main menu
+            this.vista.dispose();
         MenuPrincipal menuPrincipal = new MenuPrincipal();
         menuPrincipal.setVisible(true);
         this.vista.dispose();

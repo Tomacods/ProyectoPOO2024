@@ -64,9 +64,7 @@ public class ControladorSeleccionarJugadores {
     
 
     private void volverAtras() {
-        MenuPrincipal menuPrincipal = new MenuPrincipal();
-        new MenuPrincipalController(menuPrincipal);
-        menuPrincipal.setVisible(true); // Abre la vista MenuPrincipal
+        new MenuPrincipalController();
         vistaSeleccionarJugador.dispose(); // Cierra la ventana actual
     }
 

@@ -11,15 +11,13 @@ import java.awt.event.ActionListener;
 public class ControladorModoAdmin {
     private ModoAdmin vista;
 
-    public ControladorModoAdmin(ModoAdmin vista) {
-        this.vista = vista;
+    public ControladorModoAdmin() {
+        this.vista =  new ModoAdmin();
+        this.vista.setVisible(true);
         this.vista.getjButtonBack().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            
-                MenuPrincipal menuPrincipal = new MenuPrincipal();
-                new MenuPrincipalController(menuPrincipal);
-                menuPrincipal.setVisible(true); // Abre la vista MenuPrincipal
+                new MenuPrincipalController();
                 vista.dispose(); // Cierra la ventana actual
             }
         });
@@ -29,6 +27,7 @@ public class ControladorModoAdmin {
             public void actionPerformed(ActionEvent e) {
                 vista.dispose(); // Cierra la ventana actual
                 new ABMPreguntas().setVisible(true); // Abre la vista ABMPreguntas
+                vista.dispose(); // Cierra la ventana actual
             }
         });
 
@@ -37,6 +36,7 @@ public class ControladorModoAdmin {
             public void actionPerformed(ActionEvent e) {
                 vista.dispose(); // Cierra la ventana actual
                 new ControladorABMTematica(); // Abre la vista ABMTematicas
+                vista.dispose(); // Cierra la ventana actual
             }
         });
     }
