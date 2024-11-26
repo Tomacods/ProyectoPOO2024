@@ -62,13 +62,17 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jLabelFondoPregunta = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
+        jDialog1.setMaximumSize(new java.awt.Dimension(500, 500));
+        jDialog1.setPreferredSize(new java.awt.Dimension(445, 200));
+        jDialog1.setResizable(false);
+
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextFieldEditarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jTextFieldEditarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldEditarPregunta.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldEditarPregunta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel2.add(jTextFieldEditarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 450, 50));
+        jPanel2.add(jTextFieldEditarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 400, 60));
 
         jTextFieldNuevaPregunta.setEditable(false);
         jTextFieldNuevaPregunta.setBackground(new java.awt.Color(51, 153, 0));
@@ -81,18 +85,22 @@ public class ABMPreguntas extends javax.swing.JFrame {
                 jTextFieldNuevaPreguntaActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextFieldNuevaPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 310, 50));
-        jPanel2.add(jLabelFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 510, 180));
+        jPanel2.add(jTextFieldNuevaPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 310, 50));
+        jPanel2.add(jLabelFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -20, 570, 260));
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
         jDialog1Layout.setHorizontalGroup(
             jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jDialog1Layout.setVerticalGroup(
             jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);

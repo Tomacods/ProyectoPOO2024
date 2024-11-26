@@ -14,14 +14,36 @@ public class ControladorABMRespuestaAprox {
     }
 
     private void iniciarVista() {
+        this.vista.jTextFieldPreguntaAprox.setText(this.preguntaActual.getEnunciado());
 
+        this.vista.jButtonBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                volver();
+            }
+        });
+
+        this.vista.jButtonExit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                salir();
+            }
+        });
+
+        this.vista.jTextFieldEditarPreguntaAprox.addActionListener (new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                preguntaActual.setValorAproximado(vista.jTextFieldEditarPreguntaAprox.getText());
+            }
+        });
     }
 
-    private void volver() {
-
+    private PreguntaAproximacion volver() {
+        this.vista.dispose();
+        return this.preguntaActual;
     }
 
     private void salir() {
-        
+        this.vista.dispose();
     }
 }
