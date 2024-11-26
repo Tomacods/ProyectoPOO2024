@@ -165,6 +165,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
         });*/
         jPanel1.add(jButtonModificarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 80, 70));
 
+        jButtonAgregarPregunta.setEditable(true);
         jButtonAgregarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jButtonAgregarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 70)); // NOI18N
         jButtonAgregarPregunta.setForeground(new java.awt.Color(255, 255, 255));
