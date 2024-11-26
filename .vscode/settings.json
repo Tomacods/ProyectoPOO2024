@@ -16,5 +16,6 @@
         "pruebas ABM/DAOS/src/Vista/src",
         "8Escalones/src",
         "8escalones/Proyecto/src/Vista"
-    ]
+    ],
+    "sarif-viewer.connectToGithubCodeScanning": "off"
 }
