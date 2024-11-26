@@ -55,9 +55,27 @@ public class Jugador {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-
+/* 
     public void incrementarPuntaje() {
         this.puntaje++;
+    } */
+    public void incrementarPuntaje() {
+        this.puntaje++;
+        System.out.println("Puntaje incrementado: " + this.puntaje);  // Verifica el puntaje antes de actualizar
+        //this.actualizarPuntaje();  // Llama a actualizarPuntaje para reflejar el cambio en la base de datos
+    }
+    public void decrementarPuntaje() {
+        this.puntaje--;
+        this.actualizarPuntaje();
+    }
+    public void setearPuntaje(){
+        setPuntaje(0);
+    }
+    
+    
+    public void actualizarPuntaje() {
+        JugadorDAOImpl dao = new JugadorDAOImpl();
+        dao.actualizarPuntaje(this);  // Actualiza el puntaje en la base de datos
     }
 
     //ABM
@@ -98,6 +116,16 @@ public class Jugador {
         return nombre;
     }
 
+   /*  public void actualizarPuntaje() {
+        JugadorDAOImpl dao = new JugadorDAOImpl();
+        dao.actualizarPuntaje(this);
+    } */
+
+  /*   public static ArrayList<Jugador> obtenerJugadoresConMenorPuntaje() {
+        JugadorDAOImpl dao = new JugadorDAOImpl();
+        return dao.obtenerJugadoresConMenorPuntaje();
+    } */
+    
     
 
 }
