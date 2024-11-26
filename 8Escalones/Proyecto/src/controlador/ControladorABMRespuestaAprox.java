@@ -2,6 +2,8 @@ package controlador;
 
 import Modelos.PreguntaAproximacion;
 import Vista.ABMRespuestaAprox;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ControladorABMRespuestaAprox {
     private ABMRespuestaAprox vista;
@@ -33,7 +35,12 @@ public class ControladorABMRespuestaAprox {
         this.vista.jTextFieldEditarPreguntaAprox.addActionListener (new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                preguntaActual.setValorAproximado(vista.jTextFieldEditarPreguntaAprox.getText());
+                try{
+                preguntaActual.setValorAproximado(Integer.parseInt(vista.jTextFieldEditarPreguntaAprox.getText()));
+                }
+                catch(NumberFormatException e){
+                    System.out.println("Este valor no es valido");
+                }
             }
         });
     }
