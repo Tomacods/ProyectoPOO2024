@@ -30,10 +30,14 @@ public class ControladorABMRespuestaMC {
 
         respuestas.clear();
 
-        this.vista.jButtonBack.addActionListener(new ActionListener() {
+        this.vista.jButtonSave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                volver();
+                try {
+                    volver();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -73,10 +77,15 @@ public class ControladorABMRespuestaMC {
         });
     }
 
-    private List<Respuesta> volver() {
+    private void volver() throws SQLException {
         cambiar_correcta();
+        //TODO: condicional que verifique si existe la pregunta con ese id en la tabla
+        if ("abc" == "def") {
+            MultipleChoicePregunta.actualizarPregunta(pregunta_actual); //dead code hasta que pongamos bien la condición
+        } else {
+            MultipleChoicePregunta.insertarPregunta(pregunta_actual, this.pregunta_actual.getOpciones());
+        }
         this.vista.dispose();
-        return this.pregunta_actual.getOpciones();
     }
 
     private void salir() {

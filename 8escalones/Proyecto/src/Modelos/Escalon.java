@@ -29,7 +29,7 @@ public class Escalon {
             quienesSuben();
         }
     }
-    public void jugarEscalonFinal() {
+    public void jugarEscalonFinal() throws SQLException {
         System.out.println("¡¡Bienvenidos al Escalon Final!!");
         Ronda ronda = new Ronda(juego.getIdJuego(), jugadores, this);
         ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();

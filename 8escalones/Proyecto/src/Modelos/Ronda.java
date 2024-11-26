@@ -22,7 +22,7 @@ public class Ronda {
         this.estado = "en curso";
     }
 
-    public Jugador rondaFinal(ArrayList<Tematica> tematicas, ArrayList<Jugador> jugadores){
+    public Jugador rondaFinal(ArrayList<Tematica> tematicas, ArrayList<Jugador> jugadores) throws SQLException{
         inicializarPuntos();
         int pos = 0;
         for (int i = 1; i<=5; i++){
@@ -65,7 +65,7 @@ public class Ronda {
         }
     }//APLICAR EN EL CONTROLADOR
 
-    private void realizarPreguntas(int idTematica, ArrayList<Jugador> jugadores) {
+    private void realizarPreguntas(int idTematica, ArrayList<Jugador> jugadores) throws SQLException {
         ArrayList<MultipleChoicePregunta> pregMult = new ArrayList<>();
         pregMult = MultipleChoicePregunta.obtenerPreguntasMC(idTematica);//Trae las preguntas MC de la BD
         for (Jugador jugador : jugadores) {
