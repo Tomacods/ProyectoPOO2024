@@ -79,7 +79,13 @@ public class Ronda {
     public Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta){
         pregunta.imprimirOpciones();
         String respuesta = "Opción A"; // Se conectaria con el controlador para obtener la respuesta
-        if (pregunta.getRespuestaCorrecta() == respuesta) {
+        ArrayList<Respuesta> respuestas = Respuesta.obtenerRespuestasPorPregunta(pregunta.getIdPregunta());
+        for (Respuesta rta : respuestas) {
+            if (rta.isEsCorrecta() == true) {
+                Respuesta correcta = rta;
+            }
+        }
+        if (correcta.getTexto() == respuesta) {
             System.out.println("Respuesta correcta");
             jugador.incrementarPuntaje();
         } else {
@@ -92,7 +98,7 @@ public class Ronda {
     //recorro la lista de jugadores y de las respuestas que me dicen compararlas con la respuesta correcta, la que mas se aproxime es la que se toma como correcta y el queda en el escalon
 
 
-    public boolean determinarResultado() throws SQLException {
+    public Boolean determinarResultado() throws SQLException {
         // Lógica para determinar el resultado de la ronda
         // Por ejemplo, eliminar al jugador con menos puntaje
         // ESTE CODIGO DEBE UTILIZARSE EN EL CONTROLADOR GAMEPLAY EN CONTROLADOR GAMEPLAY_APROXIMACION
