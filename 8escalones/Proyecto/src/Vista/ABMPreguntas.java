@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-
+import java.awt.event.ActionListener;
 /**
  *
  * @author Maria
@@ -15,7 +15,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
     public ABMPreguntas() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, Proyecto/src/imagenes/codigo.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/codigo.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "Proyecto/src/imagenes/admin.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconEdit, "Proyecto/src/imagenes/lapiz.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelSave, "Proyecto/src/imagenes/guardar.png");
@@ -289,5 +289,52 @@ public class ABMPreguntas extends javax.swing.JFrame {
     public javax.swing.JTextField jTextFieldTematica;
     public javax.swing.JTextField jTextFieldTipo;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JButton getjButtonBack() {
+        return jButtonBack;
+    }
+    
+    public javax.swing.JButton getjButtonSave() {
+        return jButtonSave;
+    }
+    
+    public javax.swing.JButton getjButtonEliminarPregunta() {
+        return jButtonEliminarPregunta;
+    }
+    
+    public javax.swing.JButton getjButtonEditarPregunta() {
+        return jButtonEditarPregunta;
+    }
+    
+    public javax.swing.JButton getjTextFieldNuevaPregunta() {
+        return jButtonAgregarPregunta;
+    }
+    public javax.swing.JComboBox<String> getjComboBoxPregunta() {
+        return jComboBoxPregunta;
+    }
+    
+    public javax.swing.JComboBox<String> getjComboBoxTematica() {
+        return jComboBoxTematica;
+    }
+    
+    public javax.swing.JComboBox<String> getjComboBoxTipo() {
+        return jComboBoxTipo;
+    }
+
+    public void listenerTematica(ActionListener listener) {
+        jComboBoxTematica.addActionListener(listener);
+    }
+    public void listenerTipo(ActionListener listener) {
+        jComboBoxTipo.addActionListener(listener);
+    }
+    public void listenerInsertar(ActionListener listener) {
+        jButtonAgregarPregunta.addActionListener(listener);
+    }
+    public void listenerEliminar(ActionListener listener) {
+        jButtonEliminarPregunta.addActionListener(listener);
+    }
+    public void listenerActualizar(ActionListener listener) {
+        jButtonEditarPregunta.addActionListener(listener);
+    }
 }
 
