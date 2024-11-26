@@ -1,10 +1,8 @@
 package controlador;
 
 import Vista.MenuPrincipal;
-import Vista.SeleccionarJugador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 
 public class MenuPrincipalController {
     private MenuPrincipal menuPrincipal;
@@ -45,15 +43,14 @@ public class MenuPrincipalController {
     }
 
     private void abrirSeleccionarJugador() {
-        SeleccionarJugador seleccionarJugador = new SeleccionarJugador();
-        new ControladorSeleccionarJugadores(seleccionarJugador);
+        new ControladorSeleccionarJugadores();
         menuPrincipal.dispose();
     }
 
     private void abrirOpcionesGenerales() {
         new ControladorOpcionesGenerales();
         menuPrincipal.dispose();
-    
+
     }
 
     private void abrirABMJugadores() {
@@ -64,6 +61,7 @@ public class MenuPrincipalController {
     private void salirDelJuego() {
         System.exit(0);
     }
+
     private void abrirAyuda() {
         new ControladorAyuda();
         menuPrincipal.dispose();

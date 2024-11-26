@@ -1,7 +1,6 @@
 package controlador;
 
 import Vista.AdminContraseña;
-import Vista.OpcionesGenerales;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,9 +15,7 @@ public class ControladorAdminContraseña {
             @Override
             public void actionPerformed(ActionEvent e) {
                 vista.dispose(); // Cierra la ventana actual
-                OpcionesGenerales opcionesGenerales = new OpcionesGenerales();
-                opcionesGenerales.setVisible(true); // Abre la vista OpcionesGenerales
-                vista.dispose(); // Cierra la ventana actual
+                new ControladorOpcionesGenerales(); // Abre la vista OpcionesGenerales
             }
         });
 
@@ -26,14 +23,16 @@ public class ControladorAdminContraseña {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String password = new String(vista.jPasswordField.getPassword());
-                if ("admin".equals(password)) {
-                    vista.dispose(); // Cierra la ventana actual
+                if ("admin".equals(password)) { // acá se puede cambiar la contraseña de admin, para futaas
+                                                // implementaciones podemos guardar la contraseña en la base de datos y
+                                                // en la vista admin agregar una ventana para cambiar la contraseña
                     vista.dispose(); // Cierra la ventana actual
                     new ControladorModoAdmin();
                 } else {
                     // Mostrar mensaje de error o realizar alguna acción
                     System.out.println("Contraseña incorrecta");
-                javax.swing.JOptionPane.showMessageDialog(vista, "Contraseña incorrecta", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+                    javax.swing.JOptionPane.showMessageDialog(vista, "Contraseña incorrecta", "Error",
+                            javax.swing.JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

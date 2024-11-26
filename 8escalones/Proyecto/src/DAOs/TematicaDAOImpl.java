@@ -1,4 +1,5 @@
 package DAOs;
+
 import Modelos.Tematica;
 
 import java.sql.Connection;
@@ -10,44 +11,44 @@ import java.util.ArrayList;
 public class TematicaDAOImpl {
     private final BaseDeDatos connection = BaseDeDatos.obtenerInstancia();
 
-    //private final Connection connection;
+    // private final Connection connection;
 
     public TematicaDAOImpl() {
 
     }
 
-//ABM 
+    // ABM
 
-public void insertarTematica(Tematica tematica) {
-    String query = "INSERT INTO tematica (nombre_tematica) VALUES (?)";
-    try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
-        statement.setString(1, tematica.getNombre());
-        statement.executeUpdate();
-    } catch (SQLException e) {
-        e.printStackTrace();
+    public void insertarTematica(Tematica tematica) {
+        String query = "INSERT INTO tematica (nombre_tematica) VALUES (?)";
+        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
+            statement.setString(1, tematica.getNombre());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
-}
 
-public void actualizarTematica(Tematica tematica) {
-    String query = "UPDATE tematica SET nombre_tematica = ? WHERE id_tematica = ?";
-    try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
-        statement.setString(1, tematica.getNombre());
-        statement.setInt(2, tematica.getId());
-        statement.executeUpdate();
-    } catch (SQLException e) {
-        e.printStackTrace();
+    public void actualizarTematica(Tematica tematica) {
+        String query = "UPDATE tematica SET nombre_tematica = ? WHERE id_tematica = ?";
+        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
+            statement.setString(1, tematica.getNombre());
+            statement.setInt(2, tematica.getId());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
-}
 
-public void eliminarTematica(int id_tematica) {
-    String query = "DELETE FROM tematica WHERE id_tematica = ?";
-    try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
-        statement.setInt(1, id_tematica);
-        statement.executeUpdate();
-    } catch (SQLException e) {
-        e.printStackTrace();
+    public void eliminarTematica(int id_tematica) {
+        String query = "DELETE FROM tematica WHERE id_tematica = ?";
+        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
+            statement.setInt(1, id_tematica);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
-}
 
     // QUERYS
     public ArrayList<Object[]> obtenerTematicas() { // DEVUELVE LAS TEMATICAS
@@ -55,7 +56,7 @@ public void eliminarTematica(int id_tematica) {
         String query = "SELECT * FROM tematica";
 
         try (PreparedStatement statement = BaseDeDatos.prepareStatement(query);
-            ResultSet resultSet = statement.executeQuery()) {
+                ResultSet resultSet = statement.executeQuery()) {
 
             while (resultSet.next()) {
                 Object[] row = {

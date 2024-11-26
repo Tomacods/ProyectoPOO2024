@@ -14,7 +14,7 @@ public class ControladorABMRespuestaMC {
     private ABMRespuestaMC vista;
     private MultipleChoicePregunta pregunta_actual;
 
-    public ControladorABMRespuestaMC(MultipleChoicePregunta pregunta) throws SQLException{
+    public ControladorABMRespuestaMC(MultipleChoicePregunta pregunta) throws SQLException {
         this.vista = new ABMRespuestaMC();
         this.pregunta_actual = pregunta;
         iniciarVista();
@@ -49,7 +49,7 @@ public class ControladorABMRespuestaMC {
                 modificar_respuesta(0, vista.jTextFieldRtaA.getText());
             }
         });
-        
+
         this.vista.jTextFieldRtaB.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 modificar_respuesta(1, vista.jTextFieldRtaB.getText());
@@ -84,10 +84,14 @@ public class ControladorABMRespuestaMC {
     }
 
     private void cambiar_correcta() {
-        if (this.vista.jRadioButtonRtaA.isSelected()) this.pregunta_actual.setRespuestaCorrecta(this.vista.jTextFieldRtaA.getText());
-        else if (this.vista.jRadioButtonRtaB.isSelected()) this.pregunta_actual.setRespuestaCorrecta(this.vista.jTextFieldRtaB.getText());
-        else if (this.vista.jRadioButtonRtaC.isSelected()) this.pregunta_actual.setRespuestaCorrecta(this.vista.jTextFieldRtaC.getText());
-        else if (this.vista.jRadioButtonRtaD.isSelected()) this.pregunta_actual.setRespuestaCorrecta(this.vista.jTextFieldRtaD.getText());
+        if (this.vista.jRadioButtonRtaA.isSelected())
+            this.pregunta_actual.setRespuestaCorrecta(this.vista.jTextFieldRtaA.getText());
+        else if (this.vista.jRadioButtonRtaB.isSelected())
+            this.pregunta_actual.setRespuestaCorrecta(this.vista.jTextFieldRtaB.getText());
+        else if (this.vista.jRadioButtonRtaC.isSelected())
+            this.pregunta_actual.setRespuestaCorrecta(this.vista.jTextFieldRtaC.getText());
+        else if (this.vista.jRadioButtonRtaD.isSelected())
+            this.pregunta_actual.setRespuestaCorrecta(this.vista.jTextFieldRtaD.getText());
     }
 
 }
