@@ -337,6 +337,14 @@ public class ABMPreguntas extends javax.swing.JFrame {
         this.jComboBoxTipo = jComboBoxTipo;
     }
 
+    public javax.swing.JTextField getjjTextFieldNuevaPregunta() {
+        return jTextFieldNuevaPregunta;
+    }
+
+    public void setjTextFieldNuevaPregunta(javax.swing.JTextField jTextFieldNuevaPregunta) {
+        this.jComboBoxTipo = jComboBoxTipo;
+    
+
 
 }
 
