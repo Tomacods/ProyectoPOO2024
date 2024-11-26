@@ -11,7 +11,6 @@ import Modelos.Jugador;
 import Modelos.MultipleChoicePregunta;
 import Modelos.Respuesta;
 import Modelos.Ronda;
-import Modelos.Tematica;
 import Modelos.Juego;
 
 import Vista.Gameplay_final;
@@ -25,14 +24,14 @@ public class ControladorGameplayFinal {
     private Escalon escalon; // Agregado
     private String estado; // Agregado
     private Juego juego;
-    private ArrayList<Tematica> tematicas;
+    private ArrayList<MultipleChoicePregunta> preguntas;
 
     public ControladorGameplayFinal(int idJuego, ArrayList<Jugador> jugadores, Escalon escalon) throws SQLException {
         this.idJuego = idJuego; 
         this.jugadores = jugadores; 
         this.escalon = escalon; 
         this.vista = new Gameplay_final();
-        this.tematicas = Tematica.obtenerTematicas();
+        this.preguntas = MultipleChoicePregunta.obtenerTodasPreguntasMC();
         this.ronda = new Ronda(idJuego, jugadores, escalon);
 
         vista.setVisible(true);
@@ -48,31 +47,26 @@ public class ControladorGameplayFinal {
 
     public void jugarEscalonFinal() throws SQLException {
         System.out.println("¡¡Bienvenidos al Escalon Final!!");
-        ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
-        Jugador jugadorGanador = rondaFinal(tematicas, jugadores);
+        //ArrayList<MultipleChoicePregunta> preguntas = MultipleChoicePregunta.;
+        Jugador jugadorGanador = rondaFinal(preguntas, jugadores);
         System.out.println("El ganador es " + jugadorGanador.getNombre());
     }
 
-    public Jugador rondaFinal(ArrayList<Tematica> tematicas, ArrayList<Jugador> jugadores) throws SQLException{
+    public Jugador rondaFinal(ArrayList<MultipleChoicePregunta> preguntas, ArrayList<Jugador> jugadores) throws SQLException{
         inicializarPuntos();
         int pos = 0;
         for (int i = 1; i<=5; i++){
-            Tematica tematica = tematicas.get(pos);
-            realizarPreguntas(tematica.getId(), jugadores);
+            realizarPreguntas(preguntas, jugadores);
             if (valorAbsoluto(jugadores.get(0).getPuntaje()) - valorAbsoluto(jugadores.get(1).getPuntaje()) >= 3) {
                 System.out.println("\n¡" + (jugadores.get(0).getPuntaje() > jugadores.get(1).getPuntaje() ? jugadores.get(0).getNombre() : jugadores.get(1).getNombre()) + " ES EL GANADOR DE LOS 8 ESCALONES!");
                 break; // Salir del for
             }
-            pos++;
+            pos = pos + 1;
         }
         if (jugadores.get(0).getPuntaje() == jugadores.get(1).getPuntaje()) {
             while (jugadores.get(0).getPuntaje() == jugadores.get(1).getPuntaje()) {
-                Tematica tematica = tematicas.get(pos);
-                realizarPreguntas(tematica.getId(), jugadores);
+                realizarPreguntas(preguntas, jugadores);
                 pos++;
-                if (pos > tematicas.size()) {
-                    pos = 0;
-                }
             }
         }
         if (jugadores.get(0).getPuntaje() > jugadores.get(1).getPuntaje()) {
@@ -82,14 +76,12 @@ public class ControladorGameplayFinal {
         }
     }
 
-    private void realizarPreguntas(int idTematica, ArrayList<Jugador> jugadores) throws SQLException {
-        ArrayList<MultipleChoicePregunta> pregMult = new ArrayList<>();
-        pregMult = MultipleChoicePregunta.obtenerPreguntasMC(idTematica);//Trae las preguntas MC de la BD
+    private void realizarPreguntas(ArrayList<MultipleChoicePregunta> preguntas, ArrayList<Jugador> jugadores) throws SQLException {
         for (Jugador jugador : jugadores) {
-            MultipleChoicePregunta pregunta = pregMult.get(new Random().nextInt(pregMult.size()));
+            MultipleChoicePregunta pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
             System.out.println("Pregunta para " + jugador.getNombre() + ": "+"\n" + pregunta.getEnunciado());
             jugador = preguntarJugador(jugador, pregunta);
-            pregMult.remove(pregunta);
+            preguntas.remove(pregunta);
         }
     }
 
@@ -134,29 +126,7 @@ public class ControladorGameplayFinal {
     }
 }
 
-    /* public void iniciarRonda() throws SQLException {
-        inicializarPuntos();
-        
-        // Verificar si la tematica es null antes de usarla
-        if (this.escalon.getTematica() != null) {
-            for (int i = 1; i <= 2; i++) {
-                System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
-                realizarPreguntas(this.escalon.getTematica().getId(), this.jugadores);
-            }
-        } else {
-            System.out.println("Error: La temática es null.");
-        }
-    }
-    
-
-    private void inicializarPuntos() {
-        ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
-        for (Jugador jug : jugadores) {
-           // jug.setPuntaje(0);
-        }
-    } 
-
-    private void realizarPreguntas(int idEscalon, ArrayList<Jugador> jugadores) throws SQLException {
+    /*private void realizarPreguntas(int idEscalon, ArrayList<Jugador> jugadores) throws SQLException {
         ArrayList<MultipleChoicePregunta> pregMult = MultipleChoicePregunta.obtenerPreguntasMC(idEscalon);
        // ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
 
