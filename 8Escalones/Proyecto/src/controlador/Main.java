@@ -12,12 +12,14 @@ public class Main {
       //ControladorABMJugadores c = new ControladorABMJugadores();
       //ventanas.AdminContraseña a = new AdminContraseña(null)
     // ControladorAdminContraseña c = new ControladorAdminContraseña();
-          // SeleccionarJugador sele = new SeleccionarJugador();
-          // ControladorSeleccionarJugadores c = new ControladorSeleccionarJugadores(sele);
-          MenuPrincipal menuPrincipal = new MenuPrincipal();
-          new MenuPrincipalController(menuPrincipal);
-          menuPrincipal.setVisible(true); // Abre la vista MenuPrincipal
-    } 
-    //ControladorGameplay c = new ControladorGameplay();
-}
+       //   
 
+    //ControladorGameplay c = new ControladorGameplay();
+    
+    //ControladorABMPreguntas c = new ControladorABMPreguntas();
+
+    //SeleccionarJugador sele = new SeleccionarJugador();
+          new MenuPrincipalController();
+  
+}
+}

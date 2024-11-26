@@ -306,7 +306,6 @@ public class Gameplay extends javax.swing.JFrame {
     }
 
 
-   
     
 }
 

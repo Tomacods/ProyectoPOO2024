@@ -19,6 +19,7 @@ public class ControladorAdminContraseña {
                 vista.dispose(); // Cierra la ventana actual
                 OpcionesGenerales opcionesGenerales = new OpcionesGenerales();
                 opcionesGenerales.setVisible(true); // Abre la vista OpcionesGenerales
+                vista.dispose(); // Cierra la ventana actual
             }
         });
 
@@ -28,9 +29,8 @@ public class ControladorAdminContraseña {
                 String password = new String(vista.jPasswordField.getPassword());
                 if ("admin".equals(password)) {
                     vista.dispose(); // Cierra la ventana actual
-                    ModoAdmin modoAdmin = new ModoAdmin();
-                    new ControladorModoAdmin(modoAdmin);
-                    modoAdmin.setVisible(true); // Abre la vista ModoAdmin
+                    vista.dispose(); // Cierra la ventana actual
+                    new ControladorModoAdmin();
                 } else {
                     // Mostrar mensaje de error o realizar alguna acción
                     System.out.println("Contraseña incorrecta");

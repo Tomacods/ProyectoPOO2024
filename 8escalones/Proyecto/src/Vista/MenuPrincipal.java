@@ -9,7 +9,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconJugar, "Proyecto/src/imagenes/Joystick.png");
-        new MenuPrincipalController(this); // Inicializa el controlador
     }
 
     @SuppressWarnings("unchecked")
