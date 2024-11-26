@@ -19,6 +19,8 @@ public class ControladorABMPreguntas {
         listeners();
     }
 
+    
+
     private void traerTematicasCB() {
         ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
         for (Tematica tematica : tematicas) {
@@ -28,6 +30,14 @@ public class ControladorABMPreguntas {
     }
 
     private void listeners() {
+
+        vista.getjButtonBack().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            vista.dispose();
+            new ControladorModoAdmin();
+            }
+        });
         vista.listenerTematica(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -135,33 +145,27 @@ public class ControladorABMPreguntas {
     private void insertarPregunta() throws SQLException {
         String tipoSeleccionado = (String) vista.getjComboBoxTipo().getSelectedItem();
         if (tipoSeleccionado.equals("Multiple choice")) {
-            String nuevaPregunta = vista.getjTextFieldNuevaPregunta().getText();
             String tematicaSeleccionada = (String) vista.getjComboBoxTematica().getSelectedItem();
-            if (!nuevaPregunta.isEmpty() && tematicaSeleccionada != null) {
+            if (tematicaSeleccionada != null) {
 
                 int idTematica = obtenerIdPorNombre(tematicaSeleccionada);
 
-                MultipleChoicePregunta preguntaIns = new MultipleChoicePregunta(0, nuevaPregunta, idTematica);
-
-                MultipleChoicePregunta.insertarPregunta(preguntaIns, null); //ver como hacer con las rtas
-                //abm preg mc
-
-                traerPreguntasMC(idTematica);
+                MultipleChoicePregunta preguntaIns = new MultipleChoicePregunta(0, "", idTematica);
+                this.vista.dispose();
+                ControladorABMRespuestaMC controladorMC = new ControladorABMRespuestaMC(preguntaIns, true);
             } else {
                 System.out.println("El campo de la nueva pregunta o la temática está vacío.");
             }
         } else if (tipoSeleccionado.equals("Aproximacion")) {
-            String nuevaPregunta = vista.getjTextFieldNuevaPregunta().getText();
             String tematicaSeleccionada = (String) vista.getjComboBoxTematica().getSelectedItem();
-            if (!nuevaPregunta.isEmpty() && tematicaSeleccionada != null) {
+            if (tematicaSeleccionada != null) {
 
                 int idTematica = obtenerIdPorNombre(tematicaSeleccionada);
 
-                PreguntaAproximacion preguntaIns = new PreguntaAproximacion(0, nuevaPregunta, idTematica, 0);//ver como hacer con el valor aproximado
+                PreguntaAproximacion preguntaIns = new PreguntaAproximacion(0, "", idTematica, 0);//ver como hacer con el valor aproximado
+                this.vista.dispose();
+                ControladorABMRespuestaAprox controladorAprox = new ControladorABMRespuestaAprox(preguntaIns, true)
 
-                PreguntaAproximacion.insertarPreguntaAproximacion(preguntaIns);
-
-                traerPreguntasAprox(idTematica);
             } else {
                 System.out.println("El campo de la nueva pregunta o la temática está vacío.");
             }
@@ -253,5 +257,6 @@ public class ControladorABMPreguntas {
 
         }
     }
+
 
 }
