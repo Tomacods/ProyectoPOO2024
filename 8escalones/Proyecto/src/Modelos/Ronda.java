@@ -76,22 +76,30 @@ public class Ronda {
         }
     }
 
-    public Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta){
+    public Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta) throws SQLException{
         pregunta.imprimirOpciones();
         String respuesta = "Opción A"; // Se conectaria con el controlador para obtener la respuesta
         ArrayList<Respuesta> respuestas = Respuesta.obtenerRespuestasPorPregunta(pregunta.getIdPregunta());
-        for (Respuesta rta : respuestas) {
-            if (rta.isEsCorrecta() == true) {
-                Respuesta correcta = rta;
-            }
-        }
-        if (correcta.getTexto() == respuesta) {
+        Boolean correcta = respuestaCorrecta(respuestas, respuesta);
+        if (correcta == true) {
             System.out.println("Respuesta correcta");
             jugador.incrementarPuntaje();
         } else {
             System.out.println("Respuesta incorrecta");
         }
         return jugador;
+    }
+
+    private Boolean respuestaCorrecta(ArrayList<Respuesta> respuestas, String resp) {
+        Boolean correcta = false;
+        for (Respuesta rta : respuestas) {
+            if (rta.isEsCorrecta() == true) {
+                if (rta.getTexto() == resp) {
+                    correcta = true;
+                }
+            }
+        }
+        return correcta;
     }
     
     //metodoo para realizar preguntas por aproximacion
