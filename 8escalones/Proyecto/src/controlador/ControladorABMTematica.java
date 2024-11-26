@@ -111,7 +111,7 @@ public class ControladorABMTematica {
                 javax.swing.JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public void seleccionarTematica(String tematicaSeleccionada) {
+    private void seleccionarTematica(String tematicaSeleccionada) {
         Tematica tematica = obtenerTematicaPorNombre(tematicaSeleccionada);
         if (tematica != null) {
             int idTematica = tematica.getId();

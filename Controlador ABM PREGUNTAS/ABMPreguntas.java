@@ -165,6 +165,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
         });*/
         jPanel1.add(jButtonModificarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 80, 70));
 
+        jButtonAgregarPregunta.setEditable(true);
         jButtonAgregarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jButtonAgregarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 70)); // NOI18N
         jButtonAgregarPregunta.setForeground(new java.awt.Color(255, 255, 255));
@@ -335,6 +336,14 @@ public class ABMPreguntas extends javax.swing.JFrame {
     public void setjComboBoxTipo(javax.swing.JComboBox<String> jComboBoxTipo) {
         this.jComboBoxTipo = jComboBoxTipo;
     }
+
+    public javax.swing.JTextField getjjTextFieldNuevaPregunta() {
+        return jTextFieldNuevaPregunta;
+    }
+
+    public void setjTextFieldNuevaPregunta(javax.swing.JTextField jTextFieldNuevaPregunta) {
+        this.jComboBoxTipo = jComboBoxTipo;
+    
 
 
 }

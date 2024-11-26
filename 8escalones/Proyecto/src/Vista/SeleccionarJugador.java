@@ -7,7 +7,7 @@ package Vista;
 import controlador.ControladorSeleccionarJugadores;
 import java.awt.Image;
 import java.awt.event.ActionListener;
-import java.awt.ActionEvent;
+
 
 import javax.swing.ImageIcon;
 import javax.swing.*;

@@ -32,7 +32,9 @@ public class Escalon {
     public void jugarEscalonFinal() {
         System.out.println("¡¡Bienvenidos al Escalon Final!!");
         Ronda ronda = new Ronda(juego.getIdJuego(), jugadores, this);
-        ronda.rondaFinal();
+        ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
+        Jugador jugadorGanador = ronda.rondaFinal(tematicas, jugadores);
+        System.out.println("El ganador es " + jugadorGanador.getNombre());
     }
 
     private void quienesSuben() {

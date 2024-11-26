@@ -1,10 +1,8 @@
 package controlador;
-
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-
 import Modelos.MultipleChoicePregunta;
 import Modelos.PreguntaAproximacion;
 import Modelos.Tematica;
@@ -140,7 +138,8 @@ public class ControladorABMPreguntas {
 
                 MultipleChoicePregunta preguntaIns = new MultipleChoicePregunta(0, nuevaPregunta, idTematica);
 
-                MultipleChoicePregunta.insertarPregunta(preguntaIns, null);
+                MultipleChoicePregunta.insertarPregunta(preguntaIns, null); //ver como hacer con las rtas
+                //abm preg mc
 
                 traerPreguntasMC(idTematica);
             } else {
@@ -153,7 +152,7 @@ public class ControladorABMPreguntas {
 
                 int idTematica = obtenerIdPorNombre(tematicaSeleccionada);
 
-                PreguntaAproximacion preguntaIns = new PreguntaAproximacion(0, nuevaPregunta, idTematica, 0);
+                PreguntaAproximacion preguntaIns = new PreguntaAproximacion(0, nuevaPregunta, idTematica, 0);//ver como hacer con el valor aproximado
 
                 PreguntaAproximacion.insertarPreguntaAproximacion(preguntaIns);
 
@@ -193,9 +192,9 @@ public class ControladorABMPreguntas {
             if (pregunta != null) {
                 int idPregunta = pregunta.getIdPregunta();
                 System.out.println("Pregunta seleccionada para eliminar: " + selectedPregunta + ", ID: " + idPregunta);
-                PreguntaAproximacion.eliminarPreguntaAprox(idTematica); // Llamada a eliminar pregunta
-                traerPreguntasAprox(idTematica); // Refrescar la lista de preguntas
+                PreguntaAproximacion.eliminarPreguntaAprox(idPregunta); 
                 System.out.println("Pregunta eliminada: " + selectedPregunta);
+                traerPreguntasAprox(idTematica);  
             } else {
                 System.out.println("No se encontró la pregunta con el enunciado seleccionado.");
             }

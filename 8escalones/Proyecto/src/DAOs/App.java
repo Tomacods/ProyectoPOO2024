@@ -19,15 +19,19 @@ import Modelos.Juego;
 
 public class App {
     public static void main(String[] args) throws SQLException {
-        ArrayList<Jugador> jugadores = new ArrayList<>();
-        jugadores = Jugador.obtenerJugadores();
+/*         ArrayList<Jugador> jugadores = new ArrayList<>();
+        jugadores = Jugador.obtenerJugadores(); */
         /* ArrayList<Tematica> tematicas = new ArrayList<>();
         tematicas = Tematica.obtenerTematicas();
+
+        
+
+
        // Escalon escalon = new Escalon(1, "Comenzado", Tematica.obtenerTematica(1), jugadores);
       //  escalon.jugarEscalon(); */
-        Date fechaActual = new Date();
+/*         Date fechaActual = new Date();
         Juego juego = new Juego(1, fechaActual, "Comenzado", 1);
-        juego.comenzarJuego();
+        juego.comenzarJuego(); */
 
 
       //  MultipleChoicePregunta pregunta = MultipleChoicePregunta.obtenerPreguntaConRtas(1);
