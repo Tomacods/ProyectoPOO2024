@@ -1,7 +1,7 @@
 package controlador;
 import java.awt.event.ActionListener;
 
-import Vista.MenuPrincipal;
+
 import Vista.OpcionesGenerales;
 
 

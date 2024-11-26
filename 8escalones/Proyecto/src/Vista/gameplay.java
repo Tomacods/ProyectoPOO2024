@@ -7,16 +7,15 @@ import controlador.ControladorGameplay;
 
 public class Gameplay extends javax.swing.JFrame {
    // @SuppressWarnings("unused")
-    private ControladorGameplay controlador;
 
-        public Gameplay(ControladorGameplay controlador) {
+
+        public Gameplay() {
             initComponents();
             this.setLocationRelativeTo(null);
             rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
             rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "Proyecto/src/imagenes/entretenimiento.png");
             rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser, "Proyecto/src/imagenes/user.png");
             rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
-            this.controlador = controlador;
     }
 
 
@@ -248,7 +247,7 @@ public class Gameplay extends javax.swing.JFrame {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
-                new Gameplay(c).setVisible(true);
+                new Gameplay().setVisible(true);
             }
         });
     }

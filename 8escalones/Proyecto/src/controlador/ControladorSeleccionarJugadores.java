@@ -1,7 +1,6 @@
 package controlador;
 
 import Vista.Gameplay;
-import Vista.MenuPrincipal;
 import Vista.SeleccionarJugador;
 import Modelos.Jugador;
 import java.awt.event.ActionEvent;
@@ -69,7 +68,7 @@ public class ControladorSeleccionarJugadores {
     }
 
     private void jugar() {
-        Gameplay gameplay = new Gameplay(null);
+        Gameplay gameplay = new Gameplay();
         gameplay.setVisible(true);
         vistaSeleccionarJugador.dispose();
     }

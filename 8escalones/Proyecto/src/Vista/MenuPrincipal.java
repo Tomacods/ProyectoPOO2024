@@ -1,6 +1,5 @@
 package Vista;
 
-import controlador.MenuPrincipalController;
 
 public class MenuPrincipal extends javax.swing.JFrame {
 
@@ -11,7 +10,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconJugar, "Proyecto/src/imagenes/Joystick.png");
     }
 
-    @SuppressWarnings("unchecked")
     private void initComponents() {
         jPanel1 = new javax.swing.JPanel();
         jLabelJugar = new javax.swing.JLabel();

@@ -2,11 +2,9 @@ package controlador;
 
 import Vista.MenuPrincipal;
 import Vista.SeleccionarJugador;
-import Vista.OpcionesGenerales;
-import Vista.ABMJugadores;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import controlador.ControladorOpcionesGenerales;
+
 
 public class MenuPrincipalController {
     private MenuPrincipal menuPrincipal;
@@ -38,6 +36,12 @@ public class MenuPrincipalController {
                 salirDelJuego();
             }
         });
+        this.menuPrincipal.jButtonAyuda.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                abrirAyuda();
+            }
+        });
     }
 
     private void abrirSeleccionarJugador() {
@@ -59,5 +63,9 @@ public class MenuPrincipalController {
 
     private void salirDelJuego() {
         System.exit(0);
+    }
+    private void abrirAyuda() {
+        new ControladorAyuda();
+        menuPrincipal.dispose();
     }
 }

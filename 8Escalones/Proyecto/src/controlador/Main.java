@@ -1,7 +1,6 @@
 package controlador;
 import java.sql.SQLException;
 
-import Vista.*;
 
 
 public class Main {

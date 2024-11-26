@@ -1,7 +1,6 @@
 package controlador;
 
 import Vista.AdminContraseña;
-import Vista.ModoAdmin;
 import Vista.OpcionesGenerales;
 
 import java.awt.event.ActionEvent;

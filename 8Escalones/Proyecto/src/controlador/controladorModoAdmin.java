@@ -1,8 +1,5 @@
 package controlador;
 
-import Vista.ABMPreguntas;
-import Vista.ABMTematicas;
-import Vista.MenuPrincipal;
 import Vista.ModoAdmin;
 
 import java.awt.event.ActionEvent;

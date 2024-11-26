@@ -1,7 +1,6 @@
 package controlador;
 
 import Vista.Creditos;
-import Vista.OpcionesGenerales;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
