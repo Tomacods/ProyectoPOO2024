@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package ventanas;
+package Vista;
 
 /**
  *
@@ -289,6 +289,46 @@ public class Gameplay extends javax.swing.JFrame {
     public javax.swing.JTextField jTextFieldPregunta;
     public javax.swing.JTextField jTextFieldRonda;
     public javax.swing.JTextField jTextFieldTematica;
+    
+    public javax.swing.JButton getjButtonExit() {
+        return jButtonExit;
+    }
+
+    public javax.swing.JButton getjButtonRtaA() {
+        return jButtonRtaA;
+    }
+
+    public javax.swing.JButton getjButtonRtaB() {
+        return jButtonRtaB;
+    }
+
+    public javax.swing.JButton getjButtonRtaC() {
+        return jButtonRtaC;
+    }
+
+    public javax.swing.JButton getjButtonRtaD() {
+        return jButtonRtaD;
+    }
+
+    public javax.swing.JTextField getjTextFieldEscalon() {
+        return jTextFieldEscalon;
+    }
+
+    public javax.swing.JTextField getjTextFieldJugador() {
+        return jTextFieldJugador;
+    }
+
+    public javax.swing.JTextField getjTextFieldPregunta() {
+        return jTextFieldPregunta;
+    }
+
+    public javax.swing.JTextField getjTextFieldRonda() {
+        return jTextFieldRonda;
+    }
+
+    public javax.swing.JTextField getjTextFieldTematica() {
+        return jTextFieldTematica;
+    }
     // End of variables declaration//GEN-END:variables
 }
 
