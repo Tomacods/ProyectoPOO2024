@@ -10,7 +10,7 @@ import Vista.Gameplay;
 public class ControladorGameplay {
     private Gameplay vista;
     public ControladorGameplay() throws SQLException{
-        this.vista= new Gameplay(this);
+        this.vista= new Gameplay();
         vista.setVisible(true);
         traerPregunta();
        // traerRespuestas();

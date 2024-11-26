@@ -4,10 +4,8 @@ package Vista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import controlador.ControladorABMTematica;
 
 public class ABMTematicas extends javax.swing.JFrame {
-    private ControladorABMTematica controlador;
 
     public ABMTematicas() {
         initComponents();

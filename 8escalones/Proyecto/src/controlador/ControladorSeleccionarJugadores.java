@@ -1,7 +1,6 @@
 package controlador;
 
 import Vista.Gameplay;
-import Vista.MenuPrincipal;
 import Vista.SeleccionarJugador;
 import Modelos.Jugador;
 import java.awt.event.ActionEvent;
@@ -64,14 +63,12 @@ public class ControladorSeleccionarJugadores {
     
 
     private void volverAtras() {
-        MenuPrincipal menuPrincipal = new MenuPrincipal();
-        new MenuPrincipalController(menuPrincipal);
-        menuPrincipal.setVisible(true); // Abre la vista MenuPrincipal
+        new MenuPrincipalController();
         vistaSeleccionarJugador.dispose(); // Cierra la ventana actual
     }
 
     private void jugar() {
-        Gameplay gameplay = new Gameplay(null);
+        Gameplay gameplay = new Gameplay();
         gameplay.setVisible(true);
         vistaSeleccionarJugador.dispose();
     }

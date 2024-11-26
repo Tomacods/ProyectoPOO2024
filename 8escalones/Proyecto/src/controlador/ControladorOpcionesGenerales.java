@@ -1,28 +1,28 @@
 package controlador;
 import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
-import Vista.MenuPrincipal;
+
 import Vista.OpcionesGenerales;
-import java.awt.*;
-import javax.swing.*;
+
 
 public class ControladorOpcionesGenerales {
     private OpcionesGenerales menuOpciones;
     
-    public ControladorOpcionesGenerales (OpcionesGenerales opcionesGenerales){ 
-        this.menuOpciones = opcionesGenerales;
+    public ControladorOpcionesGenerales (){ 
+        this.menuOpciones = new OpcionesGenerales();
+        this.menuOpciones.setVisible(true);
         this.menuOpciones.jButtonBack.addActionListener(new ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt){
                 menuOpciones.dispose();
-                MenuPrincipal menuPrincipal = new MenuPrincipal();
-                new MenuPrincipalController(menuPrincipal);
-                menuPrincipal.setVisible(true);
+                new MenuPrincipalController();
                 
             }
         });
         this.menuOpciones.jButtonCreditos.addActionListener(new ActionListener(){
-            public void actionPerformed(java.awt.event.ActionEvent evt){};
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+                new ControladorCreditos();
+                menuOpciones.dispose();
+            }
         });
         this.menuOpciones.jButtonModoAdmin.addActionListener(new ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt){

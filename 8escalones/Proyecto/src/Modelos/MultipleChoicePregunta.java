@@ -45,6 +45,10 @@ public class MultipleChoicePregunta {
         return respuestaCorrecta;
     }
 
+    public void setRespuestaCorrecta(String respuestaCorrecta) {
+        this.respuestaCorrecta = respuestaCorrecta;
+    }
+
     public int getIdPregunta() {
         return idPregunta;
     }

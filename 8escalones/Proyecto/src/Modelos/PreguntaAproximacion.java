@@ -75,6 +75,24 @@ public static void insertarPreguntaAproximacion(PreguntaAproximacion preguntaApr
         AproximacionDAO dao = new AproximacionDAO();
         dao.actualizarPreguntaAproximacion(preguntaAproximacion);
     }
+    public static PreguntaAproximacion obtenerPreguntaPorEnunciado(String enunciado, int idTematica) throws SQLException {
+        // Obtener las preguntas de la temática específica
+        ArrayList<PreguntaAproximacion> preguntas = obtenerPreguntasAproximacionTematica(idTematica);
+    
+        // Buscar la pregunta que coincide con el enunciado
+        for (PreguntaAproximacion pregunta : preguntas) {
+            if (pregunta.getEnunciado().equals(enunciado)) {
+                return pregunta; // Devuelve la pregunta completa
+            }
+        }
+        
+        // Si no se encuentra, lanzar una excepción indicando que no se encontró
+        throw new IllegalArgumentException("No se encontró una pregunta con el enunciado: " + enunciado + " para la temática con ID: " + idTematica);
+    }
+
+    public void setEnunciado(String nuevaPregunta) {
+        this.enunciado= nuevaPregunta;
+    }
 
 
 

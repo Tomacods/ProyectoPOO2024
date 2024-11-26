@@ -2,10 +2,7 @@ package Modelos;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Ronda {
     private int idJuego;
@@ -59,9 +56,13 @@ public class Ronda {
             System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
             realizarPreguntas(this.escalon.getTematica().getId());
         }
-        determinarResultado();
-        this.estado = "finalizado";
-    }
+        Boolean empate = determinarResultado();
+        if (empate == false) {
+            this.estado = "finalizado";
+        } else {
+            desempatar(this.escalon.getTematica().getId(),empate);
+        }
+    }//APLICAR EN EL CONTROLADOR
 
     private void realizarPreguntas(int idEscalon) {
         ArrayList<MultipleChoicePregunta> pregMult = new ArrayList<>();
@@ -69,28 +70,33 @@ public class Ronda {
         for (Jugador jugador : jugadores) {
             MultipleChoicePregunta pregunta = pregMult.get(new Random().nextInt(pregMult.size()));
             System.out.println("Pregunta para " + jugador.getNombre() + ": "+"\n" + pregunta.getEnunciado());
-            pregunta.imprimirOpciones();
-            // La respuesta se obtiene de un botón. 
-            // Simular respuesta del jugador
-            String respuesta = "Opción A"; // Ejemplo de respuesta
-            if (pregunta.getRespuestaCorrecta() == respuesta) {
-                System.out.println("Respuesta correcta");
-                jugador.incrementarPuntaje();
-            } else {
-                System.out.println("Respuesta incorrecta");
-            }
+            jugador = preguntarJugador(jugador, pregunta);
             pregMult.remove(pregunta);
         }
+    }
+
+    public Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta){
+        pregunta.imprimirOpciones();
+        String respuesta = "Opción A"; // Se conectaria con el controlador para obtener la respuesta
+        if (pregunta.getRespuestaCorrecta() == respuesta) {
+            System.out.println("Respuesta correcta");
+            jugador.incrementarPuntaje();
+        } else {
+            System.out.println("Respuesta incorrecta");
+        }
+        return jugador;
     }
     
     //metodoo para realizar preguntas por aproximacion
     //recorro la lista de jugadores y de las respuestas que me dicen compararlas con la respuesta correcta, la que mas se aproxime es la que se toma como correcta y el queda en el escalon
 
 
-    private void determinarResultado() throws SQLException {
+    public boolean determinarResultado() throws SQLException {
         // Lógica para determinar el resultado de la ronda
         // Por ejemplo, eliminar al jugador con menos puntaje
+        // ESTE CODIGO DEBE UTILIZARSE EN EL CONTROLADOR GAMEPLAY EN CONTROLADOR GAMEPLAY_APROXIMACION
         Jugador jugadorMenorPuntaje = jugadores.get(1);
+        Boolean empate;
         for (Jugador jugador : jugadores) {
             if (jugador.getPuntaje() < jugadorMenorPuntaje.getPuntaje()) {
                 jugadorMenorPuntaje = jugador;
@@ -103,36 +109,36 @@ public class Ronda {
         }
         if (empatados.size()== 1){
             eliminarJugador(empatados.get(0));
-            
+            return empate = false;//Llevaria al Controlador de Siguiente Escalon
         }else{
-            desempatar(this.escalon.getTematica().getId());
+            return empate = true;//Llevaria al controlador de Gameplay_Aproximacion
+            //desempatar(this.escalon.getTematica().getId());
         }
     }
 
-    private void desempatar(int idEscalon) throws SQLException {
+    public void desempatar(int idEscalon, boolean empate) throws SQLException {
         ArrayList<PreguntaAproximacion> pregAprox = new ArrayList<>();
         pregAprox = PreguntaAproximacion.obtenerPreguntasAproximacionTematica(idEscalon);
         System.out.println("A continuación, ¡Evaluaremos el desempate!");
         Boolean eliminado = true;
-        Scanner sc = new Scanner(System.in);
-        Map<Jugador, Integer> respuestas= new HashMap<>();
         while (eliminado) {
             PreguntaAproximacion pregunta = pregAprox.get(new Random().nextInt(pregAprox.size()));
             System.out.println("Pregunta desempate " + ": "+"\n" + pregunta.getEnunciado());
             for (Jugador jugador : empatados){
                 System.out.println("Responde el jugador " + jugador.getNombre());
-                respuestas.put(jugador, sc.nextInt());
+                jugador = preguntarAproximacion(jugador, pregunta);
             }
             int peorRta = 0;
-            for(Map.Entry<Jugador, Integer> entry : respuestas.entrySet()){
-                if (valorAbsoluto((pregunta.getValorAproximado() - entry.getValue())) > peorRta) {
+            for(Jugador jugador : empatados){
+                jugador.setPuntaje(valorAbsoluto((pregunta.getValorAproximado() - jugador.getPuntaje())));
+                if (jugador.getPuntaje() > peorRta) {
                     /* removeEmpatado(empatados.get(j)); */
-                    peorRta = valorAbsoluto((pregunta.getValorAproximado() - entry.getValue()));
+                    peorRta = jugador.getPuntaje();
                 }
             }
-            for(Map.Entry<Jugador, Integer> entry : respuestas.entrySet()){
-                if (valorAbsoluto((pregunta.getValorAproximado() - entry.getValue())) != peorRta) {
-                    removeEmpatado(entry.getKey());
+            for(Jugador jugador : empatados){
+                if (jugador.getPuntaje() != peorRta) {
+                    removeEmpatado(jugador);
                 }
             }
             if(empatados.size() == 1){
@@ -141,8 +147,13 @@ public class Ronda {
             }
             pregAprox.remove(pregunta);
         }
-/*         sc.close();
- */    }
+    }
+
+public Jugador preguntarAproximacion(Jugador jugador, PreguntaAproximacion pregunta) {
+    int rta = 2;
+    jugador.setPuntaje(rta); //Obtener de vista la respuesta
+    return jugador;
+}
     private int valorAbsoluto(int numero){
         if (numero>=0){
             return numero;
