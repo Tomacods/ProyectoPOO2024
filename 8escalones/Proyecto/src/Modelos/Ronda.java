@@ -22,39 +22,40 @@ public class Ronda {
         this.estado = "en curso";
     }
 
-    public void rondaFinal(){
+    public Jugador rondaFinal(ArrayList<Tematica> tematicas, ArrayList<Jugador> jugadores){
         inicializarPuntos();
-        Random random = new Random();
-        ArrayList<MultipleChoicePregunta> pregMult = new ArrayList<>();
-        ArrayList<Tematica> tematicas = new ArrayList<>();
-        tematicas = Tematica.obtenerTematicas();
+        int pos = 0;
         for (int i = 1; i<=5; i++){
-            System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
-            realizarPreguntas(tematicas.get(random.nextInt(tematicas.size())).getId());
+            Tematica tematica = tematicas.get(pos);
+            realizarPreguntas(tematica.getId(), jugadores);
             if (Math.abs(jugadores.get(0).getPuntaje() - jugadores.get(1).getPuntaje()) >= 3) {
                 System.out.println("\n¡" + (jugadores.get(0).getPuntaje() > jugadores.get(1).getPuntaje() ? jugadores.get(0).getNombre() : jugadores.get(1).getNombre()) + " ES EL GANADOR DE LOS 8 ESCALONES!");
                 break; // Salir del for
             }
+            pos++;
         }
         if (jugadores.get(0).getPuntaje() == jugadores.get(1).getPuntaje()) {
-            System.out.println("Chemendro empate de "+jugadores.get(0).getNombre()+jugadores.get(1).getNombre()+" causas!!!");
-            /* while (jugadores.get(0).getPuntaje() == jugadores.get(1).getPuntaje()) {
-                realizarPreguntas(tematicas.get(random.nextInt(tematicas.size())).getId());
-            } */
+            while (jugadores.get(0).getPuntaje() == jugadores.get(1).getPuntaje()) {
+                Tematica tematica = tematicas.get(pos);
+                realizarPreguntas(tematica.getId(), jugadores);
+                pos++;
+                if (pos > tematicas.size()) {
+                    pos = 0;
+                }
+            }
         }
-        /* if (jugadores.get(0).getPuntaje() > jugadores.get(1).getPuntaje()) {
-            System.out.println("\n¡" + jugadores.get(0).getNombre()  + " ES EL GANADOR DE LOS 8 ESCALONES!");
+        if (jugadores.get(0).getPuntaje() > jugadores.get(1).getPuntaje()) {
+            return jugadores.get(0);//DEVUELVE SI GANO EL JUGADOR 0
         } else {
-            System.out.println("\n¡" + jugadores.get(1).getNombre()  + " ES EL GANADOR DE LOS 8 ESCALONES!");
-        } */
+            return jugadores.get(1);//DEVUELVE SI GANO EL JUGADOR 1
+        }
     }
-
 
     public void iniciarRonda() throws SQLException {
         inicializarPuntos();
         for(int i = 1; i<=2;i++){
             System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
-            realizarPreguntas(this.escalon.getTematica().getId());
+            realizarPreguntas(this.escalon.getTematica().getId(), jugadores);
         }
         Boolean empate = determinarResultado();
         if (empate == false) {
@@ -64,9 +65,9 @@ public class Ronda {
         }
     }//APLICAR EN EL CONTROLADOR
 
-    private void realizarPreguntas(int idEscalon) {
+    private void realizarPreguntas(int idTematica, ArrayList<Jugador> jugadores) {
         ArrayList<MultipleChoicePregunta> pregMult = new ArrayList<>();
-        pregMult = MultipleChoicePregunta.obtenerPreguntasMC(idEscalon);//Trae las preguntas MC de la BD
+        pregMult = MultipleChoicePregunta.obtenerPreguntasMC(idTematica);//Trae las preguntas MC de la BD
         for (Jugador jugador : jugadores) {
             MultipleChoicePregunta pregunta = pregMult.get(new Random().nextInt(pregMult.size()));
             System.out.println("Pregunta para " + jugador.getNombre() + ": "+"\n" + pregunta.getEnunciado());
