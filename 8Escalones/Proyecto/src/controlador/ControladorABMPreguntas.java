@@ -8,6 +8,7 @@ import Modelos.PreguntaAproximacion;
 import Modelos.Tematica;
 import Vista.ABMPreguntas;
 
+
 public class ControladorABMPreguntas {
     private ABMPreguntas vista;
 
@@ -98,14 +99,18 @@ public class ControladorABMPreguntas {
         String tipoSeleccionado = (String) vista.getjComboBoxTipo().getSelectedItem();
         if (tipoSeleccionado != null) {
             vista.getjComboBoxPregunta().removeAllItems();
-            try {
-                if (tipoSeleccionado.equals("Multiple choice")) {
-                    traerPreguntasMC(idTematica);
-                } else if (tipoSeleccionado.equals("Aproximacion")) {
-                    traerPreguntasAprox(idTematica);
+            EstrategiaPregunta estrategia = null;
+            if (tipoSeleccionado.equals("Multiple choice")) {
+                estrategia = new EstrategiaPreguntaMC(vista);
+            } else if (tipoSeleccionado.equals("Aproximacion")) {
+                estrategia = new EstrategiaPreguntaAprox(vista);
+            }
+            if (estrategia != null) {
+                try {
+                    estrategia.traerPreguntas(idTematica);
+                } catch (SQLException ex) {
+                    System.err.println("Error al obtener preguntas: " + ex.getMessage());
                 }
-            } catch (SQLException ex) {
-                System.err.println("Error al obtener preguntas: " + ex.getMessage());
             }
         }
     }
