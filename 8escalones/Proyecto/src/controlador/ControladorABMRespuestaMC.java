@@ -49,42 +49,23 @@ public class ControladorABMRespuestaMC {
             }
         });
 
-        this.vista.jTextFieldRtaA.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                modificar_respuesta(0, vista.jTextFieldRtaA.getText());
-            }
-        });
-
-        this.vista.jTextFieldRtaB.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                modificar_respuesta(1, vista.jTextFieldRtaB.getText());
-            }
-        });
-
-        this.vista.jTextFieldRtaC.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                modificar_respuesta(2, vista.jTextFieldRtaC.getText());
-            }
-        });
-
-        this.vista.jTextFieldRtaD.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                modificar_respuesta(3, vista.jTextFieldRtaD.getText());
-            }
-        });
-
         this.vista.setVisible(true);
     }
 
     private void volver() throws SQLException {
+
         cambiar_correcta();
+        modificar_respuesta(0, vista.jTextFieldRtaA.getText());
+        modificar_respuesta(1, vista.jTextFieldRtaB.getText());
+        modificar_respuesta(2, vista.jTextFieldRtaC.getText());
+        modificar_respuesta(3, vista.jTextFieldRtaD.getText());
+
         if (esNueva == false) {
+            System.out.println("actualizando pregunta...");
             MultipleChoicePregunta.actualizarPregunta(pregunta_actual);
-        } else {
+        }
+        else {
+            System.out.println("insertando nueva pregunta...");
             MultipleChoicePregunta.insertarPregunta(pregunta_actual, this.pregunta_actual.getOpciones());
         }
         this.vista.dispose();

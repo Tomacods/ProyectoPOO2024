@@ -14,6 +14,7 @@ public class ControladorABMRespuestaAprox {
     public ControladorABMRespuestaAprox(PreguntaAproximacion pregunta, boolean esNueva) {
         this.vista = new ABMRespuestaAprox();
         this.preguntaActual = pregunta;
+        this.esNueva = esNueva;
         iniciarVista();
     }
 
@@ -40,9 +41,11 @@ public class ControladorABMRespuestaAprox {
         guardarCambios();
 
         if (esNueva == false) {
+            System.out.println("actualizando pregunta...");
             PreguntaAproximacion.actualizarPreguntaAprox(this.preguntaActual);
         }
         else {
+            System.out.println("insertando nueva pregunta...");
             PreguntaAproximacion.insertarPreguntaAproximacion(this.preguntaActual);
         }
 
