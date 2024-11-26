@@ -4,7 +4,6 @@ package Vista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class ABMTematicas extends javax.swing.JFrame {
 
     public ABMTematicas() {
@@ -71,7 +70,7 @@ public class ABMTematicas extends javax.swing.JFrame {
                 String selectedTematica = (String) jComboBoxTematica.getSelectedItem();
 
                 if (selectedTematica != null) {
-                  //  controlador.seleccionarTematica(selectedTematica);
+                    // controlador.seleccionarTematica(selectedTematica);
                 }
             }
         });
@@ -158,11 +157,10 @@ public class ABMTematicas extends javax.swing.JFrame {
     public void listenerModificarTematica(ActionListener listener) {
         jButtonModificarTematica.addActionListener(listener);
     }
-  
+
     public void listenerAtras(ActionListener listener) {
         jButtonBack.addActionListener(listener);
     }
-
 
     public static void main(String args[]) {
         try {
@@ -188,7 +186,7 @@ public class ABMTematicas extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               // ControladorABMTematica controlador = new ControladorABMTematica();
+                // ControladorABMTematica controlador = new ControladorABMTematica();
                 new ABMTematicas().setVisible(true);
             }
         });
@@ -211,7 +209,6 @@ public class ABMTematicas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldABMPreguntas;
     private javax.swing.JTextField jTextFieldNuevaTematica;
     private javax.swing.JTextField jTextFieldTematica;
-
 
     public javax.swing.JComboBox<String> getComboBoxTematica() {
         return jComboBoxTematica;

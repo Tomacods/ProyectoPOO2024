@@ -9,33 +9,33 @@ import Vista.Gameplay;
 
 public class ControladorGameplay {
     private Gameplay vista;
-    public ControladorGameplay() throws SQLException{
-        this.vista= new Gameplay();
+
+    public ControladorGameplay() throws SQLException {
+        this.vista = new Gameplay();
         vista.setVisible(true);
         traerPregunta();
-       // traerRespuestas();
-        
+        // traerRespuestas();
+
     }
 
-    private void traerTematica(){
+    private void traerTematica() {
 
-          //puedo sacar la tematica del modelo escalon
+        // puedo sacar la tematica del modelo escalon
     }
 
-    private void traerPregunta() throws SQLException{
+    private void traerPregunta() throws SQLException {
         String pregunta = MultipleChoicePregunta.obtenerPreguntaMC(2).getEnunciado();
-        int id_pregunta= MultipleChoicePregunta.obtenerPreguntaMC(2).getIdPregunta();
+        int id_pregunta = MultipleChoicePregunta.obtenerPreguntaMC(2).getIdPregunta();
         vista.getjTextFieldPregunta().setText(pregunta);
         traerRespuestas(id_pregunta);
 
     }
-    private void getIdPregunta(){
 
-
+    private void getIdPregunta() {
 
     }
 
-    private void traerRespuestas(int id_pregunta) throws SQLException{
+    private void traerRespuestas(int id_pregunta) throws SQLException {
         ArrayList<Respuesta> respuestas = Respuesta.obtenerRespuestasPorPregunta(id_pregunta);
         vista.getjButtonRtaA().setText(respuestas.get(0).getTexto());
         vista.getjButtonRtaB().setText(respuestas.get(1).getTexto());

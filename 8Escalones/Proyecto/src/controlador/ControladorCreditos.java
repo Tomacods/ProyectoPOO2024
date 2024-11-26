@@ -10,7 +10,7 @@ public class ControladorCreditos {
     public ControladorCreditos() {
         this.creditos = new Creditos();
         this.creditos.setVisible(true);
-        
+
         this.creditos.jButtonExit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

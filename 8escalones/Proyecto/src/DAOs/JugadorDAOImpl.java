@@ -1,4 +1,5 @@
 package DAOs;
+
 import Modelos.Jugador;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,19 +9,19 @@ import java.util.ArrayList;
 public class JugadorDAOImpl {
     private final BaseDeDatos connection = BaseDeDatos.obtenerInstancia();
 
-    public JugadorDAOImpl(){
+    public JugadorDAOImpl() {
     }
 
-    public void insertarJugador(Jugador jugador){
+    public void insertarJugador(Jugador jugador) {
         String query = "INSERT INTO jugador( nombre, puntaje, estado) VALUES (?,?,?)";
-        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)){
+        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
 
             statement.setString(1, jugador.getNombre());
             statement.setInt(2, jugador.getPuntaje());
             statement.setString(3, jugador.getEstado());
             statement.executeUpdate();
-        } catch (SQLException e){
-            e.printStackTrace(); 
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -36,7 +37,7 @@ public class JugadorDAOImpl {
             e.printStackTrace();
         }
     }
-    
+
     public void eliminarJugador(int id) {
         String query = "DELETE FROM jugador WHERE id_jugador = ?";
         try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
@@ -47,20 +48,20 @@ public class JugadorDAOImpl {
         }
     }
 
-//Querys
-   public ArrayList<Object[]> obtenerJugadores() { //DEVUELVE LOS JUGADORES 
+    // Querys
+    public ArrayList<Object[]> obtenerJugadores() { // DEVUELVE LOS JUGADORES
         ArrayList<Object[]> jugadores = new ArrayList<>();
         String query = "select * from jugador";
-        
+
         try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 Object[] row = {
-                    resultSet.getInt("id_jugador"),   
-                    resultSet.getString("nombre"),  
-                    resultSet.getInt("puntaje"),
-                    resultSet.getString("estado")  
+                        resultSet.getInt("id_jugador"),
+                        resultSet.getString("nombre"),
+                        resultSet.getInt("puntaje"),
+                        resultSet.getString("estado")
                 };
                 jugadores.add(row);
             }
@@ -68,9 +69,9 @@ public class JugadorDAOImpl {
             e.printStackTrace();
         }
         return jugadores;
-    } 
+    }
 
-    public Jugador obtenerJugador (int id_jugador) throws SQLException {
+    public Jugador obtenerJugador(int id_jugador) throws SQLException {
         String query = "SELECT * FROM jugador WHERE id_jugador = ?";
         try (PreparedStatement statement = BaseDeDatos.prepareStatement(query)) {
             statement.setInt(1, id_jugador);
@@ -80,16 +81,13 @@ public class JugadorDAOImpl {
                             resultSet.getInt("id_jugador"),
                             resultSet.getString("nombre"),
                             resultSet.getInt("puntaje"),
-                            resultSet.getString("estado")  
-                    );
+                            resultSet.getString("estado"));
                 }
             }
-        }catch (SQLException ex){
+        } catch (SQLException ex) {
             throw new SQLException("Error al obtener jugador: " + ex.getMessage());
         }
         return null;
     }
 
-    
 }
-

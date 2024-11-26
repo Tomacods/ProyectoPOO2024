@@ -141,7 +141,7 @@ public class MultipleChoiceDAO {
     public MultipleChoicePregunta obtenerPreguntaConRespuestas(int id_pregunta) throws SQLException {
         String queryPregunta = "SELECT * FROM pregunta_multiple_choise WHERE id_pregunta_mc = ?";
         MultipleChoicePregunta pregunta = null;
-    
+
         try (PreparedStatement statementPregunta = BaseDeDatos.prepareStatement(queryPregunta)) {
             statementPregunta.setInt(1, id_pregunta);
             try (ResultSet resultSetPregunta = statementPregunta.executeQuery()) {
@@ -153,11 +153,11 @@ public class MultipleChoiceDAO {
                 }
             }
         }
-    
+
         if (pregunta != null) {
             List<Object[]> objetosRespuestas = rta.obtenerRespuestasPorPregunta(id_pregunta);
             List<Respuesta> respuestas = new ArrayList<>();
-    
+
             for (Object[] obj : objetosRespuestas) {
                 Respuesta respuesta = new Respuesta(
                         (int) obj[0], // ID de respuesta
@@ -167,16 +167,15 @@ public class MultipleChoiceDAO {
                 );
                 respuestas.add(respuesta);
             }
-    
+
             for (Respuesta respuesta : respuestas) {
                 pregunta.agregarRespuesta(respuesta);
             }
         }
-    
+
         return pregunta;
     }
 }
-    
 
 /*
  * public MultipleChoiceDAO(Connection Connection){

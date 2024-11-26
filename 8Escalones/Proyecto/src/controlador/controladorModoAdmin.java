@@ -9,7 +9,7 @@ public class ControladorModoAdmin {
     private ModoAdmin vista;
 
     public ControladorModoAdmin() {
-        this.vista =  new ModoAdmin();
+        this.vista = new ModoAdmin();
         this.vista.setVisible(true);
 
         this.vista.getjButtonBack().addActionListener(new ActionListener() {

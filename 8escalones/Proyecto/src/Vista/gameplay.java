@@ -6,18 +6,16 @@ import java.sql.SQLException;
 import controlador.ControladorGameplay;
 
 public class Gameplay extends javax.swing.JFrame {
-   // @SuppressWarnings("unused")
+    // @SuppressWarnings("unused")
 
-
-        public Gameplay() {
-            initComponents();
-            this.setLocationRelativeTo(null);
-            rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
-            rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "Proyecto/src/imagenes/entretenimiento.png");
-            rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser, "Proyecto/src/imagenes/user.png");
-            rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
+    public Gameplay() {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "Proyecto/src/imagenes/entretenimiento.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser, "Proyecto/src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
     }
-
 
     private void initComponents() {
 
@@ -159,7 +157,7 @@ public class Gameplay extends javax.swing.JFrame {
         jTextFieldTurnoActual.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldTurnoActual.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldTurnoActual.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldTurnoActual.setText("TURNO ACTUAL"); 
+        jTextFieldTurnoActual.setText("TURNO ACTUAL");
         jTextFieldTurnoActual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldTurnoActualActionPerformed(evt);
@@ -175,48 +173,52 @@ public class Gameplay extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600,
+                                javax.swing.GroupLayout.PREFERRED_SIZE));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-    }//GEN-LAST:event_jButtonExitActionPerformed
+    private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonExitActionPerformed
+    }// GEN-LAST:event_jButtonExitActionPerformed
 
-    private void jButtonRtaDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRtaDActionPerformed
+    private void jButtonRtaDActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonRtaDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonRtaDActionPerformed
+    }// GEN-LAST:event_jButtonRtaDActionPerformed
 
-    private void jTextFieldPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPreguntaActionPerformed
+    private void jTextFieldPreguntaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextFieldPreguntaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldPreguntaActionPerformed
+    }// GEN-LAST:event_jTextFieldPreguntaActionPerformed
 
-    private void jTextFieldJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldJugadorActionPerformed
+    private void jTextFieldJugadorActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextFieldJugadorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldJugadorActionPerformed
+    }// GEN-LAST:event_jTextFieldJugadorActionPerformed
 
-    private void jButtonRtaAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRtaAActionPerformed
+    private void jButtonRtaAActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonRtaAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonRtaAActionPerformed
+    }// GEN-LAST:event_jButtonRtaAActionPerformed
 
-    private void jTextFieldTurnoActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTurnoActualActionPerformed
+    private void jTextFieldTurnoActualActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextFieldTurnoActualActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldTurnoActualActionPerformed
+    }// GEN-LAST:event_jTextFieldTurnoActualActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel.
+         * For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -234,8 +236,8 @@ public class Gameplay extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Gameplay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
+        // </editor-fold>
+        // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -279,32 +281,24 @@ public class Gameplay extends javax.swing.JFrame {
         return jTextFieldPregunta;
     }
 
-
     public javax.swing.JButton getjButtonRtaA() {
         return jButtonRtaA;
     }
-
 
     public javax.swing.JButton getjButtonRtaB() {
         return jButtonRtaB;
     }
 
-
     public javax.swing.JButton getjButtonRtaC() {
         return jButtonRtaC;
     }
-
 
     public javax.swing.JButton getjButtonRtaD() {
         return jButtonRtaD;
     }
 
-
     public javax.swing.JTextField getjTextFieldTurnoActual() {
         return jTextFieldTurnoActual;
     }
 
-
-    
 }
-
