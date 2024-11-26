@@ -7,6 +7,7 @@ package Vista;
 import controlador.ControladorSeleccionarJugadores;
 import java.awt.Image;
 import java.awt.event.ActionListener;
+import java.awt.ActionEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.*; 
@@ -142,10 +143,9 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ1.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ1.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxJ1ActionPerformed(evt);
+                jComboBoxJ2ActionPerformed(evt);
             }
         });
         jPanel1.add(jComboBoxJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 120, -1));
@@ -153,7 +153,6 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ2.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ2.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ2.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ2ActionPerformed(evt);
@@ -164,7 +163,6 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ3.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ3.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ3.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ3ActionPerformed(evt);
@@ -175,7 +173,6 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ4.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ4.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ4.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ4ActionPerformed(evt);
@@ -186,7 +183,6 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ5.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ5.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ5.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ5ActionPerformed(evt);
@@ -197,7 +193,6 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ6.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ6.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ6.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ6ActionPerformed(evt);
@@ -208,7 +203,6 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ7.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ7.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ7.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ7ActionPerformed(evt);
@@ -219,7 +213,6 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ8.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ8.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ8.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ8ActionPerformed(evt);
@@ -230,7 +223,6 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ9.setBackground(new java.awt.Color(102, 0, 102));
         jComboBoxJ9.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxJ9.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxJ9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJ9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxJ9ActionPerformed(evt);
@@ -257,11 +249,6 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
-    public void listenerJugador(ActionListener listener) {
-        jComboBoxJ1.addActionListener(listener);
-    }
-    
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
     }//GEN-LAST:event_jButtonExitActionPerformed
 
@@ -311,6 +298,42 @@ public class SeleccionarJugador extends javax.swing.JFrame {
     private void jComboBoxJ9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxJ9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxJ9ActionPerformed
+
+    public void listenerJ1(ActionListener listener) {
+        jComboBoxJ1.addActionListener(listener);
+    }
+
+    public void listenerJ2(ActionListener listener) {
+        jComboBoxJ2.addActionListener(listener);
+    }
+
+    public void listenerJ3(ActionListener listener) {
+        jComboBoxJ3.addActionListener(listener);
+    }
+
+    public void listenerJ4(ActionListener listener) {
+        jComboBoxJ4.addActionListener(listener);
+    }
+
+    public void listenerJ5(ActionListener listener) {
+        jComboBoxJ5.addActionListener(listener);
+    }
+
+    public void listenerJ6(ActionListener listener) {
+        jComboBoxJ6.addActionListener(listener);
+    }
+
+    public void listenerJ7(ActionListener listener) {
+        jComboBoxJ7.addActionListener(listener);
+    }
+
+    public void listenerJ8(ActionListener listener) {
+        jComboBoxJ8.addActionListener(listener);
+    }
+
+    public void listenerJ9(ActionListener listener) {
+        jComboBoxJ9.addActionListener(listener);
+    }
 
     /**
      * @param args the command line arguments
@@ -419,10 +442,5 @@ public class SeleccionarJugador extends javax.swing.JFrame {
 
     public javax.swing.JComboBox<String> getComboBoxJ9() {
         return jComboBoxJ9;
-    }
-
-    public void jComboBoxJ1(ActionListener actionListener) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'jComboBoxJ1'");
     }
 }

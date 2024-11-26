@@ -1,6 +1,5 @@
 package controlador;
 
-import Vista.Gameplay;
 import Vista.SeleccionarJugador;
 import Modelos.Jugador;
 import java.awt.event.ActionEvent;
@@ -9,16 +8,17 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class ControladorSeleccionarJugadores {
 
     private SeleccionarJugador vistaSeleccionarJugador;
     private ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
     private ArrayList<JComboBox<String>> comboBoxes;
-    private boolean updating = false;  // Bandera para evitar eventos recursivos
+    private boolean updating = false; // Bandera para evitar eventos recursivos
 
-    public ControladorSeleccionarJugadores(SeleccionarJugador vistaSeleccionarJugador) {
-        this.vistaSeleccionarJugador = vistaSeleccionarJugador;
+    public ControladorSeleccionarJugadores() {
+        this.vistaSeleccionarJugador = new SeleccionarJugador();
         this.vistaSeleccionarJugador.setVisible(true);
         this.comboBoxes = new ArrayList<>();
 
@@ -33,6 +33,7 @@ public class ControladorSeleccionarJugadores {
         comboBoxes.add(vistaSeleccionarJugador.getComboBoxJ8());
         comboBoxes.add(vistaSeleccionarJugador.getComboBoxJ9());
 
+        // Configurar botones
         this.vistaSeleccionarJugador.jButtonBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -45,7 +46,12 @@ public class ControladorSeleccionarJugadores {
                 jugar();
             }
         });
-
+        this.vistaSeleccionarJugador.jButtonExit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                salirDelJuego();
+            }
+        });
         // Inicializa y agrega ItemListener a cada JComboBox
         for (JComboBox<String> comboBox : comboBoxes) {
             traerJugadoresCB(comboBox);
@@ -60,30 +66,45 @@ public class ControladorSeleccionarJugadores {
         }
     }
 
-    
-
     private void volverAtras() {
         new MenuPrincipalController();
         vistaSeleccionarJugador.dispose(); // Cierra la ventana actual
     }
 
     private void jugar() {
-        Gameplay gameplay = new Gameplay();
-        gameplay.setVisible(true);
+        // new ControladorGameplay();
         vistaSeleccionarJugador.dispose();
     }
 
+    private void salirDelJuego() {
+        System.exit(0);
+    }
+
+    // Método para cargar jugadores en un JComboBox usando DefaultComboBoxModel
     private void traerJugadoresCB(JComboBox<String> comboBox) {
-        comboBox.removeAllItems();
+        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
         for (Jugador jugador : jugadores) {
-            comboBox.addItem(jugador.getNombre());
+            model.addElement(jugador.getNombre());
         }
+        comboBox.setModel(model);
     }
 
     private void actualizarComboBoxes() {
-        updating = true;  // Inicio de la actualización
+        updating = true; // Inicio de la actualización
 
         // Obtener jugadores seleccionados
+        ArrayList<String> seleccionados = obtenerJugadoresSeleccionados();
+
+        // Actualizar cada JComboBox
+        for (JComboBox<String> comboBox : comboBoxes) {
+            actualizarComboBox(comboBox, seleccionados);
+        }
+
+        updating = false; // Fin de la actualización
+    }
+
+    // Método auxiliar para obtener la lista de jugadores seleccionados
+    private ArrayList<String> obtenerJugadoresSeleccionados() {
         ArrayList<String> seleccionados = new ArrayList<>();
         for (JComboBox<String> comboBox : comboBoxes) {
             String seleccionado = (String) comboBox.getSelectedItem();
@@ -91,19 +112,19 @@ public class ControladorSeleccionarJugadores {
                 seleccionados.add(seleccionado);
             }
         }
+        return seleccionados;
+    }
 
-        // Actualizar cada JComboBox
-        for (JComboBox<String> comboBox : comboBoxes) {
-            String seleccionadoAnterior = (String) comboBox.getSelectedItem();
-            comboBox.removeAllItems();
-            for (Jugador jugador : jugadores) {
-                if (!seleccionados.contains(jugador.getNombre()) || jugador.getNombre().equals(seleccionadoAnterior)) {
-                    comboBox.addItem(jugador.getNombre());
-                }
+    // Método auxiliar para actualizar un JComboBox específico
+    private void actualizarComboBox(JComboBox<String> comboBox, ArrayList<String> seleccionados) {
+        String seleccionadoAnterior = (String) comboBox.getSelectedItem();
+        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
+        for (Jugador jugador : jugadores) {
+            if (!seleccionados.contains(jugador.getNombre()) || jugador.getNombre().equals(seleccionadoAnterior)) {
+                model.addElement(jugador.getNombre());
             }
-            comboBox.setSelectedItem(seleccionadoAnterior);
         }
-
-        updating = false;  // Fin de la actualización
+        comboBox.setModel(model);
+        comboBox.setSelectedItem(seleccionadoAnterior);
     }
 }
