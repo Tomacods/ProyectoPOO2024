@@ -1,14 +1,13 @@
 package controlador;
 
+import Modelos.MultipleChoicePregunta;
+import Modelos.Respuesta;
+import Vista.ABMRespuestaMC;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import Vista.ABMRespuestaMC;
-import Modelos.MultipleChoicePregunta;
-import Modelos.Respuesta;
 
 public class ControladorABMRespuestaMC {
     private ABMRespuestaMC vista;
@@ -32,6 +31,7 @@ public class ControladorABMRespuestaMC {
         respuestas.clear();
 
         this.vista.jButtonBack.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent evt) {
                 volver();
             }
@@ -45,24 +45,28 @@ public class ControladorABMRespuestaMC {
         });
 
         this.vista.jTextFieldRtaA.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent evt) {
                 modificar_respuesta(0, vista.jTextFieldRtaA.getText());
             }
         });
 
         this.vista.jTextFieldRtaB.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent evt) {
                 modificar_respuesta(1, vista.jTextFieldRtaB.getText());
             }
         });
 
         this.vista.jTextFieldRtaC.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent evt) {
                 modificar_respuesta(2, vista.jTextFieldRtaC.getText());
             }
         });
 
         this.vista.jTextFieldRtaD.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent evt) {
                 modificar_respuesta(3, vista.jTextFieldRtaD.getText());
             }

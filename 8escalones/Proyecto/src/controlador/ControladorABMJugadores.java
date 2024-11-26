@@ -14,9 +14,11 @@ public class ControladorABMJugadores {
     public ControladorABMJugadores() {
         this.vista = new ABMJugadores();
         this.jugadorSeleccionado = new Jugador();
-
         cargarJugadores();
+        iniciarVista();
+    }
 
+    private void iniciarVista() {
         this.vista.jButtonAgregarJugador.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
@@ -47,11 +49,6 @@ public class ControladorABMJugadores {
                 seleccionarJugador();
             }
         });
-
-        iniciarVista();
-    }
-
-    public void iniciarVista() {
         this.vista.setVisible(true);
     }
 
