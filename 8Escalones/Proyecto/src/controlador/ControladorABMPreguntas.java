@@ -164,7 +164,7 @@ public class ControladorABMPreguntas {
 
                 PreguntaAproximacion preguntaIns = new PreguntaAproximacion(0, "", idTematica, 0);//ver como hacer con el valor aproximado
                 this.vista.dispose();
-                ControladorABMRespuestaAprox controladorAprox = new ControladorABMRespuestaAprox(preguntaIns, true)
+                ControladorABMRespuestaAprox controladorAprox = new ControladorABMRespuestaAprox(preguntaIns, true);
 
             } else {
                 System.out.println("El campo de la nueva pregunta o la temática está vacío.");
