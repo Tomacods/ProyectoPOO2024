@@ -1,9 +1,11 @@
 package Modelos;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import DAOs.JugadorDAOImpl;
+
 import DAOs.MultipleChoiceDAO;
 
 public class MultipleChoicePregunta {
@@ -91,7 +93,17 @@ public class MultipleChoicePregunta {
             preguntasMC.add(pregunta);
         }
         return preguntasMC;
-        
+    }
+
+    public static ArrayList<MultipleChoicePregunta> obtenerTodasPreguntasMC() throws SQLException{
+        MultipleChoiceDAO dao = new MultipleChoiceDAO();
+        ArrayList<Object[]> arreglo = dao.obtenerTodasLasPreguntaMC();
+        ArrayList<MultipleChoicePregunta> preguntasMC = new ArrayList<>();
+        for (Object[] row : arreglo) {
+            MultipleChoicePregunta pregunta = new MultipleChoicePregunta((int) row[0], (String) row[1], (int) row[2]);
+            preguntasMC.add(pregunta);
+        }
+        return preguntasMC;
     }
 
     public static MultipleChoicePregunta obtenerPreguntaMC(int id_pregunta) throws SQLException{
@@ -124,8 +136,8 @@ public class MultipleChoicePregunta {
         MultipleChoiceDAO dao = new MultipleChoiceDAO();
         MultipleChoicePregunta pregunta = dao.obtenerPreguntaConRespuestas(id_pregunta);
         return pregunta;
-
     }
+
     public void imprimirPreguntaYRespuestas() { //para ver si funciona el obtenerPreguntasConRtas
         System.out.println("Pregunta: " + enunciado);
         if (opciones != null) {

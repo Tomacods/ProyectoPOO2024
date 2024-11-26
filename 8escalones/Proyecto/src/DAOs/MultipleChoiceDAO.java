@@ -114,6 +114,22 @@ public class MultipleChoiceDAO {
         }
         return null;
     }
+    public ArrayList<Object[]> obtenerTodasLasPreguntaMC() throws SQLException {
+        ArrayList<Object[]> preguntas = new ArrayList<>();
+        String query = "SELECT * FROM pregunta_multiple_choise";
+        try (PreparedStatement statement = BaseDeDatos.prepareStatement(query);
+                ResultSet resultSet = statement.executeQuery()) {
+            while (resultSet.next()) {
+                Object[] row = {
+                        resultSet.getInt("ID_pregunta_mc"),
+                        resultSet.getString("enunciado"),
+                        resultSet.getInt("ID_Tematica")
+                };
+                preguntas.add(row);
+            }
+        }
+        return preguntas;
+    }
 
     public ArrayList<Object[]> obtenerPreguntasMCPorTematica(int id) { // DEVUELVE LAS PREGUNTAS DE CIERTA TEMATICA
                                                                        // (SEGUN EL ID)

@@ -3,8 +3,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import DAOs.AproximacionDAO;
-import DAOs.MultipleChoiceDAO;
-import DAOs.TematicaDAOImpl;
 
 public class PreguntaAproximacion {
     private int idPregunta;
