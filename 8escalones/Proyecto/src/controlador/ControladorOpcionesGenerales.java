@@ -8,8 +8,9 @@ import Vista.OpcionesGenerales;
 public class ControladorOpcionesGenerales {
     private OpcionesGenerales menuOpciones;
     
-    public ControladorOpcionesGenerales (OpcionesGenerales opcionesGenerales){ 
-        this.menuOpciones = opcionesGenerales;
+    public ControladorOpcionesGenerales (){ 
+        this.menuOpciones = new OpcionesGenerales();
+        this.menuOpciones.setVisible(true);
         this.menuOpciones.jButtonBack.addActionListener(new ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt){
                 menuOpciones.dispose();
@@ -18,7 +19,10 @@ public class ControladorOpcionesGenerales {
             }
         });
         this.menuOpciones.jButtonCreditos.addActionListener(new ActionListener(){
-            public void actionPerformed(java.awt.event.ActionEvent evt){};
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+                new ControladorCreditos();
+                menuOpciones.dispose();
+            }
         });
         this.menuOpciones.jButtonModoAdmin.addActionListener(new ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt){

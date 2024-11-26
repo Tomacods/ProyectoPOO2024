@@ -43,16 +43,12 @@ public class MenuPrincipalController {
     private void abrirSeleccionarJugador() {
         SeleccionarJugador seleccionarJugador = new SeleccionarJugador();
         new ControladorSeleccionarJugadores(seleccionarJugador);
-        
         menuPrincipal.dispose();
     }
 
     private void abrirOpcionesGenerales() {
-        
-        OpcionesGenerales opcionesGenerales = new OpcionesGenerales();
-        new ControladorOpcionesGenerales(opcionesGenerales);
+        new ControladorOpcionesGenerales();
         menuPrincipal.dispose();
-        opcionesGenerales.setVisible(true);
     
     }
 

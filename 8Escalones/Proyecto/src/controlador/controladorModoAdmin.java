@@ -26,8 +26,7 @@ public class ControladorModoAdmin {
             @Override
             public void actionPerformed(ActionEvent e) {
                 vista.dispose(); // Cierra la ventana actual
-                new ABMPreguntas().setVisible(true); // Abre la vista ABMPreguntas
-                vista.dispose(); // Cierra la ventana actual
+                new ControladorABMPreguntas(); // Abre la vista ABMPreguntas
             }
         });
 
