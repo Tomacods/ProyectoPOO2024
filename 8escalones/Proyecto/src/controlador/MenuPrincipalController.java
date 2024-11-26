@@ -1,7 +1,6 @@
 package controlador;
 
 import Vista.MenuPrincipal;
-import Vista.SeleccionarJugador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -45,8 +44,7 @@ public class MenuPrincipalController {
     }
 
     private void abrirSeleccionarJugador() {
-        SeleccionarJugador seleccionarJugador = new SeleccionarJugador();
-        new ControladorSeleccionarJugadores(seleccionarJugador);
+        new ControladorSeleccionarJugadores();
         menuPrincipal.dispose();
     }
 

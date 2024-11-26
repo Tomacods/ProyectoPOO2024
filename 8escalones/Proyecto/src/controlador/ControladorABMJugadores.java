@@ -98,9 +98,7 @@ public class ControladorABMJugadores {
         
         private void volver() {
             this.vista.dispose();
-        MenuPrincipal menuPrincipal = new MenuPrincipal();
-        menuPrincipal.setVisible(true);
-        this.vista.dispose();
+            new MenuPrincipalController();
         }
 
 }

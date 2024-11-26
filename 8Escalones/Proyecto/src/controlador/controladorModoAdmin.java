@@ -11,7 +11,7 @@ public class ControladorModoAdmin {
     public ControladorModoAdmin() {
         this.vista =  new ModoAdmin();
         this.vista.setVisible(true);
-        
+
         this.vista.getjButtonBack().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -33,7 +33,6 @@ public class ControladorModoAdmin {
             public void actionPerformed(ActionEvent e) {
                 vista.dispose(); // Cierra la ventana actual
                 new ControladorABMTematica(); // Abre la vista ABMTematicas
-                vista.dispose(); // Cierra la ventana actual
             }
         });
     }

@@ -17,8 +17,8 @@ public class ControladorSeleccionarJugadores {
     private ArrayList<JComboBox<String>> comboBoxes;
     private boolean updating = false;  // Bandera para evitar eventos recursivos
 
-    public ControladorSeleccionarJugadores(SeleccionarJugador vistaSeleccionarJugador) {
-        this.vistaSeleccionarJugador = vistaSeleccionarJugador;
+    public ControladorSeleccionarJugadores() {
+        this.vistaSeleccionarJugador = new SeleccionarJugador();
         this.vistaSeleccionarJugador.setVisible(true);
         this.comboBoxes = new ArrayList<>();
 
