@@ -1,8 +1,11 @@
 package Modelos;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import DAOs.BaseDeDatos;
 import DAOs.RespuestaDAO;
 
 public class Respuesta {
@@ -76,6 +79,18 @@ public class Respuesta {
     }
     return respuestas;
 }
+
+public static int obtenerIdRtaCorrectaMC(int id_pregunta) {
+    RespuestaDAO dao = new RespuestaDAO(); // Instanciamos el DAO
+    return dao.obtenerIdRtaCorrectaMC(id_pregunta); // Llamamos al método del DAO y devolvemos el resultado
+}
+
+public static Respuesta obtenerRespuesta(int idRespuesta) throws SQLException {
+    RespuestaDAO dao = new RespuestaDAO(); // Instanciamos el DAO
+    return dao.obtenerRespuesta(idRespuesta); // Llamamos al método del DAO y devolvemos el resultado
+}
+
+
 
     
 }

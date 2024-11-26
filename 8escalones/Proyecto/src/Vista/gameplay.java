@@ -1,5 +1,7 @@
 
 package Vista;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import java.sql.SQLException;
 
@@ -81,7 +83,7 @@ public class Gameplay extends javax.swing.JFrame {
         jButtonRtaA.setText("Respuesta");
         jButtonRtaA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRtaAActionPerformed(evt);
+                System.out.println("Botón A presionado");
             }
         });
         jPanel1.add(jButtonRtaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 510, 240, 30));
@@ -90,12 +92,23 @@ public class Gameplay extends javax.swing.JFrame {
         jButtonRtaB.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaB.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaB.setText("Respuesta");
+        jButtonRtaB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                System.out.println("Botón B presionado");
+                System.out.println(jButtonRtaB.getText());
+            }
+        });
         jPanel1.add(jButtonRtaB, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 550, 240, 30));
 
         jButtonRtaC.setBackground(new java.awt.Color(102, 0, 102));
         jButtonRtaC.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         jButtonRtaC.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRtaC.setText("Respuesta");
+        jButtonRtaC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                System.out.println("Botón C presionado");
+            }
+        });
         jPanel1.add(jButtonRtaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 240, 30));
 
         jButtonRtaD.setBackground(new java.awt.Color(102, 0, 102));
@@ -104,7 +117,7 @@ public class Gameplay extends javax.swing.JFrame {
         jButtonRtaD.setText("Respuesta");
         jButtonRtaD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRtaDActionPerformed(evt);
+                System.out.println("Botón D presionado");
             }
         });
         jPanel1.add(jButtonRtaD, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 240, 30));
@@ -206,7 +219,18 @@ public class Gameplay extends javax.swing.JFrame {
     private void jTextFieldTurnoActualActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextFieldTurnoActualActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_jTextFieldTurnoActualActionPerformed
-
+    public void listenerOpcionA(ActionListener listener) {
+        jButtonRtaA.addActionListener(listener);
+    }
+    public void listenerOpcionB(ActionListener listener) {
+        jButtonRtaB.addActionListener(listener);
+    }
+    public void listenerOpcionC(ActionListener listener) {
+        jButtonRtaC.addActionListener(listener);
+    }
+    public void listenerOpcionD(ActionListener listener) {
+        jButtonRtaD.addActionListener(listener);
+    }
     /**
      * @param args the command line arguments
      */
@@ -285,6 +309,10 @@ public class Gameplay extends javax.swing.JFrame {
         return jButtonRtaA;
     }
 
+    public javax.swing.JLabel getjLabelJugador() {
+        return jLabelJugador;
+    }
+
     public javax.swing.JButton getjButtonRtaB() {
         return jButtonRtaB;
     }
@@ -301,4 +329,5 @@ public class Gameplay extends javax.swing.JFrame {
         return jTextFieldTurnoActual;
     }
 
+    
 }
