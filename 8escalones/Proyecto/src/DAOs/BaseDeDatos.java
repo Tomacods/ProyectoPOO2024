@@ -13,7 +13,7 @@ public class BaseDeDatos {
     private String url = "jdbc:postgresql://localhost/"; //SI LO VAN A USAR TIENEN Q CAMBIAR LOS DATOS CON SU COMPU
     private String nombre="8Escalones";
     private String usuario="postgres";
-    private String clave="1234";
+    private String clave="vocaloid2015";
     
         private BaseDeDatos() {
             try {
