@@ -107,7 +107,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jComboBoxPregunta.setBackground(new java.awt.Color(51, 153, 0));
         jComboBoxPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jComboBoxPregunta.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxPregunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxPregunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DEPORTE", "ARTE", "HISTORIA", "CIENCIA","GEOGRAFIA","MUSICA","BIOLOGIA","ENTRETENIMIENTO" }));
         /*jComboBoxPregunta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxPreguntaActionPerformed(evt);
