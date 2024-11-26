@@ -7,7 +7,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconJugar, "Proyecto/src/imagenes/Joystick.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconJugar, "Proyecto/src/imagenes/Joystick.png"); 
     }
 
 
@@ -31,8 +31,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabelJugar.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
         jLabelJugar.setForeground(new java.awt.Color(255, 255, 255));
         jLabelJugar.setText("JUGAR");
-        jPanel1.add(jLabelJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 110, 70));
         jPanel1.add(jLabelIconJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 160, 110));
+        jPanel1.add(jLabelJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 110, 70));
+        
 
         jButtonJugar.setBackground(new java.awt.Color(102, 0, 102));
         jButtonJugar.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N

@@ -23,7 +23,7 @@ public class ControladorAdminContraseña {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String password = new String(vista.jPasswordField.getPassword());
-                if ("admin".equals(password)) {
+                if ("admin".equals(password)) { //acá se puede cambiar la contraseña de admin, para futaas implementaciones podemos guardar la contraseña en la base de datos y en la vista admin agregar una ventana para cambiar la contraseña
                     vista.dispose(); // Cierra la ventana actual
                     new ControladorModoAdmin();
                 } else {
