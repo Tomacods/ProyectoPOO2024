@@ -10,26 +10,26 @@ import javax.swing.JComboBox;
 public class ControladorSeleccionarJugadores {
 
     private SeleccionarJugador vistaSeleccionarJugador;
-    private ArrayList<String> nombre_jugadores = new ArrayList<>();
-    private JComboBox<String>[] comboBoxes;
+    private ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
+    public ArrayList<Jugador> seleccionadosOrden = new ArrayList<>(); // Lista para guardar el orden de selección
+    private JComboBox<Jugador>[] comboBoxes;
     private boolean isUpdating = false; // Flag to avoid infinite loop
 
     @SuppressWarnings("unchecked")
     public ControladorSeleccionarJugadores() {
         this.vistaSeleccionarJugador = new SeleccionarJugador();
         this.vistaSeleccionarJugador.setVisible(true);
-
         // Almacenar los JComboBox en un array
-        comboBoxes = new JComboBox[] {
-                vistaSeleccionarJugador.getComboBoxJ1(),
-                vistaSeleccionarJugador.getComboBoxJ2(),
-                vistaSeleccionarJugador.getComboBoxJ3(),
-                vistaSeleccionarJugador.getComboBoxJ4(),
-                vistaSeleccionarJugador.getComboBoxJ5(),
-                vistaSeleccionarJugador.getComboBoxJ6(),
-                vistaSeleccionarJugador.getComboBoxJ7(),
-                vistaSeleccionarJugador.getComboBoxJ8(),
-                vistaSeleccionarJugador.getComboBoxJ9()
+        comboBoxes = new JComboBox[]{
+            vistaSeleccionarJugador.getComboBoxJ1(),
+            vistaSeleccionarJugador.getComboBoxJ2(),
+            vistaSeleccionarJugador.getComboBoxJ3(),
+            vistaSeleccionarJugador.getComboBoxJ4(),
+            vistaSeleccionarJugador.getComboBoxJ5(),
+            vistaSeleccionarJugador.getComboBoxJ6(),
+            vistaSeleccionarJugador.getComboBoxJ7(),
+            vistaSeleccionarJugador.getComboBoxJ8(),
+            vistaSeleccionarJugador.getComboBoxJ9()
         };
 
         // Configurar botones
@@ -71,18 +71,15 @@ public class ControladorSeleccionarJugadores {
     }
 
     private void llenarLista() {
-        ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
-        for (Jugador jugador : jugadores) {
-            nombre_jugadores.add(jugador.getNombre());
-        }
+        jugadores = Jugador.obtenerJugadores();
     }
 
     private void traerJugadoresCB() {
         isUpdating = true; // Evitar actualizar durante el llenado inicial
-        for (JComboBox<String> comboBox : comboBoxes) {
+        for (JComboBox<Jugador> comboBox : comboBoxes) {
             comboBox.removeAllItems();
-            comboBox.addItem(""); // Añadir opción vacía para deselección
-            for (String jugador : nombre_jugadores) {
+            comboBox.addItem(null); // Añadir opción no seleccionable
+            for (Jugador jugador : jugadores) {
                 comboBox.addItem(jugador);
             }
         }
@@ -90,12 +87,20 @@ public class ControladorSeleccionarJugadores {
     }
 
     private void listeners() {
-        for (JComboBox<String> comboBox : comboBoxes) {
+        for (JComboBox<Jugador> comboBox : comboBoxes) {
             comboBox.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     if (!isUpdating) {
-                        actualizarComboBoxes();
+                        @SuppressWarnings("unchecked")
+                        JComboBox<Jugador> source = (JComboBox<Jugador>) e.getSource();
+                        if (source.getSelectedIndex() == 0) {
+                            // Si se selecciona el primer elemento, restablecer la selección
+                            source.setSelectedIndex(-1);
+                        } else {
+                            actualizarComboBoxes();
+                            actualizarSeleccionadosOrden();
+                        }
                     }
                 }
             });
@@ -104,19 +109,19 @@ public class ControladorSeleccionarJugadores {
 
     private void actualizarComboBoxes() {
         isUpdating = true; // Evitar bucles infinitos
-        ArrayList<String> seleccionados = new ArrayList<>();
-        for (JComboBox<String> comboBox : comboBoxes) {
-            String seleccionado = (String) comboBox.getSelectedItem();
-            if (seleccionado != null && !seleccionado.isEmpty()) {
+        ArrayList<Jugador> seleccionados = new ArrayList<>();
+        for (JComboBox<Jugador> comboBox : comboBoxes) {
+            Jugador seleccionado = (Jugador) comboBox.getSelectedItem();
+            if (seleccionado != null) {
                 seleccionados.add(seleccionado);
             }
         }
 
-        for (JComboBox<String> comboBox : comboBoxes) {
-            String seleccionadoActual = (String) comboBox.getSelectedItem();
+        for (JComboBox<Jugador> comboBox : comboBoxes) {
+            Jugador seleccionadoActual = (Jugador) comboBox.getSelectedItem();
             comboBox.removeAllItems();
-            comboBox.addItem(""); // Añadir opción vacía para deselección
-            for (String jugador : nombre_jugadores) {
+            comboBox.addItem(null); // Añadir opción no seleccionable
+            for (Jugador jugador : jugadores) {
                 if (!seleccionados.contains(jugador) || jugador.equals(seleccionadoActual)) {
                     comboBox.addItem(jugador);
                 }
@@ -124,5 +129,17 @@ public class ControladorSeleccionarJugadores {
             comboBox.setSelectedItem(seleccionadoActual);
         }
         isUpdating = false; // Permitir actualizaciones después de completar
+    }
+
+    private void actualizarSeleccionadosOrden() {
+        seleccionadosOrden.clear();
+        for (JComboBox<Jugador> comboBox : comboBoxes) {
+            Jugador seleccionado = (Jugador) comboBox.getSelectedItem();
+            if (seleccionado != null) {
+                seleccionadosOrden.add(seleccionado);
+            }
+        }
+        // Puedes imprimir la lista para verificar el orden de selección
+        System.out.println("Orden de selección: " + seleccionadosOrden);
     }
 }

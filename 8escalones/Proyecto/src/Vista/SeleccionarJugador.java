@@ -3,15 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-
-import controlador.ControladorSeleccionarJugadores;
-import java.awt.Image;
 import java.awt.event.ActionListener;
-
-
-import javax.swing.ImageIcon;
-import javax.swing.*;
-import java.awt.*;
 
 /**
  *
@@ -25,7 +17,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
     public SeleccionarJugador() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/violeta.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo2, "Proyecto/src/imagenes/violeta.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelJugar, "Proyecto/src/imagenes/derecha.png");
