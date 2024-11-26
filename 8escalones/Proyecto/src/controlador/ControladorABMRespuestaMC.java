@@ -84,6 +84,7 @@ public class ControladorABMRespuestaMC {
         } else {
             MultipleChoicePregunta.insertarPregunta(pregunta_actual, this.pregunta_actual.getOpciones());
         }
+        new ControladorABMPreguntas();
         this.vista.dispose();
     }
 

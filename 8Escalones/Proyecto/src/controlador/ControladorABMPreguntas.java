@@ -19,6 +19,8 @@ public class ControladorABMPreguntas {
         listeners();
     }
 
+    
+
     private void traerTematicasCB() {
         ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
         for (Tematica tematica : tematicas) {
@@ -28,6 +30,14 @@ public class ControladorABMPreguntas {
     }
 
     private void listeners() {
+
+        vista.getjButtonBack().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            vista.dispose();
+            new ControladorModoAdmin();
+            }
+        });
         vista.listenerTematica(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -253,5 +263,6 @@ public class ControladorABMPreguntas {
 
         }
     }
+
 
 }
