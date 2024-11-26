@@ -1,5 +1,6 @@
 package controlador;
 import ventanas.*;
+import Modelos
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -7,6 +8,8 @@ import java.awt.event.MouseListener;
 
 public class controladorABMPreguntas implements ActionListener, MouseListener {
     private ABMPreguntas vista;
+    private PreguntaAproximacion modeloPreguntaAproximacion;
+    private MultipleChoicePregunta modeloPreguntaMultiple;
 
     public controladorABMPreguntas(){
         super();
@@ -46,9 +49,12 @@ public class controladorABMPreguntas implements ActionListener, MouseListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        String tipoPregunta;
+        String tematicaPregunta
         if (e.getSource().equals(getVista().getjButtonAgregarPregunta())){
-            //Codigo para agregar pregunta a BD?
-            System.out.println("Pregunta subida a BD"); //PRUEBA
+            String nuevaPregunta = getVista().getjjTextFieldNuevaPregunta().getText();
+            //if ()
+            //System.out.println("Pregunta subida a BD"); //PRUEBA
         }
         if(e.getSource().equals(getVista().getjButtonEliminarPregunta())){
             //Codigo para eliminar pregunta a BD?
@@ -59,22 +65,20 @@ public class controladorABMPreguntas implements ActionListener, MouseListener {
             System.out.println("Modifica pregunta a BD");
         }
         if(e.getSource().equals(getVista().getjButtonBack())){
-            //New ControladorModoAdmin();
+            New ControladorModoAdmin();
             System.out.println("Vuelve a Modo ADMIN");
             getVista().dispose();
         }
         if(e.getSource().equals(getVista().getjButtonExit())){
-            //New ControladorMenuPrincipal();
+            New ControladorMenuPrincipal();
             System.out.println("Vuelve a Menu Principal");
             getVista().dispose();
         }
         if(e.getSource().equals(getVista().getjComboBoxTipo())){
-            //Muestra TIPOS DE PREGUNTA MultipleChoice o Aproximacion;
-            System.out.println("Se selecciona tipo pregunta");
+            tipoPregunta = (String) getVista().getjComboBoxTipo().getSelectedItem(); //Se guarda tipo pregunta para luego en agregar pregunta decida la clase a instanciar
         }
         if(e.getSource().equals(getVista().getjComboBoxTematica())){
-            //Muestra TIPOS DE TEMATICA DEPORTE,ARTE,HISTORIA,CIENCIA,GEOGRAFIA,MUSICA,BIOLOGIA,ENTRETENIMIENTO; 
-            System.out.println("Se selecciona tematica pregunta");
+            tematicaPregunta = (String) getVista().getjComboBoxTipo().getSelectedItem();
         }
     }
 
