@@ -32,35 +32,34 @@ public class ControladorABMRespuestaAprox {
             }
         });
 
-        this.vista.jTextFieldEditarRespuesta.addActionListener (new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                try{
-                preguntaActual.setValorAproximado(Integer.parseInt(vista.jTextFieldEditarRespuesta.getText()));
-                }
-                catch(NumberFormatException e){
-                    System.out.println("Este valor no es valido");
-                }
-            }
-        });
-
-        this.vista.jTextFieldEditarPregunta.addActionListener (new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                preguntaActual.setEnunciado(vista.jTextFieldEditarPregunta.getText());
-            }
-        });
+        this.vista.setVisible(true);
     }
 
     private void volver() throws SQLException {
+
+        guardarCambios();
+
         if (esNueva == false) {
             PreguntaAproximacion.actualizarPreguntaAprox(this.preguntaActual);
         }
         else {
             PreguntaAproximacion.insertarPreguntaAproximacion(this.preguntaActual);
         }
+
         this.vista.dispose();
         ControladorABMPreguntas controladorPreguntas = new ControladorABMPreguntas();
     }
 
+    private void guardarCambios() {
+
+        preguntaActual.setEnunciado(vista.jTextFieldEditarPregunta.getText());
+        System.out.println("nuevo enunciado: " + preguntaActual.getEnunciado());
+
+        try{
+            preguntaActual.setValorAproximado(Integer.parseInt(vista.jTextFieldEditarRespuesta.getText()));
+            System.out.println("nuevo valor aproximado: " + preguntaActual.getValorAproximado());
+            } catch(NumberFormatException e){
+                System.out.println("Este valor no es valido");
+            }
+    }
 }

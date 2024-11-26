@@ -16,7 +16,7 @@ public class ControladorABMRespuestaMC {
     public ControladorABMRespuestaMC(MultipleChoicePregunta pregunta, boolean esNueva) throws SQLException {
         this.vista = new ABMRespuestaMC();
         this.pregunta_actual = pregunta;
-        this.esNueva = esNueva
+        this.esNueva = esNueva;
         iniciarVista();
 
     }
@@ -76,6 +76,8 @@ public class ControladorABMRespuestaMC {
                 modificar_respuesta(3, vista.jTextFieldRtaD.getText());
             }
         });
+
+        this.vista.setVisible(true);
     }
 
     private void volver() throws SQLException {
