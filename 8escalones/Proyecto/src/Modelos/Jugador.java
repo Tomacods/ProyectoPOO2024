@@ -55,7 +55,7 @@ public class Jugador {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-
+    
     public void incrementarPuntaje() {
         this.puntaje++;
     }
@@ -98,6 +98,16 @@ public class Jugador {
         return nombre;
     }
 
+   /*  public void actualizarPuntaje() {
+        JugadorDAOImpl dao = new JugadorDAOImpl();
+        dao.actualizarPuntaje(this);
+    } */
+
+  /*   public static ArrayList<Jugador> obtenerJugadoresConMenorPuntaje() {
+        JugadorDAOImpl dao = new JugadorDAOImpl();
+        return dao.obtenerJugadoresConMenorPuntaje();
+    } */
+    
     
 
 }
