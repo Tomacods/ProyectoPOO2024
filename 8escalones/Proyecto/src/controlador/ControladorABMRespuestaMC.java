@@ -7,11 +7,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ControladorABMRespuestaMC {
     private ABMRespuestaMC vista;
     private MultipleChoicePregunta pregunta_actual;
+    private boolean esNueva;
 
     public ControladorABMRespuestaMC(MultipleChoicePregunta pregunta) throws SQLException {
         this.vista = new ABMRespuestaMC();
@@ -79,9 +79,8 @@ public class ControladorABMRespuestaMC {
 
     private void volver() throws SQLException {
         cambiar_correcta();
-        //TODO: condicional que verifique si existe la pregunta con ese id en la tabla
-        if ("abc" == "def") {
-            MultipleChoicePregunta.actualizarPregunta(pregunta_actual); //dead code hasta que pongamos bien la condición
+        if (esNueva == false) {
+            MultipleChoicePregunta.actualizarPregunta(pregunta_actual);
         } else {
             MultipleChoicePregunta.insertarPregunta(pregunta_actual, this.pregunta_actual.getOpciones());
         }

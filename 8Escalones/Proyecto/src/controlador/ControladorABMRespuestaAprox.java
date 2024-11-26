@@ -9,8 +9,9 @@ import java.sql.SQLException;
 public class ControladorABMRespuestaAprox {
     private ABMRespuestaAprox vista;
     private PreguntaAproximacion preguntaActual;
+    private boolean esNueva;
     
-    public ControladorABMRespuestaAprox(PreguntaAproximacion pregunta) {
+    public ControladorABMRespuestaAprox(PreguntaAproximacion pregunta, boolean esNueva) {
         this.vista = new ABMRespuestaAprox();
         this.preguntaActual = pregunta;
         iniciarVista();
@@ -52,12 +53,11 @@ public class ControladorABMRespuestaAprox {
     }
 
     private void volver() throws SQLException {
-        // TODO: condicional que verifique si existe la pregunta con ese id en la tabla
-        if (1 == 1) {
+        if (esNueva == false) {
             PreguntaAproximacion.actualizarPreguntaAprox(this.preguntaActual);
         }
         else {
-            PreguntaAproximacion.insertarPreguntaAproximacion(this.preguntaActual); //aparece todo subrayado por la condición anterior, hasta que la coloque bien
+            PreguntaAproximacion.insertarPreguntaAproximacion(this.preguntaActual);
         }
         this.vista.dispose();
     }
