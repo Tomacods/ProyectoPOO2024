@@ -35,6 +35,11 @@ public class ABMPreguntas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        jTextFieldEditarPregunta = new javax.swing.JTextField();
+        jTextFieldNuevaPregunta = new javax.swing.JTextField();
+        jLabelFondo1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabelIconAdmin = new javax.swing.JLabel();
         jTextFieldPreguntas = new javax.swing.JTextField();
@@ -43,7 +48,6 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jTextFieldTipo = new javax.swing.JTextField();
         jComboBoxTipo = new javax.swing.JComboBox<>();
         jComboBoxPregunta = new javax.swing.JComboBox<>();
-        jTextFieldEditarPregunta = new javax.swing.JTextField();
         jLabelBack = new javax.swing.JLabel();
         jLabelExit = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
@@ -57,6 +61,39 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jLabelFondoTipo = new javax.swing.JLabel();
         jLabelFondoPregunta = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextFieldEditarPregunta.setBackground(new java.awt.Color(0, 102, 0));
+        jTextFieldEditarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldEditarPregunta.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldEditarPregunta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel2.add(jTextFieldEditarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 450, 50));
+
+        jTextFieldNuevaPregunta.setEditable(false);
+        jTextFieldNuevaPregunta.setBackground(new java.awt.Color(51, 153, 0));
+        jTextFieldNuevaPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
+        jTextFieldNuevaPregunta.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldNuevaPregunta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldNuevaPregunta.setText("NUEVA PREGUNTA");
+        jTextFieldNuevaPregunta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNuevaPreguntaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextFieldNuevaPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 310, 50));
+        jPanel2.add(jLabelFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 510, 180));
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -115,12 +152,6 @@ public class ABMPreguntas extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jComboBoxPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 570, 50));
-
-        jTextFieldEditarPregunta.setBackground(new java.awt.Color(0, 102, 0));
-        jTextFieldEditarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldEditarPregunta.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldEditarPregunta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextFieldEditarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, 570, 50));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 40, 30));
         jPanel1.add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 40, 30));
 
@@ -223,6 +254,10 @@ public class ABMPreguntas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonExitActionPerformed
 
+    private void jTextFieldNuevaPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNuevaPreguntaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNuevaPreguntaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -282,9 +317,11 @@ public class ABMPreguntas extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> jComboBoxPregunta;
     public javax.swing.JComboBox<String> jComboBoxTematica;
     public javax.swing.JComboBox<String> jComboBoxTipo;
+    private javax.swing.JDialog jDialog1;
     public javax.swing.JLabel jLabelBack;
     public javax.swing.JLabel jLabelExit;
     public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelFondo1;
     public javax.swing.JLabel jLabelFondoPregunta;
     public javax.swing.JLabel jLabelFondoTematica;
     public javax.swing.JLabel jLabelFondoTipo;
@@ -292,7 +329,9 @@ public class ABMPreguntas extends javax.swing.JFrame {
     public javax.swing.JLabel jLabelIconDelete;
     public javax.swing.JLabel jLabelIconEdit;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     public javax.swing.JTextField jTextFieldEditarPregunta;
+    public javax.swing.JTextField jTextFieldNuevaPregunta;
     public javax.swing.JTextField jTextFieldPreguntas;
     public javax.swing.JTextField jTextFieldTematica;
     public javax.swing.JTextField jTextFieldTipo;
