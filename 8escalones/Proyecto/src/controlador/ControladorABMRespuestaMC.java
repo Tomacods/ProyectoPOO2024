@@ -22,12 +22,20 @@ public class ControladorABMRespuestaMC {
     }
 
     private void iniciarVista() throws SQLException {
+        if (esNueva == true) {
+            this.pregunta_actual.setEnunciado("Ingrese el enunciado de la pregunta");
+            for (int i = 1; i < 5; i++) {
+                Respuesta rta = new Respuesta(0,0,"",false)
+                this.pregunta_actual.agregarRespuesta(rta);
+            }
+        }
         this.vista.jTextFieldPreguntaMC.setText(this.pregunta_actual.getEnunciado());
         ArrayList<Respuesta> respuestas = Respuesta.obtenerRespuestasPorPregunta(this.pregunta_actual.getIdPregunta());
         this.vista.jTextFieldRtaA.setText(respuestas.get(0).getTexto());
         this.vista.jTextFieldRtaB.setText(respuestas.get(1).getTexto());
         this.vista.jTextFieldRtaC.setText(respuestas.get(2).getTexto());
         this.vista.jTextFieldRtaD.setText(respuestas.get(3).getTexto());
+        this.vista.jRadioButtonRtaA.setSelected(true);
 
         respuestas.clear();
 

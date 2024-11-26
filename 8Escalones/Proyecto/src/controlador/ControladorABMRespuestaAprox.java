@@ -19,6 +19,10 @@ public class ControladorABMRespuestaAprox {
     }
 
     private void iniciarVista() {
+        if (esNueva == true) {
+            this.preguntaActual.setEnunciado("Ingresar enunciado de la pregunta");
+            this.preguntaActual.setValorAproximado(0);
+        }
         this.vista.jTextFieldPreguntaAprox.setText(this.preguntaActual.getEnunciado());
         this.vista.jTextFieldRespuesta.setText(String.valueOf(this.preguntaActual.getValorAproximado()));
 
