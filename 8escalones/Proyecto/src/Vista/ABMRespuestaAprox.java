@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package ventanas;
+package Vista;
 
 /**
  *
@@ -15,10 +15,10 @@ public class ABMRespuestaAprox extends javax.swing.JFrame {
     public ABMRespuestaAprox() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "src/imagenes/admin.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoPregunta, "src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/guardar.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/codigo.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "Proyecto/src/imagenes/admin.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoPregunta, "Proyecto/src/imagenes/verde.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/guardar.png");
     }
 
     /**

@@ -15,9 +15,9 @@ public class Gameplay extends javax.swing.JFrame {
     public Gameplay() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/MenuPrincipal3.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "src/imagenes/entretenimiento.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "Proyecto/src/imagenes/entretenimiento.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
     }
 
     /**

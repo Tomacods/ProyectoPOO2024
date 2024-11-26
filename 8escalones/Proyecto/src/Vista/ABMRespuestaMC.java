@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package ventanas;
+package Vista;
 
 /**
  *
@@ -15,11 +15,11 @@ public class ABMRespuestaMC extends javax.swing.JFrame {
     public ABMRespuestaMC() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "src/imagenes/admin.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoPregunta, "src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelSave, "src/imagenes/guardar.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/codigo.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "Proyecto/src/imagenes/admin.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoPregunta, "Proyecto/src/imagenes/verde.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelSave, "Proyecto/src/imagenes/guardar.png");
     }
 
     /**

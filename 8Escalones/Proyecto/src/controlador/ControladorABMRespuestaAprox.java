@@ -4,6 +4,7 @@ import Modelos.PreguntaAproximacion;
 import Vista.ABMRespuestaAprox;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class ControladorABMRespuestaAprox {
     private ABMRespuestaAprox vista;
@@ -17,40 +18,48 @@ public class ControladorABMRespuestaAprox {
 
     private void iniciarVista() {
         this.vista.jTextFieldPreguntaAprox.setText(this.preguntaActual.getEnunciado());
+        this.vista.jTextFieldRespuesta.setText(String.valueOf(this.preguntaActual.getValorAproximado()));
 
         this.vista.jButtonBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                volver();
+                try {
+                    volver();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
-        this.vista.jButtonExit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                salir();
-            }
-        });
-
-        this.vista.jTextFieldEditarPreguntaAprox.addActionListener (new ActionListener() {
+        this.vista.jTextFieldEditarRespuesta.addActionListener (new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
                 try{
-                preguntaActual.setValorAproximado(Integer.parseInt(vista.jTextFieldEditarPreguntaAprox.getText()));
+                preguntaActual.setValorAproximado(Integer.parseInt(vista.jTextFieldEditarRespuesta.getText()));
                 }
                 catch(NumberFormatException e){
                     System.out.println("Este valor no es valido");
                 }
             }
         });
+
+        this.vista.jTextFieldEditarPregunta.addActionListener (new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                preguntaActual.setEnunciado(vista.jTextFieldEditarPregunta.getText());
+            }
+        });
     }
 
-    private PreguntaAproximacion volver() {
+    private void volver() throws SQLException {
+        // TODO: condicional que verifique si existe la pregunta con ese id en la tabla
+        if (1 == 1) {
+            PreguntaAproximacion.actualizarPreguntaAprox(this.preguntaActual);
+        }
+        else {
+            PreguntaAproximacion.insertarPreguntaAproximacion(this.preguntaActual); //aparece todo subrayado por la condición anterior, hasta que la coloque bien
+        }
         this.vista.dispose();
-        return this.preguntaActual;
     }
 
-    private void salir() {
-        this.vista.dispose();
-    }
 }
