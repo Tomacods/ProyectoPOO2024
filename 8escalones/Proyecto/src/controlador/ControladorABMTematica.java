@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import Vista.ABMTematicas;
 import Modelos.Tematica;
-import Vista.ModoAdmin;
 public class ControladorABMTematica {
 private ABMTematicas vistaABMTematicas;
 
@@ -46,8 +45,7 @@ private void listeners(){
         @Override
         public void actionPerformed(ActionEvent e) {
             vistaABMTematicas.dispose();
-            ModoAdmin admin = new ModoAdmin();
-            admin.setVisible(true);
+            new ControladorModoAdmin();
         } });
 }
 
@@ -103,7 +101,7 @@ private void modificarTematica() {
     tematica.setNombre(nuevaTematica);
     Tematica.actualizarTematica(tematica);
     traerTematicasCB();
-    System.out.println("Temática modificada exitosamente.");
+    javax.swing.JOptionPane.showMessageDialog(vistaABMTematicas, "Temática modificada exitosamente.", "Éxito", javax.swing.JOptionPane.INFORMATION_MESSAGE);
 }
 
 public void seleccionarTematica(String tematicaSeleccionada) {

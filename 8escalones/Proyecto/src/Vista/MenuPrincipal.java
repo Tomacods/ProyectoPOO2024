@@ -1,5 +1,6 @@
 package Vista;
 
+import javax.swing.ImageIcon;
 
 public class MenuPrincipal extends javax.swing.JFrame {
 
@@ -9,6 +10,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconJugar, "Proyecto/src/imagenes/Joystick.png");
     }
+
 
     private void initComponents() {
         jPanel1 = new javax.swing.JPanel();

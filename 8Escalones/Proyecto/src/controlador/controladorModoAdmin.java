@@ -11,6 +11,7 @@ public class ControladorModoAdmin {
     public ControladorModoAdmin() {
         this.vista =  new ModoAdmin();
         this.vista.setVisible(true);
+        
         this.vista.getjButtonBack().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
