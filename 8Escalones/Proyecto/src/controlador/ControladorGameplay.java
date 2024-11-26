@@ -23,6 +23,17 @@ public class ControladorGameplay {
         // puedo sacar la tematica del modelo escalon
     }
 
+    private void realizarPreguntas(int idEscalon) {
+        ArrayList<MultipleChoicePregunta> pregMult = new ArrayList<>();
+        pregMult = MultipleChoicePregunta.obtenerPreguntasMC(idEscalon);//Trae las preguntas MC de la BD
+        for (Jugador jugador : jugadores) {
+            MultipleChoicePregunta pregunta = pregMult.get(new Random().nextInt(pregMult.size()));
+            System.out.println("Pregunta para " + jugador.getNombre() + ": "+"\n" + pregunta.getEnunciado());
+            jugador = preguntarJugador(jugador, pregunta);
+            pregMult.remove(pregunta);
+        }
+    }
+
     private void traerPregunta() throws SQLException {
         String pregunta = MultipleChoicePregunta.obtenerPreguntaMC(2).getEnunciado();
         int id_pregunta = MultipleChoicePregunta.obtenerPreguntaMC(2).getIdPregunta();
