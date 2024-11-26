@@ -12,13 +12,15 @@ public class Main {
       //ControladorABMJugadores c = new ControladorABMJugadores();
       //ventanas.AdminContraseña a = new AdminContraseña(null)
     // ControladorAdminContraseña c = new ControladorAdminContraseña();
-       //   SeleccionarJugador sele = new SeleccionarJugador();
-      /*       MenuPrincipal frame = new MenuPrincipal();
-            frame.setVisible(true);
-    } */
+       //   
 
     //ControladorGameplay c = new ControladorGameplay();
     
-    ControladorABMPreguntas c = new ControladorABMPreguntas();
+    //ControladorABMPreguntas c = new ControladorABMPreguntas();
+
+    //SeleccionarJugador sele = new SeleccionarJugador();
+          MenuPrincipal frame = new MenuPrincipal();
+            frame.setVisible(true);
+  
 }
 }

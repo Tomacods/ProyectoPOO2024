@@ -1,11 +1,9 @@
 package controlador;
 import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 import Vista.MenuPrincipal;
 import Vista.OpcionesGenerales;
-import java.awt.*;
-import javax.swing.*;
+
 
 public class ControladorOpcionesGenerales {
     private OpcionesGenerales menuOpciones;
