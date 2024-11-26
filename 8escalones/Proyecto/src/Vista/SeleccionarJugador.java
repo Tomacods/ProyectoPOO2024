@@ -258,8 +258,6 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         jComboBoxJ1.addActionListener(listener);
     }
     
-    private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-    }//GEN-LAST:event_jButtonExitActionPerformed
 
     private void jButtonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJugarActionPerformed
         // TODO add your handling code here:

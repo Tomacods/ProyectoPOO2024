@@ -1,6 +1,5 @@
 package Vista;
 
-import javax.swing.ImageIcon;
 
 public class MenuPrincipal extends javax.swing.JFrame {
 
