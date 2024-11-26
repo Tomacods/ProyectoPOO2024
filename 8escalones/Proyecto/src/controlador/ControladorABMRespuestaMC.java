@@ -13,9 +13,10 @@ public class ControladorABMRespuestaMC {
     private MultipleChoicePregunta pregunta_actual;
     private boolean esNueva;
 
-    public ControladorABMRespuestaMC(MultipleChoicePregunta pregunta) throws SQLException {
+    public ControladorABMRespuestaMC(MultipleChoicePregunta pregunta, boolean esNueva) throws SQLException {
         this.vista = new ABMRespuestaMC();
         this.pregunta_actual = pregunta;
+        this.esNueva = esNueva
         iniciarVista();
 
     }
@@ -84,8 +85,8 @@ public class ControladorABMRespuestaMC {
         } else {
             MultipleChoicePregunta.insertarPregunta(pregunta_actual, this.pregunta_actual.getOpciones());
         }
-        new ControladorABMPreguntas();
         this.vista.dispose();
+        ControladorABMPreguntas controladorPreguntas = new ControladorABMPreguntas();
     }
 
     private void salir() {

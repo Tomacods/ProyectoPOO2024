@@ -59,8 +59,8 @@ public class ControladorABMRespuestaAprox {
         else {
             PreguntaAproximacion.insertarPreguntaAproximacion(this.preguntaActual);
         }
-        new ControladorABMPreguntas();
         this.vista.dispose();
+        ControladorABMPreguntas controladorPreguntas = new ControladorABMPreguntas();
     }
 
 }
