@@ -17,9 +17,9 @@ public class GameplayAproximacion extends javax.swing.JFrame {
     public GameplayAproximacion() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/MenuPrincipal3.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "src/imagenes/historia.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelTematica, "Proyecto/src/imagenes/historia.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
     }
 
     /**
@@ -234,5 +234,3 @@ public class GameplayAproximacion extends javax.swing.JFrame {
     }
     
 }
-
- 
