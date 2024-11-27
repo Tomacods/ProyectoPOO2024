@@ -128,9 +128,6 @@ public class ControladorGameplayAproximacion {
         siguienteEscalon();
     }
     
-    
-    
-
     public Jugador preguntarAproximacion(Jugador jugador, PreguntaAproximacion pregunta) {
        // int rta = vista.getRtaIn;
         int rta= rtaIngresada;

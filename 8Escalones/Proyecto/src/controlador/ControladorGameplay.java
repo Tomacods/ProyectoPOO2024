@@ -54,7 +54,7 @@ public class ControladorGameplay {
             this.vista.dispose();
             //sacar la tematica actual de la lista de tematicas restantes
             tematicasRestantes.remove(0);
-            new ControladorGameplayFinal(idJuego, jugadores, escalon); //cambiar esto
+            new ControladorGameplayFinal(idJuego, jugadores, tematicasRestantes); //cambiar esto
         } else {
         if (!tematicasRestantes.isEmpty() && tematicasRestantes.get(0) != null) {
             inicializarPuntos();

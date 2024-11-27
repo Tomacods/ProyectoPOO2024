@@ -10,31 +10,29 @@ import Modelos.Jugador;
 import Modelos.MultipleChoicePregunta;
 import Modelos.Respuesta;
 import Modelos.Ronda;
+import Modelos.Tematica;
 import Modelos.Juego;
 import Vista.Gameplay_final;
 
 public class ControladorGameplayFinal {
-    private Ronda ronda;
     private Gameplay_final vista;
     private String rtaSelec;
     private int idJuego; // Agregado
     private ArrayList<Jugador> jugadores; // Agregado
     private Escalon escalon; // Agregado
-    private String estado; // Agregado
 
 
-    public ControladorGameplayFinal(int idJuego, ArrayList<Jugador> jugadores, Escalon escalon) throws SQLException {
+
+    public ControladorGameplayFinal(int idJuego, ArrayList<Jugador> jugadores, ArrayList<Tematica> tematicas) throws SQLException {
         this.idJuego = idJuego; 
         this.jugadores = jugadores; 
-        this.escalon = escalon; 
         this.vista = new Gameplay_final();
-        this.ronda = new Ronda(idJuego, jugadores, escalon);
+       // this.ronda = new Ronda(idJuego, jugadores, escalon);
         vista.setVisible(true);
         traerJugador();
         listeners_rtas();
         jugarEscalonFinal();
     }
-
     private void traerJugador(){
         this.vista.getJugador1().setText((jugadores.get(0)).getNombre());
         this.vista.getJugador2().setText((jugadores.get(1)).getNombre());
@@ -43,7 +41,6 @@ public class ControladorGameplayFinal {
         this.vista.getjButtonRtaA().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 rtaSelec = vista.getjButtonRtaA().getText();
             }
         });
@@ -84,7 +81,8 @@ public class ControladorGameplayFinal {
 
     public void jugarEscalonFinal() throws SQLException {
         //System.out.println("¡¡Bienvenidos al Escalon Final!!");
-        ArrayList<MultipleChoicePregunta> preguntas = MultipleChoicePregunta.obtenerTodasPreguntasMC();
+        ArrayList<MultipleChoicePregunta> preguntas = MultipleChoicePregunta.obtenerTodasPreguntasMC(); 
+        java.util.Collections.shuffle(preguntas);
         Jugador jugadorGanador = rondaFinal(preguntas, jugadores);
         System.out.println("El ganador es " + jugadorGanador.getNombre());
     }
@@ -100,7 +98,6 @@ public class ControladorGameplayFinal {
             }
             pos = pos + 1;
         }
-        
         if (jugadores.get(0).getPuntaje() == jugadores.get(1).getPuntaje()) {
             while (jugadores.get(0).getPuntaje() == jugadores.get(1).getPuntaje()) {
                 realizarPreguntas(preguntas, jugadores);
