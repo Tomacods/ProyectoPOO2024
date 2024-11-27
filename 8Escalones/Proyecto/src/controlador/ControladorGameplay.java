@@ -50,6 +50,12 @@ public class ControladorGameplay {
     
 
     public void iniciarRonda(ArrayList<Jugador> jugadores) throws SQLException {
+        if (this.idJuego == 8) {
+            this.vista.dispose();
+            //sacar la tematica actual de la lista de tematicas restantes
+            tematicasRestantes.remove(0);
+            new ControladorGameplayFinal(idJuego, jugadores, escalon); //cambiar esto
+        } else {
         if (!tematicasRestantes.isEmpty() && tematicasRestantes.get(0) != null) {
             inicializarPuntos();
             for (int i = 1; i <= 2; i++) {
@@ -66,6 +72,7 @@ public class ControladorGameplay {
         } else {
             System.out.println("Error: La temática es null.");
         }
+    }
         //realizar metodo para ver a que vista se lleva la partida siguiente, si a la de aproximacion o a la de escalon
     }
 
@@ -208,6 +215,8 @@ public class ControladorGameplay {
             jugadores.remove(jugadorEliminado);
             try {
                 this.vista.dispose();
+                //elimino la tematica actual de la lista de tematicas restantes
+                tematicasRestantes.remove(0);
                 new ControladorGameplay(idJuego + 1, jugadores, tematicasRestantes);
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -215,18 +224,14 @@ public class ControladorGameplay {
         }
         else{
             try {
-                new ControladorGameplayAproximacion(obtenerJugadoresConMenorPuntaje());
+                this.vista.dispose();
+                //elimino la tematica actual de la lista de tematicas restantes
+                tematicasRestantes.remove(0);
+                new ControladorGameplayAproximacion(idJuego,obtenerJugadoresConMenorPuntaje(),jugadores,tematicasRestantes);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public void actualizarJugadores(Jugador jugador) {
-        jugadores.remove(jugador);
-    }
-
-    public void actualizarJugadores(ArrayList<Jugador> jugadores) {
-        this.jugadores = jugadores;
-    }
 }
