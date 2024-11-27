@@ -65,7 +65,7 @@ public class Gameplay_final extends javax.swing.JFrame {
         jTextFieldPregunta.setEditable(false);
         jTextFieldPregunta.setBackground(new java.awt.Color(255, 204, 51));
         jTextFieldPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldPregunta.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldPregunta.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldPregunta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldPregunta.setText("Pregunta");
         jTextFieldPregunta.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +110,7 @@ public class Gameplay_final extends javax.swing.JFrame {
 
         jButtonRtaA.setBackground(new java.awt.Color(255, 204, 51));
         jButtonRtaA.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonRtaA.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonRtaA.setForeground(new java.awt.Color(0, 0, 0));
         jButtonRtaA.setText("Respuesta");
         jButtonRtaA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,7 +121,7 @@ public class Gameplay_final extends javax.swing.JFrame {
 
         jButtonRtaB.setBackground(new java.awt.Color(255, 204, 51));
         jButtonRtaB.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonRtaB.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonRtaB.setForeground(new java.awt.Color(0, 0, 0));
         jButtonRtaB.setText("Respuesta");
         jButtonRtaB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,7 +132,7 @@ public class Gameplay_final extends javax.swing.JFrame {
 
         jButtonRtaC.setBackground(new java.awt.Color(255, 204, 51));
         jButtonRtaC.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonRtaC.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonRtaC.setForeground(new java.awt.Color(0, 0, 0));
         jButtonRtaC.setText("Respuesta");
         jButtonRtaC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +143,7 @@ public class Gameplay_final extends javax.swing.JFrame {
 
         jButtonRtaD.setBackground(new java.awt.Color(255, 204, 51));
         jButtonRtaD.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        jButtonRtaD.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonRtaD.setForeground(new java.awt.Color(0, 0, 0));
         jButtonRtaD.setText("Respuesta");
         jButtonRtaD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,7 +160,7 @@ public class Gameplay_final extends javax.swing.JFrame {
         jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(255, 204, 51));
         jTextField3.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
         jTextField3.setText("JUGADOR N");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,7 +172,7 @@ public class Gameplay_final extends javax.swing.JFrame {
         jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(255, 204, 51));
         jTextField4.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
         jTextField4.setText("JUGADOR N");
         jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 130, -1));
 
