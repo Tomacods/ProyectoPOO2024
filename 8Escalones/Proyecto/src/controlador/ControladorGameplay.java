@@ -4,26 +4,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
-import Modelos.Escalon;
+//import Modelos.Escalon;
 import Modelos.Jugador;
 import Modelos.MultipleChoicePregunta;
 import Modelos.Respuesta;
-import Modelos.Ronda;
+//import Modelos.Ronda;
 import Modelos.Tematica;
 import Vista.Gameplay;
-import Vista.GameplayAproximacion;
+//import Vista.GameplayAproximacion;
 
 
 public class ControladorGameplay {
-    private Ronda ronda;
+   // private Ronda ronda;
     private Gameplay vista;
     private String rtaSelec;
     private int idJuego; // Agregado
     private ArrayList<Jugador> jugadores; // Agregado
-    private Escalon escalon; // Agregado
-    private String estado; // Agregado
+    //private Escalon escalon; // Agregado
     private ArrayList<Tematica> tematicasRestantes; 
+    //private String estado; // Agregado
+    private Tematica tematica;
 
     public ControladorGameplay(int idJuego, ArrayList<Jugador> jugadores,ArrayList<Tematica> tematicas) throws SQLException {
         this.vista = new Gameplay();
@@ -31,11 +33,12 @@ public class ControladorGameplay {
         this.idJuego = idJuego;
         this.jugadores = jugadores;
         this.tematicasRestantes = tematicas;
+        this.tematica = traerTematicaoObj();
         // this.escalon = new Escalon(0, null, Tematica.obtenerTematica(1), jugadores, null);
         // this.ronda = new Ronda(this.idJuego,this.jugadores ,this.escalon);
 
         listeners_rtas();
-        traerTematica();
+        //traerTematica();
         traerEscalon();
         this.vista.setVisible(true);
 
@@ -61,7 +64,8 @@ public class ControladorGameplay {
                 for (int i = 1; i <= 2; i++) {
                     System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
                     vista.getjTextFieldRonda().setText("RONDA "+ i);
-                    realizarPreguntas(this.idJuego, this.jugadores);
+                    //Tematica tematica = traerTematicaoObj();
+                    realizarPreguntas(tematica, this.jugadores);
                     // Al finalizar las 2 rondas, imprime el puntaje final de cada jugador
                     imprimirPuntajes();
                     decidirVista();
@@ -87,11 +91,13 @@ public class ControladorGameplay {
         }
     }
 
-    private void realizarPreguntas(int idjuego, ArrayList<Jugador> jugadores) throws SQLException {
-        ArrayList<MultipleChoicePregunta> pregMult = MultipleChoicePregunta.obtenerPreguntasMC(idjuego);
+    private void realizarPreguntas(Tematica tematica, ArrayList<Jugador> jugadores) throws SQLException {
+        ArrayList<MultipleChoicePregunta> pregMult = MultipleChoicePregunta.obtenerPreguntasMC(tematica.getId());
         // ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
+        vista.getjTextFieldTematica().setText(tematica.getNombre());//poner el nombre tematica
         for (Jugador jugador : jugadores) {
-            //jugador = Jugador.obtenerJugador(jugador.getId());
+            //jugador = Jugador.obtenerJugador(jugador.getId());7
+            
             vista.getjTextFieldJugador().setText(jugador.getNombre());
             MultipleChoicePregunta pregunta = pregMult.get(new Random().nextInt(pregMult.size()));
             // Limpiar la respuesta seleccionada antes de la nueva pregunta
@@ -106,7 +112,7 @@ public class ControladorGameplay {
                     respuestaSeleccionada = true;
                 }
                 try {
-                    Thread.sleep(1);
+                    Thread.sleep(10);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -115,10 +121,18 @@ public class ControladorGameplay {
         }
     }
 
-    private void traerTematica() { //del array que entra busco el primer elemento para mostrae en la vist
-        String tematica = Tematica.obtenerTematicas().get(0).getNombre();
-        vista.getjTextFieldTematica().setText(tematica);
+
+    private Tematica traerTematicaoObj(){
+        //ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
+        Tematica tematica = tematicasRestantes.get(new Random().nextInt(tematicasRestantes.size()));
+        return tematica;
     }
+    
+    /* private void traerTematica() { //del array que entra busco el primer elemento para mostrae en la vist
+        ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
+        Tematica tematica = tematicas.get(new Random().nextInt(tematicas.size()));
+        vista.getjTextFieldTematica().setText(tematica.getNombre());
+    } */
 
     private Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta) throws SQLException {
         Integer idRtaCorrecta = Respuesta.obtenerIdRtaCorrectaMC(pregunta.getIdPregunta());
@@ -126,12 +140,12 @@ public class ControladorGameplay {
             String respuestaCorrecta = Respuesta.obtenerRespuesta(idRtaCorrecta).getTexto();
             if (rtaSelec != null && rtaSelec.equals(respuestaCorrecta)) {
                 System.out.println("Correcto");
+                javax.swing.JOptionPane.showMessageDialog(vista, "CORRECTA", "La respuesta es", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 jugador.incrementarPuntaje();
                 System.out.println("si" + " " + jugador.getPuntaje());
             } else {
                 System.out.println("Incorrecto");
-                javax.swing.JOptionPane.showMessageDialog(vista, "RESPUESTA INCORRECTA",
-            "Respuesta incorrecta", javax.swing.JOptionPane.ERROR_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(vista, "INCORRECTA", "la respuesta es", javax.swing.JOptionPane.ERROR_MESSAGE);
             }
         } else {
             System.out.println("No se ha seleccionado ninguna respuesta.");
@@ -174,6 +188,7 @@ public class ControladorGameplay {
 
     private void traerRespuestas(int idPregunta) throws SQLException {
         ArrayList<Respuesta> respuestas = Respuesta.obtenerRespuestasPorPregunta(idPregunta);
+        Collections.shuffle(respuestas);
         if (respuestas.size() >= 4) {
             vista.getjButtonRtaA().setText(respuestas.get(0).getTexto());
             vista.getjButtonRtaB().setText(respuestas.get(1).getTexto());
@@ -211,7 +226,7 @@ public class ControladorGameplay {
             try {
                 this.vista.dispose();
                 //elimino la tematica actual de la lista de tematicas restantes
-                tematicasRestantes.remove(0);
+                tematicasRestantes.remove(tematica);
                 new ControladorGameplay(idJuego + 1, jugadores, tematicasRestantes);
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -221,8 +236,8 @@ public class ControladorGameplay {
             try {
                 this.vista.dispose();
                 //elimino la tematica actual de la lista de tematicas restantes
-                tematicasRestantes.remove(0);
-                new ControladorGameplayAproximacion(idJuego,obtenerJugadoresConMenorPuntaje(),jugadores,tematicasRestantes);
+                tematicasRestantes.remove(tematica);
+                new ControladorGameplayAproximacion(idJuego,obtenerJugadoresConMenorPuntaje(),jugadores,tematicasRestantes,tematica);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
