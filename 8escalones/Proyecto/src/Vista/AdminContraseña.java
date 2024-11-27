@@ -1,5 +1,6 @@
 package Vista;
 
+import java.awt.Toolkit;
 public class AdminContraseña extends javax.swing.JFrame {
     /**
      * Creates new form gameplay
@@ -10,6 +11,7 @@ public class AdminContraseña extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/codigo.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "Proyecto/src/imagenes/admin.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
     }
 
     /**

@@ -4,7 +4,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-
+import java.awt.Toolkit;
 
 /**
  *
@@ -18,10 +18,11 @@ public class Gameplay_final extends javax.swing.JFrame {
     public Gameplay_final() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/dorado.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "src/imagenes/exit.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser2, "src/imagenes/user.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser, "src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/dorado.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser2, "Proyecto/src/imagenes/user.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser, "Proyecto/src/imagenes/user.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
     }
 
     /**

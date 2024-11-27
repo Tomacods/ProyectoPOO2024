@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-
+import java.awt.Toolkit;
 
 /**
  *
@@ -16,8 +16,9 @@ public class Ganador extends javax.swing.JFrame {
     public Ganador() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "proyecto/src/imagenes/messi.gif");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelWinner, "proyecto/src/imagenes/man_1.gif");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/messi.gif");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelWinner, "Proyecto/src/imagenes/man_1.gif");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
 
     }
     
