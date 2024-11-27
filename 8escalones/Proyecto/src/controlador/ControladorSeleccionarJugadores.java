@@ -17,7 +17,7 @@ public class ControladorSeleccionarJugadores {
 
     @SuppressWarnings("unchecked")
     public ControladorSeleccionarJugadores() {
-        this.vistaSeleccionarJugador = new SeleccionarJugador();
+        this.vistaSeleccionarJugador = new SeleccionarJugador();    
         this.vistaSeleccionarJugador.setVisible(true);
         // Almacenar los JComboBox en un array
         comboBoxes = new JComboBox[]{
