@@ -37,6 +37,7 @@ public class Gameplay_final extends javax.swing.JFrame {
         jTextFieldPregunta = new javax.swing.JTextField();
         jLabelExit = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
+        //jTextFieldJugador = new javax.swing.JTextField();
         jLabelIconUser = new javax.swing.JLabel();
         jLabelIconUser2 = new javax.swing.JLabel();
         jLabelUser = new javax.swing.JLabel();
@@ -262,6 +263,25 @@ public class Gameplay_final extends javax.swing.JFrame {
     public javax.swing.JLabel jLabelVersus;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField jTextFieldPregunta;
+    
     // End of variables declaration//GEN-END:variables
 
+    public javax.swing.JButton getjButtonExit() {
+        return jButtonExit;
+    }
+    public javax.swing.JButton getjButtonRtaA() {
+        return jButtonRtaA;
+    }
+    public javax.swing.JButton getjButtonRtaB() {
+        return jButtonRtaB;
+    }
+    public javax.swing.JButton getjButtonRtaC() {
+        return jButtonRtaC;
+    }
+    public javax.swing.JButton getjButtonRtaD() {
+        return jButtonRtaD;
+    }
+public javax.swing.JTextField getjTextFieldPregunta() {
+        return jTextFieldPregunta;
+    }
 }
