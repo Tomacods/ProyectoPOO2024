@@ -16,8 +16,8 @@ public class Ganador extends javax.swing.JFrame {
     public Ganador() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "proyecto/src/imagenes/messi.gif");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelWinner, "proyecto/src/imagenes/man_1.gif");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/messi.gif");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelWinner, "Proyecto/src/imagenes/man_1.gif");
 
     }
     
