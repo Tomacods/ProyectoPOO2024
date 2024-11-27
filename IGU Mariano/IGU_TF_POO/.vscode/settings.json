@@ -1,8 +1,0 @@
-{
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "c:\\Users\\Maria\\Documents\\GitHub\\ProyectoPOO2024\\IGU Mariano\\RSScaleLabel.jar",
-        "src/Librerias/AbsoluteLayout.jar",
-        "src/Librerias/RSScaleLabel.jar"
-    ]
-}
