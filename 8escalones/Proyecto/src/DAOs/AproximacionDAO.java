@@ -51,8 +51,8 @@ public class AproximacionDAO {
                     return new PreguntaAproximacion(
                             resultSet.getInt("ID_Pregunta"),
                             resultSet.getString("Enunciado"),
-                            resultSet.getInt("Valor_Aproximado"),
-                            resultSet.getInt("ID_Tematica"));
+                            resultSet.getInt("ID_Tematica"),
+                            resultSet.getInt("Valor_Aproximado"));
                 }
             }
         }
@@ -68,8 +68,8 @@ public class AproximacionDAO {
                 Object[] row = {
                         resultSet.getInt("ID_Pregunta"),
                         resultSet.getString("Enunciado"),
-                        resultSet.getInt("Valor_Aproximado"),
-                        resultSet.getInt("ID_Tematica")
+                        resultSet.getInt("ID_Tematica"),
+                        resultSet.getInt("Valor_Aproximado")
 
                 };
                 preguntas.add(row);

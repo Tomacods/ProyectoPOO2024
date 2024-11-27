@@ -137,7 +137,7 @@ public class ControladorGameplayAproximacion {
             }
 
             if (empatados.size() == 1) {// Si hay mas de un jugador con el peor puntaje, no entra aca
-                eliminarJugador(empatados.get(0), pregunta);
+                eliminarJugador(empatados.get(0), valorCorrecto);
                 eliminado = false;
             }
             pregAprox.remove(pregunta);
@@ -160,16 +160,16 @@ public class ControladorGameplayAproximacion {
         }
     }
 
-    private void eliminarJugador(Jugador jugador, PreguntaAproximacion pregunta) {
+    private void eliminarJugador(Jugador jugador, int valorCorrecto) {
         empatados.remove(jugador);
         siguenJugando.remove(jugador);
         jugador.setEstado("Eliminado");
         System.out.println("Jugador eliminado: " + jugador.getNombre());//ACA
-        ventanaJugadorEliminado(jugador, pregunta);
+        ventanaJugadorEliminado(jugador, valorCorrecto);
     }
 
-    private void ventanaJugadorEliminado(Jugador jugador, PreguntaAproximacion pregunta) {
-        javax.swing.JOptionPane panel = new javax.swing.JOptionPane("El jugador " + jugador.getNombre() + " ha sido eliminado!\nLa respuesta correcta era: " + pregunta.getValorAproximado(), javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    private void ventanaJugadorEliminado(Jugador jugador, int valorCorrecto) {
+        javax.swing.JOptionPane panel = new javax.swing.JOptionPane("El jugador " + jugador.getNombre() + " ha sido eliminado!\nLa respuesta correcta era: \n" + valorCorrecto, javax.swing.JOptionPane.INFORMATION_MESSAGE);
         javax.swing.JDialog cuadro = panel.createDialog("Jugador eliminado");
         Thread cerrar = new Thread(() -> {
             try {
