@@ -122,7 +122,7 @@ public class ControladorGameplayFinal {
             boolean respuestaSeleccionada = false;
             while (!respuestaSeleccionada) {
                 if (rtaSelec != null && !rtaSelec.isEmpty()) {
-                    jugador = preguntarJugador(jugador, pregunta); // Procesa la respuesta
+                    jugador = preguntarJugador(jugador, pregunta, jugadores); // Procesa la respuesta
                     respuestaSeleccionada = true;
                 } else {
                     // Agrega un pequeño retardo para evitar un consumo excesivo de CPU
@@ -137,18 +137,20 @@ public class ControladorGameplayFinal {
         }
     }
 
-    private Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta) throws SQLException {
+    private Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta, ArrayList<Jugador> jugadores) throws SQLException {
         Integer idRtaCorrecta = Respuesta.obtenerIdRtaCorrectaMC(pregunta.getIdPregunta());
         if (idRtaCorrecta != -1) {
             String rtaCorrecta = Respuesta.obtenerRespuesta(idRtaCorrecta).getTexto();
             if (rtaSelec != null && rtaSelec.equals(rtaCorrecta)) {
                 System.out.println("Correcto");
                 jugador.incrementarPuntaje();
-                ventanaRta("CORRECTA \n" + jugador.getPuntaje() + " preguntas acertadas", jugador);
+                String puntos = "Puntos \n" + jugadores.get(0).getNombre() + ": " + jugadores.get(0).getPuntaje() + "\n" + jugadores.get(1).getNombre() + ": " + jugadores.get(1).getPuntaje();
+                ventanaRta("CORRECTA", puntos);
                 System.out.println("si" + " " + jugador.getPuntaje());
             } else {
                 System.out.println("Incorrecto");
-                ventanaRta("INCORRECTA \n" + jugador.getPuntaje() + " preguntas acertadas", jugador);
+                String puntos = "Puntos \n" + jugadores.get(0).getNombre() + ": " + jugadores.get(0).getPuntaje() + "\n" + jugadores.get(1).getNombre() + ": " + jugadores.get(1).getPuntaje();
+                ventanaRta("INCORRECTA", puntos);
             }
         } else {
             System.out.println("No se ha seleccionado ninguna respuesta.");
@@ -156,8 +158,8 @@ public class ControladorGameplayFinal {
         return jugador;
     }
 
-    private void ventanaRta(String rta, Jugador jugador) {
-        javax.swing.JOptionPane panel = new javax.swing.JOptionPane(rta, javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    private void ventanaRta(String rta, String puntos) {
+        javax.swing.JOptionPane panel = new javax.swing.JOptionPane(rta + "\n" + puntos, javax.swing.JOptionPane.INFORMATION_MESSAGE);
         javax.swing.JDialog cuadro = panel.createDialog("La respuesta es");
         Thread cerrar = new Thread(() -> {
             try {
