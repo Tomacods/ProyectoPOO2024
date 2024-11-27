@@ -95,7 +95,7 @@ public class ControladorGameplayFinal {
         inicializarPuntos();
         for (int i = 1; i<=5; i++){
             realizarPreguntas(preguntas, jugadores);
-            if (valorAbsoluto(jugadores.get(0).getPuntaje()) - valorAbsoluto(jugadores.get(1).getPuntaje()) >= 3) {
+            if (valorAbsoluto(jugadores.get(0).getPuntaje() - jugadores.get(1).getPuntaje()) >= 3) {
                 System.out.println("\n¡" + (jugadores.get(0).getPuntaje() > jugadores.get(1).getPuntaje() ? jugadores.get(0).getNombre() : jugadores.get(1).getNombre()) + " ES EL GANADOR DE LOS 8 ESCALONES!");
                 break; // Salir del for
             }
