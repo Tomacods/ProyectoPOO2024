@@ -69,12 +69,12 @@ public class ControladorABMJugadores {
     }
 
     private void editarJugador() {
-        if (this.vista.jTextFieldEditarJugador.getText() != "") {
+        if (this.vista.jTextFieldEditarJugador.getText().length() > 1) {
             this.jugadorSeleccionado.setNombre(this.vista.jTextFieldEditarJugador.getText());
             Jugador.actualizarJugador(this.jugadorSeleccionado);
         }
         else {
-            javax.swing.JOptionPane.showMessageDialog(vista, "El campo de la nueva temática está vacío.",
+            javax.swing.JOptionPane.showMessageDialog(vista, "Ingrese un nombre valido.",
             "Error", javax.swing.JOptionPane.ERROR_MESSAGE);        }
     }
 
