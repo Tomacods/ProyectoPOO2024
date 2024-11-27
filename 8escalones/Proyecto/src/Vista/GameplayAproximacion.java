@@ -198,7 +198,7 @@ public class GameplayAproximacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Respuesta;
+    public javax.swing.JButton Respuesta;
     public javax.swing.JButton jButtonExit;
     public javax.swing.JLabel jLabelExit;
     public javax.swing.JLabel jLabelFondo;
@@ -210,6 +210,7 @@ public class GameplayAproximacion extends javax.swing.JFrame {
     public javax.swing.JTextField jTextFieldTematica;
     // End of variables declaration//GEN-END:variables
 
+    
     public javax.swing.JTextField getjTextFieldJugador() {//ACA VA LA PREGUNTA GOD
         return jTextFieldJugador;
     }
