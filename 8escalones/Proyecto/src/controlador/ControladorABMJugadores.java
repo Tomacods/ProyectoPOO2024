@@ -53,18 +53,16 @@ public class ControladorABMJugadores {
     }
 
     private void agregarJugador() {
-        try {
+        if (this.vista.jTextFieldEditarJugador.getText().length() > 1) {
             Jugador nuevoJugador = new Jugador();
             nuevoJugador.setNombre(this.vista.jTextFieldEditarJugador.getText());
-            if (nuevoJugador.getNombre().length() == 0) {
-                throw new Exception();
-            }
             nuevoJugador.setPuntaje(0);
             nuevoJugador.setEstado("activo");
             Jugador.insertarJugador(nuevoJugador);
             this.vista.jComboBoxJugadores.addItem(nuevoJugador);
-        } catch (Exception e) {
-
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(vista, "Ingrese un nombre valido.",
+            "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }
 
