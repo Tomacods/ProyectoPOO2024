@@ -1,9 +1,9 @@
 package controlador;
-
+import java.util.ArrayList;
+import Modelos.Jugador;
 import java.sql.SQLException;
-
 public class Main {
-   public static void main(String[] args) throws SQLException {
+public static void main(String[] args) throws SQLException {
       // ControladorABMTematica con =new ControladorABMTematica();
       //ControladorSeleccionarJugadores sel = new ControladorSeleccionarJugadores();
       // controladorModoAdmin a = new controladorModoAdmin();
@@ -13,12 +13,12 @@ public class Main {
       //
 
       // ControladorGameplay c = new ControladorGameplay(); 
-
+//
       // ControladorABMPreguntas c = new ControladorABMPreguntas();
 
       // SeleccionarJugador sele = new SeleccionarJugador();
-      //new MenuPrincipalController();
-      new ControladorGameplayAproximacion();
+      new MenuPrincipalController();
+      //new ControladorGameplayAproximacion();
+  }
 
-   }
 }
