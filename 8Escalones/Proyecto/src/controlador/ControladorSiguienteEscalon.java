@@ -17,7 +17,7 @@ public class ControladorSiguienteEscalon {
     private Jugador eliminado;
 
     //jugadores id juego jugador eliminado tematicas 
-    public ControladorSiguienteEscalon(int id_juego, ArrayList<Jugador>jugadores, Jugador eliminado, ArrayList<Tematica> tematicas){
+    public ControladorSiguienteEscalon(int id_juego, ArrayList<Jugador>jugadores, Jugador eliminado, ArrayList<Tematica> tematicas) throws SQLException{
         this.jugadores= jugadores;
         this.eliminado= eliminado;
 
@@ -27,6 +27,7 @@ public class ControladorSiguienteEscalon {
         traerJugadoresSiguen();
         traerEliminado();
         //this.vista1.setVisible(true);
+        new ControladorGameplay(id_juego+1, jugadores, tematicas);
         
     }
 
@@ -34,7 +35,7 @@ public class ControladorSiguienteEscalon {
 
         vista1.setVisible(true);
 
-        Timer timer = new Timer(10000, new ActionListener() {
+        Timer timer = new Timer(5000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 vista1.dispose(); 
@@ -50,7 +51,6 @@ public class ControladorSiguienteEscalon {
     }
     private void traerJugadoresSiguen() {
         // Método para obtener nombre del jugador o un valor vacío si no existe
-       
     
         // Setear los campos con los nombres o vacío si no hay suficientes jugadores
         vista1.getjTextFieldJ1().setText(obtenerNombreJugador(0));
@@ -69,11 +69,4 @@ public class ControladorSiguienteEscalon {
       //  vista2.getTextFieldEliminado.setText(eliminado.getNombre());
     vista1.getjTextFieldJ9().setText(eliminado.getNombre());
     }
-
-    // public static void main(String[] args) throws SQLException {
-    //     ArrayList<Jugador> jugadores = Jugador.obtenerJugadores(); // Obtiene la lista de jugadores
-
-    //     ArrayList<Jugador> subListaJugadores = new ArrayList<>(jugadores.subList(0, Math.min(7, jugadores.size())));
-    //     new ControladorSiguienteEscalon(1, subListaJugadores, Jugador.obtenerJugador(7), null);
-    // }
 }

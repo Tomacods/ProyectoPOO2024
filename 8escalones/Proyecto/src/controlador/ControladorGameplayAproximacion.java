@@ -201,7 +201,7 @@ public class ControladorGameplayAproximacion {
     public void removeEmpatado(Jugador jugador) {
         empatados.remove(jugador);
     }
-    public void siguienteEscalon() {
+    public void siguienteEscalon() throws SQLException {
         System.out.println("Jugadores que quedan:");
                 for (Jugador jugador: siguenJugando) {
                     System.out.println(jugador.getNombre());
@@ -215,12 +215,12 @@ public class ControladorGameplayAproximacion {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             vista.dispose(); 
-                            try {
+                            /* try {
                                 new ControladorGameplay(idJuego + 1, siguenJugando, tematicasRestantes);
                             } catch (SQLException e1) {
                                 // TODO Auto-generated catch block
                                 e1.printStackTrace();
-                            }
+                            } */
                             //mostrarMenuPrincipal();
                             
                
