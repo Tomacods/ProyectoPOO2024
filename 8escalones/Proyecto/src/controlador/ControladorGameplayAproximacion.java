@@ -23,16 +23,18 @@ public class ControladorGameplayAproximacion {
     private Integer rtaIngresada;
     private int idJuego;
     private ArrayList<Tematica> tematicasRestantes;
+    private Tematica tematicaRonda;
 
     // lista jugadores, escalones, tematica
 
-    public ControladorGameplayAproximacion(int idJuego,ArrayList<Jugador> empatados,ArrayList<Jugador> jugadores,ArrayList<Tematica> tematicasRestantes) throws SQLException {
+    public ControladorGameplayAproximacion(int idJuego,ArrayList<Jugador> empatados,ArrayList<Jugador> jugadores,ArrayList<Tematica> tematicasRestantes, Tematica tematicaActual) throws SQLException {
         this.vista = new GameplayAproximacion();
         this.idJuego = idJuego;
         this.empatados = empatados; // este es el array de jugadores que empataron
         this.siguenJugando = jugadores; // este es el array de jugadores que siguen jugando
         this.tematicasRestantes = tematicasRestantes;
         this.vista.setVisible(true);
+        this.tematicaRonda = tematicaActual;
 
 
         this.vista.jButtonExit.addActionListener(new ActionListener() {
@@ -51,17 +53,29 @@ public class ControladorGameplayAproximacion {
             }
         });
         listener();
-        traerTematica();
-        desempatar(this.idJuego);
+        traerNombreTematica();
+        desempatar();
     }
 
     private void salirDelJuego() {
         System.exit(0);
     }
 
-    private void traerTematica() {
-        String tematica = Tematica.obtenerTematica(tematicasRestantes.get(0).getId()).getNombre();
-        vista.getTematica().setText(tematica);
+    private int traerIdTematica(String tematica) {
+        ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
+        int id = 0;
+        for (Tematica tem: tematicas) {
+            if (tem.getNombre() == tematica) {
+                id = tem.getId();
+            }
+        }
+        return id;
+    }
+
+    private void traerNombreTematica() {
+        /* ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
+        Tematica tematica = tematicas.get(new Random().nextInt(tematicas.size())); */
+        vista.getTematica().setText(tematicaRonda.getNombre());
     }
 
     private void listener() {
@@ -74,10 +88,10 @@ public class ControladorGameplayAproximacion {
         });
     }
 
-    public void desempatar(int idJuego) throws SQLException { //id juego es el id de la tematica actual
+    public void desempatar() throws SQLException { //id juego es el id de la tematica actual
         inicializarPuntos();
         ArrayList<PreguntaAproximacion> pregAprox = new ArrayList<>();
-        pregAprox = PreguntaAproximacion.obtenerPreguntasAproximacionTematica(idJuego);
+        pregAprox = PreguntaAproximacion.obtenerPreguntasAproximacionTematica(tematicaRonda.getId());
         System.out.println("A continuación, ¡Evaluaremos el desempate!");
         Boolean eliminado = true;
         while (eliminado) {
@@ -115,6 +129,7 @@ public class ControladorGameplayAproximacion {
             while (iter.hasNext()) {
                 Jugador jugador = iter.next();
                 if (jugador.getPuntaje() != peorDiferencia) { // Condición para remover
+                    
                     iter.remove(); // Elimina el jugador de forma segura
                     //siguenJugando.add(jugador);
                 }
@@ -148,7 +163,8 @@ public class ControladorGameplayAproximacion {
         empatados.remove(jugador);
         siguenJugando.remove(jugador);
         jugador.setEstado("Eliminado");
-        System.out.println("Jugador eliminado: " + jugador.getNombre());
+        System.out.println("Jugador eliminado: " + jugador.getNombre());//ACA
+        javax.swing.JOptionPane.showMessageDialog(vista, "El jugador " + jugador.getNombre() + " ha sido eliminado!", "JUGADOR ELIMINADO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void inicializarPuntos() {
