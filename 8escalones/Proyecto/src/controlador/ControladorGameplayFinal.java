@@ -130,7 +130,7 @@ public class ControladorGameplayFinal {
                 } else {
                     // Agrega un pequeño retardo para evitar un consumo excesivo de CPU
                     try {
-                        Thread.sleep(10);
+                        Thread.sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -197,12 +197,5 @@ public class ControladorGameplayFinal {
         }else{
         return (numero*-1);
         }
-    }
-    public static void main(String[] args) throws SQLException {
-        ArrayList<Jugador>jug = new ArrayList<>();
-        jug.add(Jugador.obtenerJugador(1));
-        jug.add(Jugador.obtenerJugador(3));
-        Escalon esc = new Escalon(0, null, null, null, null);
-        new ControladorGameplayFinal(6, jug, null);
     }
 }
