@@ -69,8 +69,13 @@ public class ControladorABMJugadores {
     }
 
     private void editarJugador() {
-        this.jugadorSeleccionado.setNombre(this.vista.jTextFieldEditarJugador.getText());
-        Jugador.actualizarJugador(this.jugadorSeleccionado);
+        if (this.vista.jTextFieldEditarJugador.getText().length() > 1) {
+            this.jugadorSeleccionado.setNombre(this.vista.jTextFieldEditarJugador.getText());
+            Jugador.actualizarJugador(this.jugadorSeleccionado);
+        }
+        else {
+            javax.swing.JOptionPane.showMessageDialog(vista, "Ingrese un nombre valido.",
+            "Error", javax.swing.JOptionPane.ERROR_MESSAGE);        }
     }
 
     private void eliminarJugador() {

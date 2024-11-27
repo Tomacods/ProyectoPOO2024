@@ -24,7 +24,7 @@ public class App {
         /* ArrayList<Tematica> tematicas = new ArrayList<>();
         tematicas = Tematica.obtenerTematicas();
 
-        
+    
 
 
        // Escalon escalon = new Escalon(1, "Comenzado", Tematica.obtenerTematica(1), jugadores);
@@ -32,7 +32,9 @@ public class App {
 /*         Date fechaActual = new Date();
         Juego juego = new Juego(1, fechaActual, "Comenzado", 1);
         juego.comenzarJuego(); */
-
+        JugadorDAOImpl dao = new JugadorDAOImpl();
+        for
+        dao.actualizarPuntaje();
 
       //  MultipleChoicePregunta pregunta = MultipleChoicePregunta.obtenerPreguntaConRtas(1);
       //  pregunta.imprimirPreguntaYRespuestas();
