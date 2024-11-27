@@ -4,7 +4,11 @@ import Vista.SeleccionarJugador;
 import Modelos.Jugador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JComboBox;
 import java.sql.SQLException;
 import Modelos.Tematica;
@@ -84,6 +88,15 @@ public class ControladorSeleccionarJugadores {
                 } else {
                     javax.swing.JOptionPane.showMessageDialog(vistaSeleccionarJugador, "Se necesitan 9 jugadores", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
                 }} catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (UnsupportedAudioFileException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (LineUnavailableException e) {
+                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
         }).start();

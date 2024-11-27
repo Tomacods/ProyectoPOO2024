@@ -10,6 +10,7 @@ import java.util.Random;
 import javax.swing.Timer;
 
 import Modelos.Tematica;
+import Modelos.AudioLoop;
 import Modelos.Jugador;
 import Modelos.PreguntaAproximacion;
 import Vista.GameplayAproximacion;
@@ -94,6 +95,8 @@ public class ControladorGameplayAproximacion {
     }
 
     public void desempatar() throws SQLException { //id juego es el id de la tematica actual
+        AudioLoop musicaFondo = new AudioLoop();
+        musicaFondo.reproducir("src\\Audio\\Toxicity-8-Bit-Cover-Tribute-to-System-of-a-Down-8-Bit-Universe.wav");
         inicializarPuntos();
         ArrayList<PreguntaAproximacion> pregAprox = new ArrayList<>();
         pregAprox = PreguntaAproximacion.obtenerPreguntasAproximacionTematica(tematicaRonda.getId());
@@ -149,6 +152,7 @@ public class ControladorGameplayAproximacion {
             }
             pregAprox.remove(pregunta);
         }
+        musicaFondo.detener();
         siguienteEscalon();
     }
     
