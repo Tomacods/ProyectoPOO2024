@@ -71,46 +71,4 @@ public class ControladorABMRespuestaAprox {
             }
     }
 
-    /**
-     * @return ABMRespuestaAprox return the vista
-     */
-    public ABMRespuestaAprox getVista() {
-        return vista;
-    }
-
-    /**
-     * @param vista the vista to set
-     */
-    public void setVista(ABMRespuestaAprox vista) {
-        this.vista = vista;
-    }
-
-    /**
-     * @return PreguntaAproximacion return the preguntaActual
-     */
-    public PreguntaAproximacion getPreguntaActual() {
-        return preguntaActual;
-    }
-
-    /**
-     * @param preguntaActual the preguntaActual to set
-     */
-    public void setPreguntaActual(PreguntaAproximacion preguntaActual) {
-        this.preguntaActual = preguntaActual;
-    }
-
-    /**
-     * @return boolean return the esNueva
-     */
-    public boolean isEsNueva() {
-        return esNueva;
-    }
-
-    /**
-     * @param esNueva the esNueva to set
-     */
-    public void setEsNueva(boolean esNueva) {
-        this.esNueva = esNueva;
-    }
-
 }

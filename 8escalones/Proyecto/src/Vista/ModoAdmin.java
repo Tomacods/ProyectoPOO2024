@@ -1,6 +1,5 @@
 
 package Vista;
-
 /**
  *
  * @author Maria
@@ -9,6 +8,8 @@ public class ModoAdmin extends javax.swing.JFrame {
     /**
      * Creates new form gameplay
      */
+
+        
     public ModoAdmin() {
         setLookandFeel();
         initComponents();
@@ -47,8 +48,8 @@ public class ModoAdmin extends javax.swing.JFrame {
 
         jLabelTitulo.setFont(new java.awt.Font("Roboto Medium", 0, 40)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo.setText("MODO");
-        jPanel1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 120, 40));
+        jLabelTitulo.setText("MODO  ");
+        jPanel1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 120, 40)); //esto representa la posicion de la palabra representada en 4
 
         jLabelTitulo1.setFont(new java.awt.Font("Roboto Medium", 0, 40)); // NOI18N
         jLabelTitulo1.setForeground(new java.awt.Color(255, 255, 255));
