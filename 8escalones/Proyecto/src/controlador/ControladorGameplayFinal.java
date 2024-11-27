@@ -5,14 +5,12 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Random;
-
 import Modelos.Escalon;
 import Modelos.Jugador;
 import Modelos.MultipleChoicePregunta;
 import Modelos.Respuesta;
 import Modelos.Ronda;
 import Modelos.Juego;
-
 import Vista.Gameplay_final;
 
 public class ControladorGameplayFinal {
@@ -23,31 +21,26 @@ public class ControladorGameplayFinal {
     private ArrayList<Jugador> jugadores; // Agregado
     private Escalon escalon; // Agregado
     private String estado; // Agregado
-    private Juego juego;
-    private ArrayList<MultipleChoicePregunta> preguntas;
 
     public ControladorGameplayFinal(int idJuego, ArrayList<Jugador> jugadores, Escalon escalon) throws SQLException {
         this.idJuego = idJuego; 
         this.jugadores = jugadores; 
         this.escalon = escalon; 
         this.vista = new Gameplay_final();
-        this.preguntas = MultipleChoicePregunta.obtenerTodasPreguntasMC();
         this.ronda = new Ronda(idJuego, jugadores, escalon);
 
         vista.setVisible(true);
-
         vista.setVisible(true);
-
+        jugarEscalonFinal();
         /* listeners_rtas();
         traerTematica();
         iniciarRonda(); */
        // realizarPreguntas(3); // no se donde sale ese id
-
     }
 
     public void jugarEscalonFinal() throws SQLException {
         System.out.println("¡¡Bienvenidos al Escalon Final!!");
-        //ArrayList<MultipleChoicePregunta> preguntas = MultipleChoicePregunta.;
+        ArrayList<MultipleChoicePregunta> preguntas = MultipleChoicePregunta.obtenerTodasPreguntasMC();
         Jugador jugadorGanador = rondaFinal(preguntas, jugadores);
         System.out.println("El ganador es " + jugadorGanador.getNombre());
     }
