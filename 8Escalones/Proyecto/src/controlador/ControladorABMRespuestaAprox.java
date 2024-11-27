@@ -21,10 +21,11 @@ public class ControladorABMRespuestaAprox {
     private void iniciarVista() {
         if (esNueva == true) {
             this.preguntaActual.setEnunciado("Ingresar enunciado de la pregunta");
-            this.preguntaActual.setValorAproximado(0);
+            this.vista.jTextFieldRespuesta.setText("Ingresar la respuesta correcta ->");
+        } else{
+            this.vista.jTextFieldRespuesta.setText(String.valueOf(this.preguntaActual.getValorAproximado()));
         }
         this.vista.jTextFieldPreguntaAprox.setText(this.preguntaActual.getEnunciado());
-        this.vista.jTextFieldRespuesta.setText(String.valueOf(this.preguntaActual.getValorAproximado()));
 
         this.vista.jButtonBack.addActionListener(new ActionListener() {
             @Override
@@ -69,4 +70,47 @@ public class ControladorABMRespuestaAprox {
                 System.out.println("Este valor no es valido");
             }
     }
+
+    /**
+     * @return ABMRespuestaAprox return the vista
+     */
+    public ABMRespuestaAprox getVista() {
+        return vista;
+    }
+
+    /**
+     * @param vista the vista to set
+     */
+    public void setVista(ABMRespuestaAprox vista) {
+        this.vista = vista;
+    }
+
+    /**
+     * @return PreguntaAproximacion return the preguntaActual
+     */
+    public PreguntaAproximacion getPreguntaActual() {
+        return preguntaActual;
+    }
+
+    /**
+     * @param preguntaActual the preguntaActual to set
+     */
+    public void setPreguntaActual(PreguntaAproximacion preguntaActual) {
+        this.preguntaActual = preguntaActual;
+    }
+
+    /**
+     * @return boolean return the esNueva
+     */
+    public boolean isEsNueva() {
+        return esNueva;
+    }
+
+    /**
+     * @param esNueva the esNueva to set
+     */
+    public void setEsNueva(boolean esNueva) {
+        this.esNueva = esNueva;
+    }
+
 }

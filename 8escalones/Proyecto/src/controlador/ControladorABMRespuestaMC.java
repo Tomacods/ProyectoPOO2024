@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class ControladorABMRespuestaMC {
     private ABMRespuestaMC vista;
@@ -25,12 +27,12 @@ public class ControladorABMRespuestaMC {
         if (esNueva == true) {
             this.pregunta_actual.setEnunciado("Ingrese el enunciado de la pregunta");
             for (int i = 1; i < 5; i++) {
-                Respuesta rta = new Respuesta(0,0,"",false)
+                Respuesta rta = new Respuesta(0,0,"",false);
                 this.pregunta_actual.agregarRespuesta(rta);
             }
         }
         this.vista.jTextFieldPreguntaMC.setText(this.pregunta_actual.getEnunciado());
-        ArrayList<Respuesta> respuestas = Respuesta.obtenerRespuestasPorPregunta(this.pregunta_actual.getIdPregunta());
+        List<Respuesta> respuestas = this.pregunta_actual.getOpciones();
         this.vista.jTextFieldRtaA.setText(respuestas.get(0).getTexto());
         this.vista.jTextFieldRtaB.setText(respuestas.get(1).getTexto());
         this.vista.jTextFieldRtaC.setText(respuestas.get(2).getTexto());
