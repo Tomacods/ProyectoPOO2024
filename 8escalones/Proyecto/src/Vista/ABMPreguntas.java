@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Vista;
+package ventanas;
 
 /**
  *
@@ -15,15 +15,14 @@ public class ABMPreguntas extends javax.swing.JFrame {
     public ABMPreguntas() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, Proyecto/src/imagenes/codigo.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "Proyecto/src/imagenes/admin.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconEdit, "Proyecto/src/imagenes/lapiz.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelSave, "Proyecto/src/imagenes/guardar.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconDelete, "Proyecto/src/imagenes/basura.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTematica, "Proyecto/src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTipo, "Proyecto/src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoPregunta, "Proyecto/src/imagenes/verde.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/codigo.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "src/imagenes/admin.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconEdit, "src/imagenes/lapiz.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconDelete, "src/imagenes/basura.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTematica, "src/imagenes/verde.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTipo, "src/imagenes/verde.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoPregunta, "src/imagenes/verde.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "src/imagenes/back.png");
     }
 
     /**
@@ -47,8 +46,6 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jButtonBack = new javax.swing.JButton();
         jLabelIconEdit = new javax.swing.JLabel();
         jLabelIconDelete = new javax.swing.JLabel();
-        jLabelSave = new javax.swing.JLabel();
-        jButtonSave = new javax.swing.JButton();
         jButtonEliminarPregunta = new javax.swing.JButton();
         jButtonEditarPregunta = new javax.swing.JButton();
         jButtonAgregarPregunta = new javax.swing.JButton();
@@ -70,7 +67,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jTextFieldPreguntas.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldPreguntas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldPreguntas.setText("PREGUNTAS");
-        jPanel1.add(jTextFieldPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 230, 70));
+        jPanel1.add(jTextFieldPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 230, 70));
 
         jTextFieldTematica.setEditable(false);
         jTextFieldTematica.setBackground(new java.awt.Color(51, 153, 0));
@@ -125,19 +122,8 @@ public class ABMPreguntas extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, 50));
-        jPanel1.add(jLabelIconEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 60, 50));
-        jPanel1.add(jLabelIconDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 60, 50));
-        jPanel1.add(jLabelSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 60, 50));
-
-        jButtonSave.setBackground(new java.awt.Color(0, 102, 0));
-        jButtonSave.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButtonSave.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSaveActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 80, 70));
+        jPanel1.add(jLabelIconEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 60, 50));
+        jPanel1.add(jLabelIconDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 60, 50));
 
         jButtonEliminarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jButtonEliminarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
@@ -147,7 +133,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
                 jButtonEliminarPreguntaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonEliminarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 80, 70));
+        jPanel1.add(jButtonEliminarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 80, 70));
 
         jButtonEditarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jButtonEditarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
@@ -157,7 +143,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
                 jButtonEditarPreguntaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonEditarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 80, 70));
+        jPanel1.add(jButtonEditarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 80, 70));
 
         jButtonAgregarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jButtonAgregarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 70)); // NOI18N
@@ -168,7 +154,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
                 jButtonAgregarPreguntaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonAgregarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 80, 70));
+        jPanel1.add(jButtonAgregarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 80, 70));
         jPanel1.add(jLabelFondoTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 290, 80));
         jPanel1.add(jLabelFondoTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 270, 80));
         jPanel1.add(jLabelFondoPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 590, 70));
@@ -211,10 +197,6 @@ public class ABMPreguntas extends javax.swing.JFrame {
     private void jComboBoxPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPreguntaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxPreguntaActionPerformed
-
-    private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,7 +253,6 @@ public class ABMPreguntas extends javax.swing.JFrame {
     public javax.swing.JButton jButtonBack;
     public javax.swing.JButton jButtonEditarPregunta;
     public javax.swing.JButton jButtonEliminarPregunta;
-    public javax.swing.JButton jButtonSave;
     public javax.swing.JComboBox<String> jComboBoxPregunta;
     public javax.swing.JComboBox<String> jComboBoxTematica;
     public javax.swing.JComboBox<String> jComboBoxTipo;
@@ -283,7 +264,6 @@ public class ABMPreguntas extends javax.swing.JFrame {
     public javax.swing.JLabel jLabelIconAdmin;
     public javax.swing.JLabel jLabelIconDelete;
     public javax.swing.JLabel jLabelIconEdit;
-    public javax.swing.JLabel jLabelSave;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField jTextFieldPreguntas;
     public javax.swing.JTextField jTextFieldTematica;
