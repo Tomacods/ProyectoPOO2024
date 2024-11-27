@@ -14,6 +14,7 @@ import Modelos.Tematica;
 import Vista.Gameplay;
 import Vista.GameplayAproximacion;
 
+
 public class ControladorGameplay {
     private Ronda ronda;
     private Gameplay vista;
@@ -22,34 +23,39 @@ public class ControladorGameplay {
     private ArrayList<Jugador> jugadores; // Agregado
     private Escalon escalon; // Agregado
     private String estado; // Agregado
+    private ArrayList<Tematica> tematicasRestantes; 
 
-    public ControladorGameplay(int idJuego, ArrayList<Jugador> jugadores, Escalon escalon) throws SQLException {
+    public ControladorGameplay(int idJuego, ArrayList<Jugador> jugadores,ArrayList<Tematica> tematicas) throws SQLException {
+        this.vista = new Gameplay();
+        
         this.idJuego = idJuego;
         this.jugadores = jugadores;
-        this.escalon = escalon;
-        this.vista = new Gameplay();
-        this.ronda = new Ronda(idJuego, jugadores, escalon);
-
-
-        vista.setVisible(true);
+        this.tematicasRestantes = tematicas;
+        // this.escalon = new Escalon(0, null, Tematica.obtenerTematica(1), jugadores, null);
+        // this.ronda = new Ronda(this.idJuego,this.jugadores ,this.escalon);
 
         listeners_rtas();
         traerTematica();
         traerEscalon();
+        this.vista.setVisible(true);
+
         iniciarRonda(jugadores);
     }
     
     private void traerEscalon(){
-        vista.getjTextFieldEscalon().setText("ESCALON " +  this.escalon.getNumeroEscalon());
+        vista.getjTextFieldEscalon().setText("ESCALON " +  this.idJuego);
     }
 
+
+    
+
     public void iniciarRonda(ArrayList<Jugador> jugadores) throws SQLException {
-        if (escalon.getTematica() != null) {
+        if (!tematicasRestantes.isEmpty() && tematicasRestantes.get(0) != null) {
             inicializarPuntos();
             for (int i = 1; i <= 2; i++) {
                 System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
                 vista.getjTextFieldRonda().setText("RONDA "+ i);
-                realizarPreguntas(escalon.getTematica().getId(), jugadores);
+                realizarPreguntas(this.idJuego, this.jugadores);
                 imprimirPuntajes();
             }
             // Al finalizar las 2 rondas, imprime el puntaje final de cada jugador
@@ -60,7 +66,7 @@ public class ControladorGameplay {
         } else {
             System.out.println("Error: La temática es null.");
         }
-        pasarVista(); //creo q va aca
+        //realizar metodo para ver a que vista se lleva la partida siguiente, si a la de aproximacion o a la de escalon
     }
 
     public void imprimirPuntajes() {
@@ -77,8 +83,8 @@ public class ControladorGameplay {
         }
     }
 
-    private void realizarPreguntas(int idEscalon, ArrayList<Jugador> jugadores) throws SQLException {
-        ArrayList<MultipleChoicePregunta> pregMult = MultipleChoicePregunta.obtenerPreguntasMC(idEscalon);
+    private void realizarPreguntas(int idjuego, ArrayList<Jugador> jugadores) throws SQLException {
+        ArrayList<MultipleChoicePregunta> pregMult = MultipleChoicePregunta.obtenerPreguntasMC(idjuego);
         // ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
         for (Jugador jugador : jugadores) {
             //jugador = Jugador.obtenerJugador(jugador.getId());
@@ -105,8 +111,8 @@ public class ControladorGameplay {
         }
     }
 
-    private void traerTematica() {
-        String tematica = Tematica.obtenerTematica(1).getNombre();
+    private void traerTematica() { //del array que entra busco el primer elemento para mostrae en la vist
+        String tematica = Tematica.obtenerTematicas().get(0).getNombre();
         vista.getjTextFieldTematica().setText(tematica);
     }
 
@@ -171,53 +177,56 @@ public class ControladorGameplay {
     }
 
     public void pasarVista(){
-        new GameplayAproximacion().setVisible(true);;
+        new GameplayAproximacion().setVisible(true);
 
       //  ControladorGameplayAprox c = new ControladorGameplayAprox(obtenerJugadoresConMenorPuntaje());
         //se supone que aca le paso la lista al controlador de game aprox y ya entra ahi
     }
 
     public ArrayList<Jugador> obtenerJugadoresConMenorPuntaje() {
-
         ArrayList<Jugador> jugadores = this.jugadores;
-
-        if (jugadores.isEmpty()) {
-            return new ArrayList<>();
-        }
-
         int menorPuntaje = jugadores.get(1).getPuntaje();
         for (Jugador jugador : jugadores) {
             if (jugador.getPuntaje() < menorPuntaje) {
                 menorPuntaje = jugador.getPuntaje();
             }
         }
-
         ArrayList<Jugador> jugadoresConMenorPuntaje = new ArrayList<>();
         for (Jugador jugador : jugadores) {
             if (jugador.getPuntaje() == menorPuntaje) {
                 jugadoresConMenorPuntaje.add(jugador);
             }
         }
-
+        if (jugadoresConMenorPuntaje.isEmpty()){
+        }
         return jugadoresConMenorPuntaje;
     }
-
-
-    public static void main(String[] args) throws SQLException {
-
-        Tematica tematica = Tematica.obtenerTematica(4);
-        ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
-        Escalon esc = new Escalon(0, null, tematica, jugadores, null);
-        ControladorGameplay c = new ControladorGameplay(1, jugadores, esc);
-        jugadores = c.obtenerJugadoresConMenorPuntaje();
-
-        
-        ArrayList<Jugador> jugadoresConMenorPuntaje = c.obtenerJugadoresConMenorPuntaje();
-        System.out.println("Jugadores con el menor puntaje:");
-        for (Jugador jugador : jugadores) {
-        System.out.println("Nombre: " + jugador.getNombre() + ", Puntaje: " +
-        jugador.getPuntaje() + " puntos");
+    //metodo decidir que si la lista tiene un elemento pasa a la vista de escalon y si no a la de aproximacion
+    public void decidirVista(){
+        if (obtenerJugadoresConMenorPuntaje().size() == 1){ //queda un jugador solo ese jugador queda eliminado y se saca de el arraylist jugadores
+            Jugador jugadorEliminado = obtenerJugadoresConMenorPuntaje().get(0);
+            jugadores.remove(jugadorEliminado);
+            try {
+                this.vista.dispose();
+                new ControladorGameplay(idJuego + 1, jugadores, tematicasRestantes);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-        
+        else{
+            try {
+                new ControladorGameplayAproximacion(obtenerJugadoresConMenorPuntaje());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void actualizarJugadores(Jugador jugador) {
+        jugadores.remove(jugador);
+    }
+
+    public void actualizarJugadores(ArrayList<Jugador> jugadores) {
+        this.jugadores = jugadores;
     }
 }

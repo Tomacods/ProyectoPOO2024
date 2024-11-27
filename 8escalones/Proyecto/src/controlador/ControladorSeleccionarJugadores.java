@@ -6,9 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
+import java.sql.SQLException;
+import Modelos.Tematica;
 
 public class ControladorSeleccionarJugadores {
 
+    public  ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
     private SeleccionarJugador vistaSeleccionarJugador;
     private ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
     public ArrayList<Jugador> seleccionadosOrden = new ArrayList<>(); // Lista para guardar el orden de selección
@@ -31,6 +34,8 @@ public class ControladorSeleccionarJugadores {
             vistaSeleccionarJugador.getComboBoxJ8(),
             vistaSeleccionarJugador.getComboBoxJ9()
         };
+        // Tematica tematica = tematicas.get(1);
+        // ArrayList tematicasRestantes = new ArrayList <>(tematicas.subList(1,tematicas.size()));
 
         // Configurar botones
         this.vistaSeleccionarJugador.jButtonBack.addActionListener(new ActionListener() {
@@ -60,10 +65,25 @@ public class ControladorSeleccionarJugadores {
         new MenuPrincipalController();
         vistaSeleccionarJugador.dispose(); // Cierra la ventana actual
     }
+    
 
+    // private void jugar() {
+    //     try {
+    //         vistaSeleccionarJugador.dispose();
+    //         new ControladorGameplay(1, obtenerJugadoresSeleccionados(), tematicas);
+    //     } catch (SQLException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
     private void jugar() {
-        // new ControladorGameplay();
-        vistaSeleccionarJugador.dispose();
+        new Thread(() -> {
+            try {
+                new ControladorGameplay(1, obtenerJugadoresSeleccionados(), tematicas);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        vistaSeleccionarJugador.setVisible(false);
     }
 
     private void salirDelJuego() {
@@ -142,4 +162,16 @@ public class ControladorSeleccionarJugadores {
         // Puedes imprimir la lista para verificar el orden de selección
         System.out.println("Orden de selección: " + seleccionadosOrden);
     }
+
+    public ArrayList<Jugador> obtenerJugadoresSeleccionados() {
+        ArrayList<Jugador> jugadoresSeleccionados = new ArrayList<>();
+        for (JComboBox<Jugador> comboBox : comboBoxes) {
+            Jugador jugadorSeleccionado = (Jugador) comboBox.getSelectedItem();
+            if (jugadorSeleccionado != null) {
+                jugadoresSeleccionados.add(jugadorSeleccionado);
+            }
+        }
+        return jugadoresSeleccionados;
+    }
+    
 }
