@@ -1,8 +1,11 @@
 package Modelos;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import DAOs.AproximacionDAO;
+import DAOs.BaseDeDatos;
 
 public class PreguntaAproximacion {
     private int idPregunta;
@@ -90,6 +93,13 @@ public static void insertarPreguntaAproximacion(PreguntaAproximacion preguntaApr
 
     public void setEnunciado(String nuevaPregunta) {
         this.enunciado= nuevaPregunta;
+    }
+
+
+
+    public static int obtenerValorAproximado(int id_pregunta) throws SQLException{
+        AproximacionDAO dao = new AproximacionDAO();
+        return dao.obtenerValorAproximado(id_pregunta);
     }
 
 

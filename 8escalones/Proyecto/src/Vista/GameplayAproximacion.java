@@ -210,7 +210,14 @@ public class GameplayAproximacion extends javax.swing.JFrame {
     public javax.swing.JTextField jTextFieldTematica;
     // End of variables declaration//GEN-END:variables
 
-    public javax.swing.JTextField getjTextFieldPregunta() {
+    public javax.swing.JTextField getjTextFieldJugador() {//ACA VA LA PREGUNTA GOD
+        return jTextFieldJugador;
+    }
+
+    public String getjTextFieldPregunta1() {//ACA VA LA PREGUNTA GOD
+        return jTextFieldPregunta.getText();
+    }
+    public javax.swing.JTextField getjTextFieldPregunta() {//ACA VA LA PREGUNTA GOD
         return jTextFieldPregunta;
     }
 
@@ -218,8 +225,14 @@ public class GameplayAproximacion extends javax.swing.JFrame {
         return jTextFieldTematica;
     }
 
-    public javax.swing.JButton getResultadoAprox() {
+    public javax.swing.JButton getBoton() {
         return Respuesta;
     }
+
+    public  int getRtaIngresada() {
+        return Integer.parseInt(jTextFieldRespuestaAprox.getText());
+    }
+    
 }
 
+ 
