@@ -240,18 +240,15 @@ public class ControladorGameplay {
         return jugadoresConMenorPuntaje;
     }
     //metodo decidir que si la lista tiene un elemento pasa a la vista de escalon y si no a la de aproximacion
-    public void decidirVista(){
+    public void decidirVista() throws SQLException{
         if (obtenerJugadoresConMenorPuntaje().size() == 1){ //queda un jugador solo ese jugador queda eliminado y se saca de el arraylist jugadores
             Jugador jugadorEliminado = obtenerJugadoresConMenorPuntaje().get(0);
             jugadores.remove(jugadorEliminado);
-            try {
-                this.vista.dispose();
-                //elimino la tematica actual de la lista de tematicas restantes
-                tematicasRestantes.remove(tematica);
-                new ControladorGameplay(idJuego + 1, jugadores, tematicasRestantes);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            this.vista.dispose();
+            //elimino la tematica actual de la lista de tematicas restantes
+            tematicasRestantes.remove(tematica);
+            new ControladorSiguienteEscalon(idJuego, jugadores, jugadorEliminado, tematicasRestantes);
+          //  new ControladorGameplay(idJuego + 1, jugadores, tematicasRestantes);
         }
         else{
             try {
