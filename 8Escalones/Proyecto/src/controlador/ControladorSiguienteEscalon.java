@@ -26,7 +26,7 @@ public class ControladorSiguienteEscalon {
       inicializarVista();
         traerJugadoresSiguen();
         traerEliminado();
-
+        //this.vista1.setVisible(true);
         
     }
 

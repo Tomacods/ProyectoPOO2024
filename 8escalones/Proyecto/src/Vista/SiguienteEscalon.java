@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package ventanas;
+package Vista;
 
 import javax.swing.Timer; 
 import java.awt.event.ActionEvent; 
@@ -258,8 +258,45 @@ public class SiguienteEscalon extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldJ6;
     private javax.swing.JTextField jTextFieldJ7;
     private javax.swing.JTextField jTextFieldJ8;
+    public javax.swing.JTextField getjTextFieldJ1() {
+        return jTextFieldJ1;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ2() {
+        return jTextFieldJ2;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ3() {
+        return jTextFieldJ3;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ4() {
+        return jTextFieldJ4;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ5() {
+        return jTextFieldJ5;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ6() {
+        return jTextFieldJ6;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ7() {
+        return jTextFieldJ7;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ8() {
+        return jTextFieldJ8;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ9() {
+        return jTextFieldJ9;
+    }
+
     private javax.swing.JTextField jTextFieldJ9;
     // End of variables declaration//GEN-END:variables
+    
     private void iniciarCronometro(){
     tiempo=5;
     timer = new Timer(1000, new ActionListener(){
