@@ -78,7 +78,7 @@ public class ControladorSeleccionarJugadores {
     private void jugar() {
         new Thread(() -> {
             try {
-                if (obtenerJugadoresSeleccionados().size() < 9) { 
+                if (obtenerJugadoresSeleccionados().size() == 9) { 
                 new ControladorGameplay(1, obtenerJugadoresSeleccionados(), tematicas);
             } else {
                 javax.swing.JOptionPane.showMessageDialog(vistaSeleccionarJugador, "Se necesitan 9 jugadores",
