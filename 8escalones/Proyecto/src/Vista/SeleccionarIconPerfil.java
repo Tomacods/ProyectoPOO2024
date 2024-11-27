@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-
+import java.awt.Toolkit;
 /**
  *
  * @author Maria
@@ -36,6 +36,7 @@ public class SeleccionarIconPerfil extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser14, "Proyecto/src/imagenes/IconUser14.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser15, "Proyecto/src/imagenes/IconUser15.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser16, "Proyecto/src/imagenes/IconUser16.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
     }
 
     /**

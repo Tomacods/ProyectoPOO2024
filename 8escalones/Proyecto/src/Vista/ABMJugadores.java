@@ -5,7 +5,7 @@
 package Vista;
 
 import Modelos.Jugador;
-
+import java.awt.Toolkit;
 /**
  *
  * @author Maria
@@ -23,6 +23,7 @@ public class ABMJugadores extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconDelete, "Proyecto/src/imagenes/basura.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoJugadores, "Proyecto/src/imagenes/verde.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
     }
 
     /**

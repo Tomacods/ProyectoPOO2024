@@ -1,4 +1,5 @@
 package Vista;
+import java.awt.Toolkit;
 
 public class Ayuda extends javax.swing.JFrame {
     public Ayuda() {
@@ -6,6 +7,7 @@ public class Ayuda extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
     }
 
     /**

@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-
+import java.awt.Toolkit;
 /**
  *
  * @author Maria
@@ -22,6 +22,7 @@ public class Puntuaciones extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconGanador, "Proyecto/src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconPodio3, "Proyecto/src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconPodio2, "Proyecto/src/imagenes/user.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
     }
 
     /**

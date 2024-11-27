@@ -8,6 +8,7 @@ import javax.swing.Timer;
 import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener; 
 import javax.swing.JOptionPane;
+import java.awt.Toolkit;
 /**
  *
  * @author Maria
@@ -26,6 +27,7 @@ public class SiguienteEscalon extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoAvanzan, "Proyecto/src/imagenes/verde.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoEliminados, "Proyecto/src/imagenes/rojo.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
     }
 
     /**

@@ -4,7 +4,7 @@
  */
 package Vista;
 import java.awt.event.ActionListener;
-
+import java.awt.Toolkit;
 /**
  *
  * @author Maria
@@ -30,6 +30,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser7, "Proyecto/src/imagenes/IconUser7.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser8, "Proyecto/src/imagenes/IconUser8.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelUser9, "Proyecto/src/imagenes/IconUser9.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
         // new ControladorSeleccionarJugadores(this);
     }
 

@@ -1,5 +1,6 @@
 
 package Vista;
+import java.awt.Toolkit;
 /**
  *
  * @author Maria
@@ -17,6 +18,7 @@ public class ModoAdmin extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "proyecto/src/imagenes/codigo.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "proyecto/src/imagenes/back.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "proyecto/src/imagenes/admin.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
 
     }
 
