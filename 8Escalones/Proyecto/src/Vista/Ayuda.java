@@ -39,7 +39,7 @@ public class Ayuda extends javax.swing.JFrame {
         textoAyuda.setMinimumSize(new java.awt.Dimension(10, 10));
         textoAyuda.setPreferredSize(new java.awt.Dimension(10, 10));
         textoAyuda.setText(
-                "\\\\\\El juego involucra a 9 jugadores que deben avanzar por 8 escalones///\n \n\n\\\\\\Eliminando a uno en cada subida hasta llegar a una final entre dos jugadores/// \n \n\n\\\\\\Cada escalón tiene una temática elegida al azar y los jugadores \nsolo sabrán cuál les corresponde al avanzar./// \n\n\n\\\\\\Las preguntas son de opción múltiple y se asignan aleatoriamente.///\n\n \n\\\\\\Si hay empate, se realiza una pregunta de aproximación,  \nen la que gana el jugador que esté más cerca de la respuesta correcta.///  \n\n\n\\\\\\En cada escalón, se hacen dos rondas de preguntas.///");
+                "\\\\\\El juego involucra a 9 jugadores que deben avanzar por 8 escalones///\n \n\n\\\\\\Eliminando a uno en cada subida hasta llegar a una final entre dos jugadores/// \n \n\n\\\\\\Cada escalón tiene una temática elegida al azar y los jugadores \nsolo sabrán cuál les corresponde al avanzar./// \n\n\n\\\\\\Las preguntas son de opción múltiple y se asignan aleatoriamente.///\n\n \n\\\\\\Si hay empate, se realiza una pregunta de aproximación a cada uno,  \nen la que ganan los jugadores que estén más cerca de la respuesta correcta.///  \n\n\n\\\\\\En cada escalón, se hacen dos rondas de preguntas.///");
         jPanel1.add(textoAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 510, 320));
         jPanel1.add(jLabelBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 20));
 
