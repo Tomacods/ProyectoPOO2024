@@ -71,11 +71,11 @@ public class ControladorABMJugadores {
     private void editarJugador() {
         if (this.vista.jTextFieldEditarJugador.getText() != "") {
         this.jugadorSeleccionado.setNombre(this.vista.jTextFieldEditarJugador.getText());
+        Jugador.actualizarJugador(this.jugadorSeleccionado);
         }
         else {
             System.out.println("nombre invalido");
         }
-        Jugador.actualizarJugador(this.jugadorSeleccionado);
     }
 
     private void eliminarJugador() {
