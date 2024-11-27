@@ -79,15 +79,15 @@ public class ControladorSeleccionarJugadores {
         new Thread(() -> {
             try {
                 if (obtenerJugadoresSeleccionados().size() == 9) { 
-                new ControladorGameplay(1, obtenerJugadoresSeleccionados(), tematicas);
-            } else {
-                javax.swing.JOptionPane.showMessageDialog(vistaSeleccionarJugador, "Se necesitan 9 jugadores",
-            "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
-            }} catch (SQLException e) {
-                e.printStackTrace();
-            }
+                    vistaSeleccionarJugador.dispose();
+                    new ControladorGameplay(1, obtenerJugadoresSeleccionados(), tematicas);
+                } else {
+                    javax.swing.JOptionPane.showMessageDialog(vistaSeleccionarJugador, "Se necesitan 9 jugadores", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+                }} catch (SQLException e) {
+                    e.printStackTrace();
+                }
         }).start();
-        vistaSeleccionarJugador.setVisible(false);
+        //vistaSeleccionarJugador.setVisible(false);
     }
 
     private void salirDelJuego() {
