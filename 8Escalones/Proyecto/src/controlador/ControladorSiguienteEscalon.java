@@ -70,10 +70,10 @@ public class ControladorSiguienteEscalon {
     vista1.getjTextFieldJ9().setText(eliminado.getNombre());
     }
 
-    public static void main(String[] args) throws SQLException {
-        ArrayList<Jugador> jugadores = Jugador.obtenerJugadores(); // Obtiene la lista de jugadores
+    // public static void main(String[] args) throws SQLException {
+    //     ArrayList<Jugador> jugadores = Jugador.obtenerJugadores(); // Obtiene la lista de jugadores
 
-        ArrayList<Jugador> subListaJugadores = new ArrayList<>(jugadores.subList(0, Math.min(7, jugadores.size())));
-        new ControladorSiguienteEscalon(1, subListaJugadores, Jugador.obtenerJugador(7), null);
-    }
+    //     ArrayList<Jugador> subListaJugadores = new ArrayList<>(jugadores.subList(0, Math.min(7, jugadores.size())));
+    //     new ControladorSiguienteEscalon(1, subListaJugadores, Jugador.obtenerJugador(7), null);
+    // }
 }

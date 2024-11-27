@@ -6,6 +6,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
+
+import javax.swing.Timer;
+
 import Modelos.Tematica;
 import Modelos.Jugador;
 import Modelos.PreguntaAproximacion;
@@ -24,6 +27,7 @@ public class ControladorGameplayAproximacion {
     private int idJuego;
     private ArrayList<Tematica> tematicasRestantes;
     private Tematica tematicaRonda;
+    private Jugador jugadorEliminado;
 
     // lista jugadores, escalones, tematica
 
@@ -137,6 +141,7 @@ public class ControladorGameplayAproximacion {
             }
 
             if (empatados.size() == 1) {// Si hay mas de un jugador con el peor puntaje, no entra aca
+                jugadorEliminado= empatados.get(0);
                 eliminarJugador(empatados.get(0), valorCorrecto);
                 eliminado = false;
             }
@@ -201,12 +206,28 @@ public class ControladorGameplayAproximacion {
                 for (Jugador jugador: siguenJugando) {
                     System.out.println(jugador.getNombre());
                 }
-        try {
-            this.vista.dispose();
-            new ControladorGameplay(idJuego + 1, siguenJugando, tematicasRestantes);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+                this.vista.dispose();
+
+                new ControladorSiguienteEscalon(idJuego, siguenJugando, jugadorEliminado, tematicasRestantes);
+
+            
+                    Timer timer = new Timer(10000, new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            vista.dispose(); 
+                            try {
+                                new ControladorGameplay(idJuego + 1, siguenJugando, tematicasRestantes);
+                            } catch (SQLException e1) {
+                                // TODO Auto-generated catch block
+                                e1.printStackTrace();
+                            }
+                            //mostrarMenuPrincipal();
+                            
+               
+                        }
+                    });
+                    timer.setRepeats(false); // Solo se ejecuta una vez
+                    timer.start(); 
         
     }
 }
