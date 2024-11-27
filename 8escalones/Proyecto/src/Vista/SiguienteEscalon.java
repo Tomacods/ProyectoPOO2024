@@ -70,7 +70,7 @@ public class SiguienteEscalon extends javax.swing.JFrame {
         jTextFieldJ1.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldJ1.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldJ1.setText("Jugador N");
+        jTextFieldJ1.setText("-");
         jPanel1.add(jTextFieldJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 180, 40));
 
         jTextFieldJ2.setEditable(false);
@@ -78,7 +78,7 @@ public class SiguienteEscalon extends javax.swing.JFrame {
         jTextFieldJ2.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldJ2.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldJ2.setText("Jugador N");
+        jTextFieldJ2.setText("-");
         jPanel1.add(jTextFieldJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 180, 40));
 
         jTextFieldJ3.setEditable(false);
@@ -86,7 +86,7 @@ public class SiguienteEscalon extends javax.swing.JFrame {
         jTextFieldJ3.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldJ3.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldJ3.setText("Jugador N");
+        jTextFieldJ3.setText("-");
         jPanel1.add(jTextFieldJ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 180, 40));
 
         jTextFieldJ4.setEditable(false);
@@ -94,7 +94,7 @@ public class SiguienteEscalon extends javax.swing.JFrame {
         jTextFieldJ4.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldJ4.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldJ4.setText("Jugador N");
+        jTextFieldJ4.setText("-");
         jTextFieldJ4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldJ4ActionPerformed(evt);
@@ -107,7 +107,7 @@ public class SiguienteEscalon extends javax.swing.JFrame {
         jTextFieldJ5.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldJ5.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldJ5.setText("Jugador N");
+        jTextFieldJ5.setText("-");
         jTextFieldJ5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldJ5ActionPerformed(evt);
@@ -120,7 +120,7 @@ public class SiguienteEscalon extends javax.swing.JFrame {
         jTextFieldJ6.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldJ6.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldJ6.setText("Jugador N");
+        jTextFieldJ6.setText("-");
         jPanel1.add(jTextFieldJ6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, 180, 40));
 
         jTextFieldJ7.setEditable(false);
@@ -128,7 +128,7 @@ public class SiguienteEscalon extends javax.swing.JFrame {
         jTextFieldJ7.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldJ7.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldJ7.setText("Jugador N");
+        jTextFieldJ7.setText("-");
         jPanel1.add(jTextFieldJ7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 180, 40));
 
         jTextFieldJ8.setEditable(false);
@@ -136,7 +136,7 @@ public class SiguienteEscalon extends javax.swing.JFrame {
         jTextFieldJ8.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldJ8.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldJ8.setText("Jugador N");
+        jTextFieldJ8.setText("-");
         jPanel1.add(jTextFieldJ8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 180, 40));
 
         jTextFieldJ9.setEditable(false);
@@ -144,7 +144,7 @@ public class SiguienteEscalon extends javax.swing.JFrame {
         jTextFieldJ9.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jTextFieldJ9.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldJ9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldJ9.setText("Jugador N");
+        jTextFieldJ9.setText("-");
         jTextFieldJ9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldJ9ActionPerformed(evt);
