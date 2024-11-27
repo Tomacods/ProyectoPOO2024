@@ -116,7 +116,7 @@ public class ControladorGameplayAproximacion {
                 Jugador jugador = iter.next();
                 if (jugador.getPuntaje() != peorDiferencia) { // Condición para remover
                     iter.remove(); // Elimina el jugador de forma segura
-                    siguenJugando.add(jugador);
+                    //siguenJugando.add(jugador);
                 }
             }
 
