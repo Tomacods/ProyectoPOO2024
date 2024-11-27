@@ -46,6 +46,7 @@ public class ControladorGameplay {
             inicializarPuntos();
             for (int i = 1; i <= 2; i++) {
                 System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
+                vista.getjTextFieldRonda().setText("RONDA "+ i);
                 realizarPreguntas(escalon.getTematica().getId(), jugadores);
                 imprimirPuntajes();
             }
