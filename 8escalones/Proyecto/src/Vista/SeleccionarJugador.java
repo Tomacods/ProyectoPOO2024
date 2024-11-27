@@ -123,7 +123,7 @@ public class SeleccionarJugador extends javax.swing.JFrame {
 
         jTextFieldSeleccionarJugador.setEditable(false);
         jTextFieldSeleccionarJugador.setBackground(new java.awt.Color(102, 0, 102));
-        jTextFieldSeleccionarJugador.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldSeleccionarJugador.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jTextFieldSeleccionarJugador.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldSeleccionarJugador.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldSeleccionarJugador.setText("SELECCIONAR JUGADORES");

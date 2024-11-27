@@ -15,9 +15,9 @@ public class ModoAdmin extends javax.swing.JFrame {
         setLookandFeel();
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "proyecto/src/imagenes/codigo.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "proyecto/src/imagenes/back.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "proyecto/src/imagenes/admin.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/codigo.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "Proyecto/src/imagenes/admin.png");
         setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
 
     }
@@ -48,12 +48,12 @@ public class ModoAdmin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelTitulo.setFont(new java.awt.Font("Roboto Medium", 0, 40)); // NOI18N
+        jLabelTitulo.setFont(new java.awt.Font("Roboto Medium", 0, 35)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo.setText("MODO  ");
+        jLabelTitulo.setText("MODO");
         jPanel1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 120, 40)); //esto representa la posicion de la palabra representada en 4
 
-        jLabelTitulo1.setFont(new java.awt.Font("Roboto Medium", 0, 40)); // NOI18N
+        jLabelTitulo1.setFont(new java.awt.Font("Roboto Medium", 0, 35)); // NOI18N
         jLabelTitulo1.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo1.setText("ADMIN");
         jPanel1.add(jLabelTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, -1, 40));
