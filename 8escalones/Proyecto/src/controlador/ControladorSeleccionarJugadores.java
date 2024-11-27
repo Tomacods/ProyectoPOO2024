@@ -78,8 +78,12 @@ public class ControladorSeleccionarJugadores {
     private void jugar() {
         new Thread(() -> {
             try {
+                if (obtenerJugadoresSeleccionados().size() < 9) { 
                 new ControladorGameplay(1, obtenerJugadoresSeleccionados(), tematicas);
-            } catch (SQLException e) {
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(vistaSeleccionarJugador, "Se necesitan 9 jugadores",
+            "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }} catch (SQLException e) {
                 e.printStackTrace();
             }
         }).start();

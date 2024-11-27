@@ -229,7 +229,7 @@ public class GameplayAproximacion extends javax.swing.JFrame {
         return Respuesta;
     }
 
-    public  int getRtaIngresada() {
+    public int getRtaIngresada() {
         return Integer.parseInt(jTextFieldRespuestaAprox.getText());
     }
     

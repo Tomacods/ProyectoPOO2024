@@ -56,24 +56,20 @@ public class ControladorGameplay {
             tematicasRestantes.remove(0);
             new ControladorGameplayFinal(idJuego, jugadores, tematicasRestantes); //cambiar esto
         } else {
-        if (!tematicasRestantes.isEmpty() && tematicasRestantes.get(0) != null) {
-            inicializarPuntos();
-            for (int i = 1; i <= 2; i++) {
-                System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
-                vista.getjTextFieldRonda().setText("RONDA "+ i);
-                realizarPreguntas(this.idJuego, this.jugadores);
-                imprimirPuntajes();
-            }
-            // Al finalizar las 2 rondas, imprime el puntaje final de cada jugador
-            System.out.println("\nPuntajes finales:");
-            for (Jugador jugador : jugadores) {
-                System.out.println(jugador.getNombre() + ": " + jugador.getPuntaje() + " puntos");
-            }
-        } else {
+            if (!tematicasRestantes.isEmpty() && tematicasRestantes.get(0) != null) {
+                inicializarPuntos();
+                for (int i = 1; i <= 2; i++) {
+                    System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
+                    vista.getjTextFieldRonda().setText("RONDA "+ i);
+                    realizarPreguntas(this.idJuego, this.jugadores);
+                    // Al finalizar las 2 rondas, imprime el puntaje final de cada jugador
+                    imprimirPuntajes();
+                    decidirVista();
+                }
+            } else {
             System.out.println("Error: La temática es null.");
-        }
+            }
     }
-    decidirVista();
         //realizar metodo para ver a que vista se lleva la partida siguiente, si a la de aproximacion o a la de escalon
     }
 
@@ -134,6 +130,8 @@ public class ControladorGameplay {
                 System.out.println("si" + " " + jugador.getPuntaje());
             } else {
                 System.out.println("Incorrecto");
+                javax.swing.JOptionPane.showMessageDialog(vista, "RESPUESTA INCORRECTA",
+            "Respuesta incorrecta", javax.swing.JOptionPane.ERROR_MESSAGE);
             }
         } else {
             System.out.println("No se ha seleccionado ninguna respuesta.");

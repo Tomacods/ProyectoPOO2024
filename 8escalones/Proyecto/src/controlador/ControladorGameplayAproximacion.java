@@ -68,7 +68,8 @@ public class ControladorGameplayAproximacion {
         this.vista.getBoton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                rtaIngresada = vista.getRtaIngresada(); 
+                rtaIngresada = vista.getRtaIngresada();
+                vista.getBoton().setText("");
             }
         });
     }
@@ -169,8 +170,8 @@ public class ControladorGameplayAproximacion {
                     System.out.println(jugador.getNombre());
                 }
         try {
-            new ControladorGameplay(idJuego + 1, siguenJugando, tematicasRestantes);
             this.vista.dispose();
+            new ControladorGameplay(idJuego + 1, siguenJugando, tematicasRestantes);
         } catch (SQLException e) {
             e.printStackTrace();
         }
