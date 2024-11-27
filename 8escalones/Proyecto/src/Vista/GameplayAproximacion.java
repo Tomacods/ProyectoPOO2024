@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -36,8 +38,8 @@ public class GameplayAproximacion extends javax.swing.JFrame {
         jTextFieldPregunta = new javax.swing.JTextField();
         jLabelTematica = new javax.swing.JLabel();
         jTextFieldRespuestaAprox = new javax.swing.JTextField();
-        jTextFieldTurnoAproximacion = new javax.swing.JTextField();
-        jTextFieldRespuesta = new javax.swing.JTextField();
+        jTextFieldTematica = new javax.swing.JTextField();
+        Respuesta = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,31 +93,29 @@ public class GameplayAproximacion extends javax.swing.JFrame {
         });
         jPanel1.add(jTextFieldRespuestaAprox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 380, 40));
 
-        jTextFieldTurnoAproximacion.setEditable(false);
-        jTextFieldTurnoAproximacion.setBackground(new java.awt.Color(102, 0, 102));
-        jTextFieldTurnoAproximacion.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldTurnoAproximacion.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldTurnoAproximacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldTurnoAproximacion.setText("TEMATICA");
-        jTextFieldTurnoAproximacion.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldTematica.setEditable(false);
+        jTextFieldTematica.setBackground(new java.awt.Color(102, 0, 102));
+        jTextFieldTematica.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jTextFieldTematica.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldTematica.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldTematica.setText("TEMATICA");
+        jTextFieldTematica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldTurnoAproximacionActionPerformed(evt);
+                jTextFieldTematicaActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldTurnoAproximacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 170, 40));
+        jPanel1.add(jTextFieldTematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 170, 40));
 
-        jTextFieldRespuesta.setEditable(false);
-        jTextFieldRespuesta.setBackground(new java.awt.Color(102, 0, 102));
-        jTextFieldRespuesta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jTextFieldRespuesta.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldRespuesta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldRespuesta.setText("Respuesta");
-        jTextFieldRespuesta.addActionListener(new java.awt.event.ActionListener() {
+        Respuesta.setBackground(new java.awt.Color(102, 0, 102));
+        Respuesta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        Respuesta.setForeground(new java.awt.Color(255, 255, 255));
+        Respuesta.setText("Respuesta");
+        Respuesta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldRespuestaActionPerformed(evt);
+                System.out.println("Botón respuesta presionado");
             }
         });
-        jPanel1.add(jTextFieldRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 190, 40));
+        jPanel1.add(Respuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 190, 40));
 
         jLabelFondo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jLabelFondo.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,9 +135,14 @@ public class GameplayAproximacion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldTurnoAproximacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTurnoAproximacionActionPerformed
+
+    public void listenerRta(ActionListener listener) {
+        Respuesta.addActionListener(listener);
+    }
+
+    private void jTextFieldTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTematicaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldTurnoAproximacionActionPerformed
+    }//GEN-LAST:event_jTextFieldTematicaActionPerformed
 
     private void jTextFieldRespuestaAproxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldRespuestaAproxActionPerformed
         // TODO add your handling code here:
@@ -154,11 +159,6 @@ public class GameplayAproximacion extends javax.swing.JFrame {
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
 
     }//GEN-LAST:event_jButtonExitActionPerformed
-
-    private void jTextFieldRespuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldRespuestaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldRespuestaActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -198,6 +198,7 @@ public class GameplayAproximacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Respuesta;
     public javax.swing.JButton jButtonExit;
     public javax.swing.JLabel jLabelExit;
     public javax.swing.JLabel jLabelFondo;
@@ -205,9 +206,20 @@ public class GameplayAproximacion extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField jTextFieldJugador;
     public javax.swing.JTextField jTextFieldPregunta;
-    public javax.swing.JTextField jTextFieldRespuesta;
     public javax.swing.JTextField jTextFieldRespuestaAprox;
-    public javax.swing.JTextField jTextFieldTurnoAproximacion;
+    public javax.swing.JTextField jTextFieldTematica;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JTextField getjTextFieldPregunta() {
+        return jTextFieldPregunta;
+    }
+
+    public javax.swing.JTextField getTematica() {
+        return jTextFieldTematica;
+    }
+
+    public javax.swing.JButton getResultadoAprox() {
+        return Respuesta;
+    }
 }
 

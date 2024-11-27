@@ -38,7 +38,13 @@ public class ControladorGameplay {
 
         listeners_rtas();
         traerTematica();
+        traerEscalon();
         iniciarRonda(jugadores);
+    }
+    
+    private void traerEscalon(){
+        //Integer nroEscalon = this.escalon.getNumeroEscalon();
+        vista.getjTextFieldEscalon().setText("ESCALON " +  this.escalon.getNumeroEscalon());
     }
 
     public void iniciarRonda(ArrayList<Jugador> jugadores) throws SQLException {
@@ -46,6 +52,7 @@ public class ControladorGameplay {
             inicializarPuntos();
             for (int i = 1; i <= 2; i++) {
                 System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
+                vista.getjTextFieldRonda().setText("RONDA "+ i);
                 realizarPreguntas(escalon.getTematica().getId(), jugadores);
                 imprimirPuntajes();
             }

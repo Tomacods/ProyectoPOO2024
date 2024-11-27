@@ -17,7 +17,8 @@ public class Main {
       // ControladorABMPreguntas c = new ControladorABMPreguntas();
 
       // SeleccionarJugador sele = new SeleccionarJugador();
-      new MenuPrincipalController();
+      //new MenuPrincipalController();
+      new ControladorGameplayAproximacion();
 
    }
 }
