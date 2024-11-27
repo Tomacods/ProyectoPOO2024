@@ -57,7 +57,7 @@ public class ControladorGameplay {
             this.vista.dispose();
             //sacar la tematica actual de la lista de tematicas restantes
             tematicasRestantes.remove(0);
-            new ControladorGameplayFinal(idJuego, jugadores, tematicasRestantes); //cambiar esto
+            new ControladorGameplayFinal(jugadores, tematicasRestantes); //cambiar esto
         } else {
             if (!tematicasRestantes.isEmpty() && tematicasRestantes.get(0) != null) {
                 inicializarPuntos();
@@ -67,9 +67,10 @@ public class ControladorGameplay {
                     //Tematica tematica = traerTematicaoObj();
                     realizarPreguntas(tematica, this.jugadores);
                     // Al finalizar las 2 rondas, imprime el puntaje final de cada jugador
-                    imprimirPuntajes();
-                    decidirVista();
+                    
                 }
+                imprimirPuntajes();
+                decidirVista();
             } else {
             System.out.println("Error: La temática es null.");
             }
@@ -84,12 +85,12 @@ public class ControladorGameplay {
         }
     }
 
-    public void inicializarPuntos() {
+    /* public void inicializarPuntos() {
         // ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
         for (Jugador jug : jugadores) {
             jug.setPuntaje(0);
         }
-    }
+    } */
 
     private void realizarPreguntas(Tematica tematica, ArrayList<Jugador> jugadores) throws SQLException {
         ArrayList<MultipleChoicePregunta> pregMult = MultipleChoicePregunta.obtenerPreguntasMC(tematica.getId());
@@ -121,6 +122,11 @@ public class ControladorGameplay {
         }
     }
 
+    private void inicializarPuntos() {
+        for (Jugador jug: jugadores) {
+            jug.setPuntaje(0);
+        }
+    }
 
     private Tematica traerTematicaoObj(){
         //ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
@@ -140,17 +146,32 @@ public class ControladorGameplay {
             String respuestaCorrecta = Respuesta.obtenerRespuesta(idRtaCorrecta).getTexto();
             if (rtaSelec != null && rtaSelec.equals(respuestaCorrecta)) {
                 System.out.println("Correcto");
-                javax.swing.JOptionPane.showMessageDialog(vista, "CORRECTA", "La respuesta es", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 jugador.incrementarPuntaje();
+                ventanaRta("CORRECTA \n (" + jugador.getPuntaje() + "/2) preguntas acertadas", jugador);
                 System.out.println("si" + " " + jugador.getPuntaje());
             } else {
                 System.out.println("Incorrecto");
-                javax.swing.JOptionPane.showMessageDialog(vista, "INCORRECTA", "la respuesta es", javax.swing.JOptionPane.ERROR_MESSAGE);
+                ventanaRta("INCORRECTA \n (" + jugador.getPuntaje() + "/2) preguntas acertadas", jugador);
             }
         } else {
             System.out.println("No se ha seleccionado ninguna respuesta.");
         }
         return jugador;
+    }
+
+    private void ventanaRta(String rta, Jugador jugador) {
+        javax.swing.JOptionPane panel = new javax.swing.JOptionPane(rta, javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        javax.swing.JDialog cuadro = panel.createDialog("La respuesta es");
+        Thread cerrar = new Thread(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            cuadro.dispose();
+        });
+        cerrar.start();
+        cuadro.setVisible(true);
     }
 
     private void listeners_rtas() {

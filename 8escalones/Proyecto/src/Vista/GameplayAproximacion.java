@@ -233,4 +233,7 @@ public class GameplayAproximacion extends javax.swing.JFrame {
         return Integer.parseInt(jTextFieldRespuestaAprox.getText());
     }
     
+    public void resetRtaIngresada() {
+        jTextFieldRespuestaAprox.setText("");
+    }
 }

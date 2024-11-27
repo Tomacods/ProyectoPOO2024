@@ -12,8 +12,8 @@ import Modelos.PreguntaAproximacion;
 import Vista.GameplayAproximacion;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.lang.reflect.Array;
-import Modelos.Tematica;
+//import java.lang.reflect.Array;
+//import Modelos.Tematica;
 
 
 public class ControladorGameplayAproximacion {
@@ -61,7 +61,7 @@ public class ControladorGameplayAproximacion {
         System.exit(0);
     }
 
-    private int traerIdTematica(String tematica) {
+    /* private int traerIdTematica(String tematica) {
         ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
         int id = 0;
         for (Tematica tem: tematicas) {
@@ -70,7 +70,7 @@ public class ControladorGameplayAproximacion {
             }
         }
         return id;
-    }
+    } */
 
     private void traerNombreTematica() {
         /* ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();
@@ -84,6 +84,7 @@ public class ControladorGameplayAproximacion {
             public void actionPerformed(ActionEvent e) {
                 rtaIngresada = vista.getRtaIngresada();
                 vista.getBoton().setText("");
+                vista.resetRtaIngresada();
             }
         });
     }
@@ -136,7 +137,7 @@ public class ControladorGameplayAproximacion {
             }
 
             if (empatados.size() == 1) {// Si hay mas de un jugador con el peor puntaje, no entra aca
-                eliminarJugador(empatados.get(0));
+                eliminarJugador(empatados.get(0), pregunta);
                 eliminado = false;
             }
             pregAprox.remove(pregunta);
@@ -159,12 +160,27 @@ public class ControladorGameplayAproximacion {
         }
     }
 
-    private void eliminarJugador(Jugador jugador) {
+    private void eliminarJugador(Jugador jugador, PreguntaAproximacion pregunta) {
         empatados.remove(jugador);
         siguenJugando.remove(jugador);
         jugador.setEstado("Eliminado");
         System.out.println("Jugador eliminado: " + jugador.getNombre());//ACA
-        javax.swing.JOptionPane.showMessageDialog(vista, "El jugador " + jugador.getNombre() + " ha sido eliminado!", "JUGADOR ELIMINADO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        ventanaJugadorEliminado(jugador, pregunta);
+    }
+
+    private void ventanaJugadorEliminado(Jugador jugador, PreguntaAproximacion pregunta) {
+        javax.swing.JOptionPane panel = new javax.swing.JOptionPane("El jugador " + jugador.getNombre() + " ha sido eliminado!\nLa respuesta correcta era: " + pregunta.getValorAproximado(), javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        javax.swing.JDialog cuadro = panel.createDialog("Jugador eliminado");
+        Thread cerrar = new Thread(() -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            cuadro.dispose();
+        });
+        cerrar.start();
+        cuadro.setVisible(true);
     }
 
     private void inicializarPuntos() {
