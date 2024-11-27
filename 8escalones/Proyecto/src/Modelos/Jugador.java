@@ -57,7 +57,7 @@ public class Jugador {
     }
     
     public void incrementarPuntaje() {
-        this.puntaje++;
+        puntaje= puntaje + 1;
     }
 
     //ABM

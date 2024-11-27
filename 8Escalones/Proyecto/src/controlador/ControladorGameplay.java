@@ -38,17 +38,17 @@ public class ControladorGameplay {
 
         listeners_rtas();
         traerTematica();
-        iniciarRonda();
+        iniciarRonda(jugadores);
     }
 
-    public void iniciarRonda() throws SQLException {
-        if (this.escalon.getTematica() != null) {
-            //inicializarPuntos(jugadores);
+    public void iniciarRonda(ArrayList<Jugador> jugadores) throws SQLException {
+        if (escalon.getTematica() != null) {
+            inicializarPuntos();
             for (int i = 1; i <= 2; i++) {
                 System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
-                realizarPreguntas(this.escalon.getTematica().getId(), this.jugadores);
+                realizarPreguntas(escalon.getTematica().getId(), jugadores);
+                imprimirPuntajes();
             }
-
             // Al finalizar las 2 rondas, imprime el puntaje final de cada jugador
             System.out.println("\nPuntajes finales:");
             for (Jugador jugador : jugadores) {
@@ -59,30 +59,32 @@ public class ControladorGameplay {
         }
     }
 
-    public void inicializarPuntos(ArrayList<Jugador> jugadores) {
+    public void imprimirPuntajes() {
+        System.out.println("\nPuntajes finales:");
+        for (Jugador jugador : jugadores) {
+            System.out.println(jugador.getNombre() + ": " + jugador.getPuntaje() + " puntos");
+        }
+    }
+
+    public void inicializarPuntos() {
         // ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
         for (Jugador jug : jugadores) {
-            jug.setearPuntaje();
+            jug.setPuntaje(0);
         }
     }
 
     private void realizarPreguntas(int idEscalon, ArrayList<Jugador> jugadores) throws SQLException {
         ArrayList<MultipleChoicePregunta> pregMult = MultipleChoicePregunta.obtenerPreguntasMC(idEscalon);
         // ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
-
         for (Jugador jugador : jugadores) {
-            jugador = Jugador.obtenerJugador(jugador.getId());
+            //jugador = Jugador.obtenerJugador(jugador.getId());
             vista.getjTextFieldJugador().setText(jugador.getNombre());
             MultipleChoicePregunta pregunta = pregMult.get(new Random().nextInt(pregMult.size()));
-
             // Limpiar la respuesta seleccionada antes de la nueva pregunta
             rtaSelec = null;
-
             vista.getjTextFieldPregunta().setText(pregunta.getEnunciado());
             traerRespuestas(pregunta.getIdPregunta());
-
             System.out.println("Pregunta para " + jugador.getNombre() + ": " + pregunta.getEnunciado());
-
             boolean respuestaSeleccionada = false;
             while (!respuestaSeleccionada) {
                 if (rtaSelec != null && !rtaSelec.isEmpty()) {
@@ -90,29 +92,28 @@ public class ControladorGameplay {
                     respuestaSeleccionada = true;
                 }
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(1);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
-
             pregMult.remove(pregunta);
         }
     }
 
     private void traerTematica() {
-
         String tematica = Tematica.obtenerTematica(1).getNombre();
         vista.getjTextFieldTematica().setText(tematica);
     }
+
     private Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta) throws SQLException {
         Integer idRtaCorrecta = Respuesta.obtenerIdRtaCorrectaMC(pregunta.getIdPregunta());
         if (idRtaCorrecta != -1) {
             String respuestaCorrecta = Respuesta.obtenerRespuesta(idRtaCorrecta).getTexto();
             if (rtaSelec != null && rtaSelec.equals(respuestaCorrecta)) {
                 System.out.println("Correcto");
-                jugador.incrementarPuntaje();  
-                System.out.println("si" +  "" + jugador.getPuntaje());
+                jugador.incrementarPuntaje();
+                System.out.println("si" + " " + jugador.getPuntaje());
             } else {
                 System.out.println("Incorrecto");
             }
@@ -121,7 +122,6 @@ public class ControladorGameplay {
         }
         return jugador;
     }
-    
 
     private void listeners_rtas() {
         this.vista.getjButtonRtaA().addActionListener(new ActionListener() {
@@ -144,21 +144,21 @@ public class ControladorGameplay {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                rtaSelec = vista.getjButtonRtaC().getText(); 
+                rtaSelec = vista.getjButtonRtaC().getText();
             }
         });
 
         this.vista.getjButtonRtaD().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                rtaSelec = vista.getjButtonRtaD().getText(); 
+                rtaSelec = vista.getjButtonRtaD().getText();
             }
         });
     }
 
     private void traerRespuestas(int idPregunta) throws SQLException {
         ArrayList<Respuesta> respuestas = Respuesta.obtenerRespuestasPorPregunta(idPregunta);
-        if (respuestas.size() >= 4) { 
+        if (respuestas.size() >= 4) {
             vista.getjButtonRtaA().setText(respuestas.get(0).getTexto());
             vista.getjButtonRtaB().setText(respuestas.get(1).getTexto());
             vista.getjButtonRtaC().setText(respuestas.get(2).getTexto());
@@ -171,20 +171,20 @@ public class ControladorGameplay {
         ArrayList<Jugador> jugadores = this.jugadores;
 
         if (jugadores.isEmpty()) {
-            return new ArrayList<>(); 
+            return new ArrayList<>();
         }
 
-        int menorPuntaje = jugadores.get(1).getPuntaje(); 
+        int menorPuntaje = jugadores.get(1).getPuntaje();
         for (Jugador jugador : jugadores) {
             if (jugador.getPuntaje() < menorPuntaje) {
-                menorPuntaje = jugador.getPuntaje(); 
+                menorPuntaje = jugador.getPuntaje();
             }
         }
 
         ArrayList<Jugador> jugadoresConMenorPuntaje = new ArrayList<>();
         for (Jugador jugador : jugadores) {
             if (jugador.getPuntaje() == menorPuntaje) {
-                jugadoresConMenorPuntaje.add(jugador); 
+                jugadoresConMenorPuntaje.add(jugador);
             }
         }
 
@@ -193,22 +193,23 @@ public class ControladorGameplay {
 
     public static void main(String[] args) throws SQLException {
 
-        Tematica tematica = Tematica.obtenerTematica(4); 
+        Tematica tematica = Tematica.obtenerTematica(4);
+        ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
+        Escalon esc = new Escalon(0, null, tematica, jugadores, null);
+        ControladorGameplay c = new ControladorGameplay(1, jugadores, esc);
+        jugadores = c.obtenerJugadoresConMenorPuntaje();
 
-        Escalon esc = new Escalon(0, null, tematica, null, null);
-
-        ControladorGameplay c = new ControladorGameplay(1, Jugador.obtenerJugadores(), esc);
-
+        
         ArrayList<Jugador> jugadoresConMenorPuntaje = c.obtenerJugadoresConMenorPuntaje();
-
         System.out.println("Jugadores con el menor puntaje:");
-        for (Jugador jugador : jugadoresConMenorPuntaje) {
-            System.out.println("Nombre: " + jugador.getNombre() + ", Puntaje: " + jugador.getPuntaje() + " puntos");
+        for (Jugador jugador : jugadores) {
+        System.out.println("Nombre: " + jugador.getNombre() + ", Puntaje: " +
+        jugador.getPuntaje() + " puntos");
         }
         
     }
-
 }
+
 
 /*
  * private void realizarPreguntas(int idEscalon) throws SQLException {
