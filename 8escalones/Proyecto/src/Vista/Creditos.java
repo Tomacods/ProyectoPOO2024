@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-
+import java.awt.Toolkit;
 /**
  *
  * @author Maria
@@ -15,8 +15,9 @@ public class Creditos extends javax.swing.JFrame {
     public Creditos() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/plantilla.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/8EscalonesCarga.gif");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/back.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
     }
 
     /**
@@ -68,11 +69,11 @@ public class Creditos extends javax.swing.JFrame {
         jPanel1.add(jLabelN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 150, 70));
 
         jLabelN3.setFont(new java.awt.Font("Roboto Medium", 0, 50)); // NOI18N
-        jLabelN3.setText("Tomas");
+        jLabelN3.setText("Tomás");
         jPanel1.add(jLabelN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 160, 70));
 
         jLabelN4.setFont(new java.awt.Font("Roboto Medium", 0, 50)); // NOI18N
-        jLabelN4.setText("Tomas");
+        jLabelN4.setText("Tomás");
         jPanel1.add(jLabelN4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 160, 70));
 
         jLabeln5.setFont(new java.awt.Font("Roboto Medium", 0, 50)); // NOI18N

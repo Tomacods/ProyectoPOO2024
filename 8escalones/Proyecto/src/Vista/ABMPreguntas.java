@@ -4,6 +4,7 @@
  */
 package Vista;
 import java.awt.event.ActionListener;
+import java.awt.Toolkit;
 /**
  *
  * @author Maria
@@ -24,6 +25,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTipo, "Proyecto/src/imagenes/verde.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoPregunta, "Proyecto/src/imagenes/verde.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
     }
 
     /**

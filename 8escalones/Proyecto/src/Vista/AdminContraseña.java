@@ -1,5 +1,6 @@
 package Vista;
 
+import java.awt.Toolkit;
 public class AdminContraseña extends javax.swing.JFrame {
     /**
      * Creates new form gameplay
@@ -10,6 +11,7 @@ public class AdminContraseña extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/codigo.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "Proyecto/src/imagenes/admin.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
     }
 
     /**
@@ -65,7 +67,7 @@ public class AdminContraseña extends javax.swing.JFrame {
         jPanel1.add(jLabelIconAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 110, 100));
 
         jButtonIngresar.setBackground(new java.awt.Color(51, 153, 0));
-        jButtonIngresar.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jButtonIngresar.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jButtonIngresar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonIngresar.setText("INGRESAR");
         jPanel1.add(jButtonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 130, -1));

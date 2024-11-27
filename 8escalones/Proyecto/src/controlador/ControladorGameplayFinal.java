@@ -2,10 +2,20 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
+import Modelos.AudioLoop;
 //import Modelos.Escalon;
 import Modelos.Jugador;
 import Modelos.MultipleChoicePregunta;
@@ -24,7 +34,7 @@ public class ControladorGameplayFinal {
 
 
 
-    public ControladorGameplayFinal(/* int idJuego, */ ArrayList<Jugador> jugadores, ArrayList<Tematica> tematicas) throws SQLException {
+    public ControladorGameplayFinal(/* int idJuego, */ ArrayList<Jugador> jugadores, ArrayList<Tematica> tematicas) throws SQLException, UnsupportedAudioFileException, IOException, LineUnavailableException {
         /* this.idJuego = idJuego;  */
         this.jugadores = jugadores; 
         this.vista = new Gameplay_final();
@@ -81,17 +91,20 @@ public class ControladorGameplayFinal {
         }
     }
 
-    public void jugarEscalonFinal() throws SQLException {
+    public void jugarEscalonFinal() throws SQLException, UnsupportedAudioFileException, IOException, LineUnavailableException {
         //System.out.println("¡¡Bienvenidos al Escalon Final!!");
+        AudioLoop musicaFondo = new AudioLoop();
+        musicaFondo.reproducir("src\\Audio\\Through-The-Fire-and-Flames-8-Bit-Cover-Tribute-to-Dragonforce-8-Bit-Universe.wav");
         ArrayList<MultipleChoicePregunta> preguntas = MultipleChoicePregunta.obtenerTodasPreguntasMC(); 
         java.util.Collections.shuffle(preguntas);
         Jugador jugadorGanador = rondaFinal(preguntas, jugadores);
         System.out.println("El ganador es " + jugadorGanador.getNombre());
+        musicaFondo.detener();
         this.vista.dispose();
         new ControladorGanador(jugadorGanador);
     }
 
-    public Jugador rondaFinal(ArrayList<MultipleChoicePregunta> preguntas, ArrayList<Jugador> jugadores) throws SQLException{
+    public Jugador rondaFinal(ArrayList<MultipleChoicePregunta> preguntas, ArrayList<Jugador> jugadores) throws SQLException, UnsupportedAudioFileException, IOException, LineUnavailableException{
         inicializarPuntos();
         for (int i = 1; i<=5; i++){
             realizarPreguntas(preguntas, jugadores);
@@ -112,7 +125,7 @@ public class ControladorGameplayFinal {
         }
     }
 
-    private void realizarPreguntas(ArrayList<MultipleChoicePregunta> preguntas, ArrayList<Jugador> jugadores) throws SQLException {
+    private void realizarPreguntas(ArrayList<MultipleChoicePregunta> preguntas, ArrayList<Jugador> jugadores) throws SQLException, UnsupportedAudioFileException, IOException, LineUnavailableException {
         for (Jugador jugador : jugadores) {
             MultipleChoicePregunta pregunta = preguntas.get(new Random().nextInt(preguntas.size()));
             rtaSelec = null;
@@ -137,18 +150,20 @@ public class ControladorGameplayFinal {
         }
     }
 
-    private Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta, ArrayList<Jugador> jugadores) throws SQLException {
+    private Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta, ArrayList<Jugador> jugadores) throws SQLException, UnsupportedAudioFileException, IOException, LineUnavailableException {
         Integer idRtaCorrecta = Respuesta.obtenerIdRtaCorrectaMC(pregunta.getIdPregunta());
         if (idRtaCorrecta != -1) {
             String rtaCorrecta = Respuesta.obtenerRespuesta(idRtaCorrecta).getTexto();
             if (rtaSelec != null && rtaSelec.equals(rtaCorrecta)) {
                 System.out.println("Correcto");
+                AudioLoop.reproducirSonido("src\\Audio\\correcto-sonido.wav");
                 jugador.incrementarPuntaje();
                 String puntos = "Puntos \n" + jugadores.get(0).getNombre() + ": " + jugadores.get(0).getPuntaje() + "\n" + jugadores.get(1).getNombre() + ": " + jugadores.get(1).getPuntaje();
                 ventanaRta("CORRECTA", puntos);
                 System.out.println("si" + " " + jugador.getPuntaje());
             } else {
                 System.out.println("Incorrecto");
+                AudioLoop.reproducirSonido("src\\Audio\\wrong-answer.wav");
                 String puntos = "Puntos \n" + jugadores.get(0).getNombre() + ": " + jugadores.get(0).getPuntaje() + "\n" + jugadores.get(1).getNombre() + ": " + jugadores.get(1).getPuntaje();
                 ventanaRta("INCORRECTA", puntos);
             }

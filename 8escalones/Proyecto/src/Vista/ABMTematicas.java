@@ -3,6 +3,7 @@ package Vista;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Toolkit;
 
 public class ABMTematicas extends javax.swing.JFrame {
 
@@ -15,6 +16,7 @@ public class ABMTematicas extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconDelete, "Proyecto/src/imagenes/basura.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTematica, "Proyecto/src/imagenes/verde.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelBack, "Proyecto/src/imagenes/back.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
     }
 
     private void initComponents() {

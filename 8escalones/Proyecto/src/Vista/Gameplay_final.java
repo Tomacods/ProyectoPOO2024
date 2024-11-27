@@ -4,7 +4,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-
+import java.awt.Toolkit;
 
 /**
  *
@@ -22,6 +22,7 @@ public class Gameplay_final extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelExit, "Proyecto/src/imagenes/exit.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser2, "Proyecto/src/imagenes/user.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconUser, "Proyecto/src/imagenes/user.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
     }
 
     /**

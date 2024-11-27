@@ -8,7 +8,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 this.setLocationRelativeTo(null);
                 rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/MenuPrincipal3.png");
                 rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconJugar, "Proyecto/src/imagenes/Joystick.png");
-                setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.png"));
+                setIconImage(Toolkit.getDefaultToolkit().getImage("Proyecto/src/imagenes/icon.jfif"));
         }
 
         private void initComponents() {

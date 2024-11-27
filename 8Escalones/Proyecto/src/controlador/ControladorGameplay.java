@@ -2,10 +2,20 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
+import Modelos.AudioLoop;
 //import Modelos.Escalon;
 import Modelos.Jugador;
 import Modelos.MultipleChoicePregunta;
@@ -27,7 +37,7 @@ public class ControladorGameplay {
     //private String estado; // Agregado
     private Tematica tematica;
 
-    public ControladorGameplay(int idJuego, ArrayList<Jugador> jugadores,ArrayList<Tematica> tematicas) throws SQLException {
+    public ControladorGameplay(int idJuego, ArrayList<Jugador> jugadores,ArrayList<Tematica> tematicas) throws SQLException, UnsupportedAudioFileException, IOException, LineUnavailableException {
         this.vista = new Gameplay();
         
         this.idJuego = idJuego;
@@ -52,7 +62,7 @@ public class ControladorGameplay {
 
     
 
-    public void iniciarRonda(ArrayList<Jugador> jugadores) throws SQLException {
+    public void iniciarRonda(ArrayList<Jugador> jugadores) throws SQLException, UnsupportedAudioFileException, IOException, LineUnavailableException {
         if (this.idJuego == 8) {
             this.vista.dispose();
             //sacar la tematica actual de la lista de tematicas restantes
@@ -60,6 +70,8 @@ public class ControladorGameplay {
             new ControladorGameplayFinal(jugadores, tematicasRestantes); //cambiar esto
         } else {
             if (!tematicasRestantes.isEmpty() && tematicasRestantes.get(0) != null) {
+                AudioLoop musicaFondo = new AudioLoop();
+                musicaFondo.reproducir("src\\Audio\\Take-On-Me-8-Bit-Remix-Cover-Version-Tribute-to-Aha-8-Bit-Universe.wav");
                 inicializarPuntos();
                 for (int i = 1; i <= 2; i++) {
                     System.out.println("Iniciando ronda " + i + " del juego " + idJuego);
@@ -70,6 +82,7 @@ public class ControladorGameplay {
                     
                 }
                 imprimirPuntajes();
+                musicaFondo.detener();
                 decidirVista();
             } else {
             System.out.println("Error: La temática es null.");
@@ -92,7 +105,7 @@ public class ControladorGameplay {
         }
     } */
 
-    private void realizarPreguntas(Tematica tematica, ArrayList<Jugador> jugadores) throws SQLException {
+    private void realizarPreguntas(Tematica tematica, ArrayList<Jugador> jugadores) throws SQLException, UnsupportedAudioFileException, IOException, LineUnavailableException {
         ArrayList<MultipleChoicePregunta> pregMult = MultipleChoicePregunta.obtenerPreguntasMC(tematica.getId());
         // ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
         vista.getjTextFieldTematica().setText(tematica.getNombre());//poner el nombre tematica
@@ -140,17 +153,19 @@ public class ControladorGameplay {
         vista.getjTextFieldTematica().setText(tematica.getNombre());
     } */
 
-    private Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta) throws SQLException {
+    private Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta) throws SQLException, UnsupportedAudioFileException, IOException, LineUnavailableException {
         Integer idRtaCorrecta = Respuesta.obtenerIdRtaCorrectaMC(pregunta.getIdPregunta());
         if (idRtaCorrecta != -1) {
             String respuestaCorrecta = Respuesta.obtenerRespuesta(idRtaCorrecta).getTexto();
             if (rtaSelec != null && rtaSelec.equals(respuestaCorrecta)) {
                 System.out.println("Correcto");
+                AudioLoop.reproducirSonido("src\\Audio\\correcto-sonido.wav");
                 jugador.incrementarPuntaje();
                 ventanaRta("CORRECTA \n (" + jugador.getPuntaje() + "/2) preguntas acertadas", jugador);
                 System.out.println("si" + " " + jugador.getPuntaje());
             } else {
                 System.out.println("Incorrecto");
+                AudioLoop.reproducirSonido("src\\Audio\\wrong-answer.wav");
                 ventanaRta("INCORRECTA \n (" + jugador.getPuntaje() + "/2) preguntas acertadas", jugador);
             }
         } else {
