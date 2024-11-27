@@ -225,7 +225,6 @@ public class ControladorGameplayAproximacion {
                             } */
                             //mostrarMenuPrincipal();
                             
-               
                         }
                     });
                     timer.setRepeats(false); // Solo se ejecuta una vez
