@@ -22,16 +22,64 @@ public class ControladorGameplayFinal {
     private Escalon escalon; // Agregado
     private String estado; // Agregado
 
+
     public ControladorGameplayFinal(int idJuego, ArrayList<Jugador> jugadores, Escalon escalon) throws SQLException {
         this.idJuego = idJuego; 
         this.jugadores = jugadores; 
         this.escalon = escalon; 
         this.vista = new Gameplay_final();
         this.ronda = new Ronda(idJuego, jugadores, escalon);
-
         vista.setVisible(true);
-        vista.setVisible(true);
+        traerJugador();
+        listeners_rtas();
         jugarEscalonFinal();
+    }
+
+    private void traerJugador(){
+        this.vista.getJugador1().setText((jugadores.get(0)).getNombre());
+        this.vista.getJugador2().setText((jugadores.get(1)).getNombre());
+    }
+    private void listeners_rtas() {
+        this.vista.getjButtonRtaA().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                rtaSelec = vista.getjButtonRtaA().getText();
+            }
+        });
+
+        this.vista.getjButtonRtaB().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                rtaSelec = vista.getjButtonRtaB().getText();
+            }
+        });
+
+        this.vista.getjButtonRtaC().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                rtaSelec = vista.getjButtonRtaC().getText();
+            }
+        });
+
+        this.vista.getjButtonRtaD().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                rtaSelec = vista.getjButtonRtaD().getText();
+            }
+        });
+    }
+
+    private void traerRespuestas(int idPregunta) throws SQLException {
+        ArrayList<Respuesta> respuestas = Respuesta.obtenerRespuestasPorPregunta(idPregunta);
+        if (respuestas.size() >= 4) {
+            vista.getjButtonRtaA().setText(respuestas.get(0).getTexto());
+            vista.getjButtonRtaB().setText(respuestas.get(1).getTexto());
+            vista.getjButtonRtaC().setText(respuestas.get(2).getTexto());
+            vista.getjButtonRtaD().setText(respuestas.get(3).getTexto());
+        }
     }
 
     public void jugarEscalonFinal() throws SQLException {
@@ -52,6 +100,7 @@ public class ControladorGameplayFinal {
             }
             pos = pos + 1;
         }
+        
         if (jugadores.get(0).getPuntaje() == jugadores.get(1).getPuntaje()) {
             while (jugadores.get(0).getPuntaje() == jugadores.get(1).getPuntaje()) {
                 realizarPreguntas(preguntas, jugadores);
@@ -76,33 +125,46 @@ public class ControladorGameplayFinal {
             traerRespuestas(pregunta.getIdPregunta());
             System.out.println("Pregunta para " + jugador.getNombre() + ": " + pregunta.getEnunciado());
             boolean respuestaSeleccionada = false;
+
             while (!respuestaSeleccionada) {
                 if (rtaSelec != null && !rtaSelec.isEmpty()) {
-                    jugador = preguntarJugador(jugador, pregunta);
+                    jugador = preguntarJugador(jugador, pregunta); // Procesa la respuesta
                     respuestaSeleccionada = true;
-                }
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                } else {
+                    // Agrega un pequeño retardo para evitar un consumo excesivo de CPU
+                    try {
+                        Thread.sleep(10);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
+            
             preguntas.remove(pregunta);
         }
     }
-    private void traerRespuestas(int idPregunta) throws SQLException {
-        ArrayList<Respuesta> respuestas = Respuesta.obtenerRespuestasPorPregunta(idPregunta);
-        if (respuestas.size() >= 4) {
-            vista.getjButtonRtaA().setText(respuestas.get(0).getTexto());
-            vista.getjButtonRtaB().setText(respuestas.get(1).getTexto());
-            vista.getjButtonRtaC().setText(respuestas.get(2).getTexto());
-            vista.getjButtonRtaD().setText(respuestas.get(3).getTexto());
+
+
+    private Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta) throws SQLException {
+        Integer idRtaCorrecta = Respuesta.obtenerIdRtaCorrectaMC(pregunta.getIdPregunta());
+        if (idRtaCorrecta != -1) {
+            String respuestaCorrecta = Respuesta.obtenerRespuesta(idRtaCorrecta).getTexto();
+            if (rtaSelec != null && rtaSelec.equals(respuestaCorrecta)) {
+                System.out.println("Correcto");
+                jugador.incrementarPuntaje();
+                //System.out.println("si" + " " + jugador.getPuntaje());
+            } else {
+                System.out.println("Incorrecto");
+            }
+        } else {
+            System.out.println("No se ha seleccionado ninguna respuesta.");
         }
+        return jugador;
     }
 
-    public Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta) throws SQLException{
+/*     public Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta pregunta) throws SQLException{
         pregunta.imprimirOpciones();
-        String respuesta = "Opción A"; // Se conectaria con el controlador para obtener la respuesta
+        //String respuesta = "Opción A"; // Se conectaria con el controlador para obtener la respuesta
         ArrayList<Respuesta> respuestas = Respuesta.obtenerRespuestasPorPregunta(pregunta.getIdPregunta());
         Boolean correcta = respuestaCorrecta(respuestas, respuesta);
         if (correcta == true) {
@@ -112,9 +174,9 @@ public class ControladorGameplayFinal {
             System.out.println("Respuesta incorrecta");
         }
         return jugador;
-    }
+    } */
 
-    private Boolean respuestaCorrecta(ArrayList<Respuesta> respuestas, String resp) {
+/*     private Boolean respuestaCorrecta(ArrayList<Respuesta> respuestas, String resp) {
         Boolean correcta = false;
         for (Respuesta rta : respuestas) {
             if (rta.isEsCorrecta() == true) {
@@ -124,7 +186,7 @@ public class ControladorGameplayFinal {
             }
         }
         return correcta;
-    }
+    } */
 
     private void inicializarPuntos() {
         for (Jugador jug: jugadores) {
@@ -138,5 +200,12 @@ public class ControladorGameplayFinal {
         }else{
         return (numero*-1);
         }
+    }
+    public static void main(String[] args) throws SQLException {
+        ArrayList<Jugador>jug = new ArrayList<>();
+        jug.add(Jugador.obtenerJugador(1));
+        jug.add(Jugador.obtenerJugador(3));
+        Escalon esc = new Escalon(0, null, null, null, null);
+        new ControladorGameplayFinal(6, jug, null);
     }
 }

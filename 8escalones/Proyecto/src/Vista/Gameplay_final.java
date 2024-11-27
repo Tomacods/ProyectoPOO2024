@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package ventanas;
+package Vista;
 
 
 /**
@@ -292,6 +292,22 @@ public class Gameplay_final extends javax.swing.JFrame {
     public javax.swing.JButton getjButtonExit() {
         return jButtonExit;
     }
+    public javax.swing.JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public javax.swing.JTextField getjTextField2() {
+        return jTextField2;
+    }
+
+    public javax.swing.JTextField getJugador1() {
+        return jTextField3;
+    }
+
+    public javax.swing.JTextField getJugador2() {
+        return jTextField4;
+    }
+
     public javax.swing.JButton getjButtonRtaA() {
         return jButtonRtaA;
     }
