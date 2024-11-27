@@ -38,7 +38,13 @@ public class ControladorGameplay {
 
         listeners_rtas();
         traerTematica();
+        traerEscalon();
         iniciarRonda(jugadores);
+    }
+    
+    private void traerEscalon(){
+        //Integer nroEscalon = this.escalon.getNumeroEscalon();
+        vista.getjTextFieldEscalon().setText("ESCALON " +  this.escalon.getNumeroEscalon());
     }
 
     public void iniciarRonda(ArrayList<Jugador> jugadores) throws SQLException {
