@@ -107,9 +107,11 @@ public class ControladorGameplayAproximacion {
                 System.out.println("Responde el jugador " + jugador.getNombre());
                 vista.getjTextFieldJugador().setText(jugador.getNombre());
                 rtaIngresada = null;
+                vista.getBoton().setText("Respuesta");
                 boolean respuestaSeleccionada = false;
                 while (!respuestaSeleccionada) {
                     if (rtaIngresada != null ) {
+                        
                         jugador = preguntarAproximacion(jugador, pregunta);
                         respuestaSeleccionada = true;
                     }
