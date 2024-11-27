@@ -284,5 +284,42 @@ public class SiguienteEscalon extends javax.swing.JFrame {
     public javax.swing.JTextField jTextFieldJ7;
     public javax.swing.JTextField jTextFieldJ8;
     public javax.swing.JTextField jTextFieldJ9;
+    
+    public javax.swing.JTextField getjTextFieldJ1() {
+        return jTextFieldJ1;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ2() {
+        return jTextFieldJ2;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ3() {
+        return jTextFieldJ3;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ4() {
+        return jTextFieldJ4;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ5() {
+        return jTextFieldJ5;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ6() {
+        return jTextFieldJ6;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ7() {
+        return jTextFieldJ7;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ8() {
+        return jTextFieldJ8;
+    }
+
+    public javax.swing.JTextField getjTextFieldJ9() {
+        return jTextFieldJ9;
+    }
+
     // End of variables declaration//GEN-END:variables
 }
