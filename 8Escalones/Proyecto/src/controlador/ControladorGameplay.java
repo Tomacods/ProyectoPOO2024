@@ -73,6 +73,7 @@ public class ControladorGameplay {
             System.out.println("Error: La temática es null.");
         }
     }
+    decidirVista();
         //realizar metodo para ver a que vista se lleva la partida siguiente, si a la de aproximacion o a la de escalon
     }
 
@@ -183,12 +184,8 @@ public class ControladorGameplay {
         }
     }
 
-    public void pasarVista(){
-        new GameplayAproximacion().setVisible(true);
 
-      //  ControladorGameplayAprox c = new ControladorGameplayAprox(obtenerJugadoresConMenorPuntaje());
-        //se supone que aca le paso la lista al controlador de game aprox y ya entra ahi
-    }
+
 
     public ArrayList<Jugador> obtenerJugadoresConMenorPuntaje() {
         ArrayList<Jugador> jugadores = this.jugadores;

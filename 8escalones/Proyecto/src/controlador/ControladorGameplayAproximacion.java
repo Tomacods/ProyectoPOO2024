@@ -125,6 +125,7 @@ public class ControladorGameplayAproximacion {
             }
             pregAprox.remove(pregunta);
         }
+        siguienteEscalon();
     }
     
     
@@ -172,6 +173,7 @@ public class ControladorGameplayAproximacion {
                 }
         try {
             new ControladorGameplay(idJuego + 1, siguenJugando, tematicasRestantes);
+            this.vista.dispose();
         } catch (SQLException e) {
             e.printStackTrace();
         }
