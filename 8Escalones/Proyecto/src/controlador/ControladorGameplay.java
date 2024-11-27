@@ -5,15 +5,14 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Random;
-
 import Modelos.Escalon;
 import Modelos.Jugador;
-
 import Modelos.MultipleChoicePregunta;
 import Modelos.Respuesta;
 import Modelos.Ronda;
 import Modelos.Tematica;
 import Vista.Gameplay;
+import Vista.GameplayAproximacion;
 
 public class ControladorGameplay {
     private Ronda ronda;
@@ -31,8 +30,6 @@ public class ControladorGameplay {
         this.vista = new Gameplay();
         this.ronda = new Ronda(idJuego, jugadores, escalon);
 
-        // Reiniciar puntajes al comenzar un nuevo juego
-        // inicializarPuntos(this.jugadores);
 
         vista.setVisible(true);
 
@@ -43,7 +40,6 @@ public class ControladorGameplay {
     }
     
     private void traerEscalon(){
-        //Integer nroEscalon = this.escalon.getNumeroEscalon();
         vista.getjTextFieldEscalon().setText("ESCALON " +  this.escalon.getNumeroEscalon());
     }
 
@@ -64,6 +60,7 @@ public class ControladorGameplay {
         } else {
             System.out.println("Error: La temática es null.");
         }
+        pasarVista(); //creo q va aca
     }
 
     public void imprimirPuntajes() {
@@ -173,6 +170,13 @@ public class ControladorGameplay {
         }
     }
 
+    public void pasarVista(){
+        new GameplayAproximacion().setVisible(true);;
+
+      //  ControladorGameplayAprox c = new ControladorGameplayAprox(obtenerJugadoresConMenorPuntaje());
+        //se supone que aca le paso la lista al controlador de game aprox y ya entra ahi
+    }
+
     public ArrayList<Jugador> obtenerJugadoresConMenorPuntaje() {
 
         ArrayList<Jugador> jugadores = this.jugadores;
@@ -198,6 +202,7 @@ public class ControladorGameplay {
         return jugadoresConMenorPuntaje;
     }
 
+
     public static void main(String[] args) throws SQLException {
 
         Tematica tematica = Tematica.obtenerTematica(4);
@@ -216,156 +221,3 @@ public class ControladorGameplay {
         
     }
 }
-
-
-/*
- * private void realizarPreguntas(int idEscalon) throws SQLException {
- * ArrayList<MultipleChoicePregunta> pregMult = new ArrayList<>();
- * pregMult = MultipleChoicePregunta.obtenerPreguntasMC(idEscalon);//Trae las
- * preguntas MC de la BD
- * ArrayList<Jugador>jugadores = Jugador.obtenerJugadores();
- * for (Jugador jugador : jugadores) {
- * String pregunta = pregMult.get(new
- * Random().nextInt(pregMult.size())).getEnunciado();
- * // MultipleChoicePregunta pregunta = pregMult.get(new
- * Random().nextInt(pregMult.size()));
- * //String preguntaStr =
- * MultipleChoicePregunta.obtenerPreguntaMC(2).getEnunciado();
- * int id_pregunta =
- * MultipleChoicePregunta.obtenerPreguntaMC(2).getIdPregunta();
- * vista.getjTextFieldPregunta().setText(pregunta);
- * traerRespuestas(id_pregunta);
- * 
- * System.out.println("Pregunta para " + jugador.getNombre() + ": "+"\n" +
- * pregunta.getEnunciado());
- * jugador = preguntarJugador(jugador, pregunta);
- * pregMult.remove(pregunta);
- * }
- * }
- */
-// private Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta
-// pregunta){
-// pregunta.imprimirOpciones();
-
-/*
- * String respuesta = "Opción A"; // Se conectaria con el controlador para
- * obtener la respuesta
- * if (pregunta.getRespuestaCorrecta() == respuesta) {
- * System.out.println("Respuesta correcta");
- * jugador.incrementarPuntaje();
- * } else {
- * System.out.println("Respuesta incorrecta");
- * }
- * return jugador;
- * }
- */
-/*
- * private Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta
- * pregunta){
- * // pregunta.imprimirOpciones();
- * 
- * String respuesta = "Opción A"; // Se conectaria con el controlador para
- * obtener la respuesta
- * if (pregunta.getRespuestaCorrecta() == respuesta) {
- * System.out.println("Respuesta correcta");
- * jugador.incrementarPuntaje();
- * } else {
- * System.out.println("Respuesta incorrecta");
- * }
- * return jugador;
- * }
- */
-
-/*
- * private void traerRespuestas(int id_pregunta) throws SQLException {
- * ArrayList<Respuesta> respuestas =
- * Respuesta.obtenerRespuestasPorPregunta(id_pregunta);
- * vista.getjButtonRtaA().setText(respuestas.get(0).getTexto());
- * vista.getjButtonRtaB().setText(respuestas.get(1).getTexto());
- * vista.getjButtonRtaC().setText(respuestas.get(2).getTexto());
- * vista.getjButtonRtaD().setText(respuestas.get(3).getTexto());
- * }
- */
-/*
- * private void realizarPreguntas(int idEscalon) throws SQLException {
- * 
- * ArrayList<MultipleChoicePregunta> pregMult =
- * MultipleChoicePregunta.obtenerPreguntasMC(idEscalon);
- * ArrayList<Jugador> jugadores = Jugador.obtenerJugadores();
- * 
- * for (Jugador jugador : jugadores) {
- * jugador = Jugador.obtenerJugador(jugador.getId());
- * vista.getjLabelJugador().setText(jugador.getNombre());
- * MultipleChoicePregunta pregunta = pregMult.get(new
- * Random().nextInt(pregMult.size()));
- * 
- * vista.getjTextFieldPregunta().setText(pregunta.getEnunciado());
- * 
- * traerRespuestas(pregunta.getIdPregunta());
- * 
- * System.out.println("Pregunta para " + jugador.getNombre() + ": " +
- * pregunta.getEnunciado());
- * 
- * jugador = preguntarJugador(jugador, pregunta);
- * 
- * 
- * pregMult.remove(pregunta);
- * }
- * }
- * 
- * private Jugador preguntarJugador(Jugador jugador, MultipleChoicePregunta
- * pregunta) throws SQLException {
- * System.out.println("Respuesta seleccionada por el jugador: " + rtaSelec); //
- * Depuración
- * 
- * Integer idRtaCorrecta =
- * Respuesta.obtenerIdRtaCorrectaMC(pregunta.getIdPregunta());
- * if (idRtaCorrecta != -1) {
- * String respuestaCorrecta =
- * Respuesta.obtenerRespuesta(idRtaCorrecta).getTexto();
- * if (rtaSelec.equals(respuestaCorrecta)) {
- * System.out.println("Respuesta correcta");
- * jugador.incrementarPuntaje();
- * } else {
- * System.out.println("Respuesta incorrecta");
- * }
- * } else {
- * System.out.println("No se encontró una respuesta correcta.");
- * }
- * 
- * return jugador;
- * }
- * 
- * private void listeners_rtas(){
- * this.vista.getjButtonRtaA().addActionListener(new ActionListener() {
- * 
- * @Override
- * public void actionPerformed(ActionEvent e) {
- * rtaSelec= vista.getjButtonRtaA().getText();
- * }
- * });
- * this.vista.getjButtonRtaB().addActionListener(new ActionListener() {
- * 
- * @Override
- * public void actionPerformed(ActionEvent e) {
- * rtaSelec= vista.getjButtonRtaB().getText();
- * }
- * });
- * this.vista.getjButtonRtaC().addActionListener(new ActionListener() {
- * 
- * @Override
- * public void actionPerformed(ActionEvent e) {
- * rtaSelec= vista.getjButtonRtaC().getText();
- * }
- * });
- * this.vista.getjButtonRtaD().addActionListener(new ActionListener() {
- * 
- * @Override
- * public void actionPerformed(ActionEvent e) {
- * rtaSelec= vista.getjButtonRtaD().getText();
- * }
- * });
- * 
- * 
- * }
- */
