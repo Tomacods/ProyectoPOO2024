@@ -85,6 +85,8 @@ public class ControladorGameplayFinal {
         java.util.Collections.shuffle(preguntas);
         Jugador jugadorGanador = rondaFinal(preguntas, jugadores);
         System.out.println("El ganador es " + jugadorGanador.getNombre());
+        this.vista.dispose();
+        new ControladorGanador(jugadorGanador);
     }
 
     public Jugador rondaFinal(ArrayList<MultipleChoicePregunta> preguntas, ArrayList<Jugador> jugadores) throws SQLException{

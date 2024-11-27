@@ -18,7 +18,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "Proyecto/src/imagenes/codigo.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconAdmin, "Proyecto/src/imagenes/admin.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconEdit, "Proyecto/src/imagenes/lapiz.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelSave, "Proyecto/src/imagenes/guardar.png");
+      //  rsscalelabel.RSScaleLabel.setScaleLabel(jLabelSave, "Proyecto/src/imagenes/guardar.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelIconDelete, "Proyecto/src/imagenes/basura.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTematica, "Proyecto/src/imagenes/verde.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondoTipo, "Proyecto/src/imagenes/verde.png");
@@ -48,7 +48,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jLabelIconEdit = new javax.swing.JLabel();
         jLabelIconDelete = new javax.swing.JLabel();
         jLabelSave = new javax.swing.JLabel();
-        jButtonSave = new javax.swing.JButton();
+        // jButtonSave = new javax.swing.JButton();
         jButtonEliminarPregunta = new javax.swing.JButton();
         jButtonEditarPregunta = new javax.swing.JButton();
         jButtonAgregarPregunta = new javax.swing.JButton();
@@ -129,15 +129,15 @@ public class ABMPreguntas extends javax.swing.JFrame {
         jPanel1.add(jLabelIconDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 60, 50));
         jPanel1.add(jLabelSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 60, 50));
 
-        jButtonSave.setBackground(new java.awt.Color(0, 102, 0));
-        jButtonSave.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jButtonSave.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSaveActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 80, 70));
+        // jButtonSave.setBackground(new java.awt.Color(0, 102, 0));
+        // jButtonSave.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        // jButtonSave.setForeground(new java.awt.Color(255, 255, 255));
+        // jButtonSave.addActionListener(new java.awt.event.ActionListener() {
+        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
+        //         jButtonSaveActionPerformed(evt);
+        //     }
+        // });
+        // jPanel1.add(jButtonSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 80, 70));
 
         jButtonEliminarPregunta.setBackground(new java.awt.Color(0, 102, 0));
         jButtonEliminarPregunta.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
@@ -271,7 +271,7 @@ public class ABMPreguntas extends javax.swing.JFrame {
     public javax.swing.JButton jButtonBack;
     public javax.swing.JButton jButtonEditarPregunta;
     public javax.swing.JButton jButtonEliminarPregunta;
-    public javax.swing.JButton jButtonSave;
+   // public javax.swing.JButton jButtonSave;
     public javax.swing.JComboBox<String> jComboBoxPregunta;
     public javax.swing.JComboBox<String> jComboBoxTematica;
     public javax.swing.JComboBox<String> jComboBoxTipo;
@@ -294,9 +294,9 @@ public class ABMPreguntas extends javax.swing.JFrame {
         return jButtonBack;
     }
     
-    public javax.swing.JButton getjButtonSave() {
-        return jButtonSave;
-    }
+    // public javax.swing.JButton getjButtonSave() {
+    //     return jButtonSave;
+    // }
     
     public javax.swing.JButton getjButtonEliminarPregunta() {
         return jButtonEliminarPregunta;

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package ventanas;
+package Vista;
 
 
 /**
@@ -16,8 +16,8 @@ public class Ganador extends javax.swing.JFrame {
     public Ganador() {
         initComponents();
         this.setLocationRelativeTo(null);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "src/imagenes/messi.gif");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelWinner, "src/imagenes/man_1.gif");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelFondo, "proyecto/src/imagenes/messi.gif");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelWinner, "proyecto/src/imagenes/man_1.gif");
 
     }
     
@@ -122,8 +122,8 @@ public class Ganador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel jLabelFondo;
-    private javax.swing.JLabel jLabelWinner;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JLabel jLabelWinner;
+    public javax.swing.JPanel jPanel1;
     public javax.swing.JTextField jTextFieldJ9;
     // End of variables declaration//GEN-END:variables
 }
