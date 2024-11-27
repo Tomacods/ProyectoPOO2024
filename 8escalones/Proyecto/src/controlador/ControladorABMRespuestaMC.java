@@ -39,8 +39,6 @@ public class ControladorABMRespuestaMC {
         this.vista.jTextFieldRtaD.setText(respuestas.get(3).getTexto());
         this.vista.jRadioButtonRtaA.setSelected(true);
 
-        respuestas.clear();
-
         this.vista.jButtonSave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
@@ -65,6 +63,7 @@ public class ControladorABMRespuestaMC {
     private void volver() throws SQLException {
 
         cambiar_correcta();
+        this.pregunta_actual.setEnunciado(this.vista.jTextFieldPreguntaMC1.getText());
         modificar_respuesta(0, vista.jTextFieldRtaA.getText());
         modificar_respuesta(1, vista.jTextFieldRtaB.getText());
         modificar_respuesta(2, vista.jTextFieldRtaC.getText());
