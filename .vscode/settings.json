@@ -13,9 +13,7 @@
         "8escalones/Proyecto/RSScaleLabel.jar"
     ],
     "java.project.sourcePaths": [
-        "pruebas ABM/DAOS/src/Vista/src",
-        "8Escalones/src",
-        "8escalones/Proyecto/src/Vista"
+        "8Escalones_Juego/Proyecto/src/DAOs"
     ],
     "sarif-viewer.connectToGithubCodeScanning": "off"
 }
