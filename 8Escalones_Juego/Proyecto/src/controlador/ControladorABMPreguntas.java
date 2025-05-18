@@ -9,6 +9,45 @@ import Modelos.Tematica;
 import Vista.ABMPreguntas;
 
 
+/**
+ * ControladorABMPreguntas es el controlador encargado de gestionar la lógica de la vista ABMPreguntas,
+ * permitiendo la administración (Alta, Baja y Modificación) de preguntas de diferentes tipos (Multiple Choice y Aproximación)
+ * asociadas a distintas temáticas.
+ * 
+ * Funcionalidades principales:
+ * <ul>
+ *   <li>Carga y actualización de temáticas y preguntas en los componentes de la vista.</li>
+ *   <li>Gestión de eventos de la interfaz gráfica para insertar, modificar y eliminar preguntas.</li>
+ *   <li>Interacción con las clases de modelo para obtener, actualizar y eliminar preguntas y temáticas.</li>
+ *   <li>Implementación de estrategias para manejar diferentes tipos de preguntas.</li>
+ * </ul>
+ * 
+ * Métodos destacados:
+ * <ul>
+ *   <li>{@code traerTematicasCB()}: Carga las temáticas disponibles en el ComboBox correspondiente.</li>
+ *   <li>{@code listeners()}: Configura los listeners de los botones y ComboBox de la vista.</li>
+ *   <li>{@code actualizarPreguntas(int idTematica)}: Actualiza el listado de preguntas según la temática y tipo seleccionados.</li>
+ *   <li>{@code insertarPregunta()}: Inicia el proceso de inserción de una nueva pregunta.</li>
+ *   <li>{@code eliminarPregunta()}: Elimina la pregunta seleccionada.</li>
+ *   <li>{@code modificarPregunta()}: Modifica la pregunta seleccionada con los nuevos datos ingresados.</li>
+ *   <li>{@code obtenerIdPorNombre(String nombre)}: Obtiene el ID de una temática a partir de su nombre.</li>
+ * </ul>
+ * 
+ * Dependencias:
+ * <ul>
+ *   <li>ABMPreguntas (vista)</li>
+ *   <li>Tematica, MultipleChoicePregunta, PreguntaAproximacion (modelo)</li>
+ *   <li>EstrategiaPregunta, EstrategiaPreguntaMC, EstrategiaPreguntaAprox (patrón estrategia para preguntas)</li>
+ *   <li>Controladores auxiliares para respuestas (ControladorABMRespuestaMC, ControladorABMRespuestaAprox)</li>
+ * </ul>
+ * 
+ * Manejo de errores:
+ * <ul>
+ *   <li>Captura y muestra errores de SQL y validaciones de selección de campos obligatorios.</li>
+ * </ul>
+ * 
+ * Nota: Este controlador asume que la vista y los modelos están correctamente implementados y disponibles.
+ */
 public class ControladorABMPreguntas {
     private ABMPreguntas vista;
 

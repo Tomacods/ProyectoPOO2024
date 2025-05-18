@@ -7,6 +7,34 @@ import Modelos.Jugador;
 import java.util.ArrayList;
 import Vista.ABMJugadores;
 
+/**
+ * ControladorABMJugadores es el controlador encargado de gestionar la lógica de la vista ABMJugadores,
+ * permitiendo agregar, editar, eliminar y seleccionar jugadores en la aplicación.
+ * 
+ * Funcionalidades principales:
+ * <ul>
+ *   <li>Inicializa la vista y carga la lista de jugadores existentes.</li>
+ *   <li>Permite agregar un nuevo jugador con nombre válido, asignando puntaje inicial y estado "activo".</li>
+ *   <li>Permite editar el nombre del jugador seleccionado, validando la entrada.</li>
+ *   <li>Permite eliminar el jugador seleccionado de la base de datos y de la vista.</li>
+ *   <li>Actualiza la selección de jugador y muestra información relevante en consola.</li>
+ *   <li>Permite volver al menú principal cerrando la vista actual.</li>
+ * </ul>
+ * 
+ * Dependencias:
+ * <ul>
+ *   <li>ABMJugadores: Vista asociada para la gestión de jugadores.</li>
+ *   <li>Jugador: Modelo que representa a un jugador y sus operaciones CRUD.</li>
+ *   <li>MenuPrincipalController: Controlador del menú principal de la aplicación.</li>
+ * </ul>
+ * 
+ * Uso:
+ * <pre>
+ *     ControladorABMJugadores controlador = new ControladorABMJugadores();
+ * </pre>
+ * 
+ * Nota: Este controlador asume que la vista y el modelo están correctamente implementados y conectados.
+ */
 public class ControladorABMJugadores {
     private ABMJugadores vista;
     private Jugador jugadorSeleccionado;
