@@ -19,6 +19,48 @@ import java.awt.event.KeyEvent;
 //import Modelos.Tematica;
 
 
+/**
+ * ControladorGameplayAproximacion gestiona la lógica de la ronda de desempate por aproximación
+ * en el juego de los 8 Escalones. Se encarga de coordinar la interacción entre la vista
+ * (GameplayAproximacion) y el modelo (jugadores, temáticas y preguntas de aproximación).
+ * 
+ * Funcionalidades principales:
+ * <ul>
+ *   <li>Inicializa la vista y los datos necesarios para la ronda de desempate.</li>
+ *   <li>Gestiona la entrada de respuestas numéricas por parte de los jugadores empatados.</li>
+ *   <li>Selecciona preguntas de aproximación de la temática actual y evalúa las respuestas.</li>
+ *   <li>Determina y elimina al jugador con la peor aproximación en cada ronda de desempate.</li>
+ *   <li>Muestra mensajes informativos sobre el jugador eliminado y la respuesta correcta.</li>
+ *   <li>Permite avanzar al siguiente escalón con los jugadores restantes.</li>
+ *   <li>Incluye validaciones para asegurar que solo se ingresen números como respuesta.</li>
+ * </ul>
+ * 
+ * Campos principales:
+ * <ul>
+ *   <li>vista: Referencia a la interfaz gráfica de la ronda de aproximación.</li>
+ *   <li>empatados: Lista de jugadores que están empatados y participan en el desempate.</li>
+ *   <li>siguenJugando: Lista de jugadores que continúan en el juego.</li>
+ *   <li>tematicasRestantes: Temáticas que aún no han sido jugadas.</li>
+ *   <li>tematicaRonda: Temática actual de la ronda de desempate.</li>
+ *   <li>jugadorEliminado: Jugador que resulta eliminado tras el desempate.</li>
+ * </ul>
+ * 
+ * Métodos destacados:
+ * <ul>
+ *   <li>desempatar(): Ejecuta el ciclo de preguntas de aproximación hasta eliminar a un jugador.</li>
+ *   <li>preguntarAproximacion(): Asigna la respuesta ingresada al jugador correspondiente.</li>
+ *   <li>eliminarJugador(): Elimina al jugador con la peor aproximación y actualiza su estado.</li>
+ *   <li>siguienteEscalon(): Avanza el juego al siguiente escalón con los jugadores restantes.</li>
+ * </ul>
+ * 
+ * Uso:
+ * <p>
+ * Se instancia este controlador cuando hay un empate que debe resolverse mediante preguntas de aproximación.
+ * El controlador se encarga de todo el flujo de desempate hasta que solo quede un jugador eliminado.
+ * </p>
+ * 
+ * @author tomas
+ */
 public class ControladorGameplayAproximacion {
     private GameplayAproximacion vista;
     private ArrayList<Jugador> empatados;

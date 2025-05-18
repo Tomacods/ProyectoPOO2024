@@ -6,6 +6,36 @@ import java.util.ArrayList;
 import Vista.ABMTematicas;
 import Modelos.Tematica;
 
+/**
+ * ControladorABMTematica es el controlador encargado de gestionar la lógica de la vista ABMTematicas,
+ * permitiendo la administración de temáticas (agregar, eliminar, modificar y seleccionar) en la aplicación.
+ * 
+ * Funcionalidades principales:
+ * <ul>
+ *   <li>Inicializa la vista ABMTematicas y la muestra al usuario.</li>
+ *   <li>Agrega listeners a los componentes de la vista para manejar eventos de usuario.</li>
+ *   <li>Permite insertar nuevas temáticas, eliminarlas, modificarlas y seleccionarlas.</li>
+ *   <li>Actualiza el ComboBox de temáticas con los datos actuales.</li>
+ *   <li>Gestiona la navegación hacia la vista de administración principal.</li>
+ * </ul>
+ * 
+ * Dependencias:
+ * <ul>
+ *   <li>ABMTematicas: Vista asociada para la administración de temáticas.</li>
+ *   <li>Tematica: Modelo que representa una temática y provee métodos estáticos para operaciones CRUD.</li>
+ * </ul>
+ * 
+ * Uso:
+ * <pre>
+ *     ControladorABMTematica controlador = new ControladorABMTematica();
+ * </pre>
+ * 
+ * Nota: Este controlador asume que la clase Tematica implementa los métodos estáticos
+ * para obtener, insertar, eliminar y actualizar temáticas.
+ * 
+ * @author (Tu Nombre)
+ * @version 1.0
+ */
 public class ControladorABMTematica {
     private ABMTematicas vistaABMTematicas;
 

@@ -9,6 +9,33 @@ import javax.swing.JComboBox;
 import java.sql.SQLException;
 import Modelos.Tematica;
 
+/**
+ * ControladorSeleccionarJugadores es el controlador encargado de gestionar la lógica
+ * de selección de jugadores para el juego. Permite seleccionar hasta 9 jugadores
+ * únicos a través de una interfaz gráfica compuesta por JComboBox, asegurando que
+ * no se repitan jugadores en la selección. Además, administra la navegación entre
+ * pantallas, la inicialización de la lista de jugadores y temáticas, y la validación
+ * de la cantidad de jugadores seleccionados antes de iniciar el juego.
+ * 
+ * Funcionalidades principales:
+ * <ul>
+ *   <li>Inicializa la vista de selección de jugadores y la lista de temáticas.</li>
+ *   <li>Permite seleccionar 9 jugadores únicos mediante JComboBox.</li>
+ *   <li>Evita la selección repetida de jugadores en los distintos JComboBox.</li>
+ *   <li>Gestiona los eventos de los botones para volver atrás, jugar o salir del juego.</li>
+ *   <li>Valida que se hayan seleccionado exactamente 9 jugadores antes de iniciar la partida.</li>
+ *   <li>Mantiene el orden de selección de los jugadores.</li>
+ * </ul>
+ * 
+ * Dependencias:
+ * <ul>
+ *   <li>Vista: SeleccionarJugador</li>
+ *   <li>Modelo: Jugador, Tematica</li>
+ *   <li>Controladores adicionales: MenuPrincipalController, ControladorGameplay</li>
+ * </ul>
+ * 
+ * Nota: Utiliza un flag interno para evitar bucles infinitos al actualizar los JComboBox.
+ */
 public class ControladorSeleccionarJugadores {
 
     public  ArrayList<Tematica> tematicas = Tematica.obtenerTematicas();

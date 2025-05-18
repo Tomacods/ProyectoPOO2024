@@ -15,6 +15,36 @@ import Modelos.Tematica;
 //import Modelos.Juego;
 import Vista.Gameplay_final;
 
+/**
+ * ControladorGameplayFinal es el controlador encargado de gestionar la lógica del escalón final
+ * del juego "8 Escalones". Se encarga de coordinar la interacción entre la vista (Gameplay_final)
+ * y el modelo (jugadores, preguntas y respuestas), así como de manejar la lógica de preguntas,
+ * respuestas, puntajes y determinación del ganador.
+ *
+ * Funcionalidades principales:
+ * <ul>
+ *   <li>Inicializa la vista y los jugadores participantes en la ronda final.</li>
+ *   <li>Asigna los nombres de los jugadores a la interfaz gráfica.</li>
+ *   <li>Gestiona los listeners de los botones de respuesta para capturar la selección del usuario.</li>
+ *   <li>Obtiene y muestra las respuestas posibles para cada pregunta de opción múltiple.</li>
+ *   <li>Realiza la ronda final, presentando preguntas a cada jugador y actualizando los puntajes.</li>
+ *   <li>Determina el ganador cuando la diferencia de puntaje es suficiente o en caso de empate, continúa hasta desempatar.</li>
+ *   <li>Muestra ventanas emergentes indicando si la respuesta fue correcta o incorrecta y los puntajes actuales.</li>
+ * </ul>
+ *
+ * Dependencias:
+ * <ul>
+ *   <li>Gameplay_final: Vista gráfica del juego.</li>
+ *   <li>Jugador: Modelo que representa a los jugadores.</li>
+ *   <li>MultipleChoicePregunta y Respuesta: Modelos para preguntas y respuestas de opción múltiple.</li>
+ *   <li>ControladorGanador: Controlador para la pantalla de ganador.</li>
+ * </ul>
+ *
+ * Nota: Este controlador asume que siempre hay dos jugadores en la ronda final.
+ *
+ * @author (Tu Nombre)
+ * @version 1.0
+ */
 public class ControladorGameplayFinal {
     private Gameplay_final vista;
     private String rtaSelec;

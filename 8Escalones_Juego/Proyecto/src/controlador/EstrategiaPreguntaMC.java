@@ -2,6 +2,17 @@ package controlador;
 import java.util.ArrayList;
 import Modelos.MultipleChoicePregunta;
 import Vista.ABMPreguntas;
+/**
+ * EstrategiaPreguntaMC implements the EstrategiaPregunta interface to handle
+ * the retrieval and display of multiple choice questions in the ABMPreguntas view.
+ * <p>
+ * This strategy fetches all multiple choice questions associated with a given
+ * thematic ID and populates the corresponding JComboBox in the view with the
+ * question statements.
+ * </p>
+ *
+ * @author tomas
+ */
 public class EstrategiaPreguntaMC implements EstrategiaPregunta {
     private ABMPreguntas vista;
 

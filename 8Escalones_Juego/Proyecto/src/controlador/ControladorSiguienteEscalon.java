@@ -11,6 +11,23 @@ import Modelos.Tematica;
 import Vista.SiguienteEscalon;
 
 
+/**
+ * ControladorSiguienteEscalon es el controlador encargado de gestionar la lógica
+ * relacionada con la transición al siguiente escalón en el juego. Se encarga de
+ * mostrar la vista correspondiente, actualizar los campos con los nombres de los
+ * jugadores que siguen en juego y mostrar el jugador eliminado.
+ * 
+ * Funcionalidades principales:
+ * <ul>
+ *   <li>Inicializa la vista SiguienteEscalon y la muestra al usuario.</li>
+ *   <li>Actualiza los campos de texto con los nombres de los jugadores activos.</li>
+ *   <li>Muestra el nombre del jugador eliminado en la vista.</li>
+ *   <li>Después de un tiempo determinado, cierra la vista y continúa el flujo del juego.</li>
+ * </ul>
+ * 
+ * @author (Tu Nombre)
+ * @version 1.0
+ */
 public class ControladorSiguienteEscalon {
     private ArrayList<Jugador>jugadores;
     private SiguienteEscalon vista1;

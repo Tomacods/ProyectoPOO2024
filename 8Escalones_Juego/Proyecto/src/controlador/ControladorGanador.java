@@ -5,6 +5,19 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * ControladorGanador is responsible for managing the winner view in the application.
+ * It displays the winner's information and, after a set period, transitions back to the main menu.
+ *
+ * <p>Responsibilities:</p>
+ * <ul>
+ *   <li>Initializes the winner view with the player's name.</li>
+ *   <li>Shows the winner view for a fixed duration (10 seconds).</li>
+ *   <li>Automatically closes the winner view and returns to the main menu after the duration.</li>
+ * </ul>
+ *
+ * @author tomas
+ */
 public class ControladorGanador {
     private Jugador jugador;
     private Ganador vista;

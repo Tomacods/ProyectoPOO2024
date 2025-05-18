@@ -5,6 +5,22 @@ import Vista.AdminContraseña;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * ControladorAdminContraseña es el controlador encargado de gestionar la lógica de la vista
+ * AdminContraseña, permitiendo la autenticación del usuario administrador mediante una contraseña.
+ * 
+ * Funcionalidades principales:
+ * <ul>
+ *   <li>Muestra la interfaz de ingreso de contraseña de administrador.</li>
+ *   <li>Permite regresar a la vista de opciones generales al presionar el botón "Back".</li>
+ *   <li>Valida la contraseña ingresada al presionar el botón "Ingresar".</li>
+ *   <li>Si la contraseña es correcta, abre el modo administrador.</li>
+ *   <li>Si la contraseña es incorrecta, muestra un mensaje de error.</li>
+ * </ul>
+ * 
+ * Nota: Actualmente la contraseña está hardcodeada como "admin". Para futuras implementaciones,
+ * se recomienda almacenar la contraseña en una base de datos y permitir su modificación desde la vista de administración.
+ */
 public class ControladorAdminContraseña {
     private AdminContraseña vista;
 

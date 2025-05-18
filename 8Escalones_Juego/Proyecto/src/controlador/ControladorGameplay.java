@@ -16,6 +16,35 @@ import Vista.Gameplay;
 //import Vista.GameplayAproximacion;
 
 
+/**
+ * ControladorGameplay es el controlador principal para la lógica del juego de preguntas y respuestas
+ * basado en rondas y temáticas. Gestiona la interacción entre la vista Gameplay y los modelos de Jugador,
+ * Tematica y Pregunta, controlando el flujo del juego, la selección de preguntas, el manejo de puntajes,
+ * la eliminación de jugadores y la transición entre diferentes etapas del juego.
+ *
+ * Funcionalidades principales:
+ * <ul>
+ *   <li>Inicializa la vista y los datos del juego (jugadores, temáticas, identificador de juego).</li>
+ *   <li>Gestiona el ciclo de rondas, mostrando preguntas a los jugadores y evaluando sus respuestas.</li>
+ *   <li>Actualiza y muestra los puntajes de los jugadores tras cada ronda.</li>
+ *   <li>Determina qué jugadores continúan o son eliminados según su desempeño.</li>
+ *   <li>Controla la transición entre vistas según el estado del juego (escalón, aproximación, final).</li>
+ *   <li>Administra la selección aleatoria de temáticas y preguntas.</li>
+ *   <li>Implementa listeners para la captura de respuestas desde la interfaz gráfica.</li>
+ * </ul>
+ *
+ * Dependencias:
+ * <ul>
+ *   <li>Gameplay (vista principal del juego)</li>
+ *   <li>Jugador, Tematica, MultipleChoicePregunta, Respuesta (modelos de datos)</li>
+ *   <li>Controladores auxiliares: ControladorGameplayFinal, ControladorSiguienteEscalon, ControladorGameplayAproximacion</li>
+ * </ul>
+ *
+ * Nota: Este controlador asume que la vista y los modelos están correctamente implementados y conectados.
+ *
+ * @author (Tu Nombre)
+ * @version 1.0
+ */
 public class ControladorGameplay {
    // private Ronda ronda;
     private Gameplay vista;
