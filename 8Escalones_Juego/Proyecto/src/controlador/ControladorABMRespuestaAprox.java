@@ -6,6 +6,42 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
+/**
+ * ControladorABMRespuestaAprox es el controlador encargado de gestionar la lógica de la vista
+ * ABMRespuestaAprox para la creación y edición de preguntas de aproximación en el sistema.
+ * 
+ * Este controlador permite:
+ * <ul>
+ *   <li>Inicializar la vista para crear una nueva pregunta o editar una existente.</li>
+ *   <li>Guardar los cambios realizados en la pregunta de aproximación.</li>
+ *   <li>Insertar una nueva pregunta o actualizar una existente en la base de datos.</li>
+ *   <li>Gestionar la navegación de la interfaz de usuario.</li>
+ * </ul>
+ * 
+ * Atributos:
+ * <ul>
+ *   <li><b>vista</b>: Instancia de la vista ABMRespuestaAprox.</li>
+ *   <li><b>preguntaActual</b>: PreguntaAproximacion que se está creando o editando.</li>
+ *   <li><b>esNueva</b>: Indica si la pregunta es nueva o se está editando una existente.</li>
+ * </ul>
+ * 
+ * Métodos principales:
+ * <ul>
+ *   <li><b>iniciarVista()</b>: Inicializa la vista y configura los valores iniciales de los campos.</li>
+ *   <li><b>volver()</b>: Guarda los cambios y realiza la inserción o actualización de la pregunta.</li>
+ *   <li><b>guardarCambios()</b>: Actualiza los atributos de la pregunta con los valores ingresados en la vista.</li>
+ * </ul>
+ * 
+ * Excepciones:
+ * <ul>
+ *   <li>Puede lanzar SQLException al interactuar con la base de datos.</li>
+ * </ul>
+ * 
+ * Uso típico:
+ * <pre>
+ *     ControladorABMRespuestaAprox controlador = new ControladorABMRespuestaAprox(pregunta, true);
+ * </pre>
+ */
 public class ControladorABMRespuestaAprox {
     private ABMRespuestaAprox vista;
     private PreguntaAproximacion preguntaActual;

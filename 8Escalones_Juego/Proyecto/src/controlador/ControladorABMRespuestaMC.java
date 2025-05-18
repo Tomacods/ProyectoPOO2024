@@ -10,6 +10,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * ControladorABMRespuestaMC es el controlador encargado de gestionar la vista y la lógica
+ * asociada al alta, baja y modificación de respuestas de preguntas de tipo Multiple Choice.
+ * 
+ * Este controlador interactúa con la vista ABMRespuestaMC y la clase de modelo MultipleChoicePregunta,
+ * permitiendo crear nuevas preguntas, editar preguntas existentes y gestionar las respuestas asociadas.
+ * 
+ * Funcionalidades principales:
+ * <ul>
+ *   <li>Inicializa la vista y la pregunta actual, configurando los campos y respuestas según corresponda.</li>
+ *   <li>Permite modificar el enunciado y las respuestas de la pregunta.</li>
+ *   <li>Gestiona la selección de la respuesta correcta.</li>
+ *   <li>Guarda los cambios realizados, ya sea actualizando una pregunta existente o insertando una nueva.</li>
+ *   <li>Permite cerrar la ventana de edición sin guardar cambios.</li>
+ * </ul>
+ * 
+ * Dependencias:
+ * <ul>
+ *   <li>ABMRespuestaMC: Vista asociada para la edición de preguntas Multiple Choice.</li>
+ *   <li>MultipleChoicePregunta: Modelo de pregunta de opción múltiple.</li>
+ *   <li>Respuesta: Modelo de respuesta individual.</li>
+ * </ul>
+ * 
+ * Uso:
+ * <pre>
+ *     ControladorABMRespuestaMC controlador = new ControladorABMRespuestaMC(pregunta, esNueva);
+ * </pre>
+ * 
+ * @author tomas
+ */
 public class ControladorABMRespuestaMC {
     private ABMRespuestaMC vista;
     private MultipleChoicePregunta pregunta_actual;
