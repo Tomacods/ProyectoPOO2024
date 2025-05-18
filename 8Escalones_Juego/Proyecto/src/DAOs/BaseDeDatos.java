@@ -7,6 +7,32 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 //Singleton
+/**
+ * La clase BaseDeDatos implementa un patrón Singleton para gestionar la conexión a una base de datos PostgreSQL.
+ * Proporciona métodos para obtener la instancia única, ejecutar consultas y sentencias de inserción, y preparar sentencias SQL.
+ * 
+ * <p>Características principales:</p>
+ * <ul>
+ *   <li>Conexión única a la base de datos definida por los atributos {@code url}, {@code nombre}, {@code usuario} y {@code clave}.</li>
+ *   <li>Método {@link #obtenerInstancia()} para acceder a la instancia única de la clase.</li>
+ *   <li>Método {@link #query(PreparedStatement)} para ejecutar consultas SQL y obtener un {@link ResultSet}.</li>
+ *   <li>Método {@link #insert(String)} para ejecutar sentencias de inserción, actualización o eliminación.</li>
+ *   <li>Métodos {@link #prepareStatement(String)} y {@link #prepareStatement(String, int)} para preparar sentencias SQL parametrizadas.</li>
+ *   <li>Método {@link #getConnection()} para obtener la conexión actual.</li>
+ * </ul>
+ * 
+ * <p>Nota: Es necesario modificar los datos de conexión para adaptarlos a la configuración local de cada usuario.</p>
+ * 
+ * <p>Ejemplo de uso:</p>
+ * <pre>
+ *     BaseDeDatos bd = BaseDeDatos.obtenerInstancia();
+ *     PreparedStatement ps = bd.prepareStatement("SELECT * FROM tabla WHERE id = ?");
+ *     ps.setInt(1, 1);
+ *     ResultSet rs = bd.query(ps);
+ * </pre>
+ * 
+ * @author tomas
+ */
 public class BaseDeDatos {
     private static Connection connection;
     private static BaseDeDatos bd;

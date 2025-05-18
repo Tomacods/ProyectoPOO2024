@@ -8,6 +8,32 @@ import java.util.List;
 
 import DAOs.MultipleChoiceDAO;
 
+/**
+ * Representa una pregunta de opción múltiple en el sistema.
+ * Cada pregunta tiene un enunciado, un identificador, una temática asociada,
+ * una lista de opciones de respuesta y la respuesta correcta.
+ * 
+ * Proporciona métodos para gestionar preguntas de opción múltiple, incluyendo
+ * inserción, eliminación, actualización y obtención desde la base de datos.
+ * También permite agregar respuestas, imprimir opciones y buscar preguntas por enunciado.
+ * 
+ * Métodos destacados:
+ * <ul>
+ *   <li>{@link #insertarPregunta(MultipleChoicePregunta, List)}: Inserta una nueva pregunta y sus respuestas.</li>
+ *   <li>{@link #eliminarPregunta(int)}: Elimina una pregunta por su ID.</li>
+ *   <li>{@link #actualizarPregunta(MultipleChoicePregunta)}: Actualiza una pregunta existente.</li>
+ *   <li>{@link #obtenerPreguntasMC(int)}: Obtiene todas las preguntas de una temática.</li>
+ *   <li>{@link #obtenerTodasPreguntasMC()}: Obtiene todas las preguntas de opción múltiple.</li>
+ *   <li>{@link #obtenerPreguntaMC(int)}: Obtiene una pregunta por su ID.</li>
+ *   <li>{@link #obtenerPreguntaPorEnunciado(String, int)}: Busca una pregunta por su enunciado y temática.</li>
+ *   <li>{@link #obtenerPreguntaConRtas(int)}: Obtiene una pregunta junto con sus respuestas.</li>
+ *   <li>{@link #agregarRespuesta(Respuesta)}: Agrega una respuesta a la lista de opciones.</li>
+ *   <li>{@link #imprimirOpciones()}: Imprime las opciones de respuesta en formato a, b, c, d.</li>
+ *   <li>{@link #imprimirPreguntaYRespuestas()}: Imprime la pregunta y sus respuestas con indicación de cuál es correcta.</li>
+ * </ul>
+ * 
+ * Nota: Esta clase depende de la clase {@code MultipleChoiceDAO} para operaciones de persistencia.
+ */
 public class MultipleChoicePregunta {
     private int idPregunta;
     private String enunciado;

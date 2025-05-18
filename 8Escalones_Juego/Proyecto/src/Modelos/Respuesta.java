@@ -8,6 +8,18 @@ import java.util.ArrayList;
 import DAOs.BaseDeDatos;
 import DAOs.RespuestaDAO;
 
+/**
+ * La clase Respuesta representa una posible respuesta a una pregunta en el sistema.
+ * Contiene información sobre el identificador de la respuesta, el identificador de la pregunta
+ * a la que pertenece, el texto de la respuesta y si es la respuesta correcta.
+ * 
+ * Proporciona constructores para crear instancias de Respuesta, así como métodos getter y setter
+ * para acceder y modificar sus atributos.
+ * 
+ * Además, incluye métodos estáticos para obtener respuestas asociadas a una pregunta específica,
+ * obtener el identificador de la respuesta correcta para preguntas de opción múltiple,
+ * y recuperar una respuesta específica por su identificador, utilizando la capa DAO.
+ */
 public class Respuesta {
     private int idRespuesta;
     private int idPregunta;

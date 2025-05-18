@@ -8,6 +8,22 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * JugadorDAOImpl es una clase que proporciona métodos para realizar operaciones CRUD
+ * (Crear, Leer, Actualizar, Eliminar) sobre la entidad Jugador en la base de datos.
+ * Utiliza la clase BaseDeDatos para gestionar la conexión y ejecución de sentencias SQL.
+ *
+ * Métodos principales:
+ * <ul>
+ *   <li>{@link #insertarJugador(Jugador)}: Inserta un nuevo jugador en la base de datos.</li>
+ *   <li>{@link #actualizarJugador(Jugador)}: Actualiza los datos de un jugador existente.</li>
+ *   <li>{@link #eliminarJugador(int)}: Elimina un jugador por su identificador.</li>
+ *   <li>{@link #obtenerJugadores()}: Obtiene una lista de todos los jugadores.</li>
+ *   <li>{@link #obtenerJugador(int)}: Obtiene un jugador específico por su identificador.</li>
+ * </ul>
+ *
+ * Maneja las excepciones SQL y utiliza sentencias preparadas para evitar inyecciones SQL.
+ */
 public class JugadorDAOImpl {
     private final BaseDeDatos connection = BaseDeDatos.obtenerInstancia();
 

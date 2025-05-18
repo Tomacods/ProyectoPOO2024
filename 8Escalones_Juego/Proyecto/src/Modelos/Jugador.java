@@ -6,6 +6,30 @@ import java.util.ArrayList;
 import DAOs.JugadorDAOImpl;
 import DAOs.TematicaDAOImpl;
 
+/**
+ * La clase Jugador representa a un jugador en el sistema, almacenando información relevante
+ * como su identificador, nombre, puntaje y estado. Proporciona métodos para manipular y acceder
+ * a estos datos, así como operaciones estáticas para la gestión de jugadores en la base de datos
+ * (insertar, eliminar, actualizar y obtener jugadores).
+ * 
+ * <p>
+ * Métodos principales:
+ * <ul>
+ *   <li>Constructores para crear instancias de Jugador.</li>
+ *   <li>Getters y setters para los atributos del jugador.</li>
+ *   <li>Método para incrementar el puntaje del jugador.</li>
+ *   <li>Métodos estáticos para operaciones de ABM (Alta, Baja, Modificación) sobre jugadores.</li>
+ *   <li>Método para obtener la representación en cadena del jugador.</li>
+ * </ul>
+ * </p>
+ * 
+ * <p>
+ * Nota: Esta clase depende de la clase JugadorDAOImpl para la interacción con la base de datos.
+ * </p>
+ * 
+ * @author (Tu Nombre)
+ * @version 1.0
+ */
 public class Jugador {
     private int id_jugador;
     private String nombre;

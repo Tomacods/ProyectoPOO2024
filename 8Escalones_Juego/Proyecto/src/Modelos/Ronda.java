@@ -4,6 +4,45 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 
+/**
+ * La clase Ronda representa una ronda dentro del juego "8 Escalones".
+ * Gestiona el flujo de preguntas, el puntaje de los jugadores, el desempate y la eliminación de jugadores.
+ * 
+ * <p>Responsabilidades principales:</p>
+ * <ul>
+ *   <li>Inicializar y gestionar el estado de una ronda.</li>
+ *   <li>Realizar preguntas de opción múltiple a los jugadores.</li>
+ *   <li>Determinar el resultado de la ronda y gestionar empates.</li>
+ *   <li>Realizar preguntas de aproximación en caso de empate.</li>
+ *   <li>Eliminar jugadores según el puntaje obtenido.</li>
+ * </ul>
+ * 
+ * <p>Atributos principales:</p>
+ * <ul>
+ *   <li>idJuego: Identificador del juego al que pertenece la ronda.</li>
+ *   <li>jugadores: Lista de jugadores participantes en la ronda.</li>
+ *   <li>escalon: Escalón actual de la ronda.</li>
+ *   <li>resultado: Resultado de la ronda.</li>
+ *   <li>fecha: Fecha de realización de la ronda.</li>
+ *   <li>estado: Estado actual de la ronda (por ejemplo, "en curso", "finalizado").</li>
+ *   <li>empatados: Lista de jugadores empatados en la ronda.</li>
+ * </ul>
+ * 
+ * <p>Métodos principales:</p>
+ * <ul>
+ *   <li>iniciarRonda(): Inicia la ronda y gestiona el flujo de preguntas y desempates.</li>
+ *   <li>rondaFinal(): Ejecuta la ronda final entre dos jugadores y determina el ganador.</li>
+ *   <li>realizarPreguntas(): Realiza preguntas de opción múltiple a los jugadores.</li>
+ *   <li>preguntarJugador(): Gestiona la interacción de un jugador con una pregunta de opción múltiple.</li>
+ *   <li>determinarResultado(): Determina el resultado de la ronda y si hay empate.</li>
+ *   <li>desempatar(): Gestiona el desempate mediante preguntas de aproximación.</li>
+ *   <li>eliminarJugador(): Elimina a un jugador de la ronda.</li>
+ * </ul>
+ * 
+ * <p>Nota: Esta clase depende de otras clases como Jugador, Escalon, Tematica, MultipleChoicePregunta, PreguntaAproximacion y Respuesta.</p>
+ * 
+ * @author tomas
+ */
 public class Ronda {
     private int idJuego;
     private ArrayList<Jugador> jugadores;

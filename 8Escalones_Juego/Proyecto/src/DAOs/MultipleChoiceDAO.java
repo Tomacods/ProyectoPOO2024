@@ -8,6 +8,31 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * DAO (Data Access Object) class for managing Multiple Choice questions in the database.
+ * Provides methods to insert, update, delete, and retrieve multiple choice questions and their associated answers.
+ * 
+ * <p>
+ * This class interacts with the "pregunta_multiple_choise" table and uses {@link RespuestaDAO}
+ * for handling related answers.
+ * </p>
+ * 
+ * <ul>
+ *   <li>{@link #insertarPreguntaMultipleChoise(MultipleChoicePregunta, List)}: Inserts a new multiple choice question and its answers.</li>
+ *   <li>{@link #actualizarPreguntaMC(MultipleChoicePregunta)}: Updates an existing multiple choice question.</li>
+ *   <li>{@link #eliminarPreguntaMC(int)}: Deletes a multiple choice question and its answers.</li>
+ *   <li>{@link #obtenerPreguntaMC(int)}: Retrieves a multiple choice question by its ID.</li>
+ *   <li>{@link #obtenerTodasLasPreguntaMC()}: Retrieves all multiple choice questions.</li>
+ *   <li>{@link #obtenerPreguntasMCPorTematica(int)}: Retrieves all questions for a specific topic.</li>
+ *   <li>{@link #obtenerPreguntaConRespuestas(int)}: Retrieves a question along with its answers.</li>
+ * </ul>
+ * 
+ * <p>
+ * Usage of this class requires a valid database connection managed by {@link BaseDeDatos}.
+ * </p>
+ * 
+ * @author 
+ */
 public class MultipleChoiceDAO {
 
     /*

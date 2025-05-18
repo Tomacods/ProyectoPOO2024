@@ -7,6 +7,29 @@ import java.util.ArrayList;
 import DAOs.AproximacionDAO;
 import DAOs.BaseDeDatos;
 
+/**
+ * La clase PreguntaAproximacion representa una pregunta de tipo aproximación,
+ * utilizada en el contexto de un juego o aplicación educativa.
+ * 
+ * Cada instancia contiene un identificador único, el enunciado de la pregunta,
+ * el identificador de la temática a la que pertenece y el valor aproximado correcto.
+ * 
+ * Proporciona métodos estáticos para interactuar con la base de datos a través de la clase AproximacionDAO,
+ * permitiendo obtener, insertar, eliminar y actualizar preguntas de aproximación.
+ * 
+ * Métodos principales:
+ * <ul>
+ *   <li>{@link #obtenerPreguntasAprox()} - Obtiene todas las preguntas de aproximación.</li>
+ *   <li>{@link #obtenerPreguntasAproximacionTematica(int)} - Obtiene preguntas por temática.</li>
+ *   <li>{@link #insertarPreguntaAproximacion(PreguntaAproximacion)} - Inserta una nueva pregunta.</li>
+ *   <li>{@link #eliminarPreguntaAprox(int)} - Elimina una pregunta por su ID.</li>
+ *   <li>{@link #actualizarPreguntaAprox(PreguntaAproximacion)} - Actualiza una pregunta existente.</li>
+ *   <li>{@link #obtenerPreguntaPorEnunciado(String, int)} - Busca una pregunta por enunciado y temática.</li>
+ *   <li>{@link #obtenerValorAproximado(int)} - Obtiene el valor aproximado de una pregunta por su ID.</li>
+ * </ul>
+ * 
+ * Nota: Esta clase depende de la clase AproximacionDAO para la persistencia de datos.
+ */
 public class PreguntaAproximacion {
     private int idPregunta;
     private String enunciado;

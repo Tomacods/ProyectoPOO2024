@@ -7,6 +7,36 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * AproximacionDAO es una clase que proporciona métodos para realizar operaciones CRUD 
+ * (Crear, Leer, Actualizar, Eliminar) sobre preguntas de aproximación en la base de datos.
+ * Utiliza la clase BaseDeDatos para gestionar la conexión y ejecución de sentencias SQL.
+ * 
+ * Métodos principales:
+ * <ul>
+ *   <li>{@link #insertarPreguntaAproximacion(PreguntaAproximacion)}: Inserta una nueva pregunta de aproximación en la base de datos.</li>
+ *   <li>{@link #actualizarPreguntaAproximacion(PreguntaAproximacion)}: Actualiza una pregunta de aproximación existente.</li>
+ *   <li>{@link #eliminarPreguntaAproximacion(int)}: Elimina una pregunta de aproximación por su ID.</li>
+ *   <li>{@link #obtenerPreguntaAproximacion(int)}: Obtiene una pregunta de aproximación específica por su ID.</li>
+ *   <li>{@link #obtenerTodasLasPreguntasAproximacion()}: Recupera todas las preguntas de aproximación almacenadas.</li>
+ *   <li>{@link #obtenerPreguntasPorTematica(int)}: Recupera todas las preguntas de aproximación asociadas a una temática específica.</li>
+ *   <li>{@link #obtenerValorAproximado(int)}: Obtiene el valor aproximado (respuesta correcta) de una pregunta por su ID.</li>
+ * </ul>
+ * 
+ * Excepciones:
+ * <ul>
+ *   <li>Lanza {@link SQLException} en caso de errores de acceso a la base de datos.</li>
+ * </ul>
+ * 
+ * Uso típico:
+ * <pre>
+ *     AproximacionDAO dao = new AproximacionDAO();
+ *     dao.insertarPreguntaAproximacion(pregunta);
+ * </pre>
+ * 
+ * @author (Tu Nombre)
+ * @version 1.0
+ */
 public class AproximacionDAO {
     private BaseDeDatos connection = BaseDeDatos.obtenerInstancia();
 

@@ -8,6 +8,26 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * TematicaDAOImpl provides data access methods for the "tematica" table in the database.
+ * It implements basic CRUD (Create, Read, Update, Delete) operations for Tematica entities.
+ * 
+ * <p>
+ * Methods:
+ * <ul>
+ *   <li>{@link #insertarTematica(Tematica)}: Inserts a new Tematica into the database.</li>
+ *   <li>{@link #actualizarTematica(Tematica)}: Updates an existing Tematica in the database.</li>
+ *   <li>{@link #eliminarTematica(int)}: Deletes a Tematica by its ID.</li>
+ *   <li>{@link #obtenerTematicas()}: Retrieves all Tematicas as a list of Object arrays.</li>
+ *   <li>{@link #obtenerTematica(int)}: Retrieves a single Tematica by its ID.</li>
+ * </ul>
+ * </p>
+ * 
+ * <p>
+ * This class uses a singleton instance of {@link BaseDeDatos} to manage database connections.
+ * All SQLExceptions are either printed to the stack trace or rethrown with a custom message.
+ * </p>
+ */
 public class TematicaDAOImpl {
     private final BaseDeDatos connection = BaseDeDatos.obtenerInstancia();
 

@@ -7,6 +7,29 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * RespuestaDAO es una clase de acceso a datos (DAO) para gestionar operaciones CRUD 
+ * relacionadas con la entidad Respuesta en la base de datos. Proporciona métodos para 
+ * insertar, actualizar, eliminar y consultar respuestas, así como obtener respuestas 
+ * asociadas a preguntas específicas y la respuesta correcta en preguntas de tipo 
+ * multiple choice.
+ * 
+ * Métodos principales:
+ * <ul>
+ *   <li>{@link #insertarRespuesta(Respuesta)}: Inserta una nueva respuesta en la base de datos.</li>
+ *   <li>{@link #actualizarRespuesta(Respuesta)}: Actualiza una respuesta existente.</li>
+ *   <li>{@link #eliminarRespuesta(int)}: Elimina una respuesta por su ID.</li>
+ *   <li>{@link #eliminarRespuestaPregunta(int)}: Elimina todas las respuestas asociadas a una pregunta.</li>
+ *   <li>{@link #obtenerRespuesta(int)}: Obtiene una respuesta específica por su ID.</li>
+ *   <li>{@link #obtenerRespuestasPorPregunta(int)}: Obtiene todas las respuestas asociadas a una pregunta.</li>
+ *   <li>{@link #obtenerTodasLasRespuestas()}: Obtiene todas las respuestas de la base de datos.</li>
+ *   <li>{@link #obtenerIdRtaCorrectaMC(int)}: Obtiene el ID de la respuesta correcta para una pregunta de tipo multiple choice.</li>
+ * </ul>
+ * 
+ * Utiliza la clase BaseDeDatos para gestionar la conexión y ejecución de sentencias SQL.
+ * 
+ * @author tu_nombre
+ */
 public class RespuestaDAO {
     private final BaseDeDatos connection = BaseDeDatos.obtenerInstancia();
 

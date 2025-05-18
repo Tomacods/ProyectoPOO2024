@@ -3,6 +3,19 @@ import DAOs.TematicaDAOImpl;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * La clase Tematica representa una temática o categoría dentro del sistema.
+ * Proporciona atributos para identificar la temática y su nombre, así como métodos
+ * para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre temáticas.
+ * 
+ * <p>Incluye constructores para crear instancias de Tematica a partir de un id y nombre,
+ * o para cargar una temática desde la base de datos usando solo el id.</p>
+ * 
+ * <p>Los métodos estáticos permiten insertar, eliminar, actualizar y obtener temáticas
+ * utilizando la clase TematicaDAOImpl para la interacción con la base de datos.</p>
+ * 
+ * @author (Tu Nombre)
+ */
 public class Tematica {
     private int id;
     private String nombre;

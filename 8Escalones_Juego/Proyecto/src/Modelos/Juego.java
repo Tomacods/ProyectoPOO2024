@@ -4,6 +4,22 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 
+/**
+ * La clase Juego representa una partida del juego "8 Escalones".
+ * Contiene información sobre el identificador del juego, la fecha de realización,
+ * el estado actual, la lista de jugadores participantes y el identificador del jugador ganador.
+ * 
+ * Proporciona métodos para iniciar, finalizar y verificar el estado del juego,
+ * así como para gestionar el flujo principal del juego a través de los escalones y temáticas.
+ * 
+ * Métodos principales:
+ * - comenzarJuego(): Inicia el flujo del juego, seleccionando temáticas aleatoriamente y gestionando los escalones.
+ * - iniciarJuego(): Cambia el estado del juego a "en curso".
+ * - finalizarJuego(int idJugadorGanador): Finaliza el juego y registra al jugador ganador.
+ * - estaEnCurso(): Verifica si el juego está actualmente en curso.
+ * 
+ * Requiere acceso a las clases Tematica, Jugador y Escalon para su funcionamiento.
+ */
 public class Juego {
     private int idJuego;
     private Date fecha;

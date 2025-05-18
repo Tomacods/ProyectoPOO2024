@@ -17,6 +17,20 @@ import Modelos.Respuesta;
 import Modelos.Tematica;
 import Modelos.Juego;
 
+/**
+ * Clase principal de la aplicación que contiene el método main.
+ * 
+ * Esta clase se utiliza para realizar pruebas y ejecutar diferentes funcionalidades
+ * relacionadas con el manejo de jugadores, temáticas, preguntas y respuestas del juego.
+ * Incluye ejemplos de cómo interactuar con los DAOs para insertar, eliminar y obtener
+ * información de la base de datos, así como pruebas de conexión y manipulación de objetos
+ * del dominio.
+ * 
+ * Nota: Gran parte del código está comentado y se utiliza para pruebas manuales de las
+ * distintas funcionalidades implementadas en el proyecto.
+ * 
+ * @author tomas
+ */
 public class App {
     public static void main(String[] args) throws SQLException {
 /*         ArrayList<Jugador> jugadores = new ArrayList<>();

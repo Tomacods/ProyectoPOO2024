@@ -2,6 +2,28 @@ package Modelos;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * La clase Escalon representa un escalón dentro del juego, asociado a una temática,
+ * un conjunto de jugadores y un estado. Permite gestionar la lógica de juego de cada escalón,
+ * incluyendo la ejecución de rondas y la determinación de los jugadores que avanzan.
+ *
+ * Campos:
+ * - numeroEscalon: número identificador del escalón dentro del juego.
+ * - estado: estado actual del escalón (por ejemplo, activo, finalizado).
+ * - jugadores: lista de jugadores que participan en el escalón.
+ * - tematica: temática asociada al escalón.
+ * - juego: referencia al juego al que pertenece el escalón.
+ *
+ * Métodos principales:
+ * - jugarEscalon(): ejecuta la lógica de juego para el escalón, iniciando una ronda y determinando los jugadores que avanzan.
+ * - jugarEscalonFinal(): ejecuta la lógica específica para el escalón final, determinando al ganador.
+ * - quienesSuben(): muestra los jugadores que avanzan al siguiente escalón.
+ * - actualizarJugadores(Jugador): elimina un jugador de la lista de participantes del escalón.
+ * - Getters para los campos principales.
+ *
+ * Excepciones:
+ * - Puede lanzar SQLException durante la ejecución de las rondas.
+ */
 public class Escalon {
     //private int idEscalon;
     private int numeroEscalon;
